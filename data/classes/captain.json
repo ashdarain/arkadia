@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "id": "captain",
+  "name": "Captain",
+  "tags": [
+    "support",
+    "utility"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d8+4+CON",
+    "dice": "1d8",
+    "flat": 4,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 3,
+        "gain": 3
+      },
+      "grants": "2 Inspiration Points"
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 8,
+        "gain": 5
+      },
+      "grants": "3 Inspiration Points (+1)"
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 10,
+        "gain": 2
+      },
+      "grants": "4 Inspiration Points (+1)"
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "inspirations",
+      "name": "Inspirations",
+      "body": "Inspirations are buffing skills used on yourself or allies costing Inspiration Points (IP), gained per level of Captain. Inspirations have a base range of **10m** and are preformed with a **Half Action** or **Extra Action**, unless otherwise stated. Inspiration Points are reset to full after a Short or Long Rest. At the start of Combat set your Inspiration Points to half your maximum rounded down. Inspirations may be used outside of combat in specific scenarios (ask your DM)."
+    }
+  ],
+  "features": [
+    {
+      "id": "captain-at-arms",
+      "level": 1,
+      "name": "Captain at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in two melee weapon, one ranged weapon, two armours and one shield."
+    },
+    {
+      "id": "deliberation",
+      "level": 2,
+      "name": "Deliberation",
+      "abilityType": null,
+      "cost": null,
+      "body": "As a **Full Action** you may spend specific amounts of Mana to gain Inspiration Points up to your maximum. Each Inspiration Point costs **3 Mana**."
+    }
+  ],
+  "abilityGroups": [
+    {
+      "id": "inspiration-abilities",
+      "name": "Inspirations",
+      "resource": "Inspiration",
+      "mechanicId": "inspirations",
+      "abilities": [
+        {
+          "id": "inspire-swiftness",
+          "level": 1,
+          "name": "Inspire Swiftness",
+          "cost": "1+ Inspiration Points",
+          "body": "Target gains **+6m** movement until the end of their next turn. Additionally, you may spend +1 inspiration points to increase that ally's Initiative by **+1d4**. Each ally can increase their Initiative this way once per combat. At Captain Level 6, increase their Initiative by **+1d6** instead."
+        },
+        {
+          "id": "inspire-ferocity",
+          "level": 1,
+          "name": "Inspire Ferocity",
+          "cost": "1+ Inspiration Points",
+          "body": "Target gains **+1d6** to their next attack roll. If that attack lands, they deal and additional **+1d6** damage. If that ally defeats an enemy from the attack, gain **+1 Inspiration Points**. Damage Dice Class of the attack in increased by **+1** at Captain Levels **4** and **8**. For each additional Inspiration Point spend on this, increase the Damage Dice Count by +1."
+        },
+        {
+          "id": "inspire-fortitude",
+          "level": 1,
+          "name": "Inspire Fortitude",
+          "cost": "1 Inspiration Point",
+          "body": "Target ally gains +2 to AC and Spell AC until the end of their next turn. Additionally, you may spend +1 Inspiration Points. If you do, the next time that ally takes damage, they take half damage. Boost the AC by an additional +2 at Captain Level 6 and Player Levels 12 and 18."
+        },
+        {
+          "id": "inspire-vigilance",
+          "level": 3,
+          "name": "Inspire Vigilance",
+          "cost": "2 Inspiration Points",
+          "body": "Until the start of your next turn, all attacks against target have Disadvantage. If the target is successfully hit with an attack with this active, gain **+1 Inspiration Points**."
+        },
+        {
+          "id": "inspire-courage",
+          "level": 3,
+          "name": "Inspire Courage",
+          "cost": "2 Inspiration Points",
+          "body": "Target is cured of all Weak Debuffs. Until the start of your next turn, target cannot be afflicted by Weak mental Debuffs, and gains Advantage against saving throws from all other Debuffs."
+        }
+      ]
+    }
+  ],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [],
+  "source": "Classes/Captain.md"
+}

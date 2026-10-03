@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "id": "arcane-archer",
+  "name": "Arcane Archer",
+  "tags": [
+    "ranged",
+    "spellcaster"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d6+4+CON",
+    "dice": "1d6",
+    "flat": 4,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 4,
+        "gain": 4
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 8,
+        "gain": 4
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 12,
+        "gain": 4
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "arcane-archer-at-arms",
+      "level": 1,
+      "name": "Arcane Archer at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies with two ranged weapons of your choice, as well as Medium and Light armour."
+    },
+    {
+      "id": "smart-shooting",
+      "level": 1,
+      "name": "Smart Shooting",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may use INT instead of DEX for both Attack and Damage rolls with ranged weapons you are proficient with. At Arcane Archer Level 10, use both DEX+INT instead of either one. You make Ranged Spell Attacks from your ranged weapon instead of your bare hands or spell foci."
+    },
+    {
+      "id": "quick-enchant-ranged",
+      "level": 2,
+      "name": "Quick Enchant: Ranged",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may cast Enchant Weapon - Ranged spells as an Extra Action."
+    },
+    {
+      "id": "prolonged-enchantment-ranged",
+      "level": 2,
+      "name": "Prolonged Enchantment: Ranged",
+      "abilityType": null,
+      "cost": null,
+      "body": "When enchanting a ranged weapon, instead of it lasting a number of attacks, you may have it last **3 turns** instead. The number of turns increases by **+1** at Arcane Archer Level 8, and Player Level 16."
+    },
+    {
+      "id": "arcane-sharpshooter",
+      "level": 3,
+      "name": "Arcane Sharpshooter",
+      "abilityType": null,
+      "cost": null,
+      "body": "Abilities that apply to Ranged Attacks also apply to Ranged Spell Attacks. Add your **Proficiency Bonus** to your Ranged Spell Attack rolls. All Ranged Spell Attacks may use DEX instead of the other stats required for Attack and Damage rolls. At Arcane Archer Level 10, combine both DEX+INT to the rolls."
+    },
+    {
+      "id": "flash-aspect",
+      "level": 3,
+      "name": "Flash Aspect",
+      "abilityType": null,
+      "cost": null,
+      "body": "Whenever you make a Ranged Attack, you may spend Mana to instantly apply an enchantment to the attack. Any **Enchant Weapon - Ranged** you’ve learned can be applied this way. This Enchantment only lasts for one attack, and **does not** replace the previously applied Enchantment; it only temporarily overrides it. Mana cost depends on the Crystal type, Tier 1 -> 1 Mana, Tier 2 -> 2 Mana, Tier 3 -> 3 Mana. At Arcane Archer Level 7, the mana cost is reduced to Tier 1 -> 1 Mana, Tier 2 -> 1 Mana, Tier 3 -> 2 Mana."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [],
+  "source": "Classes/Arcane Archer.md"
+}

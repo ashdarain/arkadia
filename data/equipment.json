@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.681Z",
+  "source": "Weapons & Armour.md",
+  "intro": "Equipment only have **penalties** if you are **not proficient** in them. For melee weapons, you can only make **Half Action** attacks if your weapon has **Light** or **Dexterous**. Ranged weapons require 2 hands to use unless they have the **One-handed** attribute.",
+  "attributes": [
+    {
+      "name": "Heavy",
+      "param": "X",
+      "text": "You must have at least X STR or higher to use this item in one hand, otherwise it requires both hands to wield."
+    },
+    {
+      "name": "Light",
+      "param": null,
+      "text": "Allows you to dual-wield and allows for Half Action attacks."
+    },
+    {
+      "name": "Crit",
+      "param": "X",
+      "text": "Gain +X to your Crit Chance."
+    },
+    {
+      "name": "Finesse",
+      "param": null,
+      "text": "Can use STR or DEX"
+    },
+    {
+      "name": "Versatile",
+      "param": null,
+      "text": "Can be two-handed, deal the higher damage value when two-handing."
+    },
+    {
+      "name": "Throwable",
+      "param": null,
+      "text": "Can be thrown as a Half Action to deal Full Action damage with a range of 8m."
+    },
+    {
+      "name": "Reach",
+      "param": null,
+      "text": "Melee weapons - adds +1m to your Melee Attack Range. Ranged weapons - doubles the range but Disadvantage on Attack Rolls past range."
+    },
+    {
+      "name": "Unwieldy",
+      "param": null,
+      "text": "Using this weapon with one hand lowers the damage Dice Class by -1."
+    },
+    {
+      "name": "Dexterous",
+      "param": "X",
+      "text": "You can make Half Action attacks if you have at least X DEX."
+    },
+    {
+      "name": "Range",
+      "param": "Xm",
+      "text": "Ranged weapons can hit targets within X meters away."
+    },
+    {
+      "name": "One-handed",
+      "param": null,
+      "text": "Weapons with this may be used with one hand."
+    }
+  ],
+  "categories": [
+    {
+      "id": "melee-weapons",
+      "name": "Melee Weapons",
+      "kind": "weapon",
+      "items": [
+        {
+          "id": "dagger",
+          "name": "Dagger",
+          "category": "melee-weapons",
+          "type": "Dagger",
+          "stats": [
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d6",
+            "damage": "Slashing or Piercing"
+          },
+          "halfAction": {
+            "dice": "1d4",
+            "damage": "Slashing"
+          },
+          "attributes": [
+            {
+              "name": "Light",
+              "value": null
+            },
+            {
+              "name": "Crit",
+              "value": "1"
+            },
+            {
+              "name": "Throwable",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "shortsword",
+          "name": "Shortsword",
+          "category": "melee-weapons",
+          "type": "Sword",
+          "stats": [
+            "STR",
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d6 - 1d8",
+            "damage": "Slashing or Piercing"
+          },
+          "halfAction": {
+            "dice": "1d4",
+            "damage": "Slashing or Piercing"
+          },
+          "attributes": [
+            {
+              "name": "Light",
+              "value": null
+            },
+            {
+              "name": "Finesse",
+              "value": null
+            },
+            {
+              "name": "Versatile",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "longsword",
+          "name": "Longsword",
+          "category": "melee-weapons",
+          "type": "Sword",
+          "stats": [
+            "STR",
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d8 - 1d10",
+            "damage": "Slashing or Piercing"
+          },
+          "halfAction": {
+            "dice": "1d6",
+            "damage": null
+          },
+          "attributes": [
+            {
+              "name": "Finesse",
+              "value": null
+            },
+            {
+              "name": "Versatile",
+              "value": null
+            },
+            {
+              "name": "Dexterous",
+              "value": "16"
+            }
+          ]
+        },
+        {
+          "id": "greatsword",
+          "name": "Greatsword",
+          "category": "melee-weapons",
+          "type": "Sword",
+          "stats": [
+            "STR"
+          ],
+          "fullAction": {
+            "dice": "1d12",
+            "damage": "Slashing or Piercing"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Heavy",
+              "value": "18"
+            },
+            {
+              "name": "Unwieldy",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "battleaxe",
+          "name": "Battleaxe",
+          "category": "melee-weapons",
+          "type": "Axe",
+          "stats": [
+            "STR"
+          ],
+          "fullAction": {
+            "dice": "1d8 - 1d10",
+            "damage": "Slashing"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Versatile",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "greataxe",
+          "name": "Greataxe",
+          "category": "melee-weapons",
+          "type": "Axe",
+          "stats": [
+            "STR"
+          ],
+          "fullAction": {
+            "dice": "1d12",
+            "damage": "Slashing"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Heavy",
+              "value": "18"
+            },
+            {
+              "name": "Unwieldy",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "smithing-hammer",
+          "name": "Smithing Hammer",
+          "category": "melee-weapons",
+          "type": "Mace",
+          "stats": [
+            "STR"
+          ],
+          "fullAction": {
+            "dice": "1d6",
+            "damage": "Bludgeoning"
+          },
+          "halfAction": {
+            "dice": "1d4",
+            "damage": "Bludgeoning"
+          },
+          "attributes": [
+            {
+              "name": "Light",
+              "value": null
+            },
+            {
+              "name": "Throwable",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "warhammer",
+          "name": "Warhammer",
+          "category": "melee-weapons",
+          "type": "Mace",
+          "stats": [
+            "STR"
+          ],
+          "fullAction": {
+            "dice": "1d8 - 1d10",
+            "damage": "Bludgeoning"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Versatile",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "great-hammer",
+          "name": "Great Hammer",
+          "category": "melee-weapons",
+          "type": "Mace",
+          "stats": [
+            "STR"
+          ],
+          "fullAction": {
+            "dice": "1d12",
+            "damage": "Bludgeoning"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Heavy",
+              "value": "18"
+            },
+            {
+              "name": "Unwieldy",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "spear",
+          "name": "Spear",
+          "category": "melee-weapons",
+          "type": "Polearm",
+          "stats": [
+            "STR",
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d8 - 1d10",
+            "damage": "Piercing"
+          },
+          "halfAction": {
+            "dice": "1d6",
+            "damage": "Piercing"
+          },
+          "attributes": [
+            {
+              "name": "Finesse",
+              "value": null
+            },
+            {
+              "name": "Reach",
+              "value": null
+            },
+            {
+              "name": "Versatile",
+              "value": null
+            },
+            {
+              "name": "Dexterous",
+              "value": "16"
+            }
+          ]
+        },
+        {
+          "id": "halberd",
+          "name": "Halberd",
+          "category": "melee-weapons",
+          "type": "Polearm",
+          "stats": [
+            "STR"
+          ],
+          "fullAction": {
+            "dice": "1d10",
+            "damage": "Slashing or Piercing"
+          },
+          "halfAction": {
+            "dice": "1d6",
+            "damage": "Slashing or Piercing"
+          },
+          "attributes": [
+            {
+              "name": "Reach",
+              "value": null
+            },
+            {
+              "name": "Heavy",
+              "value": "16"
+            },
+            {
+              "name": "Dexterous",
+              "value": "16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ranged-weapons",
+      "name": "Ranged Weapons",
+      "kind": "weapon",
+      "items": [
+        {
+          "id": "shortbow",
+          "name": "Shortbow",
+          "category": "ranged-weapons",
+          "type": "Bow",
+          "stats": [
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d6",
+            "damage": "Piercing"
+          },
+          "halfAction": {
+            "dice": "1d4",
+            "damage": "Piercing"
+          },
+          "attributes": [
+            {
+              "name": "Range",
+              "value": "12m"
+            },
+            {
+              "name": "Reach",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "longbow",
+          "name": "Longbow",
+          "category": "ranged-weapons",
+          "type": "Bow",
+          "stats": [
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d8",
+            "damage": "Piercing"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Range",
+              "value": "15m"
+            },
+            {
+              "name": "Reach",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "light-crossbow",
+          "name": "Light Crossbow",
+          "category": "ranged-weapons",
+          "type": "Crossbow",
+          "stats": [
+            "STR",
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d6",
+            "damage": "Piercing"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Range",
+              "value": "10m"
+            },
+            {
+              "name": "One-handed",
+              "value": null
+            },
+            {
+              "name": "Finesse",
+              "value": null
+            }
+          ]
+        },
+        {
+          "id": "heavy-crossbow",
+          "name": "Heavy Crossbow",
+          "category": "ranged-weapons",
+          "type": "Crossbow",
+          "stats": [
+            "STR",
+            "DEX"
+          ],
+          "fullAction": {
+            "dice": "1d8",
+            "damage": "Piercing"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Range",
+              "value": "15m"
+            },
+            {
+              "name": "Finesse",
+              "value": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spell-foci",
+      "name": "Spell Foci",
+      "kind": "weapon",
+      "items": [
+        {
+          "id": "arcane-staff",
+          "name": "Arcane Staff",
+          "category": "spell-foci",
+          "type": "Staff",
+          "fullAction": {
+            "dice": "1d4 (STR or DEX)",
+            "damage": "Bludgeoning"
+          },
+          "halfAction": null,
+          "attributes": [
+            {
+              "name": "Finesse",
+              "value": null
+            }
+          ],
+          "proficiencyBonus": "+1 to Spell Attack Rolls.",
+          "expertiseBonus": "+3 to Spell Attack Rolls."
+        },
+        {
+          "id": "wooden-effigy",
+          "name": "Wooden Effigy",
+          "category": "spell-foci",
+          "type": "Conduit",
+          "fullAction": null,
+          "halfAction": null,
+          "attributes": [],
+          "proficiencyBonus": "+1 Spell Save DC. Once per turn gain 1 Mana when you inflict an ailment on or defeat an enemy.",
+          "expertiseBonus": "Gain 3 Mana instead."
+        }
+      ]
+    },
+    {
+      "id": "armour",
+      "name": "Armour",
+      "kind": "armour",
+      "items": [
+        {
+          "id": "cloth-robes",
+          "name": "Cloth Robes",
+          "category": "armour",
+          "weight": "Light",
+          "ac": "10",
+          "spellAc": "13",
+          "proficiencyBonus": "+1m Movement, add AGI to both AC and Spell AC."
+        },
+        {
+          "id": "padded-leather",
+          "name": "Padded Leather",
+          "category": "armour",
+          "weight": "Light",
+          "ac": "11",
+          "spellAc": "11",
+          "proficiencyBonus": "+1m Movement, add AGI to both AC and Spell AC."
+        },
+        {
+          "id": "studded-leather",
+          "name": "Studded Leather",
+          "category": "armour",
+          "weight": "Medium",
+          "ac": "13",
+          "spellAc": "11",
+          "proficiencyBonus": "Add AGI to both AC and Spell AC."
+        },
+        {
+          "id": "plate-mail",
+          "name": "Plate Mail",
+          "category": "armour",
+          "weight": "Heavy",
+          "ac": "15",
+          "spellAc": "12",
+          "requirements": "15 STR",
+          "penalty": "-2m Movement, cannot Stealth",
+          "proficiencyBonus": "Disadvantage on Stealth",
+          "expertiseBonus": null
+        }
+      ]
+    },
+    {
+      "id": "shields",
+      "name": "Shields",
+      "kind": "shield",
+      "items": [
+        {
+          "id": "buckler",
+          "name": "Buckler",
+          "category": "shields",
+          "weight": "Light",
+          "ac": "+1",
+          "spellAc": "+1",
+          "penalty": null,
+          "proficiencyBonus": "When an enemy makes an attack against you, if the Attack roll is within 3 of your AC and not a Crit, you can use a Reaction to make an DEX save (DC 13) to parry and negate the attack.",
+          "expertiseBonus": "You can use the Reaction if the Attack roll is within 6 of your AC."
+        },
+        {
+          "id": "heater-shield",
+          "name": "Heater Shield",
+          "category": "shields",
+          "weight": "Medium",
+          "ac": "+2",
+          "spellAc": "+1",
+          "penalty": "Cannot cast spells.",
+          "proficiencyBonus": null
+        },
+        {
+          "id": "great-shield",
+          "name": "Great shield",
+          "category": "shields",
+          "weight": "Heavy",
+          "ac": "+2",
+          "spellAc": "+1",
+          "attributes": [
+            {
+              "name": "Heavy",
+              "value": "15"
+            }
+          ],
+          "penalty": "Cannot cast spells, -3m Movement.",
+          "proficiencyBonus": "+1 AC, +1 Spell AC, -1m Movement",
+          "expertiseBonus": "+1 AC, +2 Spell AC"
+        }
+      ]
+    }
+  ]
+}

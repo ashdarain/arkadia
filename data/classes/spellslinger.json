@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "id": "spellslinger",
+  "name": "Spellslinger",
+  "tags": [
+    "spellcaster"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d6+4+CON",
+    "dice": "1d6",
+    "flat": 4,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": null,
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": null,
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": null,
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "spellslinger-at-arms",
+      "level": 1,
+      "name": "Spellslinger at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in a single weapon type, all weapon foci, and Light armour."
+    },
+    {
+      "id": "alternate-casting",
+      "level": 1,
+      "name": "Alternate Casting",
+      "abilityType": null,
+      "cost": null,
+      "body": "Spells that require a Half Action to cast may be cast using an Extra Action. Spells that require an Extra Action may be cast using a Half Action."
+    },
+    {
+      "id": "arcane-surge",
+      "level": 1,
+      "name": "Arcane Surge",
+      "abilityType": null,
+      "cost": null,
+      "body": "The first time each round you cast **3 spells** in one turn, gain **+2 Mana**. Mana gained this way increases **+1** at Player Levels 4, 8, 12, 16, and 20."
+    },
+    {
+      "id": "alacrity-points-and-abilities",
+      "level": 2,
+      "name": "Alacrity Points & Abilities",
+      "abilityType": null,
+      "cost": null,
+      "body": "You gain max Alacrity Points equal to your **twice** your *Spellslinger Level*. Regain all Alacrity points upon a Short or Long Rest. At the start of Combat, gain **+2 Alacrity Points** (cannot surpass your max). This amount increases by **+1** at *Player Levels* 4, 9, 13, and 18. Alacrity Points can be used on the following abilities, more unlock as you gain levels in Spellslinger."
+    },
+    {
+      "id": "spell-cascade",
+      "level": 3,
+      "name": "Spell Cascade",
+      "abilityType": null,
+      "cost": null,
+      "body": "Keep track of the last 5 spells you’ve cast. Whenever you cast a spell, if you’ve already cast a spell this combat and that spell is different from the last 5 spells you’ve cast, gain 1 stack of Cascade, up to a maximum of 5. When you repeat a spell within the last 5, remove all stacks of Cascade after the spell is cast, then reset the spells you were keeping track of.\n\nFor each stack of Cascade, gain +1 to Spell Attack rolls. For every 2 stacks of Cascade, gain +1 to your Spell Save DC. During your turn you may consume 2 stacks of Cascade to cast a Half Action spell as a Free Action, or consume 4 stacks to cast a Full Action spell as a Free Action."
+    }
+  ],
+  "abilityGroups": [
+    {
+      "id": "alacrity-abilities",
+      "name": "Alacrity Abilities",
+      "resource": "Alacrity",
+      "mechanicId": null,
+      "abilities": [
+        {
+          "id": "quickened-spell",
+          "level": 2,
+          "name": "Quickened Spell",
+          "cost": "1 Alacrity Point",
+          "body": "Spend *1 Alacrity Point* to cast a **Full Action** spell as as a **Half Action**. This spell **loses Stat bonuses** to *Attack Rolls*, *Damage Rolls* and your Stat bonus to *Spell Save DCs*. Quickened spells also have a *-4m* range reduction if its base range is 10m or greater, or a *-2m* reduction if its base range is less than 10m. At Spellslinger Level 6, you no longer lose and Stat bonuses. At Spellslinger Level 9 you no longer lose range."
+        },
+        {
+          "id": "instant-spell",
+          "level": 2,
+          "name": "Instant Spell",
+          "cost": "1 Alacrity Point",
+          "body": "Spend *1 Alacrity Point* to cast a **Half or Extra Action** spell as a **Free Action**. This can only be done *once per turn*. You can use this ability on spells which already had their Action cost reduced by Spellslinger or other sources."
+        },
+        {
+          "id": "reactive-spell",
+          "level": 2,
+          "name": "Reactive Spell",
+          "cost": "1–2 Alacrity Points",
+          "body": "As a Reaction you can spend Alacrity Points to cast a spell in response being attacked or targeted by an enemy Spell or ability. Spend *2 Alacrity Points* to cast a Full Action spell, or *1 Alacrity Point* to cast a Half or Extra Action spell."
+        },
+        {
+          "id": "cheaper-spell",
+          "level": 4,
+          "name": "cheaper spell",
+          "cost": "2 Alacrity Points",
+          "body": "You can spend *2 Alacrity Points* to **reduce** the Mana cost of a spell by **-4** (cannot go below 0)."
+        },
+        {
+          "id": "charge-reduction",
+          "level": 4,
+          "name": "charge reduction",
+          "cost": "3 Alacrity Points",
+          "body": "After a spell is cast if Charges were consumed for the spell or during its effect, you may spend *3 Alacrity Points* to refund those Charges."
+        }
+      ]
+    }
+  ],
+  "sections": [],
+  "drafts": [
+    {
+      "id": "level-5",
+      "level": 5,
+      "name": "",
+      "abilityType": null,
+      "cost": null,
+      "body": "Successfully landing a *0-mana* cost spell grants **+2 Mana**. You can only gain a *maximum* of **4 Mana** each turn this way. This Maximum increases by **+2** at *Player Levels* 8 and 16.",
+      "draftReason": "no name"
+    },
+    {
+      "id": "spell-crescendo",
+      "level": null,
+      "name": "Spell Crescendo",
+      "abilityType": null,
+      "cost": null,
+      "body": "casting spells or different spells helps with casting other spells",
+      "draftReason": "no level"
+    }
+  ],
+  "designerNotes": [],
+  "source": "Classes/Spellslinger.md"
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 2,
+  "id": "spellblade",
+  "name": "Spellblade",
+  "tags": [
+    "spellcaster",
+    "melee"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d8+3+CON",
+    "dice": "1d8",
+    "flat": 3,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 4,
+        "gain": 4
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 7,
+        "gain": 3
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 11,
+        "gain": 4
+      },
+      "grants": "3 Spellstrike Points"
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "spellblade-at-arms",
+      "level": 1,
+      "name": "Spellblade at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in one weapon types and a shield type, or three weapon types. Also gain Proficiencies in Light and Medium armor."
+    },
+    {
+      "id": "siphoning-strike",
+      "level": 1,
+      "name": "Siphoning Strike",
+      "abilityType": null,
+      "cost": null,
+      "body": "Once per round when you defeat an enemy with a Melee Attack or a Melee Spell Attack, if you dealt magic damage with the attack, gain 1 Mana. Mana gained increases by +1 at Spellblade Levels 3, 6, and 9."
+    },
+    {
+      "id": "smart-striking",
+      "level": 1,
+      "name": "Smart Striking",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may use INT instead of STR or DEX for both Attack and Damage rolls with melee weapons you are proficient with. At Spellblade Level 9, use both INT+[STR or DEX] instead of either stat. You make Melee Spell Attacks from your melee weapon instead of your bare hands or spell foci."
+    },
+    {
+      "id": "quick-enchant-melee",
+      "level": 2,
+      "name": "Quick Enchant: Melee",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may cast Enchant Weapon - Melee spells as an Extra Action."
+    },
+    {
+      "id": "prolonged-enchantment-melee",
+      "level": 2,
+      "name": "Prolonged Enchantment: Melee",
+      "abilityType": null,
+      "cost": null,
+      "body": "When enchanting a melee weapon, instead of it lasting a number of attacks, you may have it last **3 turns** instead. The number of turns increases by **+1** at Spellblade Level 8, and Player Level 16."
+    },
+    {
+      "id": "spellstrike-points-and-abilities",
+      "level": 3,
+      "name": "Spellstrike Points & Abilities",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain maximum **Spellstrike Points** equal to your *Spellblade Level*. These points reset to full after a Short or Long Rest and can be used on various Spellstrike abilities list below.\n\nGain **+2** Spellstrike Points when *starting combat*, up to your maximum. This increases by **+1** at Spellblade Levels 6 and 9. This also increases by **+1** at Player Levels 13 and 17.\n\nYou can only have a maximum of **2 readied** at a time. Use a Long Rest Action to swap them out. This maximum increases by **+1** at Spellblade Levels 5, 7 and 9."
+    },
+    {
+      "id": "signature-spells-spellblade",
+      "level": 4,
+      "name": "Signature Spells: Spellblade",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain access to Spellblade Signature Spells for each magic type."
+    }
+  ],
+  "abilityGroups": [
+    {
+      "id": "spellstrike-abilities",
+      "name": "Spellstrike Abilities",
+      "resource": "Spellstrike",
+      "mechanicId": null,
+      "abilities": [
+        {
+          "id": "echoing-strike",
+          "level": 3,
+          "name": "Echoing Strike",
+          "cost": "1 Spellstrike Point",
+          "body": "When you make a melee attack, you may spend **1 Spellstrike Point** to have your blade echo and strike the target again. If the target is defeated by the initial attack, then Echoing Strike targets an adjacent enemy, or refunds the Spellstrike points spend if there is no valid target.\n\nEchoing Blade makes separate Attack and Damage rolls equivalent to your Full Action attack with the weapon you attacked with, but is not enchanted. It will however keep Stat and Proficiency bonuses made with the original attack."
+        },
+        {
+          "id": "distant-blade",
+          "level": 3,
+          "name": "Distant Blade",
+          "cost": "1 Spellstrike Point",
+          "body": "Spend **1 Spellstrike Point** to give yourself 6m melee Attack Range for your next Full Action attack, or next two Half Action attacks. If you make a single Half Action attack this way, your next Full Action attack won’t gain the range bonus."
+        },
+        {
+          "id": "pinpoint-blade",
+          "level": 3,
+          "name": "Pinpoint Blade",
+          "cost": "1 Spellstrike Point",
+          "body": "Spend **1 Spellstrike Point** to have your Melee attack hit against Spell AC instead of regular AC. You may also have your Melee Spell Attack hit against regular AC instead of Spell AC."
+        },
+        {
+          "id": "doubling-strike",
+          "level": 3,
+          "name": "Doubling Strike",
+          "cost": "2 Spellstrike Points",
+          "body": "Spend **2 Spellstrike Points** after you cast a Melee Spell to cast the same spell again as an Immediate Action choosing any target within range. This spell costs half Mana rounded down, however does not gain Stat bonuses to Attack or Damage rolls."
+        },
+        {
+          "id": "critical-blade",
+          "level": 3,
+          "name": "Critical Blade",
+          "cost": "3 Spellstrike Points",
+          "body": "Spend **3 Spellstrike Points** to ensure your next Melee Spell or Enchanted Melee attack is a guaranteed critical hit. This attack cannot miss."
+        }
+      ]
+    }
+  ],
+  "sections": [],
+  "drafts": [
+    {
+      "id": "melee-spells-count-as-melee-attacks",
+      "level": 4,
+      "name": "melee spells count as melee attacks",
+      "abilityType": null,
+      "cost": null,
+      "body": "and add proficiency bonus to spell attacks",
+      "draftReason": "fragment"
+    },
+    {
+      "id": "additional-attunement",
+      "level": 5,
+      "name": "Additional Attunement",
+      "abilityType": null,
+      "cost": null,
+      "body": "",
+      "draftReason": "no description"
+    }
+  ],
+  "designerNotes": [],
+  "source": "Classes/Spellblade.md"
+}

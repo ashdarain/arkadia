@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.662Z",
+  "id": "fire",
+  "name": "Fire",
+  "tier": 1,
+  "damageTypes": [
+    "fire"
+  ],
+  "keywords": [
+    "burn"
+  ],
+  "theme": "Reddish - Orange",
+  "stats": [
+    "CON",
+    "CHA",
+    "INT"
+  ],
+  "ascendsInto": [
+    "Inferno",
+    "Hellfire",
+    "Elemental"
+  ],
+  "mechanics": [
+    {
+      "id": "burn",
+      "name": "Burn",
+      "body": "Burn is a stackable Weak Debuff that deals 1d6 fire damage. At the start of turn make a CON save and take the damage on fail, then reduce the number of stacks by 1. Applying Burn again increases the number of stacks by that amount.",
+      "source": "Conditions"
+    }
+  ],
+  "spells": [
+    {
+      "id": "firemakers-talent",
+      "name": "Firemaker’s Talent",
+      "ba": 0,
+      "ca": "Auto",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "Being attuned to Fire magic grants you a multitude of boons and abilities based your investment into the Fire Crystal. These abilities apply to non-combat situations, however those with Action costs may be used in combat.\n*Note: Any reference to mundane flames represent torches, campfires, lanterns and other medium or small flammable devices.*\n**0+ Fire CA:**\n- *Torchlight*: As an Extra Action conjure a flame that floats around your head and follows you. The flame illuminates radius up to 20m and lasts 1 hour. You may choose to have the flame shine less than the max radius.\n- Raw food can be cooked inside your mouth, preventing most foodborne illnesses. You can also boil water and cook food from the heat of your hands.\n- You are immune to minor effects of naturally hot environments (deserts, hot springs, etc.)\n- *Kindle*: As an Extra Action light or extinguish any non-magical mundane flames within 10m of yourself.\n**20+ Fire CA:**\n- Your body temperature is slightly elevated, granting you +2 bonus to most rolls against ailments from cold environments.\n- Gain Advantage towards any survival, tracking or otherwise exploration related skill checks in hot or arid environments.\n- *Signal Flare*: As a Full Action create a signal fire visible up to 10km away in clear conditions, or half that distance in cloudy weather. It can be colored in any hue and lasts up to an hour, or if you dismiss it as a Free Action.\n- You can use your hands to perform simple metalworking, granting the Metalshaping skill which uses DEX and gains your Proficiency Bonus. Simple reshaping or repairing (bending, flattening, etc.) takes a few minutes; more complex metalwork takes longer and requires higher Metalshaping rolls based on your GM’s discretion. You cannot create items from raw ore this way.\n**40+ Fire CA:**\n- During Intimidation and Persuasion checks, if there are any mundane fires within 10m of you, the fires flare up granting you +4 to those rolls.\n- *Torchlight+*:  Torchlight now illuminates up to 40m and now expels all magical darkness within the radius.\n- When you are inflicted with Burn, you may ignore it nullifying the Debuff.\n- *Cauterize*: As a Half Action you may touch a willing or downed target (including yourself) to stabilize the target, and remove Bleed, Disease and Pestilence from them.\n**60+ Fire CA:**\n- You are immune to all Weak Debuffs threatened from cold environments (not creatures), and gain Advantage to rolls resisting Strong Debuffs from cold environments.\n- You may choose to ignore any Fire damage taken from non-magical sources.\n- Upgrade your Metalshaping skill by adding CHA in addition to your DEX, and Expertise Bonus instead of Proficiency to the roll. Improve the speed and efficiency of your metalworking, completing a craft that would take a seasoned blacksmith hours, in minutes.\n- Once per Long Rest you may perform a purification ritual by burning an item from an afflicted target, removing a persistent ailment from them. The ritual takes an Auxiliary Action and the item is destroyed.",
+      "upgrades": []
+    },
+    {
+      "id": "conjure-flame",
+      "name": "Conjure Flame",
+      "ba": 0,
+      "ca": "Auto",
+      "mana": "X",
+      "concentration": null,
+      "tags": [],
+      "body": "As a Half or Extra Action, conjure a flame into an empty hand and gain 3 Blaze charges. Blaze charges allow for **Empowered Casts** for specific Fire spells. If your flame is already conjured add +2 Blaze charges instead, up to your max.\n\nThe maximum number of Blaze charges is equal to 3, +1 per 10 Fire CA, and +1 per 3 Player Levels. Conjure Flame costs Mana equal to half the amount of Blaze charges generated, rounded up.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "You may start combat with Conjure Flame already cast for 0 Mana."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Whenever you create a or replace Conjure Flame, start with +1 more per 3 Player Levels. Whenever you cast Conjure Flame to add additional Blaze charges, add +1 more."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per round whenever you defeat an enemy, you may cast Conjure Flame as an Immediate Action."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "While casting Conjure Flame, you may automatically move the conjured flame onto your weapon (you no longer need a free hand). You can also cast Enchant Weapon: Fire as an Immediate Action, applying it to the relevant weapon type. That weapon is now the conduit for the Conjure Flame, regardless if it is Enchanted or not."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-fire",
+      "name": "Enchant Weapon: Fire",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action*, wreath your weapon in flame for 3 turns. Gain the following effects while enchanted depending on the weapon type:\n**Melee**: Whenever you land a melee attack with your enchanted weapon, apply 1 Burn. The amount of stacks applied increases +1 every 3 Player Levels.\n**Ranged**: Deal +1d4 Fire damage. This increases by +1d4 every 2 Player Levels.\n**Spell Focus**: +1 to spell save DC and spell Attack rolls for Fire spells. The attack roll bonus increases by +1 every 4 Player Levels. Fire spell Attack rolls gain +1 to Crit Chance.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": "Melee",
+          "text": "Deal +1d6 Fire damage per attack. This increases by +1d6 per 3 Player Levels. *+1 Mana Cost*."
+        },
+        {
+          "ca": "2",
+          "variant": "Ranged",
+          "text": "When you land a ranged attack with your enchanted weapon, apply 1 Burn. The amount of stacks applied increase by +1 per 3 Player Levels. *+1 Mana Cost*."
+        },
+        {
+          "ca": "3",
+          "variant": "Spell Focus",
+          "text": "Once per round whenever you successfully apply Burn, gain 1 Blaze charge. *+1 Mana Cost*."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Whenever you apply Burn with a spell or attack from an Enchanted weapon, apply +1 stack of Burn."
+        }
+      ]
+    },
+    {
+      "id": "lesser-fireball",
+      "name": "Lesser Fireball",
+      "ba": 0,
+      "ca": "2",
+      "mana": "1+",
+      "concentration": null,
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action make a ranged spell attack hurling a ball of fire towards any target within 12m, dealing **1d8** Fire damage. Lesser Fireball is a Small Projectile. Damage increases by *+1d8* per 10 Fire CA.\n\n**Empowered Cast**: Consume 1 Blaze Charge as a Half Action to make a ranged spell attack to hurling a ball of fire towards any target within 8m, dealing 2d6 fire damage. Damage increases by *+1d6* per 10 Fire CA.\n\n**0 Mana Cast:** You may cast Less Fireball for *0 Mana*, if you do it deals *1d6* Fire damage instead and the range is lowered to *6m*. Damage increases by *+1d6* per 20 Fire CA.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "You may have Lesser Fireball fork and hit two different targets within 6m of each other, making separate attack rolls for each target. *+1 Mana Cost if used*."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may have Lesser Fireball barrage each target hitting them 2 more times, costing +1 additional Blaze Charge. Make each Attack Roll separately. The subsequent Attack Rolls are reduced by -2, then -3.  *+1 Mana Cost if used*."
+        }
+      ]
+    },
+    {
+      "id": "lingering-flame",
+      "name": "Lingering Flame",
+      "ba": 0,
+      "ca": "3",
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Passive"
+      ],
+      "body": "Once per round whenever you deal non-Burn Fire damage by a spell or attack, if that damage is more than half the max damage you could have done, apply +1 Burn to all targets of the spell or attack. *For example if your damage roll is 3d6+4, 11 damage is required for Lingering Flame to trigger.*",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Lingering Flame applies +1 Burn per 10 Fire CA."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Lingering Flame now triggers up to twice per round."
+        }
+      ]
+    },
+    {
+      "id": "cleansing-fire",
+      "name": "Cleansing Fire",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action target a creature within melee range to send a flame coursing through its body. Deal **1d6** Fire damage and remove a single Weak Buff or Weak Debuff from the target. Damage against enemies increases by +1d6 per 10 Fire CA.\n\n**Empowered Cast**: By consuming 3 Blaze Charges, Cleansing Flame removes all Weak Buffs or Weak Debuffs from the target instead. The target must make a CON save taking regular damage on pass, double damage on fail.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Damage against enemies increases by +1d6 per 2 Player levels. +2 Mana cost."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Cleansing Fire can target an enemy within 12m, if so a Ranged Spell Attack is required, with no effect on fail."
+        }
+      ]
+    },
+    {
+      "id": "dragons-breath",
+      "name": "Dragon’s Breath",
+      "ba": 15,
+      "ca": "3",
+      "mana": "2+",
+      "concentration": "Major Concentration*",
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action launch a cone of fire in front of you, dealing 3d6 Fire damage. The cone is 4m long, 3m wide. Any creature caught in the fire must make a AGI save to take half damage on success. Damage increases by 1d6 per 10 Fire CA.\n\n**Empowered Cast**: Same as the Basic Cast with a +3 Mana cost, however Dragon's Breath becomes a Major Concentration spell and the fire lingers for up to 5 turns. The cone now follows you and you may rotate it freely on your turn. Whenever a creature enters the cone for the first time a turn, or starts their turn in the fire, you may use  to consume 1 blaze Charge and perform the Basic Cast again as an Immediate Action. This does not cost Mana.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Damage from Dragon Breath completely ignores allies."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Increase the cone’s size by +1m in length and width per 10 Fire CA."
+        }
+      ]
+    },
+    {
+      "id": "immolation",
+      "name": "Immolation",
+      "ba": 15,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a Half Action, target enemy within 10m makes a CON save applying 3 stacks of Burn on fail. You may also cast Immolation for 0 Mana targeting yourself as an Extra Action, ignoring the CON save. Whenever you land a critical hit with a Spell or Attack that deals Fire damage, you may use an Immediate Action to cast Immolation for 0 Mana on one target that you hit. At 30 Fire CA, Immolation can be as an Extra Action.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Immolation applies +2 additional stacks of Burn even if the target passes the save (5 stacks if they fail). +1 Mana Cost."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per turn whenever you defeat an enemy, you may cast Immolation as an Immediate Action targeting another enemy within 6m of the defeated enemy."
+        }
+      ]
+    },
+    {
+      "id": "detonate",
+      "name": "Detonate",
+      "ba": 15,
+      "ca": "3",
+      "mana": "4+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a Half Action or Extra Action snap your fingers consuming all Burn stacks on all enemies within 8m of you, dealing 1d10 Fire damage per stack removed. Rolls are combined per target, but made separately. (4 stacks of Burn on one target deals 4d10 damage, 3 stacks on another deals 3d10, etc.)",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Increase the Damage Dice Class by +1 for Detonate. +1 Mana Cost."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Detonate deals half damage to all creatures within a 3m AoE of each target affected. +1 Mana Cost."
+        }
+      ]
+    },
+    {
+      "id": "rocket-jump",
+      "name": "Rocket Jump",
+      "ba": 15,
+      "ca": "2",
+      "mana": "1",
+      "concentration": null,
+      "tags": [],
+      "body": "Once per turn, whenever you jump you may add +5m vertical or horizontal movement to the jump.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "As an Extra Action, add +10m movement to your next jump. This ability costs 3 Mana instead."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "When falling, you may use a Reaction to negate up to 30m of Fall Damage, taking half damage when falling from a greater height."
+        }
+      ]
+    },
+    {
+      "id": "burning-aura",
+      "name": "Burning Aura",
+      "ba": 30,
+      "ca": "4",
+      "mana": "3",
+      "concentration": "Major Concentration*",
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action envelop yourself in flames, burning everything around you. Enemies that enter for the first time each turn, or start their turn within 3m of you take 2d6 Fire damage and must make CON save, applying 2 Burn on fail. Damage increases by +1d6 per 10 Fire CA. Requires Major Concentration.\n\n**Empowered Cast**: You may consume 5 Blaze Charges to empower Burning Aura. It now deals 3d8 Fire damage and applies 3 Burn automatically without requiring a CON save. Damage increases by 1d8 per 10 Fire CA. When you cast Burning Aura this way and at start of each of your turns that it is active, take 2d6 Fire damage and gain 1 Burn. Fire damage inflicted by Burning Aura or Burn on yourself cannot make you Break Concentration for any Fire spell.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Burning Aura becomes a Minor Concentration spell."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Increase the range of Burning Aura by +2m."
+        }
+      ]
+    },
+    {
+      "id": "flamecallers-spark",
+      "name": "Flamecaller’s Spark",
+      "ba": 30,
+      "ca": "3",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "Whenever you roll a Nat 19 or 20, or Crit on any Attack or Spell that deals Fire damage, each target affected explodes in flame dealing 2d10 Fire damage and applying 2 Burn to them. Each enemy within a 2m radius of the target must make a AGI save to avoid half of the damage. Damage increases by +1d10 per 10 Fire CA.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Flamecaller’s Spark now triggers on a Nat 17 or higher."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Flamecaller’s Spark inflicts +1 Burn per 4 Player Levels."
+        }
+      ]
+    },
+    {
+      "id": "ember-chaff",
+      "name": "Ember Chaff",
+      "ba": 30,
+      "ca": "3",
+      "mana": "0+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a Reaction, burn away any non-Ally Small Projectile coming towards you or next to you within 2m.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Gain 1 Blaze Charge when you use Ember Chaff. If the projectile is Magical gain 2 charges instead."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "If the owner of the Projectile is an Enemy, they gain 1 Burn. Costs 1 Mana on use."
+        }
+      ]
+    },
+    {
+      "id": "summon-fire-elemental",
+      "name": "Summon Fire Elemental",
+      "ba": 30,
+      "ca": "7",
+      "mana": "6",
+      "concentration": null,
+      "tags": [],
+      "body": "You may only have 1 set of Fire Elementals active at one time. When you cast this spell again, or whenever you choose to, all previously summoned Fire Elementals die.\n\n**Basic Cast**: As a Full Action, Summon a Fire Elemental within 3m. It has 4d8 Health, 5m hovering movement speed, resistance to Fire damage, and vulnerability to Cold Damage. It gains the following Summon Actions:\n1) Fire Elemental fires a balls of flame towards any target within 12m, dealing 2d6 Fire damage.\n2) Fire Elemental Burns brightly, dealing 1d8 Fire damage to each enemy within 2m.\n\n**Empowered Cast**: You may consume any number of Blaze Charges to improve the capabilities of Summon Fire Elemental. You can apply the same effects multiple times:\n• 2 Blaze Charges to increase Fire Elemental HP by +3d8\n• 1 Blaze Charge to increase the damage Dice count by +1 for all attacks\n• 3 Blaze Charges to increase the damage Dice Class for all rolls regarding the Fire Elemental\n• 1 Blaze Charges to explode on death, dealing 2d12 Fire damage to all creatures 4m, CON save to take half damage (this is an attack)\n• 3 Blaze Charges for +1 Summon Action\n• 5 Blaze Charges for +1 Fire Elemental summoned",
+      "upgrades": [
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "+1 Fire Elemental summoned. +2 Mana Cost if used."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Increase the Dice Class for HP and Attack rolls. +2 to Mana cost if used."
+        }
+      ]
+    },
+    {
+      "id": "greater-fireball",
+      "name": "Greater Fireball",
+      "ba": 45,
+      "ca": "5",
+      "mana": "5+",
+      "concentration": null,
+      "tags": [],
+      "body": "***Basic Cast***: As a Full Action create a large ball of fire and hurl at any point or target within 12m. On impact it explodes in a 3m diameter circle dealing 6d8 Fire damage. Each creature in the blast may make a AGI save to take half damage. Greater Fireball is a Large Projectile.\n\n**Empowered Cast**: When using the basic cast, you may expend Blaze Charges to empower the fireball, the same effect may be applied multiple times:\n• 1 Blaze Charge to increase the damage  Dice Count by +1\n• 2 Blaze Charges to increase the AoE by +1m and the Cast range by +3m.\n• 3 Blaze Charges to increase the damage Dice Class by +1.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may cast Greater Fireball as a Half Action for +2 Mana."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Each enemy within the blast gains 1 Burn, each enemy within 1m radius of the center of the Blast gains 3 Burn instead."
+        }
+      ]
+    },
+    {
+      "id": "improved-burn",
+      "name": "Improved Burn",
+      "ba": 45,
+      "ca": "3",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "Increase the damage Dice Class by +1 for Burn applied by you, and add your [STAT] to the damage. When multiple Burns are triggered, only add your [STAT] once. Increase the damage Dice Class by +1 per 30 Fire CA.\n\nWithin 50m of you, if your Burn damage is higher than the Burn already on an enemy, yours overwrites it. Whenever a weaker Burn is applied to an enemy with your Burn already applied, it is upgraded to your higher damaging one.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Creatures affected by your burn makes the Burn CON save with disadvantage."
+        },
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "Whenever you apply Burn, apply +1 Burn."
+        }
+      ]
+    },
+    {
+      "id": "ember-surge",
+      "name": "Ember Surge",
+      "ba": 45,
+      "ca": "4",
+      "mana": "3*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a Half Action you or an Ally without any form of Haste within 10m gains Minor Haste (a bonus Half Action) for 1d4+1 turns.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "If the target is half HP or less, Ember Surge costs 0 Mana."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Ember Surge heals the target for 1d8 if they are not Vulnerable to Fire damage."
+        }
+      ]
+    },
+    {
+      "id": "blood-of-the-phoenix",
+      "name": "Blood of the Phoenix",
+      "ba": 45,
+      "ca": "6",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "Whenever you take Fire damage, heal HP equal to the damage done instead. The maximum amount can be healed is equal is your Fire CA, and resets after a Long Rest. When calculating the damage dealt, ignore resistances and immunities. If you can no longer heal from Blood of the Phoenix, take Fire damage normally.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Blood of the Phoenix now heals for up twice your Fire CA instead."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Instead of healing yourself, you may may apply half (rounded down) the healing to an ally within 6m of you. The full amount you would have gained (not halved) still counts towards Blood of the Phoenix’s max healing."
+        }
+      ]
+    },
+    {
+      "id": "summers-passion",
+      "name": "Summer’s Passion",
+      "ba": 45,
+      "ca": "4",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "When you learn Summer’s Passion, choose either CHA or CON and gain a passive +1 in that stat (*you lose the bonus when you unlearn this spell*). At 30 Fire CA, increase the stat bonus by +1.\n\nAs a Half Action or Extra Action, remove 2 Burn from any target within 12m to gain 1 Blaze Charge.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Whenever you make a CHA or CON saving throw in combat, consume 1 Blaze Charge to gain advantage on that save."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "While you are Burning, you have +3 to Spell AC."
+        }
+      ]
+    },
+    {
+      "id": "ember-bound-familiar",
+      "name": "Ember-Bound Familiar",
+      "ba": 60,
+      "ca": "7",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "You can no longer conjure a new flame with Conjure Flame, it is now always active and bound to a familiar of choosing. Choose from any small creature like a salamander, will-o'-wisp, butterfly, or whatever the GM allows. This familiar floats around you or perches on your shoulder, etc., but it always nearby and has you in its line of sight. It cannot take damage nor be attacked, and it cannot die unless dismissed by the player (or GM). It cannot talk but can make vague gestures for you and your party to interpret. You can change the familiar’s form during a Short or Long rest.\n\nAll Blaze Charges you gain go to the familiar, all charges you spend come from the familiar. You can still use Conjure Flame to add charges, and any upgrades regarding gaining charges from Conjure Flame still applies, however you cannot create a new flame. During your turn the familiar can fly up to 8m away, but will return and teleport next to you at the start of your next turn. Outside of combat the familiar can move triple the distance before needing to return.\n\nAs a Full Action you may give your Familiar any single Fire spell or Fire damaging spell, allowing it to cast the spell at the start of another creature’s turn. Choose a creature, at the start of that creature’s turn before they act, your familiar gets to cast the given spell with normal casting restrictions, then returns to you right you after. For all purposes, the spell counts as if you cast it yourself. The cost of this Action is equal to 2+ the spell’s Mana Cost. Your familiar can only store one spell at a time, and concentrate on any spells it casts.\n\n*Ember-Bound Familiar is considered a Summoning spell but the familiar is not a Summon for gameplay purposes.*",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You can command the familiar to pass through any number of enemies within its movement. For each creature, consume 1 Blaze Charge to afflict that enemy with 1 Burn."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Any save enemies make from the effects of spells cast by the familiar are made with Disadvantage."
+        }
+      ]
+    },
+    {
+      "id": "searing-brand",
+      "name": "Searing Brand",
+      "ba": 60,
+      "ca": "5",
+      "mana": "5+",
+      "concentration": "Minor Concentration",
+      "tags": [],
+      "body": "As a Full Action mark an enemy up to 15m away with a searing brand, lasting up to 10 turns. Whenever the branded creature takes Fire damage, immediately trigger burn. While branded, the creature becomes Vulnerable to Fire damage if they are not already Immune, and if they are Immune they lose Immunity (takes normal Fire damage).\n\nIf a creature is defeated while branded, you may consume **Blaze Charges** to cause it to become engulfed in flames and explode. The explosion has a base radius of 3m and only affects your enemies, every charge consumed increases the damage by **+2d8** and radius by +2m. Any creature affected by the explosion makes an AGI save, taking half damage on success. The target may use a Full Action to make a WIS save, dispelling Searing Brand on success.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Burn triggers on the branded target at the start of **each** turn, instead of only on their turn."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "After the branded target is defeated, you may immediately cast Searing Brand for 3 Mana as an Immediate Action."
+        }
+      ]
+    },
+    {
+      "id": "wall-of-fire",
+      "name": "Wall of Fire",
+      "ba": 60,
+      "ca": "5",
+      "mana": "X",
+      "concentration": "Major Concentration",
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action create a straight wall of fire 1m wide, 3m high, and up to 10m long. Once per turn any creature that enters the fire or starts their turn in it takes 4d12 Fire Damage and applies 2 Burn. These creatures may make an AGI save, on success moving 1m outside of the fire and taking half damage. However if there is no space within 1m free of fire, they automatically fail the save. Wall of Fire is a Major Concentration spell that lasts 10 turns or until you lose Concentration. Wall of Fire costs X Mana, where X is half its length rounded up.\n\n**Empowered Cast**: While performing the Basic Cast, you may consume Blaze Charges to improve the capabilities of Wall of Fire. For every 2 Blaze Charges consumed, Wall of Fire gains up to +1m width, +3m height, +3m max length, +1d12 damage, and +1 Burn.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Wall of Fire now lasts 3 turns after you lose Concentration or the spell ends. You can manually dismiss this fire as a Free Action. It is automatically dismissed when you create a new Wall of Fire."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "When a creature fails the AGI save, they gain twice as much Burn from Wall of Fire."
+        }
+      ]
+    },
+    {
+      "id": "flame-ward",
+      "name": "Flame Ward",
+      "ba": 60,
+      "ca": "4",
+      "mana": "5",
+      "concentration": "Minor Concentration",
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action envelop you or an ally within 10m with full-body flaming shield granting them 4d8+[STAT] Temporary HP. While this Temporary HP is active, Flame Ward retaliates any enemy making an attack or spell cast against shielded target within 1m, taking 2d8 Fire damage and applying 1 Burn. Flame Ward lasts 1 hour.\n\n**Empowered Cast**: You may consume Blaze Charges to increase the efficacy of Flame Ward. Per 3 Blaze Charges consumed, Flame Ward grants +1 Spell AC, +2d8 Temporary HP, +2d8 Fire damage retaliated, and +1 Burn afflicted.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "When Flame Ward depletes or expires, the creature protected by it may choose to have it explode, dealing damage equal to half the Temporary HP it granted in a 2m radius, rounded down."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Flame Ward now retaliates against attacks made or spells cast within 8m of the protected target."
+        }
+      ]
+    },
+    {
+      "id": "cremation",
+      "name": "Cremation",
+      "ba": 75,
+      "ca": "6",
+      "mana": "3+",
+      "concentration": null,
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action make a Melee or Ranged (12m) Spell Attack against an enemy dealing **8d8** Fire damage on hit. Then regardless of whether the attack landed, you may siphon all Burn stacks from all enemies, allies and yourself within 30m of the target, removing them from everyone else and combining them onto the initial target.\n\n**Empowered Cast**: After the Basic Cast, you may immediately spend Mana and Blaze charges to continuously trigger Burn on the target. You may repeatedly spend 2 Mana and 1 Blaze charge, each time rolling all stacks of Burn together, then reducing Burn stacks by **1d4**. (*If they have 5 stacks of 1d6 Burn, deal 5d6 Fire damage, then reduce Burn stacks*).",
+      "upgrades": [
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "Increase the Basic Cast’s chance to Crit by +5."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Using Empowered Cast reduce the number of Burn stacks by **1d4-1** instead."
+        }
+      ]
+    },
+    {
+      "id": "nova-flare",
+      "name": "Nova Flare",
+      "ba": 75,
+      "ca": "8",
+      "mana": "6+",
+      "concentration": null,
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action summon a swirling ball of fire that radiates intense heat within 5m. It gains 8d12+Fire CA Health, 1 Summon Action, is Vulnerable to Cold damage, is Immune to Fire damage, and is Resistant to all non-Magical damage types. Nova Flare emits a burning aura that once per turn per enemy deals 2d8 Fire damage and applies 2 burn, to all enemies that start their turn or enter 4m of it. Choose a point within 20m from where you spawned Nova Flare, it will travel to that point on its turn at a rate of 3m, ignoring terrain. When it reaches its destination, or whenever you use its Summon Action, Nova Flare will self-destruct dealing 12d12 Fire damage and applying 6 burn to each enemy within 8m. Creatures affected may make an AGI save to take half damage.\n\n**Empowered Cast**: +8 to Mana Cost. Nova Flare gains now gains its own Blaze Charges, +1 per 10 Fire CA, and +1 per 4 Player Levels. You may also consume your Blaze Charges to add to its pool. Nova Flare may use its Summon Action to cast any Spell dealing Fire damage you have access to with an Empowered Cast, ignoring Mana and Action cost. However, it must consume at least 1 Blaze Charge to cast the spell and use the Empowered version of that spell. After casting the spell, reduce Nova Flare’s HP by twice the Mana Cost of the spell. Nova Flare can only Concentrate on one spell at a time. You cannot cast Nova Flare from itself.",
+      "upgrades": [
+        {
+          "ca": "7",
+          "variant": null,
+          "text": "Nova Flare gains +1 Summon Action."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Nova Flare will automatically self-destruct when it reaches 0 HP if the caster chooses to."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You can now use a Summon Action to force Nova Flare to move 3m, keeping its original destination. You can also use a Summon Action to change its destination, but the new point must be equal to the distance left to the previous destination or less."
+        }
+      ]
+    }
+  ],
+  "drafts": [],
+  "source": "Magic/Fire.md"
+}

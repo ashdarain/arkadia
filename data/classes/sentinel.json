@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "id": "sentinel",
+  "name": "Sentinel",
+  "tags": [
+    "support",
+    "defensive"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d12+3+CON",
+    "dice": "1d12",
+    "flat": 3,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 3,
+        "gain": 3
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 5,
+        "gain": 2
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 9,
+        "gain": 4
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "sentinel-at-arms",
+      "level": 1,
+      "name": "Sentinel at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in all Shields, and two weapon types of your choice. Also gain Proficiency in Medium and Heavy Armour. At Sentinel Level 3, gain Expertise in Medium and Large shields instead."
+    },
+    {
+      "id": "guardian",
+      "level": 1,
+      "name": "Guardian",
+      "abilityType": null,
+      "cost": null,
+      "body": "Allies standing within your Melee range gain +1 to their AC and Spell AC. This increases by +1 at Sentinel levels 3, 6, and 9."
+    },
+    {
+      "id": "vanguard-stride",
+      "level": 2,
+      "name": "Vanguard Stride",
+      "abilityType": null,
+      "cost": null,
+      "body": "Once per turn you gain 4m of movement that can only be used to move towards allies. Moving towards allies with any form of movement allows you to ignore Difficult Terrain."
+    },
+    {
+      "id": "intercept",
+      "level": 2,
+      "name": "Intercept",
+      "abilityType": null,
+      "cost": null,
+      "body": "When an Attack or Spell Attack is made a towards an ally within your Melee Range, you may use a Reaction to have the attack go towards you instead, swapping positions with that ally."
+    },
+    {
+      "id": "bulwark",
+      "level": 3,
+      "name": "Bulwark",
+      "abilityType": null,
+      "cost": null,
+      "body": "If you have a Medium or larger shield equipped, as an **Extra** or **Half Action** you can hunker down giving cover to allies adjacent but not in front of you. You can +**2 AC** and **+1 Spell AC** until the start of your next turn. AC and Spell AC increases by **+1** at Sentinel Levels *5* and *8*. Allies to the side of you Half Cover, allies behind you have Full Cover. If they ally is 2 or more Size Classes above you, they do not gain the benefits of cover (A Medium creature can make cover for a Large creature but not a Huge one). Moving or being knocked prone breaks this formation and the cover."
+    },
+    {
+      "id": "taunting-cry",
+      "level": 3,
+      "name": "Taunting Cry",
+      "abilityType": null,
+      "cost": null,
+      "body": "As an *Extra* or *Half Action* shout at an enemy. They must make a WIS save or become **Taunted** towards you until the end of their next turn. The Save DC is equal to your **8 + Proficiency Bonus + AC on equipped Shield + CHA**."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [
+    {
+      "id": "shield-bash",
+      "level": 4,
+      "name": "Shield Bash",
+      "abilityType": null,
+      "cost": null,
+      "body": "stun",
+      "draftReason": "fragment"
+    }
+  ],
+  "designerNotes": [],
+  "source": "Classes/Sentinel.md"
+}

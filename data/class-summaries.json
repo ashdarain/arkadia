@@ -1,0 +1,14 @@
+{
+  "arcane-archer": "A ranged caster who fights with INT, enchants arrows on the fly and fires spells straight through the bow.",
+  "assassin": "Strikes from stealth or the flank for heavy crits, then slips back into hiding mid-fight.",
+  "captain": "A battlefield leader who spends Inspiration Points to hasten, empower and protect allies.",
+  "lurker": "Waits for enemies to act first, then punishes anyone whose turn has already passed.",
+  "magus": "A staff caster whose spells reach further, cover more ground and can crit without an attack roll.",
+  "marksman": "Gives up movement for accuracy, guards lanes with Overwatch and hits harder from high ground.",
+  "sage": "A concentration caster who swaps spells mid-fight, converts damage types and upgrades spells for free.",
+  "samurai": "Flows between four sword stances, each grown with its own Bushido skills.",
+  "sentinel": "A shield-bearer who hardens nearby allies, takes hits meant for them and taunts enemies away.",
+  "skirmisher": "Moves and acts outside their own turn, cutting into the initiative order with extra movement and actions.",
+  "spellblade": "A melee caster who fights with INT, enchants their blade and spends Spellstrike Points on magical strikes.",
+  "spellslinger": "A rapid caster who bends action costs, spends Alacrity Points to cast faster and is rewarded for variety."
+}

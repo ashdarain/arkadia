@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "id": "sage",
+  "name": "Sage",
+  "tags": [
+    "spellcaster",
+    "concentration",
+    "utility"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d8+4+CON",
+    "dice": "1d8",
+    "flat": 4,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 5,
+        "gain": 5
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 8,
+        "gain": 3
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 12,
+        "gain": 4
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "sage-at-arms",
+      "level": 1,
+      "name": "Sage at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiency in any spell foci, either light or medium shields, both light and medium armor."
+    },
+    {
+      "id": "centralized-thoughts",
+      "level": 1,
+      "name": "Centralized Thoughts",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may use WIS or INT for preserving Concentration instead of CON. The first time each turn you are forced to break Concentration, make the save with Advantage. At Sage Level 6 you always roll Concentration saves with Advantage."
+    },
+    {
+      "id": "rote-memorization",
+      "level": 2,
+      "name": "Rote Memorization",
+      "abilityType": null,
+      "cost": null,
+      "body": "As an Extra Action you can Unlearn one spell and Learn another. If upgrades are already applied to the first spell, apply up to that many upgrades to the second spell if you have enough CA."
+    },
+    {
+      "id": "dialectical-thinking",
+      "level": 2,
+      "name": "Dialectical Thinking",
+      "abilityType": null,
+      "cost": null,
+      "body": "Choose a **pairs** of **Non-Physical** Damage Types, whenever you deal damage in the first of a pair, it’s converted to the second type of that damage in that pair. Choose an **additional pair** at Sage Levels 4, 7 and 10. There can be overlap between the pairs (you can have both Lightning → Aether and Cold → Aether as pairs). You can swap all pairs around with a Long Rest Action."
+    },
+    {
+      "id": "philosophize",
+      "level": 3,
+      "name": "Philosophize",
+      "abilityType": null,
+      "cost": null,
+      "body": "For each Crystal, choose a spell you have Learned and apply an **Upgrade for free** (the upgrade costs 0 CA). Do this only **once per Crystal**, however this limit increases by **+1** at Sage Levels 6 and 9."
+    },
+    {
+      "id": "consolidating-thoughts",
+      "level": 3,
+      "name": "Consolidating Thoughts",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may Concentrate on **two** of same **Minor Concentration** spells at once. At Sage Level 8, you can Concentrate on **two** of the same **Major Concentration** spells at once."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [
+    "active listening -  use other players spells?"
+  ],
+  "source": "Classes/Sage.md"
+}

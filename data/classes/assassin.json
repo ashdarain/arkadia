@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 2,
+  "id": "assassin",
+  "name": "Assassin",
+  "tags": [
+    "stealth"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d6+2+CON",
+    "dice": "1d6",
+    "flat": 2,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 3,
+        "gain": 3
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 5,
+        "gain": 2
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 8,
+        "gain": 3
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "assassin-at-arms",
+      "level": 1,
+      "name": "Assassin at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in three weapon types of your choice, and in Light and Medium armour."
+    },
+    {
+      "id": "backstab",
+      "level": 1,
+      "name": "Backstab",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain **+2** to *Attack* and *Spell Attack* rolls and **+1** chance to *Crit* against enemies that are flanked, or enemies you hit from Stealth. Gain an additional **+1** to both Crit chance and Attack rolls at Assassin levels 4 and 8 (flanking bonus does not increase)."
+    },
+    {
+      "id": "enhanced-stealth",
+      "level": 2,
+      "name": "Enhanced Stealth",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may attempt to Hide as a Half Action or Extra Action even if you are seen by enemies, but each of those enemies makes a Perception check against you immediately. If you are not behind cover or in dim-lighting, they make the check with Advantage. If you are obscured by shadows and the enemy does not have Darkvision, they make the save with Disadvantage. Any creature that passes the Perception knows of your whereabouts, and you are not considered in Stealth from them. They may use a Half Action to alert their unaware allies of your location.\n\nAdditionally breaking Stealth with an attack or spell cast does not reveal yourself to any enemy who is not affected by the spell or attack.\n\nWhile in Stealth, gain +2m Movement."
+    },
+    {
+      "id": "coup-de-grace",
+      "level": 2,
+      "name": "Coup de Grace",
+      "abilityType": null,
+      "cost": null,
+      "body": "Whenever you defeat an enemy, you next Attack or Spell Attack roll this combat gains +4 to Crit chance."
+    },
+    {
+      "id": "disengage",
+      "level": 2,
+      "name": "Disengage",
+      "abilityType": null,
+      "cost": null,
+      "body": "You can preform Disengage as an Extra Action."
+    },
+    {
+      "id": "sneak-attack",
+      "level": 3,
+      "name": "Sneak Attack",
+      "abilityType": null,
+      "cost": null,
+      "body": "Once per turn if you are attacking an enemy from Stealth, or if you have advantage on the attack, deal **+2d6** bonus damage equal the most prominent damage type from the attack. Damage increases by **+1d6** every odd Player Level after 3 (levels, 5, 7, etc. until 19)."
+    },
+    {
+      "id": "exploit-weakpoint",
+      "level": 3,
+      "name": "Exploit Weakpoint",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain **+1** chance to **Crit** to all Attack and Spell Attacks. This is further increased at Assassin Level 8, and Player Level 15."
+    },
+    {
+      "id": "enhanced-critical",
+      "level": 5,
+      "name": "Enhanced Critical",
+      "abilityType": null,
+      "cost": null,
+      "body": "Critical hits do triple damage instead of double."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [],
+  "source": "Classes/Assassin.md"
+}

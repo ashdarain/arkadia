@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "id": "skirmisher",
+  "name": "Skirmisher",
+  "tags": [
+    "movement"
+  ],
+  "description": "Skirmisher excels in moving around the battlefield and acting out of turn.",
+  "healthPerLevel": {
+    "raw": "1d8+2+CON",
+    "dice": "1d8",
+    "flat": 2,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 3,
+        "gain": 3
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 7,
+        "gain": 4
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 9,
+        "gain": 2
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "skirmisher-at-arms",
+      "level": 1,
+      "name": "Skirmisher at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain proficiencies with 3 Martial weapons of your and in Light and Medium armour."
+    },
+    {
+      "id": "skirmish",
+      "level": 1,
+      "name": "Skirmish",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain a secondary pool of **6m** of Movement that can only be used outside of your turn during a **Skirmish**. A Skirmish a pseudo-turn that you can enter by interrupting another creature’s turn, before their turn starts. You can Skirmish **1 time** per round, but this increases by **+1** at Skirmisher Levels 3, 6 and 9, and Player Levels 13 and 17. Skirmish don’t count as regular turns, so any start-of-turn or end-of-turn effects apply.\n\nThe amount of movement you can use during Skirmishes resets at the start of your turn, and increases **+4m** at Skirmisher Levels 4, 7 and 10. Any bonuses to Movement also apply Skirmish Movement. Dashing or Sprinting during a Skirmish only applies to Skirmish Movement."
+    },
+    {
+      "id": "disengage",
+      "level": 1,
+      "name": "Disengage",
+      "abilityType": null,
+      "cost": null,
+      "body": "You can preform Disengage as an Extra Action."
+    },
+    {
+      "id": "quick-step",
+      "level": 2,
+      "name": "Quick Step",
+      "abilityType": null,
+      "cost": null,
+      "body": "The first attack Attack of Opportunity each enemy makes against you has Disadvantage. At Skirmisher Level 6 all Attacks of Opportunity against you are made with Disadvantage."
+    },
+    {
+      "id": "i-am-speed",
+      "level": 2,
+      "name": "I Am Speed",
+      "abilityType": null,
+      "cost": null,
+      "body": "You can Dash as an Extra Action. Once per turn you can Sprint as a Half Action."
+    },
+    {
+      "id": "hit-and-run",
+      "level": 3,
+      "name": "Hit and Run",
+      "abilityType": null,
+      "cost": null,
+      "body": "You gain 1 Half Action and 1 Extra Action each Round that can only be used during Skirmishes."
+    },
+    {
+      "id": "acceleration",
+      "level": 3,
+      "name": "Acceleration",
+      "abilityType": null,
+      "cost": null,
+      "body": "During your turn you can use a Half Action or Extra Action to add a Half Action that’s used during Skirmishes. (Remember that two Half Actions can combine into a Full Action and vice-versa)"
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [],
+  "source": "Classes/Skirmisher.md"
+}

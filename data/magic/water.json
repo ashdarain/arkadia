@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.662Z",
+  "id": "water",
+  "name": "Water",
+  "tier": 2,
+  "damageTypes": [
+    "aether",
+    "physical"
+  ],
+  "keywords": [
+    "immobilize",
+    "disarm"
+  ],
+  "theme": "Deep blue",
+  "stats": [
+    "CON",
+    "WIS",
+    "INT"
+  ],
+  "ascendsInto": [],
+  "mechanics": [
+    {
+      "id": "immobilize",
+      "name": "Immobilize",
+      "body": "Immobilized creatures cannot move and fail any AGI rolls.",
+      "source": "Conditions"
+    },
+    {
+      "id": "disarm",
+      "name": "Disarm",
+      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci.",
+      "source": "Conditions"
+    },
+    {
+      "id": "aqua-charges",
+      "name": "Aqua Charges",
+      "body": "Aqua Charges are gained during Short and Long Rests, and some during the start of combat to empower your Water spells in various ways.",
+      "source": null
+    }
+  ],
+  "spells": [
+    {
+      "id": "aqua-charges",
+      "name": "Aqua Charges",
+      "ba": 0,
+      "ca": "Auto",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "You have a maximum of **Aqua Charges** equal to **4**, which increases by **+1** per 4 Player Levels, and **+1** per 12 Water CA. During Short and Long Rests your Aqua Charges reset to full. At the start of Combat gain 3 Aqua Charges up to your maximum, which increases by **+1** per 24 Water CA.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "At the end of your turn gain **+1** Mana per **3 Aqua Charges** consumed since the end of your last turn."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "At the start of your turn gain **+1** Aqua Charge, which increases by **+1** per 36 Water CA."
+        }
+      ]
+    },
+    {
+      "id": "bubble",
+      "name": "Bubble",
+      "ba": 0,
+      "ca": "3",
+      "mana": "3",
+      "concentration": "Major Concentration*",
+      "tags": [],
+      "body": "As a **Full Action** conjure a large sphere of water entirely engulfing a creature **Medium** or smaller. If the creature fails an **AGI** save, they become **Immobilized** for up to *10 turns* or until you lose **Concentration**. Creatures immobilized this way have **Disadvantage** on AGI **saves** and Disadvantage on all **Attack** and **Spell Attack Rolls**. A creature may use a **Half Action** to attempt escaping the bubble using a **STR** save.\n\nAs an **Extra Action** or **Half Action**, you can consume **2 Aqua Charges** to flood their lungs with water, dealing **2d8** Aether damage. Damage increases by **+1d8** per 12 Water CA.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Bubble can now be used on Large or Huge creatures, however the bubble forms around their head and it cannot Immobilizes them (you can still drown them)."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Bubble becomes a Minor Concentration spell."
+        }
+      ]
+    },
+    {
+      "id": "aquatic-lash",
+      "name": "Aquatic Lash",
+      "ba": 0,
+      "ca": "2",
+      "mana": "3",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action** make a Melee Spell Attack against an enemy within 6m whipping them with a torrent of water, dealing **1d6** Bludgeoning damage and **1d6** Aether damage on it. Both damages types increase by **+1d6** per Water CA.\n\nIf the spell hits, you can consume up to **4 Aqua Charges** to move the creature in any cardinal direction, **2m** per **1 Charge** consumed.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "If you **defeat** and enemy with this spell, drain their body of water gaining **Aqua Charges** depending on their **Size Class**. 1 for Tiny, 2 for Small or Medium, 4 for Large and 6 for Huge, and 12 for Gigantic."
+        },
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "If the attack hits, the creature must make a DEX save or become Disarmed for 1 turn."
+        }
+      ]
+    },
+    {
+      "id": "rejuvenating-spring",
+      "name": "Rejuvenating Spring",
+      "ba": 0,
+      "ca": "3",
+      "mana": "3*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action** target yourself or an ally, giving them a sip of healing water. The target gains **+1d8** Health. The healing Dice *Class* increases by +1 per 24 Water CA.\n\nYou may consume any number of **Aqua Charges** to increase the healing Dice *Count* by +1 per 2 Charges consumed this way.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may cast this spell as a **Half Action** if you also consume **1 Aqua Charge**. *-1 Mana Cost*."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "When this spell is cast on an ally and not yourself, the target gains **2 Mana**, and an additional **+2** Mana per **2 Aqua Charges** consumed (*this Upgrade doesn’t let you consume Aqua Charges, it looks at how many total were consumed with spell from other means*)."
+        }
+      ]
+    }
+  ],
+  "drafts": [],
+  "source": "Magic/Water.md"
+}

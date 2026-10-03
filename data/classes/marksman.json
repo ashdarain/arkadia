@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "id": "marksman",
+  "name": "Marksman",
+  "tags": [
+    "ranged"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d8+2+CON",
+    "dice": "1d8",
+    "flat": 2,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 3,
+        "gain": 3
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 5,
+        "gain": 2
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 8,
+        "gain": 3
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "marksman-in-arms",
+      "level": 1,
+      "name": "Marksman in Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Either gain Proficiencies in all ranged weapons, or Expertise in a single ranged weapon. Also gain Proficiencies in Light and Medium armour."
+    },
+    {
+      "id": "take-aim",
+      "level": 1,
+      "name": "Take Aim",
+      "abilityType": null,
+      "cost": null,
+      "body": "If you haven’t moved on your turn yet, you may reduce your movement speed by -8m this turn. If you do all *Full Action* ranged Attacks this turn gain **Advantage**. *Half Action* ranged Attacks gain **+1d4** to Attack rolls instead, upgrading to **+1d6** at Marksman Level 6."
+    },
+    {
+      "id": "overwatch",
+      "level": 2,
+      "name": "Overwatch",
+      "abilityType": null,
+      "cost": null,
+      "body": "As a **Half Action** mark a cone up to **10m** in length and **5m** wide, watching over the area. If your Attack Range is less than 10m, then the cone’s length becomes your Attack Range. Until your next turn, whenever an enemy enters the cone, you may use a Reaction to make an attack equivalent to your Full Action ranged attack. Alternatively, you may instead choose to overwatch a single target within your Attack Range. If that target moves, makes an Attack, or casts a Spell, you may use your Reaction to attack them like above."
+    },
+    {
+      "id": "high-ground",
+      "level": 2,
+      "name": "High Ground",
+      "abilityType": null,
+      "cost": null,
+      "body": "If you are at least 2m above the target of your ranged attacks, deal +1d4 Physical damage with your ranged attacks. Deal an additional +1d4 per 2m above your target, capping out at 10m. Damage Dice class increases to +1d6 at Marksman Level 6."
+    },
+    {
+      "id": "quick-draw",
+      "level": 3,
+      "name": "Quick Draw",
+      "abilityType": null,
+      "cost": null,
+      "body": "Ranged attacks that normally take a **Full Action** may be used as a **Half Action**. Doing so removes Stat bonuses from the Attack and Damage rolls, but keeps the Proficiency/Expertise bonus."
+    },
+    {
+      "id": "heavy-shots",
+      "level": 3,
+      "name": "Heavy Shots",
+      "abilityType": null,
+      "cost": null,
+      "body": "Increase the Damage Dice Class for Full Action ranged weapon attacks by +1."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [
+    "Bows can shoot double their range, but have disadvantage on attacks"
+  ],
+  "source": "Classes/Marksman.md"
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "id": "magus",
+  "name": "Magus",
+  "tags": [
+    "spellcaster",
+    "offensive"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d6+3+CON",
+    "dice": "1d6",
+    "flat": 3,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 6,
+        "gain": 6
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 10,
+        "gain": 4
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 14,
+        "gain": 4
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "magus-at-arms",
+      "level": 1,
+      "name": "Magus at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in all Spell Foci, and Proficiency in Light armour. At Magus Level 3 gain Expertise in Staves."
+    },
+    {
+      "id": "critical-spells",
+      "level": 2,
+      "name": "Critical Spells",
+      "abilityType": null,
+      "cost": null,
+      "body": "When casting a spell that doesn’t require an Attack roll, roll a **d20**. Regardless of the outcome, the spell’s effect does not normally change, however if you roll a **Nat 20** the spell **crits**, its damage is doubled and enemies effected by the spell fail any relevant Save. This d20 roll is affected by your Crit Chance with spells, so if you have +2 to Crit Chance, spells crit on an 18 or higher."
+    },
+    {
+      "id": "expansive-casting",
+      "level": 2,
+      "name": "Expansive Casting",
+      "abilityType": null,
+      "cost": null,
+      "body": "Increase the **range** of all spells by **+2m**. This is increased by an additional **+2m** at Magus Levels 4, 6, 8, and 10.\n\nCategorize AoE spells in 2 categories, **Small** and **Large**. Small spells have an circular radius 3m or less, diameter 6m or less, a rectangular area less than 25m, a cone with no dimension greater than 4m, etc. Large spells are anything larger. *All Small spells gain +1m to their radius, or +2m to their diameter, or +1m in length and width. All Large spells gain +2m to their radius, +4 to their diameter, or +2m in length and width*. Small spells gain additional **+1m** to all sizes (+2 for diameter) at Magus Levels **5** and **8**. Large spells gain additional **+2m** (+4 diameter) at the same levels."
+    },
+    {
+      "id": "charge-regulation",
+      "level": 3,
+      "name": "Charge Regulation",
+      "abilityType": null,
+      "cost": null,
+      "body": "When you cast a spell, if that spell requires or utilizes **Charges** in any way, modify the amount of Charges used. If a spell or spell effect requires a certain number of Charges, it requires **1 less**. If a spell gains bonuses or additional effects from a certain number of Charges consumed, act as if you consumed **+1** additional Charge."
+    },
+    {
+      "id": "charge-infusion",
+      "level": 3,
+      "name": "Charge Infusion",
+      "abilityType": null,
+      "cost": null,
+      "body": "Once per turn if an effect would cause you to gain **Charges**, spend **2 Mana** to gain **+1** additional Charges. At Player Levels 7, 11, 15, and 19 the maximum of Charges can you gain is increased by +1, but costs 2 Mana per charge. You may choose less than the maximum."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [
+    {
+      "id": "level-4",
+      "level": 4,
+      "name": "",
+      "abilityType": null,
+      "cost": null,
+      "body": "more crit chance for spells",
+      "draftReason": "no name"
+    }
+  ],
+  "designerNotes": [
+    "staves need expertise bonus"
+  ],
+  "source": "Classes/Magus.md"
+}

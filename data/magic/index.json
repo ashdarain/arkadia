@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.662Z",
+  "crystals": [
+    {
+      "id": "fire",
+      "name": "Fire",
+      "tier": 1,
+      "damageTypes": [
+        "fire"
+      ],
+      "stats": [
+        "CON",
+        "CHA",
+        "INT"
+      ],
+      "file": "fire.json"
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "tier": 1,
+      "damageTypes": [
+        "cold"
+      ],
+      "stats": [
+        "WIS",
+        "DEX",
+        "INT"
+      ],
+      "file": "ice.json"
+    },
+    {
+      "id": "lightning",
+      "name": "Lightning",
+      "tier": 2,
+      "damageTypes": [
+        "lightning"
+      ],
+      "stats": [
+        "DEX",
+        "CHA",
+        "INT"
+      ],
+      "file": "lightning.json"
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "tier": 2,
+      "damageTypes": [
+        "aether",
+        "physical"
+      ],
+      "stats": [
+        "CON",
+        "WIS",
+        "INT"
+      ],
+      "file": "water.json"
+    },
+    {
+      "id": "void",
+      "name": "Void",
+      "tier": 3,
+      "damageTypes": [
+        "entropic",
+        "psychic"
+      ],
+      "stats": [
+        "WIS",
+        "CHA",
+        "INT"
+      ],
+      "file": "void.json"
+    }
+  ]
+}

@@ -1,0 +1,594 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.662Z",
+  "id": "lightning",
+  "name": "Lightning",
+  "tier": 2,
+  "damageTypes": [
+    "lightning"
+  ],
+  "keywords": [
+    "shock",
+    "electrocution",
+    "paralysis"
+  ],
+  "theme": "Yellow",
+  "stats": [
+    "DEX",
+    "CHA",
+    "INT"
+  ],
+  "ascendsInto": [],
+  "mechanics": [],
+  "spells": [
+    {
+      "id": "static-charges",
+      "name": "Static Charges",
+      "ba": 0,
+      "ca": "1",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "During combat gain Static Charges whenever you preform certain actions in combat. Specific **Static Discharge** spells may be triggered when reaching a certain number of Static Charges and meeting a condition. Charges are gained after all the effects of the action is resolved. Half of your Charges (rounded down) are lost during a Short or Long Test, and you have a maximum of 30 Charges.\n\nGain 1 Charge whenever you perform a Half Action. Gain 2 Charges whenever you perform a Full Action. Gain 1 Charge for every 5m you move in a single Move Action. Aside from movement, in order to gain a Charge, the actions must be from Lightning spells and attacks,  spells and attacks from Lightning-Ascended magic, or Actions that deal Lightning damage.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Gain 1 Static Charge once per round whenever you make an Extra Action, gain 1 Static Charge once per round whenever you make a Reaction. The same spell and attack restrictions from Full and Half Actions above applies."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Gain Static Charges when you or a summon inflicts certain debuffs, charges can only be gained once per Action. 1 Charge when Shocking a creature, 2 Charges when Electrocuting a creature, 3 Charges when Paralyzing a creature."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per Round when an enemy is defeated, if they they were damaged or affected by any of the spell or attacks listed above since the start of last Round, gain charges based on their Size Class. 1 Charge for Medium or smaller, 2 Charges for Large, and 3 Charges for Huge or bigger."
+        },
+        {
+          "ca": "6",
+          "variant": null,
+          "text": "If you start Combat with Static Charges less than your Player Level, gain charges up to your Player Level."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Charges are now gained at the start of the Action before any effects resolve."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-lightning",
+      "name": "Enchant Weapon: Lightning",
+      "ba": 0,
+      "ca": "3",
+      "mana": "2",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action* electricity your weapon for your next 3 attacks/spell casts.  Gain the following effects while enchanted depending on the weapon type:\n\n**Melee:** Convert all Physical damage to Lightning and add 1d6 Lightning damage. Added Lightning damage increases by +1d6 per 3 Player Levels, and +1d6 per 12 Lightning CA.\n**Ranged:** Convert all Physical damage to Lightning and add 1d6 Lightning damage. Added Lightning damage increases by +1d6 per 3 Player Levels, and +1d6 per 12 Lightning CA.\n**Spell Focus:** +1m to AoE, +1 to Spell Save DC, and +2m range with Lightning spells. Range increases by +2m per 12 Lightning CA.",
+      "upgrades": [
+        {
+          "ca": null,
+          "variant": "Melee",
+          "text": "When you hit a melee attack with a Lightning-Enchanted weapon,"
+        },
+        {
+          "ca": "2",
+          "variant": "Ranged",
+          "text": "When you hit a ranged attack with a Lightning-Enchanted weapon, lodge one Lightning Spear into the target."
+        },
+        {
+          "ca": "3",
+          "variant": "Spell Focus",
+          "text": "Whenever you roll a NAT 20"
+        }
+      ]
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Thunderbolt",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* choose a point on the ground within *12m* to call forth a bolt of lightning from above. Any creature within a cylindrical AoE of *1m* diameter and *30m* height (or ceiling height, whichever is lower) must pass an *AGI* save, or take **1d10** Lightning damage. Line of sight is not required for choosing the point, as long as you know what is there.\n\n**0 Mana Cast:** You may cast Thunderbolt as a *Half Action* for 0 Mana, dealing **1d6** Lightning Damage to the target on the failed save, increasing by **+1d6** per 24 Lightning CA. The range is reduced to 8m. This cannot be cast by other spells, it does not have AoE, and cannot produce shocked ground.",
+      "upgrades": [
+        {
+          "ca": "1",
+          "variant": null,
+          "text": "Damage increases by **+1d10** per 12 Lightning CA."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Increase Thunderbolt’s AoE diameter by *+2m*. *+1 to Mana Cost*."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Leave behind temporary shocked ground in a circle with a diameter *+2m* of Thunderbolt’s AoE, each grounded creature in that area must pass an *AGI* save or gain **Shock**. The shocked ground dissipates immediately afterwards. If the creature is on or in water, the save fails automatically. *+1 Mana Cost if used*. This upgrade is *disabled* when Thunderbolt is cast from other spells."
+        }
+      ]
+    },
+    {
+      "id": "lightning-spear",
+      "name": "Lightning Spear",
+      "ba": 0,
+      "ca": "3",
+      "mana": "1*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action* make a *Ranged Spell Attack*, hurling a spear made of pure lightning towards an enemy within *8m* dealing **1d6** Lightning damage on hit. If the attack lands, the spear is lodged inside the creature until it’s removed, destroyed, or the end of combat. Any number of Lightning Spears can be lodged into an enemy. A creature may use a Half Action or Extra Action to remove a lightning spear from their body, taking Flat **1d4** Lightning damage upon doing so. Damage for the spear hit increases by **+1d6** per 12 Lightning CA, and **+1d6** per 3 Player Levels. Lightning Spear is a Large Projectile.\n\nAs a *Full Action* trigger and *destroy* all spears from each creature within *12m* of you. For each spear destroyed, deal **+1d8** Lightning damage to that creature. Damage increases by **+1d8** per 24 Lightning CA. This action’s *Mana Cost* is equal to half the spears destroyed, rounded up.  At 36 Lightning CA, you may use an *Extra Action* to destroy spears this way.\n\n**0 Mana Cast:** You may cast Lightning Spear as a **Full Action** for 0 Mana dealing **1d8** Lightning damage on hit. Damage increases by **+1d8** per 4 Player Levels. Lightning Spears cast this way cannot be lodged inside enemies.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Lightning Spear now lodges 2 spears inside of the target on hit, and 1 spear on miss."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Destroying a specific number of spears on any single creature afflicts them with an ailment. 1 spear inflicts *Shock*, 3 spears inflicts *Electrocute* instead, 5 or more spears inflicts *Paralysis* instead."
+        }
+      ]
+    },
+    {
+      "id": "arcing-strike",
+      "name": "Arcing Strike",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* make a *Melee Spell Attack* striking an enemy with a blade conjured from lightning, dealing **1d8** Lightning damage on hit. The target must pass a *CON* save or gain *Shock*. Then Arcing Strike chains to multiple targets, dealing **1d4** Lightning damage to each target in the chain. Choose a different target within 6m of the previous target in the chain, repeating for the number of chains you have. You cannot repeat targets, each target must be *unique*. For each enemy in the chain, you may forgo the damage to inflict *Shock* instead. Arcing Strike starts with a base chain amount of *2*.\n\nThe primary strike damage increases by **+1d8** per 12 Lightning CA, chain damage increases by **+1d4** per 12 Lightning CA, and number of chains increase by **+1** per 2 Player Levels\n\nAs you cast Arcing Strike, you may *remove* any number of specific ailments from the initial target to gain specific bonuses. Remove *Shock* to gain **+1d4** to your Attack roll. Remove all *Electrocute* to increase the damage *Dice Class* for the main strike and subsequent chains. Remove *Paralysis* to guarantee a **Crit**. (Chain damage is also affected by Crit).",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Instead of chaining to different targets, all chains can now hit the initial strike target. Combine the chain damage into one roll. If at least 5 chains hit, the target gains *Electrocute* instead of Shock. *+2 Mana Cost if used.*"
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You no longer need to chain to *unique* targets, but cannot chain to the same target twice in a row, and the initial strike target cannot be chained to from another target."
+        }
+      ]
+    },
+    {
+      "id": "lightning-strikes-twice",
+      "name": "Lightning Strikes Twice",
+      "ba": 0,
+      "ca": "2",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "**Static Discharge:** Whenever you deal Lightning damage to a target, you may consume *4 Static Charges* to cast *Thunderbolt* on target as an *Immediate Action*. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades, otherwise it is cast normally. *Mana Cost* still applies. If multiple targets are dealt Lightning damage with a single Action, you may consume the charges multiple times to repeatedly cast Thunderbolt with consecutive Immediate Actions.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "If Thunderbolt cast this way successfully hits, gain *+1 Mana*."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "If Thunderbolt cast this way successfully hits, gain *+1 Static Charge*."
+        }
+      ]
+    },
+    {
+      "id": "where-theres-lightning",
+      "name": "Where There’s Lightning…",
+      "ba": 15,
+      "ca": "4",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "***Static Discharge:*** Whenever you deal Lightning damage, you may consume *3 Static Charges* to deal an additional *1d8* *Aether* Damage the target. Damage increase by *+1d8* per 12 Lightning CA. This damage only applies to one target per Action.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Damage all enemies within a 3m AoE diameter of the target, instead of just the target."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may pay *2 Mana* when triggering Where There’s Lightning… to increase the damage *Dice Class* of Aether Damage."
+        }
+      ]
+    },
+    {
+      "id": "shockwave",
+      "name": "Shockwave",
+      "ba": 15,
+      "ca": "3",
+      "mana": "3+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* create a cone of electricity with an AoE *6m* long and *5m* wide. Each creature affected must make an *AGI* save, taking *3d6* Lightning damage and becoming *Shocked* on fail, or half damage on success. Damage increases by *+2d6* per Lightning CA. This spell has no effect on creatures 3m or higher floating or flying.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "If a creature fails the AGI roll and they are already shocked, consume the *Shock* to inflict *Electrocute* instead."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may have Shockwave’s AoE become a circle with a radius of *4m*, with you at the centre. *+2 Mana Cost if used.*"
+        }
+      ]
+    },
+    {
+      "id": "grounding-pole",
+      "name": "Grounding Pole",
+      "ba": 15,
+      "ca": "3",
+      "mana": "X",
+      "concentration": "Minor Concentration*",
+      "tags": [],
+      "body": "As a *Half Action* conjure multiple statically charged grounding poles within *15m*, attached anywhere on the ground, walls or stationary objects. Whenever a *Small Projectile* from an enemy passes within *3m* of a pole, destroy it. Each pole can destroy *3* projectiles before being destroyed, *+1* per 24 Lightning CA. The maximum number of poles you can conjure is *2*, *+1* per 4 Player Levels. All poles share the same concentration, so losing concentration destroys all poles. If you are not at maximum poles, you can use a *Half Action* to conjure additional poles up to the maximum. Grounding Rod costs *X Mana*, where X is *half* the number of poles conjured *rounded up*.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per turn when a pole successfully destroys a projectile, it deals *2d8* Lightning damage to the projectiles owner, if the owner is within *12m* of the rod."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You may cast Grounding Rod without concentration. If you do, each pole becomes a Lightning Object with *4d8* HP, *13* Physical and Spell *AC*, *Vulnerable* to Aether damage, and *Resistant* to all other damage types. If rods exist on the battlefield like this, you cannot cast Grounding Rod with Concentration. As a Free Action during your turn you can dispel any number of poles. A creature may make a *Full Action DEX* save to try to remove a pole, on failure taking *1d8* Lightning damage per projectile destruction remaining."
+        }
+      ]
+    },
+    {
+      "id": "reflexive-fulmination",
+      "name": "Reflexive Fulmination",
+      "ba": 15,
+      "ca": "3",
+      "mana": "X*",
+      "concentration": null,
+      "tags": [],
+      "body": "Whenever an enemy casts a spell within *15m*, you may cast a Lightning spell, Lightning-Ascended spell or spell that deals Lightning damage as a *Reaction* targeting that enemy. You can only cast spells where the range requirements are fulfilled for that spell. Casting costs still apply.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Reflexive Fulmination can now also be used to react to Attacks made by enemies within *8m*."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You may react with an *Attack* that deals Lightning damage instead of a spell. Range requirements still apply, however attacks you perform this way gain *+2m* to their range."
+        }
+      ]
+    },
+    {
+      "id": "lightning-port",
+      "name": "Lightning Port",
+      "ba": 30,
+      "ca": "4",
+      "mana": "3",
+      "concentration": null,
+      "tags": [],
+      "body": "As a Full Action or Extra Action, choose a point on ground within 15m to teleport there in a flash of lightning.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Upon landing you may choose an enemy within 2m of you and cast Thunderbolt as an Immediate Action targeting them. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades. *Mana cost still applies.*"
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "When casting Lightning Port, record your starting location. Until the end of your next turn or until you cast Lightning Port again, if you were damaged in any way or targeted by a Spell or ability from an enemy, you may cast Lightning Port as a Reaction choosing the starting location as the target. *Mana cost still applies.*"
+        }
+      ]
+    },
+    {
+      "id": "static-storm",
+      "name": "Static Storm",
+      "ba": 30,
+      "ca": "3",
+      "mana": "4",
+      "concentration": "Major Concentration*",
+      "tags": [],
+      "body": "As a Full Action conjure cloud-topped cylindrical storm with an AoE diameter of *6m* and height of *10m*, centering within 12m of you. Each Enemy within the storm is *Shocked* until they leave the AoE. Whenever a creature inside the storm or up to 3m away from it takes Lightning damage from another source, Static Storm zaps an enemy of your choosing inside the storm for *2d8* Lightning Damage. Each creature can trigger this once per turn. During your turn you may spend. Damage increases by *+1d8* and diameter increases by *+2m* per 12 Lightning CA. During your turn you may move the storm using your movement; for every 2m you spend, move the storm 1m.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "If an enemy starts and ends their turn within the effect of Static Storm, they become *Electrocuted* until the end of their next turn."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Static Storm becomes a Minor Concentration spell."
+        }
+      ]
+    },
+    {
+      "id": "lighting-rod",
+      "name": "Lighting Rod",
+      "ba": 30,
+      "ca": "4",
+      "mana": "X",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* place down several lightning rods within *15m* of you that connect to each other forming barriers between them. Create up to a maximum of *2* rods, increasing *+1* per 24 Lightning CA. Each rod is a Lightning Object with *4d10* Health, *15* Physical and Spell *AC*, Immune to Lightning damage, and is Vulnerable to Aether damage. Each rod connects and creates a 1m tall barrier with up to two other rods within *8m* of another (*this allows for chaining of barriers or multiple separate barriers if you have enough rods*). The connection range increases by *+2m* every 24 Lightning CA.\n\nAny creature that starts their turn in or attempts to go through barrier must make an *AGI* save, taking *2d12* Lightning damage on fail. damage increases by +*1d12* per 24 Lightning CA. Allies automatically pass the save. Creatures who can jump higher than 1m or flying creatures ignore the barrier. Lightning Rod costs *X Mana* where X is how many rods created. Rods can be attached any unoccupied space on the ground, walls or on stationary objects.\n\nYou may cast this spell as *Half* or *Extra Action*, if you do create only *1* Lightning Rod, costing 1 Mana. You cannot create more than your maximum.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Any enemy that passes through the the barrier becomes *Shocked*. If they fail the AGI save they become *Electrocuted* instead and *lose* *4m* of movement for that turn."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per turn whenever an enemy fails the AGI save while passing through the barrier, each other enemy within *2m* of the rods or linked barrier chain takes damage listed above, rolling separately per creature."
+        }
+      ]
+    },
+    {
+      "id": "summon-ball-lightning",
+      "name": "Summon Ball Lightning",
+      "ba": 45,
+      "ca": "4",
+      "mana": "5",
+      "concentration": null,
+      "tags": [],
+      "body": "*You may only have 1 set of Ball Lightnings active at one time. Whenever you choose to or when you cast this spell again, all previously summoned Ball Lightnings die.*\n\nAs a *Full Action* summon a Medium sized furious ball of lightning within *6m*. It has 1 Summon Action, 6m movement, *6d8* Health, is Immune to Lightning damage, Vulnerable to Aether damage, and Resistant to non-magical damage. Health increases by *+3d6* per 24 Lightning CA. *+1 Summon Action* per 24 Lightning CA. Ball Lightning has the following Summon Actions:\n1) **Zap**: Deal *1d12* Lightning damage to a target within 8m, *+1d12* damage per 24 Lightning CA.\n2) **Discharge:** *3d8* Lightning damage and *Shocking* each enemy within a 1m radius AoE. *+1d8* damage per 12 Lightning CA.\n3) **Electrocute:** Inflict *Electrocution* to an enemy within 3m. +1 target per 24 Lightning CA.",
+      "upgrades": [
+        {
+          "ca": "6",
+          "variant": null,
+          "text": "+1 Ball Lightning summoned, *+3 Mana Cost.*"
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Whenever Ball Lightning is attacked or targeted by a spell, if that creature is within 3m it becomes *Shocked* and takes *2d8* Lightning damage."
+        }
+      ]
+    },
+    {
+      "id": "paralyzing-touch",
+      "name": "Paralyzing Touch",
+      "ba": 45,
+      "ca": "4",
+      "mana": "4",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* choose between making a *Touch Spell* cast (AGI save) or a *Melee Spell Attack* targeting a single creature, inflicting *Paralysis* on hit.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "If the creatures passes the save for you Touch Spell, or your Spell Attack misses, they become *Electrocuted*."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may cast Paralyzing Touch as a *Major Concentration* spell, lasting up to *10 turns*. The creature may become paralyzed like the regular cast, however they must make a *CON* save at the end of each of theirs turn, breaking free of the paralysis on success. On fail they remain paralyzed or become paralyzed again. *+2 Mana Cost* if used."
+        }
+      ]
+    },
+    {
+      "id": "chain-lightning",
+      "name": "Chain Lightning",
+      "ba": 60,
+      "ca": "6",
+      "mana": "8",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* shoot a fierce bolt of lightning making a *Ranged Spell Attack* against an enemy within *12m*. The spell then chains to a maximum of up to 3 other targets, each of which must be within *6m* of the last. You cannot choose the same creature more than once when creating the chain. The initial spell attack target takes *2d10* Lightning damage plus an additional *+2d10* per other target in the chain. Then each other creature in the chain must make an *AGI* save to take half damage, using the total damage roll as the initial target.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "If the last creature in your chain is within *6m* of the initial target, the chain loops once, applying damage to each creature equal to half they took from the main spell cast. *+3 Mana Cost if used.*"
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Maximum number of chains increases by *+1* per 24 Lightning CA. Total damage after calculating the chain increases by *+2d10* per 36 Lightning CA. *+2 Mana Cost.*"
+        }
+      ]
+    },
+    {
+      "id": "discharge-electrocute",
+      "name": "discharge electrocute",
+      "ba": 60,
+      "ca": "5",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "**Static Discharge**: Whenever you or a summon you control Electrocutes an enemy, you may consume *7 Static Charges* to *Paralyze* them instead.",
+      "upgrades": [
+        {
+          "ca": null,
+          "variant": null,
+          "text": "Whenever a Paralyzed enemy is defeated or Crit, gain *3 Static Charges*."
+        }
+      ]
+    },
+    {
+      "id": "summon-static-remnant",
+      "name": "Summon Static Remnant",
+      "ba": 75,
+      "ca": "6",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "**Static Discharge**: Whenever you are attacked or affected by a spell or ability from an enemy, as a *Reaction* you may spend *10 Static Charges* to teleport up to *3m* away leaving a summoned **Static Remnant** behind in your place. The remnant is targeted by the spell instead. It has *8d12* Health, is Immune to Lightning and Non-magical damage, and Resistant to all other non-Aether damage. When the Static Remnant is summoned, *roll initiative* for it; it does not act during your turn. *The remnant only lasts one turn*, it is dispelled at the end of its turn. Only one Static Remnant may be active at a time, following normal summoning rules.\n\nThe Static Remnant is a clone of yourself made of pure electricity, it has the same stats, weapons, AC, and gear as you. It has the *same number of Actions* and Movement as your do on your turn, and uses your Points, Charges and Mana. Any spells or abilities you can use, the remnant can use as well with the exception of this spell (Summon Static Remnant). All base Physical damage from its weapons are converted to Lightning.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "As an *Extra Action* spend 12 *Static Charges* to manually create a Static Remnant within *3m*. You may teleport to swap places with it."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "When Static Remnant is summoned, it casts any Enchant Weapon spell you have applied to its weapons for *0 Mana* as its own *Immediate Action*. Any Physical damage from weapons enchanted this way is converted to Lightning."
+        }
+      ]
+    },
+    {
+      "id": "cumulonimbus",
+      "name": "Cumulonimbus",
+      "ba": 75,
+      "ca": "7",
+      "mana": "12",
+      "concentration": "Major Concentration",
+      "tags": [],
+      "body": "As a *Full Action* conjure a large dark and stormy cloud up to *15m* in length or width, anywhere from 4m to 50m high. The weather under the cloud is constantly raining and it obscures any light from above. It lasts up to *10 turns*. Gain the following actions while Cumulonimbus is active:\n- **Downpour:** As an *Extra Action* or *Half Action* all enemies under the cloud become *Vulnerable* to Lightning damage until the start of your next turn.\n- **Roaring Thunder:** As an *Extra Action* or *Half Action* all enemies under the cloud must make a *CON* save, taking *2d12* Aether damage on fail, or half on success.\n- **Thunderstrike:** As an *Extra Action* or *Full Action* choose a point under the cloud. All enemies within a *3m* cylinder AoE of that point must make an *AGI* save, taking *8d8* Lightning damage on fail, or half damage on success. Then each creature damaged must make a *CON* save, becoming *Electrocuted* on fail or *Shocked* on success. The height of the cylinder is the height of the cloud.\n- **Squall:** As an *Extra Action* or *Half Action*, move the cloud up to *8m* in any direction. Optionally, as an *Extra Action* or *Full Action* create an AoE cube under the cloud with sides of up to *4m* in length. Each enemy inside the cube must pass a *STR* save or be pushed in a non-vertical direction up to *6m*.\n- **Negative Pressure:** As an *Extra Action* or *Full Action* create a static field under the cloud with a *6m* AoE diameter. Each grounded enemy within the static field must make a *CON* or *AGI* save, becoming *Paralyzed* on fail or *Electrocuted* on success.",
+      "upgrades": [
+        {
+          "ca": "6",
+          "variant": null,
+          "text": "If an enemy *starts* or *ends* their turn under the cloud, *Thunderbolt* is cast targeting them without paying a Mana Cost. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You may cast Cumulonimbus as a *Summon* spell, removing concentration from the spell. It has *8d12+20* health, *4m* movement, is Vulnerable to Aether damage, Immune to Lightning and non-magical damage, and Resistant to non-Aether damage. You can no longer use the above listed actions yourself, however the cloud can cast them as Summon Actions. Cumulonimbus has *4 Summon Actions*. The Half Actions listed above costs 1 Summon Action, while Full Actions costs 2. If another effect would give Cumulonimbus a Summon Action, it gains 2 instead of 1."
+        }
+      ]
+    },
+    {
+      "id": "ten-thousand-volt-slam",
+      "name": "Ten-Thousand Volt Slam",
+      "ba": 75,
+      "ca": "8",
+      "mana": "13",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* leap high into the air charging your fist or melee weapon with overwhelming electricity, slamming down onto an enemy within *12m*. Make a Melee Spell Attack against the target dealing *10d10* Lightning damage on hit. Each enemy within a *3m* radius AoE of the target must make an *AGI* save, taking *4d10* Lightning damage and becoming *Electrocuted* on fail, or take half damage on success. If you miss the initial target of the melee attack, they must also make this save. There must be an open space to land next to the target, and you may take the target’s place if they are defeated by this spell. The leap height is up to *8m*, and you may alternatively choose to not leap and make the Melee Spell Attack against an enemy within melee range.",
+      "upgrades": [
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "After leaping into the air, you may stay floating in place midair until end of turn. Doing so allows you to use actions as normal from the air, however you cannot move. Spells and ranged attacks gain *+8m* to their range while floating. You can use a *Free Action* to complete the slam and perform the Melee Spell Attack. If you are still floating at the end of turn, fall to the ground."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once a turn when you defeat an enemy with Ten-Thousand Volt Slam you may recast it as an *Immediate Action* for half Mana (rounded down)."
+        }
+      ]
+    },
+    {
+      "id": "overcurrent",
+      "name": "Overcurrent",
+      "ba": 90,
+      "ca": "10",
+      "mana": "15",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* channel immense lightning into yourself unleashing an overwhelming current affecting enemies near you. In a *6m* radius AoE around you, blast all enemies with a powerful shockwave forcing them to make an *CON* save. Each creature takes *10d8* Lightning damage and becomes *Paralyzed* on fail, or takes half damage and becomes *Electrocuted* on success. Then Overcurrent takes a hold of your body for *3 turns*. During this duration you are effectively paralyzed and cannot move, nor take any actions or reactions except for Special Actions listed below. At the start of *each turn* choose one enemy within *4m* of you to take *3d10* Lightning damage. If an enemy takes damage this way, you take *1d8* Pure Lightning damage. Self damage inflicted by this spell *cannot* make you lose concentration on spells. While affected by Overcurrent, you may only use the following Special Actions:\n- *Half Action* to move up to *4m*.\n- *Full Action* to repeat the initial blast, including the CON saves and debuffs. You take *1d10* Pure Lightning damage.\n- *Full Action* to shoot a single target within *8m* dealing *4d12* Lightning damage, or half if they pass an *AGI* save. You take *1d12* Pure Lightning damage. Floating or flying enemies damaged are immediately grounded.\n- *Full Action* to end the effect of Overcurrent early.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "The first time each Combat you are defeated or otherwise brought to 0 Health, Overcurrent is cast for 0 Mana and lasts 3 turns. You cannot use the Special Actions this way and the effect ends if you die or are revived. Trigger the initial blast and the once-per-turn target damage from your body, however ignore all self damage."
+        },
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "You may consume Static Charges to enhance this spell:\n- Per 3 charges consumed, increase the damage *Dice Count* by *+1* for all damage Overcurrent deals.\n- Per 5 charges consumed, increase the range and radius of all Overcurrent effects by *+1m*.\n- If at least 10 charges are consumed, all damage dealt by Overcurrent becomes *Pure damage*."
+        }
+      ]
+    }
+  ],
+  "drafts": [
+    {
+      "id": "fulgurmancers-talent",
+      "name": "Fulgurmancer’s Talent",
+      "ba": 0,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "- can’t be surprised",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    },
+    {
+      "id": "dischage-snap-bolt",
+      "name": "dischage snap bolt",
+      "ba": 30,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    },
+    {
+      "id": "discharge-within-range",
+      "name": "discharge within range",
+      "ba": 45,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    },
+    {
+      "id": "spark",
+      "name": "spark",
+      "ba": 45,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "When dealing Lightning damage, increase your *Crit Chance* by *+2*.",
+      "upgrades": [
+        {
+          "ca": null,
+          "variant": null,
+          "text": "Gain 3 Static Charges whenever you Crit."
+        }
+      ],
+      "draftReason": "no cost line"
+    },
+    {
+      "id": "bonus-reaction",
+      "name": "bonus reaction",
+      "ba": 60,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "",
+      "upgrades": [
+        {
+          "ca": null,
+          "variant": null,
+          "text": "this reaction can be used when you otherwise cannot use reactions"
+        }
+      ],
+      "draftReason": "no cost line"
+    },
+    {
+      "id": "stat-bonus",
+      "name": "stat bonus",
+      "ba": 60,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    }
+  ],
+  "source": "Magic/Lightning.md"
+}

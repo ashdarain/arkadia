@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.644Z",
+  "source": "Races.md",
+  "intro": "One of your d20 rolls in Character Creation is assigned to your race, the outcome of which determines how many points you get to spend on racial traits. (Racial traits have a Cost - Trait description). Unique traits cannot be taken with other unique traits of the same type.",
+  "pointsTable": [
+    {
+      "roll": "1-2",
+      "points": 4
+    },
+    {
+      "roll": "3-8",
+      "points": 5
+    },
+    {
+      "roll": "9-14",
+      "points": 6
+    },
+    {
+      "roll": "15-18",
+      "points": 7
+    },
+    {
+      "roll": "19-20",
+      "points": 8
+    }
+  ],
+  "groups": [
+    {
+      "id": "faeren",
+      "name": "Faeren",
+      "description": "Humanoid races with skin.",
+      "races": [
+        {
+          "id": "human",
+          "name": "Human",
+          "sizes": "Small or Medium",
+          "description": "Your average person; jack-of-all trades, master of none.",
+          "traits": [
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "+1 to any Stat, -1 to another Stat"
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "+1 to any Stat, -1 to another Stat"
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "+1 to any Stat"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "+1 to any Stat"
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "+2 in CHA."
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "Proficiency in any two Skills, Ineptitude in another."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Proficiency in any two Skills, Ineptitude in another."
+            },
+            {
+              "cost": 4,
+              "unique": null,
+              "text": "Expertise in any Skill, Ineptitude in two others."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Proficiencies in any two amongst weapon, foci, armour or shields."
+            }
+          ]
+        },
+        {
+          "id": "elf",
+          "name": "Elf",
+          "sizes": "Medium",
+          "description": "Slender and tall long-living humanoids with pointy ears.",
+          "traits": [
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+3 DEX, +2 AGI, -2 CON, -2 STR, -1 CHA"
+            },
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+2 INT, +2 WIS, +1 AGI, -1 CON, -2 STR, -2 CHA"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+2 DEX, +1 AGI, -1 CON, -2 STR"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+2 INT, +1 AGI, -2 STR, -1 CHA"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Gain 1 CA per Level."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "1m to Movement."
+            },
+            {
+              "cost": 4,
+              "unique": "Bows",
+              "text": "Expertise in Bows."
+            },
+            {
+              "cost": 2,
+              "unique": "Bows",
+              "text": "Proficiency in Bows."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "You can use your hands as a spell foci, and your hands can be enchanted (both hands get a single enchantment)"
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "Proficiency in any two skills, ineptitude in another."
+            }
+          ]
+        },
+        {
+          "id": "dwarf",
+          "name": "Dwarf",
+          "sizes": "Small",
+          "description": "Stout tough creatures known for Diggy Diggy Hole.",
+          "traits": [
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+2 STR, +2 CON, +1 WIS, -2 INT, -2 AGI, -1 CHA"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+2 STR, +1 CON, -1 INT, -2 AGI"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+1 STR, +2 CON, -1 INT, -2 AGI"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Expertise in Axe and Hammer weapons. -1m Movement."
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "+1d4 to CON Saves."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Proficiency in any Crafting skills."
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "Gain first priority when choosing between Crystals with your Party (keep it fair, ask your DM)."
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Expertise in any Skill, Ineptitude in another."
+            },
+            {
+              "cost": 4,
+              "unique": null,
+              "text": "Expertise in either Heavy Armour or Heavy Shields."
+            }
+          ]
+        },
+        {
+          "id": "gnome",
+          "name": "Gnome",
+          "sizes": "Small",
+          "description": "Small inquisitive humanoid creatures with pointy ears and an eye for the Arcane.",
+          "traits": [
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+2 INT, +2 CHA, +1 WIS, -2 STR, -1 CON, -2 AGI"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+2 INT, +1 CHA, -2 STR, -1 AGI"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+1 INT, +2 CHA, +2 STR, -1 AGI"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Expertise in Crystals."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Proficiency in Deception and Lore."
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Gain 3 CA every even Level (2, 4, 6, etc. up to 20)"
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "Cracking jokes in a conversation gives you +1d4 to CHA Checks."
+            },
+            {
+              "cost": 4,
+              "unique": null,
+              "text": "Start with an additional random Tier 1 Crystal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beastren",
+      "name": "Beastren",
+      "description": "Beast-like creatures with fur, feathers, scales or even chitin.",
+      "races": [
+        {
+          "id": "sevala",
+          "name": "Sevala",
+          "sizes": "Medium",
+          "description": "Prowling predatory thickly furred creatures with Canine and Feline features, equipped with sharp teeth and sharper claws.",
+          "traits": [
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+3 DEX, +1 WIS, -1 CON, -2 INT, -1 CHA"
+            },
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+3 STR, +1 WIS, -1 CON, -2 INT, -1 CHA"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+1 DEX, +1 STR, +1 WIS, -1 CON, -2 INT"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "+2 AGI"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "+2m to Movement"
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "Gain +1d6 to Checks made to find creatures."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "You cannot be surprised during Rests."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Proficiency in Stealth"
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Your claws are sharper and count as an Unarmed Slashing Melee weapons. You are Proficient with this ‘Weapon’, use DEX as its base Stat, and it can be enchanted. Base damage with a Full Action **1d6**, or **1d4** as a Half Action. Claws can be used as Dual-wielding. *Damage Dice Count* increases by **+1** at Player Levels 4, 8, 12, 16 and 20."
+            }
+          ]
+        },
+        {
+          "id": "bruvac",
+          "name": "Bruvac",
+          "sizes": "Medium or Large (from Trait)",
+          "description": "Big and beefy hooved race that’s has a mix of Bovine and Equine features.",
+          "traits": [
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+3 CON, +2 STR, -3 INT, -2 WIS, Ineptitude in **Insight** and **Crystals**."
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+2 CON, +1 STR, -3 INT, -2 WIS, Ineptitude in **Insight** and **Crystals**."
+            },
+            {
+              "cost": 3,
+              "unique": "Movement",
+              "text": "+3m to Movement"
+            },
+            {
+              "cost": 1,
+              "unique": "Movement",
+              "text": "+1m to Movement"
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "Proficiency in **Intimidation**."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Your size becomes **Large**"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Expertise in **Athletics**. Advantage on STR saves once per Round."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "As a Full Action when you Sprint, you may instead **Stampede**. This doubles your movement like Sprint, however you can only move in a straight line. Each enemy must make a STR save with Save DC of **8 + STR + Proficiency Bonus**. Each creature that fails gets knocked prone and takes **1d6** Bludgeoning damage. *Damage Dice Class* increases by +1 at Player Levels 6, 12 and 18. Every **8m** you can move with Stampede (not how much you actually moved) increases *Damage Dice Count* by **+1**."
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Your hooves can kick harder becoming stronger and count as an Unarmed Bludgeoning Melee weapon. You are Proficient with this ‘Weapon, use STR as the base stat, and it can be enchanted. Base damage with a Full Action **1d8**, or **1d4** as a Half Action. *Damage Dice Count* increases by **+1** at Player Levels 4, 8, 12, 16 and 20. When you kick an enemy, you may choose to attempt to knockback them up to 3m away. Doing so requires them to pass a **STR** save against your Save DC of **8 + STR + Proficiency Bonus**."
+            }
+          ]
+        },
+        {
+          "id": "aviansie",
+          "name": "Aviansie",
+          "sizes": "Medium or Small (from Trait)",
+          "description": "Feathered bird-like creatures with wings attached to their arms. Keen on the arcane.",
+          "traits": [
+            {
+              "cost": 2,
+              "unique": "Stats",
+              "text": "+3 INT, +2 WIS, -2 CON, -2 STR, -1 AGI"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+2 INT, +1 WIS, -1 CON, -2 STR"
+            },
+            {
+              "cost": 1,
+              "unique": "Stats",
+              "text": "+1 INT, +2 WIS, -1 CON, -1 STR, -1 AGI"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "Gain 3 CA every odd Level (1, 3, 5, etc. up to 19)"
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "+2 to CHA."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "+1m Movement."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Proficiency in Perception and Insight, Ineptitude in Athletics."
+            },
+            {
+              "cost": 1,
+              "unique": null,
+              "text": "Your size becomes **Small**."
+            },
+            {
+              "cost": 2,
+              "unique": null,
+              "text": "Take half fall damage, falls 10m or less cannot hurt you."
+            },
+            {
+              "cost": 3,
+              "unique": null,
+              "text": "As a Half Action, gain Hover movement until the end of your turn."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "designerNotes": [
+    "Seraph\nOrc\nShurtagal\nAshari\nTevari\n\nLesser Draconid\nGreater Draconid\nScurren\nVelkin\nNibori\n\nKith\n- burrow\n- hold extra things\n- start with random crystal\n- chitin\n- slightly magic attuned"
+  ]
+}

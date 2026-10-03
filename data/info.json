@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.694Z",
+  "source": "Basic Info.md",
+  "panels": [
+    {
+      "id": "character-creation",
+      "title": "Character Creation",
+      "important": true,
+      "body": "During the entirety of character creation, you have 1 Reroll that can be used to reroll any grouped dice roll (4d20, 1d12, etc.)\n\n**Step 1:** Start by roll **4d20**, you will use these d20s to **draft** different aspects of your character. If the sum of your 5d20 roll is 42 or less, reroll the *lowest die*. Keeping doing this until the sum is higher than 42.\n\nThen finalize your rolls by choosing one of the following:\n- Add **+1** to any single d20, up to 20.\n- **Reroll** both the **lowest** and **highest** roll, you must keep the new rolls. This does not count towards your single reroll stated above.\n\n**Step 2:** Use three of the d20s and assign them to **Crystal**, **Race**, and **Stats** in any order. You’ll notice that you have an extra d20 left over. You may use a 4th d20 to get another Crystal if you set aside a d20 with a value of 20. (Talk to your DM)\n\n**Step 3:** Choose 4 Skill Proficiencies, or 3 Skill Proficiencies and 1 Weapon, Armor, or Shield Proficiency.",
+      "sections": []
+    },
+    {
+      "id": "action-economy",
+      "title": "Action Economy",
+      "important": true,
+      "body": "During Combat you have access to the following Actions once per turn.\n- **1 Full Action or 2 Half Actions**. These are interchangeable, you can split a Full Action into two Half Actions, or combine two Half Actions into one Full Action.\n- **1 Extra Action**.\n- **1 Reaction**. This is used outside of your turn once per Round.\n- **Movement/Move Action:** You can break up movement as much as you want as long as have Movement left to spend.\n\nHere are actions that may come up:\n- **Free Action**. These have no cost and are usually limited but flexible. E.g. your character can speak a few sentences on their turn for free.\n- **Immediate Action**. Some effects will grant you these actions which must be taken right away or lost.\n\nSpell Concentration:\n- You can either Concentrate on one Major Concentration spell or two Minor Concentration spells. These are interchangeable like Full and Half Actions.\n\nAll Players have a base **6m** of **Movement**.",
+      "sections": []
+    },
+    {
+      "id": "default-actions",
+      "title": "Default Actions",
+      "important": true,
+      "body": "Here are default Actions any Player can make.",
+      "sections": [
+        {
+          "id": "full-actions",
+          "title": "Full Actions",
+          "body": "- **Sprint:** Double your Movement based non temporary bonuses.\n- **Grapple:** If you have a free arm, you may attempt to Grapple a creature. They made a STR or AGI save based on your Save DC of 8 + STR + Proficiency Bonus. Creatures grappled have 0 Movement and have Disadvantage attacking anyone but you. You can drag to move the target, but each movement costs double, unless they are at least 2 Size Classes smaller than you. You can only grapple targets up to 1 Size Class above you. Creatures grappled by you can use a Half Action or Extra Action to make the AGI or STR save again to escape your grapple."
+        },
+        {
+          "id": "half-actions",
+          "title": "Half Actions",
+          "body": "- **Disengage:** Move away from an enemy without triggering Attack’s of Opportunity.\n- **Dash:** Add Movement equal to half your base Movement (no temporary bonuses) rounded down.\n- **Hide:** You must be behind Full Cover or otherwise hidden from all enemies. Doing so enters Stealth.\n- **Re-Equip:** If you’ve already equipped a weapon this turn, equipping another costs a Half Action."
+        },
+        {
+          "id": "reactions",
+          "title": "Reactions",
+          "body": "- **Attack of Opportunity:** An enemy willingly moves away from your melee range without Disengaging, you can use a Reaction to make a Full Action-style attack against them."
+        },
+        {
+          "id": "free-actions",
+          "title": "Free Actions",
+          "body": "- **Equip:** Once per turn you can Equip and item for free, however subsequent equips must use a Half Action.\n- **Unequip:** You can unequip any number of items during your turn.\n- **Talk:** You can say up to a couple of sentences during your turn."
+        }
+      ]
+    },
+    {
+      "id": "spellcasting-and-crystal-acuity-ca",
+      "title": "Spellcasting & Crystal Acuity (CA)",
+      "important": true,
+      "body": "",
+      "sections": [
+        {
+          "id": "crystal-acuity",
+          "title": "Crystal Acuity",
+          "body": "Crystal Acuity (**CA**) is the resource pool you spend in order to unlock different *spells* and *upgrades* for crystals. The **Total CA** you have to spend is equal to your *Base Acuity (BA)* + *Extra Acuity (EA)*. New spells are automatically unlocked once you reach certain Base Acuity thresholds."
+        },
+        {
+          "id": "base-acuity",
+          "title": "Base Acuity",
+          "body": "Base Acuity (**BA**) comes from 3 sources:\n- +2 CA earned per Player Level\n- CA earned per Class Level, each class gives a differing amount of CA per level.\n- Any CA your racial traits give you.\nAt certain BA levels you unlock new tiers of spells (e.g. 15, 30, 45, etc.)."
+        },
+        {
+          "id": "extra-acuity",
+          "title": "Extra Acuity",
+          "body": "Extra Acuity (**EA**) comes from 3 sources:\n- **Crystals** give you CA every level depending on their **Tier**. If you have a Tier 2 Crystal, then it gives you 6 CA by level 3.\n- Bonuses from your Backgrounds\n- Bonuses from Campaign upgrades give by your DM. Every level Crystals give you EA equal to their Tier unless otherwise stated."
+        },
+        {
+          "id": "mana",
+          "title": "Mana",
+          "body": "Casting spells costs mana, which is partially refunded after a Short Rest and Fully Refunded after a Long Rest. Your Mana Pool is equal to half you **Total CA** rounded up."
+        },
+        {
+          "id": "attack-and-damage-rolls",
+          "title": "Attack and Damage Rolls",
+          "body": "All Crystals have multiple **Stat** types that scale both Spell Attack Rolls and Damage Rolls. The Fire crystal for example uses CON, CHA, or INT. So pick whichever Stat is the **highest** and use it to add to all Spell Attack Rolls and all Damage Rolls from spells. All Crystals use INT and usually two other Stats for spellcasting. Whenever you see [STAT], it refers to your highest Stat.\n\nYour Spell Save DC is equal to 8 + [Stat] + Proficiency Bonus.\n\nFlat Damage removes the Stat bonuses."
+        },
+        {
+          "id": "concentration",
+          "title": "Concentration",
+          "body": "You can either Concentrate on one Major Concentration spell or two Minor Concentration spells. These are interchangeable like Full and Half Actions. You can break Concentration any time you want.\n\n**Breaking Concentration:** Whenever you take damage make a CON Save, you have a chance to Break Concentration. When you’re concentrating on multiple spells at a time, choose which one breaks.\n- Minor Concentration: Save DC = 10 or half damage taken rounded up, whichever is higher.\n- Major Concentration: Save DC = 8 + [STAT] + Proficiency Bonus, or half damage taken rounded up, whichever is higher."
+        },
+        {
+          "id": "learning-spells",
+          "title": "Learning Spells",
+          "body": "Normally you cannot learn or unlearn spells during combat. Outside of combat you’re free to assign any unspent CA into Spells and Spell Upgrades. You can only unlearn spells and upgrades during a Long Rest."
+        },
+        {
+          "id": "spell-scaling",
+          "title": "Spell Scaling",
+          "body": "Whenever you see **X {Crystal} CA**, this refers how much CA you have invested into that Crystal. For example if you see the phrase ‘1d6 Fire damage per 10 Fire CA’, it means if you have 22 CA in learnt spells and upgrades with the Fire crystal, that specific spell gains +2d6 Fire damage."
+        },
+        {
+          "id": "casting-restrictions",
+          "title": "Casting Restrictions",
+          "body": "Casting a non-melee spell in melee range of an enemy provokes attack opportunity, but it does use their reaction."
+        }
+      ]
+    },
+    {
+      "id": "choosing-stats",
+      "title": "Choosing Stats",
+      "important": false,
+      "body": "Your Stats are AGI, CON, STR, DEX, WIS, INT, CHA.\nUse a d20 from character creation to draft your Stats. Stats cannot surpass 17 during character creation. Each start at 10.\n\n| d20 Value | Stat Points |\n| --------- | ----------- |\n| 1-2       | 3           |\n| 3-8       | 4           |\n| 9-14      | 5           |\n| 15-18     | 6           |\n| 19-20     | 7           |",
+      "sections": []
+    },
+    {
+      "id": "choosing-a-crystal",
+      "title": "Choosing a Crystal",
+      "important": false,
+      "body": "Use a d20 from character creation to draft your Crystal. You may choose a lower outcome than what you drafted.\n\n| d20 Value | Crystal Tier                      |\n| --------- | --------------------------------- |\n| 1-2       | Random Tier 1                     |\n| 3-8       | Any Tier 1                        |\n| 9-14      | Any Tier 1, or Random Tier 2      |\n| 15-18     | Any Tier 1 or 2, or Random Tier 3 |\n| 19-20     | Any Tier 1, 2 or 3                |",
+      "sections": []
+    },
+    {
+      "id": "choosing-a-race",
+      "title": "Choosing a Race",
+      "important": false,
+      "body": "Pick a race and use a d20 from character creation to draft different Racial Traits based on the total number of points you get.\n\n| d20 Value | Trait Points |\n| --------- | ------------ |\n| 1-2       | 4            |\n| 3-8       | 5            |\n| 9-14      | 6            |\n| 15-18     | 7            |\n| 19-20     | 8            |",
+      "sections": []
+    },
+    {
+      "id": "proficiency-and-expertise-bonuses",
+      "title": "Proficiency and Expertise Bonuses",
+      "important": false,
+      "body": "**Ineptitude is always a -5.**\n\n| Level | Proficiency Bonus | Expertise Bonus |\n| :---: | :---------------: | :-------------: |\n|   1   |        +2         |       +3        |\n|   2   |        +2         |       +3        |\n|   3   |        +2         |       +4        |\n|   4   |        +2         |       +4        |\n|   5   |        +3         |       +4        |\n|   6   |        +3         |       +5        |\n|   7   |        +3         |       +5        |\n|   8   |        +3         |       +5        |\n|   9   |        +4         |       +6        |\n|  10   |        +4         |       +6        |\n|  11   |        +4         |       +6        |\n|  12   |        +4         |       +7        |\n|  13   |        +5         |       +7        |\n|  14   |        +5         |       +7        |\n|  15   |        +5         |       +8        |\n|  16   |        +5         |       +8        |\n|  17   |        +6         |       +9        |\n|  18   |        +6         |       +9        |\n|  19   |        +6         |       +10       |\n|  20   |        +6         |       +10       |",
+      "sections": []
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "important": false,
+      "body": "Movement can be broken up as much as you like during a turn unless otherwise stated.\nPlayer base starting movement is **6m**.",
+      "sections": []
+    },
+    {
+      "id": "initiative",
+      "title": "Initiative",
+      "important": false,
+      "body": "Initiative is always rolled with AGI.",
+      "sections": []
+    },
+    {
+      "id": "ac-and-spell-ac",
+      "title": "AC and Spell AC",
+      "important": false,
+      "body": "AC defends against physical attacks while Spell AC defends against spell attacks. The default value for unarmored players is 10 for both AC and Spell AC.",
+      "sections": []
+    },
+    {
+      "id": "stealth",
+      "title": "Stealth",
+      "important": false,
+      "body": "Stealth gives you Advantage the first hit against enemies that are unaware of you, then breaks Stealth. Ending your turn in line of sight to an enemy reveals you as well.",
+      "sections": []
+    },
+    {
+      "id": "cover",
+      "title": "Cover",
+      "important": false,
+      "body": "- **Full Cover:** Cannot be targeted by ranged spells/attacks.\n- **Half Cover:** +3 to AC Spell AC from ranged attacks/spells, +3 to AGI saves coming from the opposite side of cover.\n- **Quarter Cover:** Similar bonuses as Half Cover but +1 instead of +3.",
+      "sections": []
+    },
+    {
+      "id": "class-features",
+      "title": "Class Features",
+      "important": false,
+      "body": "It’s assumed that features from a class only work the relevant types you’re Proficient in (armor, weapon, shields, etc.)",
+      "sections": []
+    }
+  ]
+}

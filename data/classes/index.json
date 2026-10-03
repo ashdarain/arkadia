@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-03T19:37:55.640Z",
+  "classes": [
+    {
+      "id": "arcane-archer",
+      "name": "Arcane Archer",
+      "tags": [
+        "ranged",
+        "spellcaster"
+      ],
+      "file": "arcane-archer.json",
+      "healthPerLevel": {
+        "raw": "1d6+4+CON",
+        "dice": "1d6",
+        "flat": 4,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "assassin",
+      "name": "Assassin",
+      "tags": [
+        "stealth"
+      ],
+      "file": "assassin.json",
+      "healthPerLevel": {
+        "raw": "1d6+2+CON",
+        "dice": "1d6",
+        "flat": 2,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "captain",
+      "name": "Captain",
+      "tags": [
+        "support",
+        "utility"
+      ],
+      "file": "captain.json",
+      "healthPerLevel": {
+        "raw": "1d8+4+CON",
+        "dice": "1d8",
+        "flat": 4,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "lurker",
+      "name": "Lurker",
+      "tags": [
+        "stealth"
+      ],
+      "file": "lurker.json",
+      "healthPerLevel": {
+        "raw": "1d8+3+CON",
+        "dice": "1d8",
+        "flat": 3,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "magus",
+      "name": "Magus",
+      "tags": [
+        "spellcaster",
+        "offensive"
+      ],
+      "file": "magus.json",
+      "healthPerLevel": {
+        "raw": "1d6+3+CON",
+        "dice": "1d6",
+        "flat": 3,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "marksman",
+      "name": "Marksman",
+      "tags": [
+        "ranged"
+      ],
+      "file": "marksman.json",
+      "healthPerLevel": {
+        "raw": "1d8+2+CON",
+        "dice": "1d8",
+        "flat": 2,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "sage",
+      "name": "Sage",
+      "tags": [
+        "spellcaster",
+        "concentration",
+        "utility"
+      ],
+      "file": "sage.json",
+      "healthPerLevel": {
+        "raw": "1d8+4+CON",
+        "dice": "1d8",
+        "flat": 4,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "samurai",
+      "name": "Samurai",
+      "tags": [
+        "melee",
+        "offensive"
+      ],
+      "file": "samurai.json",
+      "healthPerLevel": {
+        "raw": "1d10+3+CON",
+        "dice": "1d10",
+        "flat": 3,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "tags": [
+        "support",
+        "defensive"
+      ],
+      "file": "sentinel.json",
+      "healthPerLevel": {
+        "raw": "1d12+3+CON",
+        "dice": "1d12",
+        "flat": 3,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "skirmisher",
+      "name": "Skirmisher",
+      "tags": [
+        "movement"
+      ],
+      "file": "skirmisher.json",
+      "healthPerLevel": {
+        "raw": "1d8+2+CON",
+        "dice": "1d8",
+        "flat": 2,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "spellblade",
+      "name": "Spellblade",
+      "tags": [
+        "spellcaster",
+        "melee"
+      ],
+      "file": "spellblade.json",
+      "healthPerLevel": {
+        "raw": "1d8+3+CON",
+        "dice": "1d8",
+        "flat": 3,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "spellslinger",
+      "name": "Spellslinger",
+      "tags": [
+        "spellcaster"
+      ],
+      "file": "spellslinger.json",
+      "healthPerLevel": {
+        "raw": "1d6+4+CON",
+        "dice": "1d6",
+        "flat": 4,
+        "stat": "CON"
+      }
+    }
+  ]
+}

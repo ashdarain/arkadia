@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-03T19:37:55.662Z",
+  "id": "void",
+  "name": "Void",
+  "tier": 3,
+  "damageTypes": [
+    "entropic",
+    "psychic"
+  ],
+  "keywords": [
+    "fear",
+    "paranoia"
+  ],
+  "theme": "Very dark purple",
+  "stats": [
+    "WIS",
+    "CHA",
+    "INT"
+  ],
+  "ascendsInto": [],
+  "mechanics": [
+    {
+      "id": "fear",
+      "name": "Fear",
+      "body": "A creature that is Feared against a enemy cannot willingly move towards the enemy while it has line of sight of the enemy, and it makes attack/spell attack rolls against the enemy with Disadvantage. Fear is a Weak Debuff.",
+      "source": "Conditions"
+    },
+    {
+      "id": "paranoia",
+      "name": "Paranoia",
+      "body": "A Paranoid creature does not act normally during their turn. They must use all actions attacking or casting spells against the closest creature, including allies. Paranoia is a Strong Debuff.",
+      "source": "Conditions"
+    },
+    {
+      "id": "the-void-dimension",
+      "name": "The Void Dimension",
+      "body": "The Void Dimension is a space of existence that lies on top of the real world, invisible and untouchable for most beings. All objects and terrain is mirrored in shadow within the monochrome Void, creatures in the real world are represented as cloudy Shadow Remnants within this dimension. See the **Pierce the Veil** spell for more details.",
+      "source": null
+    }
+  ],
+  "spells": [
+    {
+      "id": "pierce-the-veil",
+      "name": "Pierce The Veil",
+      "ba": 0,
+      "ca": "Auto",
+      "mana": "1*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Half Action** or **Extra Action** enter the Void dimension. This is a space of existence that lies on top of the real world, invisible and untouchable for most beings. All objects and terrain is mirrored in shadow within the monochrome Void, creatures in the real world are represented as cloudy Shadow Remnants within this dimension. While in the Void you can move freely, attack other Remnants and cast spells. Certain creatures and beings with special abilities or Truesight can see and target you while you’re in the Void.\n\nWhen you cast Pierce the Veil to enter the Void, leave behind a **Void Remnant**, a shadowy figure in your shape, in the same position as you were in the real world. It has the same ACs, Resistances, etc. as you. **All damage the and effects the Remnant receives are inflicted to you.** This Remnant is **Resistant** to all **Non-magical** damage, but can only move when you command it to. Use a **Half** or **Extra Action** to make the Remnant move, take cover, etc. It has a base movement equal to yours and cannot exceed it. Enemies that you pull into the Void can make a **Full Action** **WIS** save to escape the Void, and typically leave behind their own Void Remnant which is also Resistant to Non-magical damage.\n\nWhen you start your turn inside the Void, pay 2 Mana or be forcibly kicked out. Returning you to your where your current position would be in the real world. You may use a **Half** or **Extra Action** to leave the void for 0 Mana. Whenever you leave the Void, all Void Remnants of yours disappears and all enemies you pulled in come back into the real world.\n\nEffects that reference “**Breach(ing) the Veil**” refer to when you when you use a spell, ability or attack from inside the Void to target outside in the real world, or **vice-versa**. When you *Breach the Veil* from within the Void, leave behind a temporary Void Remnant from your location into the real world until the end of your turn. These Remnants cannot overlap but you can make multiple of them. Enemies can react against to the temporary Remnants.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You can make your Void Remnant move with a Free Action, but every 2m it moves consumes 1m of your Movement. Its movement cannot exceed its base Movement."
+        },
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "Choose 4 Magical damage types, your Void Remnant is resistant to those types. You can change these damage types with a Short Rest Action."
+        },
+        {
+          "ca": "5",
+          "variant": null,
+          "text": "You’re considered to be in Stealth when Breaching the Veil from the Void."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Void Remnants left behind by enemies lose the Resistances granted by this spell."
+        }
+      ]
+    },
+    {
+      "id": "blast-from-beyond",
+      "name": "Blast From Beyond",
+      "ba": 0,
+      "ca": "3",
+      "mana": "2*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Full Action* call forth a beam of swirling entropic energy making a *Ranged Spell Attack* against a creature within *8m*, dealing *1d12* Entropic damage on hit. Damage increases by *+1d12* per 15 Void CA. Mana Cost increases by *+1* per 30 Void CA.\n\n**0 Mana Cast:** As a Full Action the beam does **1d8** Entropic damage. Damage increases by +1d8 per 15 Void CA.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Choose a point in space within *6m*, Blast From Beyond fires from that point targeting a creature within *8m* of it. Enemies do not consider you as the caster of this spell."
+        },
+        {
+          "ca": "0",
+          "variant": null,
+          "text": "When you Breach the Veil with this spell, idk something happens."
+        }
+      ]
+    },
+    {
+      "id": "grasp-from-the-depths",
+      "name": "Grasp From the Depths",
+      "ba": 0,
+      "ca": "4",
+      "mana": "3",
+      "concentration": "Minor Concentration",
+      "tags": [],
+      "body": "As a **Full Action** conjure a large hand made with dark energies from the ground making a Melee Spell Attack against an enemy within 6m. The hand does **1d12** Entropic damage on hit, increasing by **+1d12** per 15 Void CA. Then the target must make a **AGI** save or become Immobilized for up to 10 turns, until you lose **Concentration**, or they break free. The Immobilized target can make an **AGI** or **STR** save to break free of the grasp using a *Half Action*. If the target is more than 1m off the ground, the spell misses.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "The hand extends into an arm and stretches up to another **6m** in any direction from the point its cast, if the hand successfully grabs a creature it pulls them down to the original cast point. This can target flying creatures."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "If you **Breach the Veil** with this spell and they fail the AGI save, you have the creature swap dimensions, then they leave behind their own Void Remnant in the real world if you attacked from the Void"
+        }
+      ]
+    },
+    {
+      "id": "the-void-stares-back",
+      "name": "The Void Stares Back",
+      "ba": 0,
+      "ca": "3",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Half Action** target a creature within 12m feels the gaze of a thousand eyes from beyond. The target makes a WIS save or becomes **Feared** from you for 2 turns on fail. This spell always does **1d8** Entropic damage, but on the failed save it also deals **1d8** Psychic damage. Entropic damage increases by **+1d8** per 30 Void CA, and Psychic damage increases by **+1d8** per 15 Void CA (Psychic damage increases faster).",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You can cast this spell as a **Full Action** to make it an **AoE** spell targeting each enemies within a **6m** diameter of the point. *+2 Mana Cost.*"
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You may cast this spell as a **Full Action** which increases the Damage Dice Class by **+1**. If you Breach the Veil with this cast instead of Fearing, the failed save inflicts **Paranoia** creature until the end of their next turn. This is another alternate cast and does not gain AoE from the other Upgrade."
+        }
+      ]
+    }
+  ],
+  "drafts": [],
+  "source": "Magic/Void.md"
+}
