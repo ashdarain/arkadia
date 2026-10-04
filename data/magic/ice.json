@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T19:37:55.662Z",
+  "generatedAt": "2026-10-04T00:25:29.683Z",
   "id": "ice",
   "name": "Ice",
   "tier": 1,
@@ -38,7 +38,7 @@
     {
       "id": "frost-charges",
       "name": "Frost Charges",
-      "body": "Frost Charges and gained and used by the Ice Crystal to empower Ice Spells, and behave like a stackable Strong Buff. See the spell section below for more info.",
+      "body": "Frost Charges are gained and used by the Ice Crystal to empower Ice Spells, and behave like a stackable Strong Buff. See the spell section below for more info.",
       "source": null
     }
   ],

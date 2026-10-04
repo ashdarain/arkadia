@@ -26,6 +26,22 @@ node tools/convert-all.mjs
 This runs all the converters below. Refresh the browser to see changes.
 (Or just double-click `updateFromDocs.bat`.)
 
+### Patch notes
+
+Every update compares the old data with the new and, if anything changed, writes a note to
+`log/YYYY-MM-DD_HH-MM.md`, e.g.:
+
+```
+## Magic
+- **Added** spell: Fire › Ember Ward
+- **Changed** Fire › Rocket Jump › mana: 1 → 3
+- **Changed** Fire › Conjure Flame › text
+  > … gain ~~3~~ ==4== Blaze charges …
+```
+
+`~~struck~~` words were removed, `==highlighted==` words were added. No file is written when nothing changed.
+The logic is in `tools/changelog.mjs` (no dependencies).
+
 ### Classes
 
 ```
@@ -102,7 +118,9 @@ Any `# ` section (e.g. `# Notes`) is ignored.
 | `data/classes/`              | Generated class JSON (don't edit by hand)       |
 | `data/class-summaries.json`  | One-line class descriptions (edit freely)       |
 | `data/races.json`            | Generated race data (don't edit by hand)        |
-| `tools/convert-all.mjs`      | Runs every converter                            |
+| `tools/convert-all.mjs`      | Runs every converter, then writes patch notes   |
+| `tools/changelog.mjs`        | Compares old/new data for the patch notes       |
+| `log/`                       | Patch notes, one file per update with changes   |
 | `tools/convert-races.mjs`    | Races.md → JSON converter                       |
 | `tools/convert-magic.mjs`    | Magic notes → JSON converter                    |
 | `tools/convert-equipment.mjs`| Weapons & Armour.md → JSON converter            |

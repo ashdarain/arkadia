@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T19:37:55.681Z",
+  "generatedAt": "2026-10-04T00:25:29.704Z",
   "source": "Weapons & Armour.md",
   "intro": "Equipment only have **penalties** if you are **not proficient** in them. For melee weapons, you can only make **Half Action** attacks if your weapon has **Light** or **Dexterous**. Ranged weapons require 2 hands to use unless they have the **One-handed** attribute.",
   "attributes": [

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T19:37:55.662Z",
+  "generatedAt": "2026-10-04T00:25:29.683Z",
   "id": "water",
   "name": "Water",
   "tier": 2,
@@ -92,7 +92,7 @@
       "mana": "3",
       "concentration": null,
       "tags": [],
-      "body": "As a **Full Action** make a Melee Spell Attack against an enemy within 6m whipping them with a torrent of water, dealing **1d6** Bludgeoning damage and **1d6** Aether damage on it. Both damages types increase by **+1d6** per Water CA.\n\nIf the spell hits, you can consume up to **4 Aqua Charges** to move the creature in any cardinal direction, **2m** per **1 Charge** consumed.",
+      "body": "As a **Full Action** make a Melee Spell Attack against an enemy within 6m whipping them with a torrent of water, dealing **1d6** Bludgeoning damage and **1d6** Aether damage on it. Both damages types increase by **+1d6** per 12 Water CA.\n\nIf the spell hits, you can consume up to **4 Aqua Charges** to move the creature in any cardinal direction, **2m** per **1 Charge** consumed.",
       "upgrades": [
         {
           "ca": "3",

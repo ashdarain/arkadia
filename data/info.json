@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-03T19:37:55.694Z",
+  "generatedAt": "2026-10-04T00:25:29.716Z",
   "source": "Basic Info.md",
   "panels": [
     {
@@ -54,12 +54,12 @@
         {
           "id": "crystal-acuity",
           "title": "Crystal Acuity",
-          "body": "Crystal Acuity (**CA**) is the resource pool you spend in order to unlock different *spells* and *upgrades* for crystals. The **Total CA** you have to spend is equal to your *Base Acuity (BA)* + *Extra Acuity (EA)*. New spells are automatically unlocked once you reach certain Base Acuity thresholds."
+          "body": "Crystal Acuity (**CA**) is the resource pool you spend in order to unlock different *spells* and *upgrades* for crystals. The **Total CA** you have to spend is equal to your *Base Acuity (BA)* + *Extra Acuity (EA)*. New spells are become accessible once you reach certain Base Acuity thresholds. Crystal Acuity is generic and doesn’t belong to a single crystal."
         },
         {
           "id": "base-acuity",
           "title": "Base Acuity",
-          "body": "Base Acuity (**BA**) comes from 3 sources:\n- +2 CA earned per Player Level\n- CA earned per Class Level, each class gives a differing amount of CA per level.\n- Any CA your racial traits give you.\nAt certain BA levels you unlock new tiers of spells (e.g. 15, 30, 45, etc.)."
+          "body": "Base Acuity (**BA**) comes from 3 sources:\n- +2 CA earned per Player Level\n- CA earned per Class Level, each class gives a differing amount of CA per level.\n- Any CA your racial traits give you.\nAt certain BA levels you gain access to new tiers of spells (e.g. 15, 30, 45, etc.)."
         },
         {
           "id": "extra-acuity",
