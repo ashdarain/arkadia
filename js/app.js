@@ -1,19 +1,16 @@
 /* Arkadia reference site — no build step, no dependencies. */
 
-/* ---------------- Site settings ---------------- */
+/* ---------------- Site settings (edit config.mjs, not here) ---------------- */
 
+import SETTINGS from "../config.mjs";
+
+const idOf = (name) => name.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+  .replace(/[’']/g, "").replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const CONFIG = {
-  // Highest class level shown to playtesters. Features and abilities above this
-  // level only appear when "Show drafts & notes" is switched on.
-  // Raise it as more levels are finished (classes will eventually reach 10).
-  maxLevel: 3,
-
-  // Magic: spells above this Base Attunement tier only appear when the toggle is on.
-  maxBA: 15,
-  // Spells whose names match are hidden from the default view (e.g. "Firemaker’s Talent").
-  hiddenSpells: [/talent$/i],
-  // Accent colour per crystal, matching the "Theme:" line in each note.
-  crystalColors: { fire: "#ff9a5c", ice: "#9ed6ff", lightning: "#f2d85c", water: "#245fb1", void: "#6630a0" },
+  maxLevel: SETTINGS.playtest.maxClassLevel,
+  maxBA: SETTINGS.playtest.maxSpellBA,
+  hiddenSpells: SETTINGS.playtest.hideSpellsEndingWith.map((w) => new RegExp(`${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`, "i")),
+  crystalColors: Object.fromEntries(SETTINGS.crystals.map((c) => [idOf(c.name), c.color])),
 };
 
 const DATA_ROOT = "data";
@@ -179,8 +176,22 @@ async function loadData() {
  * columns as fit (at least `min` px wide), putting each card into the
  * currently shortest column while keeping the note's order.
  */
-const masonry = (cards, min, max = 99) =>
-  `<div class="masonry" data-min="${min}" data-max="${max}">${cards.map((html, i) => html.replace("<article ", `<article data-order="${i}" `)).join("")}</div>`;
+const masonry = (cards, min, max = 99, extraClass = "") =>
+  `<div class="masonry${extraClass ? ` ${extraClass}` : ""}" data-min="${min}" data-max="${max}">${cards.map((html, i) => html.replace("<article ", `<article data-order="${i}" `)).join("")}</div>`;
+
+/**
+ * Two-column class pages: both columns are sticky. A column shorter than the window stays in view;
+ * a taller one scrolls until its bottom reaches the window, then holds while the other side continues.
+ */
+function stickColumns() {
+  const twoCol = window.innerWidth > 1180;
+  const subtabs = main.querySelector(".subtabs")?.offsetHeight ?? 0;
+  document.documentElement.style.setProperty("--subtabs-h", `${subtabs}px`);
+  const offset = subtabs + 12;
+  for (const col of main.querySelectorAll(".class-body:not(.single) > .col")) {
+    col.style.top = twoCol ? `${Math.min(offset, window.innerHeight - col.offsetHeight - 16)}px` : "";
+  }
+}
 
 function packMasonry() {
   const grids = [...main.querySelectorAll(".masonry")];
@@ -189,7 +200,34 @@ function packMasonry() {
   grids.filter((g) => g.querySelector(".masonry")).forEach(packGrid);
 }
 
+/**
+ * Variant for grids where some cards are wider (data-span="2"): cards are placed absolutely,
+ * each at the lowest spot where it fits, so narrow cards fill the gaps beside wide ones.
+ */
+function packSpanGrid(grid) {
+  const gap = 12;
+  const cards = [...grid.querySelectorAll(":scope > [data-order]")].sort((a, b) => a.dataset.order - b.dataset.order);
+  const min = Number(grid.dataset.min) || 300;
+  const W = grid.clientWidth;
+  const n = Math.max(1, Math.min(Number(grid.dataset.max) || 99, Math.floor((W + gap) / (min + gap))));
+  const colW = (W - gap * (n - 1)) / n;
+  const heights = new Array(n).fill(0);
+  for (const card of cards) {
+    const span = Math.min(n, Number(card.dataset.span) || 1);
+    let col = 0, top = Infinity;
+    for (let c = 0; c + span <= n; c++) {
+      const t = Math.max(...heights.slice(c, c + span));
+      if (t < top - 0.5) { top = t; col = c; }
+    }
+    Object.assign(card.style, { position: "absolute", left: `${col * (colW + gap)}px`, top: `${top}px`, width: `${span * colW + (span - 1) * gap}px` });
+    const h = card.getBoundingClientRect().height;
+    for (let c = col; c < col + span; c++) heights[c] = top + h + gap;
+  }
+  grid.style.height = `${Math.max(0, ...heights) - gap}px`;
+}
+
 function packGrid(grid) {
+  if (grid.classList.contains("span-masonry")) return packSpanGrid(grid);
   const gap = 12;
   {
     const cards = [...grid.querySelectorAll(":scope > [data-order], :scope > .masonry-col > [data-order]")].sort((a, b) => a.dataset.order - b.dataset.order);
@@ -234,7 +272,9 @@ function classSubtabs(activeId) {
     </nav>`;
 }
 
-const summaryOf = (c) => state.summaries[c.id] ?? c.description ?? null;
+// data/class-summaries.json: { "<class-id>": { "summary": "...", "icon": "<svg shapes>" } } (a plain string is also accepted)
+const summaryOf = (c) => { const s = state.summaries[c.id]; return (typeof s === "string" ? s : s?.summary) ?? c.description ?? null; };
+const classIcon = (c, cls = "class-icon") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${state.summaries[c.id]?.icon ?? ICONS.classes}</svg>`;
 const chipsFor = (c) => c.tags.length ? `<div class="chips">${c.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join("")}</div>` : "";
 
 /** "1d8 + 3" — the part that matters at a glance. */
@@ -260,7 +300,7 @@ function classOverview() {
       ${shown.map((c) => `
         <a class="facet" href="#/classes/${c.id}">
           <div class="roster-top">
-            <h2>${esc(c.name)}</h2>
+            <h2>${classIcon(c)}${esc(c.name)}</h2>
             ${c.healthPerLevel ? `<span class="roster-hp" title="Health per level">${hpCore(c.healthPerLevel)}</span>` : ""}
           </div>
           ${summaryOf(c) ? `<p class="summary">${esc(summaryOf(c))}</p>` : ""}
@@ -451,6 +491,7 @@ function classPage(cls) {
   const right = systemColumn(cls);
   const hp = cls.healthPerLevel;
   return `
+    <div class="class-watermark">${classIcon(cls, "")}</div>
     ${classSubtabs(cls.id)}
     <header class="class-head">
       <div>
@@ -466,7 +507,7 @@ function classPage(cls) {
     </header>
     <div class="class-body${!right ? " single" : cls.sections.length ? " wide-right" : ""}">
       <div class="col col-features">${featureColumn(cls, { wide: !right })}</div>
-      ${right ? `<div class="col col-systems">${right}</div>` : ""}
+      ${right ? `<div class="col-divider" aria-hidden="true"></div><div class="col col-systems">${right}</div>` : ""}
     </div>`;
 }
 
@@ -574,7 +615,7 @@ function magicOverview() {
 function spellCard(c, s, { draft = false } = {}) {
   const hidden = !draft && !spellByDefault(s);
   const meta = [
-    s.ca && `<span class="chip" ${s.ca === "Auto" ? 'title="Learned automatically"' : ""}>${s.ca === "Auto" ? "Auto" : `${esc(s.ca)} CA`}</span>`,
+    s.ca && `<span class="chip ca-chip" ${s.ca === "Auto" ? 'title="Learned automatically"' : ""}>${s.ca === "Auto" ? "Auto" : `${esc(s.ca)} CA`}</span>`,
     s.mana && `<span class="badge resource">${esc(s.mana)} Mana</span>`,
     s.concentration && `<span class="chip">${esc(s.concentration)}</span>`,
     ...s.tags.map((t) => `<span class="chip">${esc(t)}</span>`),
@@ -645,8 +686,12 @@ function crystalPage(c) {
       ${mechanics}
       <section class="block">
         <h2>Spells</h2>
+        ${tiers.length > 1 ? `
+          <nav class="ba-jump" aria-label="Jump to spell tier">
+            ${tiers.map(([ba]) => `<button type="button" data-jump="${anchorId(c.id, `ba-${ba}`)}"${ba > CONFIG.maxBA ? ' class="beyond"' : ""}>BA ${ba}</button>`).join("")}
+          </nav>` : ""}
         ${tiers.map(([ba, list]) => `
-          <div class="ability-level">
+          <div class="ability-level ba-tier" id="${anchorId(c.id, `ba-${ba}`)}">
             <div class="level-divider crystal-divider${ba > CONFIG.maxBA ? " beyond" : ""}"><span>BA ${ba}</span></div>
             ${masonry(list.map((s) => spellCard(c, s)), 290, 3)}
           </div>`).join("") || '<p class="empty">No spells yet.</p>'}
@@ -749,7 +794,7 @@ function infoPanel(p) {
       <div class="body">${md(s.body)}</div>
     </article>`);
   return `
-    <article class="facet info-panel${p.important ? " important" : ""}" id="info--${p.id}">
+    <article ${p.important ? 'data-span="2" ' : ""}class="facet info-panel${p.important ? " important" : ""}" id="info--${p.id}">
       <h2>${esc(p.title)}</h2>
       ${p.body ? `<div class="body">${md(p.body)}</div>` : ""}
       ${subs.length ? masonry(subs, 230) : ""}
@@ -759,12 +804,79 @@ function infoPanel(p) {
 function infoPage() {
   const d = state.info;
   if (!d) return wipPage({ label: "Info", wip: "Info hasn't been generated yet. Run updateFromDocs.bat in the Website folder." });
-  const important = d.panels.filter((p) => p.important);
-  const rest = d.panels.filter((p) => !p.important);
+  // important panels first (two columns wide), then the rest fill whatever column is shortest
+  const panels = [...d.panels.filter((p) => p.important), ...d.panels.filter((p) => !p.important)];
   return `
     <header class="page-head"><h1>Basic Info</h1></header>
-    ${important.length ? `<div class="info-group">${masonry(important.map(infoPanel), 440, 2)}</div>` : ""}
-    ${rest.length ? `<div class="info-group">${masonry(rest.map(infoPanel), 260, 4)}</div>` : ""}`;
+    ${masonry(panels.map(infoPanel), 260, 4, "span-masonry info-grid")}`;
+}
+
+/* ---------------- Copy to clipboard ---------------- */
+
+// Cards that get a copy button (search results deliberately left out).
+const COPYABLE = [
+  ".info-panel", ".info-sub",                                   // info
+  ".race",                                                      // races
+  ".feature", ".ability", ".mechanic", ".entry", ".option",      // classes (and crystal conditions)
+  ".spell",                                                     // magic
+  ".equip",                                                     // equipment
+].join(", ");
+
+const COPY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>';
+const DONE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+
+function addCopyButtons() {
+  for (const card of main.querySelectorAll(COPYABLE)) {
+    if (card.querySelector(":scope > .copy-btn")) continue;
+    card.classList.add("copyable");
+    card.insertAdjacentHTML("afterbegin", `<button type="button" class="copy-btn" title="Copy as text" aria-label="Copy as text">${COPY_ICON}</button>`);
+  }
+}
+
+// Rows whose parts read best on one line, and what joins them.
+const JOINED = [
+  [".meta, .chips, .attrs, .equip-sub, .ac-pair, .entry-head", " · "],
+  [".equip-row, .upgrade", ": "],
+  [".trait", " - "],
+];
+const BLOCK = /^(DIV|P|H[1-6]|ARTICLE|SECTION|UL|OL|TABLE|DL|DT|DD|HEADER|NAV)$/;
+
+/** Card → plain text: one line per heading/paragraph/bullet, no formatting. */
+function plainText(el) {
+  const out = [];
+  const words = (n) => [...n.childNodes].map((x) => x.textContent.replace(/\s+/g, " ").trim()).filter(Boolean).join(" ");
+  const walk = (n) => {
+    if (n.nodeType === 3) { out.push(n.nodeValue.replace(/\s+/g, " ")); return; }
+    if (n.nodeType !== 1 || n.matches(".copy-btn, [hidden], svg, .level-divider")) return;
+    for (const [sel, sep] of JOINED) {
+      if (n.matches(sel)) {
+        const parts = [...n.children].map((c) => (c.matches(".equip-rows, ul, .body, .up-text, .trait-text") ? plainText(c).replace(/\n+/g, " ") : words(c))).filter(Boolean);
+        out.push(`\n${parts.join(sep)}\n`);
+        return;
+      }
+    }
+    if (n.matches(".unique-tag")) { out.push(`(${n.textContent.trim()}) `); return; }
+    if (n.tagName === "BR") { out.push("\n"); return; }
+    if (n.tagName === "TR") { out.push(`\n${[...n.children].map((c) => c.textContent.trim()).join(" | ")}\n`); return; }
+    if (n.tagName === "LI") out.push("\n- ");
+    const block = BLOCK.test(n.tagName);
+    if (block) out.push("\n");
+    n.childNodes.forEach(walk);
+    if (block) out.push("\n");
+  };
+  walk(el);
+  return out.join("").replace(/[ \t]*\n[ \t]*/g, "\n").replace(/\n{2,}/g, "\n").replace(/^- \n/gm, "- ").trim();
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    // clipboard API needs https/localhost; fall back for plain-http LAN hosting
+    const ta = Object.assign(document.createElement("textarea"), { value: text });
+    ta.style.cssText = "position:fixed;opacity:0";
+    document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove();
+  }
 }
 
 /* ---------------- Search ---------------- */
@@ -970,8 +1082,11 @@ function render() {
   const view = `${tab}/${sub ?? ""}`;
   main.innerHTML = html;
   document.title = `${title} · Arkadia`;
+  addCopyButtons();
   packMasonry();
-  document.fonts?.ready.then(packMasonry); // web fonts change card heights slightly
+  stickColumns();
+  markCurrentTier();
+  document.fonts?.ready.then(() => { packMasonry(); stickColumns(); }); // web fonts change card heights slightly
 
   const targetId = tab === "races" && sub ? `race--${sub}`
     : tab === "equipment" && sub ? `equip--${sub}`
@@ -1014,10 +1129,25 @@ function selectTab(btn, focus = false) {
     b.tabIndex = on ? 0 : -1;
     document.getElementById(b.getAttribute("aria-controls")).hidden = !on;
   }
+  stickColumns();
   if (focus) btn.focus();
 }
 
 main.addEventListener("click", (e) => {
+  const copy = e.target.closest(".copy-btn");
+  if (copy) {
+    copyText(plainText(copy.parentElement)).then(() => {
+      copy.innerHTML = DONE_ICON; copy.classList.add("done"); copy.title = "Copied";
+      setTimeout(() => { copy.innerHTML = COPY_ICON; copy.classList.remove("done"); copy.title = "Copy as text"; }, 1400);
+    });
+    return;
+  }
+  const jump = e.target.closest(".ba-jump button");
+  if (jump) {
+    const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById(jump.dataset.jump)?.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+    return;
+  }
   const tab = e.target.closest(".entry-tabs [role=tab]");
   if (tab) { selectTab(tab); return; }
   const eq = e.target.closest(".equip-filter button");
@@ -1058,10 +1188,21 @@ window.addEventListener("hashchange", () => {
   render();
 });
 
+/** Mark the BA button for the tier currently at the top of the screen. */
+function markCurrentTier() {
+  const bar = main.querySelector(".ba-jump");
+  if (!bar) return;
+  const line = bar.getBoundingClientRect().bottom + 24;
+  let current = null;
+  for (const tier of main.querySelectorAll(".ba-tier")) if (tier.getBoundingClientRect().top <= line) current = tier.id;
+  for (const b of bar.querySelectorAll("button")) b.setAttribute("aria-current", b.dataset.jump === (current ?? bar.querySelector("button").dataset.jump));
+}
+window.addEventListener("scroll", markCurrentTier, { passive: true });
+
 let resizeTimer;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(packMasonry, 120);
+  resizeTimer = setTimeout(() => { packMasonry(); stickColumns(); }, 120);
 });
 
 /* ---------------- Boot ---------------- */

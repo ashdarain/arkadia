@@ -1,5 +1,18 @@
 # Arkadia Website
 
+## Settings: `config.mjs`
+
+All settings live in one file, `config.mjs`, read by both the site and the converters:
+
+- `vault`: where your Obsidian vault is
+- `playtest`: what playtesters see by default (max class level, max spell BA, spells hidden by name ending)
+- `classes`: which class notes are converted (required tag, excluded tags)
+- `crystals`: which crystals are converted, in order, each with its colour on the site
+- `notes`: file names of the races, equipment and info notes
+
+After editing it, refresh the browser. If you changed which notes are read (vault, classes, crystals),
+run `updateFromDocs.bat` too.
+
 ## Running it locally
 
 Double-click `start.bat`. It starts a small local server and opens http://localhost:8080.
@@ -112,11 +125,12 @@ Any `# ` section (e.g. `# Notes`) is ignored.
 
 | Path                         | What it is                                      |
 | ---------------------------- | ----------------------------------------------- |
+| `config.mjs`                 | All settings (see top of this README)           |
 | `index.html`                 | Page shell and sidebar                          |
 | `css/styles.css`             | Theme, colours and layout                       |
 | `js/app.js`                  | Tabs, class pages, search                       |
 | `data/classes/`              | Generated class JSON (don't edit by hand)       |
-| `data/class-summaries.json`  | One-line class descriptions (edit freely)       |
+| `data/class-summaries.json`  | Per class: one-line `summary` and `icon` (SVG shapes on a 24×24 grid; edit freely) |
 | `data/races.json`            | Generated race data (don't edit by hand)        |
 | `tools/convert-all.mjs`      | Runs every converter, then writes patch notes   |
 | `tools/changelog.mjs`        | Compares old/new data for the patch notes       |

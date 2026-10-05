@@ -23,12 +23,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import CONFIG from "../config.mjs";
 
-// Which crystals to convert, in display order. Add names here as more crystals are ready.
-const CRYSTALS = ["Fire", "Ice", "Lightning", "Water", "Void"];
+// Which crystals to convert, in display order: set in config.mjs.
+const CRYSTALS = CONFIG.crystals.map((c) => c.name);
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const SRC_DIR = process.argv[2] ?? "A:/Obsidian/Arkadia/Magic";
+const SRC_DIR = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.notes.magicFolder}`;
 const VAULT = path.dirname(path.resolve(SRC_DIR)); // embeds like ![[Conditions#Burn]] are looked up here
 const OUT_DIR = path.resolve(process.argv[3] ?? path.join(HERE, "..", "data", "magic"));
 const SCHEMA_VERSION = 1;

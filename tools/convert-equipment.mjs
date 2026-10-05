@@ -18,9 +18,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import CONFIG from "../config.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const SRC = process.argv[2] ?? "A:/Obsidian/Arkadia/Weapons & Armour.md";
+const SRC = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.notes.equipment}`;
 const OUT = path.resolve(process.argv[3] ?? path.join(HERE, "..", "data", "equipment.json"));
 const SCHEMA_VERSION = 1;
 const STATS = "STR|DEX|INT|WIS|CON|AGI|CHA";

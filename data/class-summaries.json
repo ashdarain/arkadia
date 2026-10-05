@@ -1,14 +1,50 @@
 {
-  "arcane-archer": "A ranged caster who fights with INT, enchants arrows on the fly and fires spells straight through the bow.",
-  "assassin": "Strikes from stealth or the flank for heavy crits, then slips back into hiding mid-fight.",
-  "captain": "A battlefield leader who spends Inspiration Points to hasten, empower and protect allies.",
-  "lurker": "Waits for enemies to act first, then punishes anyone whose turn has already passed.",
-  "magus": "A staff caster whose spells reach further, cover more ground and can crit without an attack roll.",
-  "marksman": "Gives up movement for accuracy, guards lanes with Overwatch and hits harder from high ground.",
-  "sage": "A concentration caster who swaps spells mid-fight, converts damage types and upgrades spells for free.",
-  "samurai": "Flows between four sword stances, each grown with its own Bushido skills.",
-  "sentinel": "A shield-bearer who hardens nearby allies, takes hits meant for them and taunts enemies away.",
-  "skirmisher": "Moves and acts outside their own turn, cutting into the initiative order with extra movement and actions.",
-  "spellblade": "A melee caster who fights with INT, enchants their blade and spends Spellstrike Points on magical strikes.",
-  "spellslinger": "A rapid caster who bends action costs, spends Alacrity Points to cast faster and is rewarded for variety."
+  "arcane-archer": {
+    "summary": "A ranged caster who fights with INT, enchants arrows on the fly and fires spells straight through the bow.",
+    "icon": "<path d='M3.5 10C9 4.5 17 9 14 20.5'/><path d='M3.5 10 14 20.5'/><path d='M5.5 18.5 19.5 4.5'/><path d='M15 4.5h4.5V9'/><path d='M5.5 18.5H3M5.5 18.5V21'/><path d='M19.5 14v4M17.5 16h4'/>"
+  },
+  "assassin": {
+    "summary": "Strikes from stealth or the flank for heavy crits, then slips back into hiding mid-fight.",
+    "icon": "<path d='M3.5 20.5 10.6 10.6 13.4 13.4z'/><path d='M9 9l6 6'/><path d='M12 12l4.4-4.4'/><circle cx='17.6' cy='6.4' r='1.6'/>"
+  },
+  "captain": {
+    "summary": "A battlefield leader who spends Inspiration Points to hasten, empower and protect allies.",
+    "icon": "<path d='M5 21V3'/><path d='M5 4h13l-3 4.5 3 4.5H5'/><path d='M3 21h4'/>"
+  },
+  "lurker": {
+    "summary": "Waits for enemies to act first, then punishes anyone whose turn has already passed.",
+    "icon": "<path d='M2.5 13S6 7 12 7s9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z'/><circle cx='12' cy='13' r='2.5'/><path d='M4 7c4.5-4 11.5-4 16 0'/>"
+  },
+  "magus": {
+    "summary": "A staff caster whose spells reach further, cover more ground and can crit without an attack roll.",
+    "icon": "<path d='M5 21 14 9'/><circle cx='16.5' cy='6' r='2.5'/><path d='M16.5 1.5V2M21 6h-.5M19.7 2.8l-.4.4M19.7 9.2l-.4-.4M12 6h.5M13.3 2.8l.4.4'/><path d='M12.5 9.5l2 1.3'/>"
+  },
+  "marksman": {
+    "summary": "Gives up movement for accuracy, guards lanes with Overwatch and hits harder from high ground.",
+    "icon": "<circle cx='12' cy='12' r='7'/><circle cx='12' cy='12' r='1'/><path d='M12 2v5M12 17v5M2 12h5M17 12h5'/>"
+  },
+  "sage": {
+    "summary": "A concentration caster who swaps spells mid-fight, converts damage types and upgrades spells for free.",
+    "icon": "<path d='M12 6.5C10 5 7 4.5 3.5 5v14c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5c-3.5-.5-6.5 0-8.5 1.5z'/><path d='M12 6.5v14'/><path d='M6 9h3M6 12h3M15 9h3M15 12h3'/>"
+  },
+  "samurai": {
+    "summary": "Flows between four sword stances, each grown with its own Bushido skills.",
+    "icon": "<path d='M8.5 15.5C13 13 17.5 8.5 21 3'/><path d='M6 13l5 5'/><path d='M8 16l-4.5 4.5'/>"
+  },
+  "sentinel": {
+    "summary": "A shield-bearer who hardens nearby allies, takes hits meant for them and taunts enemies away.",
+    "icon": "<path d='M5.5 3h13v10c0 4-3 6.5-6.5 8-3.5-1.5-6.5-4-6.5-8z'/><path d='M5.5 9h13'/><path d='M12 9v12'/>"
+  },
+  "skirmisher": {
+    "summary": "Moves and acts outside their own turn, cutting into the initiative order with extra movement and actions.",
+    "icon": "<path d='M4 6l6 6-6 6'/><path d='M12 6l6 6-6 6'/>"
+  },
+  "spellblade": {
+    "summary": "A melee caster who fights with INT, enchants their blade and spends Spellstrike Points on magical strikes.",
+    "icon": "<path d='M10.5 3.5 12 2l1.5 1.5V15h-3z'/><path d='M7.5 15h9'/><path d='M12 15v5'/><path d='M10.5 21h3'/><path d='M17 3.5l2 2-2 2 2 2-2 2'/><path d='M7 5.5l-2 2 2 2'/>"
+  },
+  "spellslinger": {
+    "summary": "A rapid caster who bends action costs, spends Alacrity Points to cast faster and is rewarded for variety.",
+    "icon": "<path d='M15 4l1.5 4.5L21 10l-4.5 1.5L15 16l-1.5-4.5L9 10l4.5-1.5z'/><path d='M2 13h5M4 17h6M3 9h3'/>"
+  }
 }

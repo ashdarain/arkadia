@@ -13,9 +13,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import CONFIG from "../config.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const SRC = process.argv[2] ?? "A:/Obsidian/Arkadia/Basic Info.md";
+const SRC = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.notes.info}`;
 const OUT = path.resolve(process.argv[3] ?? path.join(HERE, "..", "data", "info.json"));
 const SCHEMA_VERSION = 1;
 

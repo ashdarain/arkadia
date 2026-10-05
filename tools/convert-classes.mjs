@@ -6,19 +6,20 @@
  *   node tools/convert-classes.mjs
  *   node tools/convert-classes.mjs "A:/Obsidian/Arkadia/Classes" "data/classes"
  *
- * Includes notes tagged #combat_class, skips anything tagged #wip.
+ * Which notes are included (#combat_class, not #wip) is set in config.mjs.
  * No dependencies — plain Node 18+.
  */
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import CONFIG from "../config.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const SRC_DIR = process.argv[2] ?? "A:/Obsidian/Arkadia/Classes";
+const SRC_DIR = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.classes.folder}`;
 const OUT_DIR = path.resolve(process.argv[3] ?? path.join(HERE, "..", "data", "classes"));
 
-const REQUIRED_TAG = "combat_class";
-const EXCLUDED_TAGS = ["wip"];
+const REQUIRED_TAG = CONFIG.classes.requiredTag.toLowerCase();
+const EXCLUDED_TAGS = CONFIG.classes.excludedTags.map((t) => t.toLowerCase());
 const IGNORED_SECTIONS = ["old stuff", "notes"]; // h1 sections that are design scratch space
 const SCHEMA_VERSION = 2;
 

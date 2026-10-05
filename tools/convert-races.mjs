@@ -18,9 +18,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import CONFIG from "../config.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const SRC = process.argv[2] ?? "A:/Obsidian/Arkadia/Races.md";
+const SRC = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.notes.races}`;
 const OUT = path.resolve(process.argv[3] ?? path.join(HERE, "..", "data", "races.json"));
 const NOTE_SECTIONS = ["notes", "old stuff"];
 const SCHEMA_VERSION = 1;
