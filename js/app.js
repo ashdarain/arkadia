@@ -822,14 +822,12 @@ const COPYABLE = [
   ".equip",                                                     // equipment
 ].join(", ");
 
-const COPY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4h-9A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>';
-const DONE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
-
+/** The card's cut-off corner becomes the copy button: it fills in on hover and copies on click. */
 function addCopyButtons() {
   for (const card of main.querySelectorAll(COPYABLE)) {
     if (card.querySelector(":scope > .copy-btn")) continue;
     card.classList.add("copyable");
-    card.insertAdjacentHTML("afterbegin", `<button type="button" class="copy-btn" title="Copy as text" aria-label="Copy as text">${COPY_ICON}</button>`);
+    card.insertAdjacentHTML("afterbegin", `<button type="button" class="copy-btn" aria-label="Copy to clipboard"></button><span class="copy-tip" aria-hidden="true">Copy to clipboard</span>`);
   }
 }
 
@@ -847,7 +845,7 @@ function plainText(el) {
   const words = (n) => [...n.childNodes].map((x) => x.textContent.replace(/\s+/g, " ").trim()).filter(Boolean).join(" ");
   const walk = (n) => {
     if (n.nodeType === 3) { out.push(n.nodeValue.replace(/\s+/g, " ")); return; }
-    if (n.nodeType !== 1 || n.matches(".copy-btn, [hidden], svg, .level-divider")) return;
+    if (n.nodeType !== 1 || n.matches(".copy-btn, .copy-tip, [hidden], svg, .level-divider")) return;
     for (const [sel, sep] of JOINED) {
       if (n.matches(sel)) {
         const parts = [...n.children].map((c) => (c.matches(".equip-rows, ul, .body, .up-text, .trait-text") ? plainText(c).replace(/\n+/g, " ") : words(c))).filter(Boolean);
@@ -1136,9 +1134,10 @@ function selectTab(btn, focus = false) {
 main.addEventListener("click", (e) => {
   const copy = e.target.closest(".copy-btn");
   if (copy) {
+    const tip = copy.nextElementSibling;
     copyText(plainText(copy.parentElement)).then(() => {
-      copy.innerHTML = DONE_ICON; copy.classList.add("done"); copy.title = "Copied";
-      setTimeout(() => { copy.innerHTML = COPY_ICON; copy.classList.remove("done"); copy.title = "Copy as text"; }, 1400);
+      copy.classList.add("done"); tip.textContent = "Copied";
+      setTimeout(() => { copy.classList.remove("done"); tip.textContent = "Copy to clipboard"; }, 1200);
     });
     return;
   }
