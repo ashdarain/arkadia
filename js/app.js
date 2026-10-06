@@ -722,7 +722,6 @@ function equipRow(label, value) {
 
 function equipCard(item) {
   const sub = [
-    item.type && `<span class="chip">${esc(item.type)}</span>`,
     item.weight && `<span class="chip weight-${slugCss(item.weight)}">${esc(item.weight)}</span>`,
     item.stats && `<span class="equip-stats">${item.stats.map(esc).join(" | ")}</span>`,
   ].filter(Boolean).join("");
@@ -735,11 +734,14 @@ function equipCard(item) {
     </div>` : "";
   return `
     <article class="facet equip" id="equip--${item.id}">
-      <h3>${esc(item.name)}</h3>
+      <div class="equip-title">
+        <h3>${esc(item.name)}</h3>
+        ${item.type ? `<span class="equip-type">${esc(item.type)}</span>` : ""}
+      </div>
+      ${item.attributes?.length ? `<div class="attrs">${item.attributes.map(attrChip).join("")}</div>` : ""}
       ${sub ? `<div class="equip-sub">${sub}</div>` : ""}
       ${ac}
       ${attacks ? `<div class="equip-rows">${attacks}</div>` : ""}
-      ${item.attributes?.length ? `<div class="attrs">${item.attributes.map(attrChip).join("")}</div>` : ""}
       ${item.requirements || item.penalty || item.proficiencyBonus || item.expertiseBonus || item.extras ? `
         <div class="equip-rows bonuses">
           ${equipRow("Requires", item.requirements)}
@@ -833,7 +835,7 @@ function addCopyButtons() {
 
 // Rows whose parts read best on one line, and what joins them.
 const JOINED = [
-  [".meta, .chips, .attrs, .equip-sub, .ac-pair, .entry-head", " · "],
+  [".meta, .chips, .attrs, .equip-sub, .ac-pair, .entry-head, .equip-title", " · "],
   [".equip-row, .upgrade", ": "],
   [".trait", " - "],
 ];

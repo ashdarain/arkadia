@@ -510,8 +510,10 @@ mark { background: var(--accent-dim); color: #fff; padding: 0 2px; border-radius
 
 .equip { padding: 12px 13px; font-size: .85rem; line-height: 1.45; --cut: 11px; scroll-margin-top: 16px; }
 .equip.flash { animation: flash 1.6s ease-out; }
-.equip h3 { font-size: 1.18rem; padding-right: 10px; }
-.equip-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 5px 0 8px; }
+.equip-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 10px; margin-bottom: 7px; padding-right: 12px; }
+.equip h3 { font-size: 1.18rem; }
+.equip-type { font-size: .76rem; color: var(--muted); letter-spacing: .02em; }
+.equip-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -2px 0 8px; }
 .equip-sub .chip { font-size: .72rem; padding: 0 6px; }
 .equip-sub .weight-light { color: #b6c2a9; }
 .equip-sub .weight-medium { color: #d1c18e; }
@@ -530,7 +532,7 @@ mark { background: var(--accent-dim); color: #fff; padding: 0 2px; border-radius
 .equip-row b { color: var(--text); }
 .equip-row .none { color: #5d6378; }
 .equip-rows.bonuses { margin-top: 8px; }
-.attrs { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 0; }
+.attrs { display: flex; flex-wrap: wrap; gap: 5px; margin: -2px 0 9px; }
 .attr { font-size: .74rem; font-weight: 700; padding: 0 6px; line-height: 1.6; border-radius: var(--radius); color: var(--accent); background: var(--accent-dim); }
 .attr.has-def { cursor: help; text-decoration: underline dotted rgba(179, 166, 255, .5); text-underline-offset: 2px; }
 

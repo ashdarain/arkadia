@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-04T00:25:29.704Z",
+  "generatedAt": "2026-10-06T05:53:14.001Z",
   "source": "Weapons & Armour.md",
   "intro": "Equipment only have **penalties** if you are **not proficient** in them. For melee weapons, you can only make **Half Action** attacks if your weapon has **Light** or **Dexterous**. Ranged weapons require 2 hands to use unless they have the **One-handed** attribute.",
   "attributes": [
@@ -71,11 +71,8 @@
           "name": "Dagger",
           "category": "melee-weapons",
           "type": "Dagger",
-          "stats": [
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d6",
+            "dice": "1d6 + [DEX]",
             "damage": "Slashing or Piercing"
           },
           "halfAction": {
@@ -102,12 +99,8 @@
           "name": "Shortsword",
           "category": "melee-weapons",
           "type": "Sword",
-          "stats": [
-            "STR",
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d6 - 1d8",
+            "dice": "1d6 or 1d8 + [STR | DEX]",
             "damage": "Slashing or Piercing"
           },
           "halfAction": {
@@ -134,12 +127,8 @@
           "name": "Longsword",
           "category": "melee-weapons",
           "type": "Sword",
-          "stats": [
-            "STR",
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d8 - 1d10",
+            "dice": "1d8 or 1d10 + [STR | DEX]",
             "damage": "Slashing or Piercing"
           },
           "halfAction": {
@@ -166,11 +155,8 @@
           "name": "Greatsword",
           "category": "melee-weapons",
           "type": "Sword",
-          "stats": [
-            "STR"
-          ],
           "fullAction": {
-            "dice": "1d12",
+            "dice": "1d12 + [STR]",
             "damage": "Slashing or Piercing"
           },
           "halfAction": null,
@@ -190,11 +176,8 @@
           "name": "Battleaxe",
           "category": "melee-weapons",
           "type": "Axe",
-          "stats": [
-            "STR"
-          ],
           "fullAction": {
-            "dice": "1d8 - 1d10",
+            "dice": "1d8 or 1d10 + [STR]",
             "damage": "Slashing"
           },
           "halfAction": null,
@@ -210,11 +193,8 @@
           "name": "Greataxe",
           "category": "melee-weapons",
           "type": "Axe",
-          "stats": [
-            "STR"
-          ],
           "fullAction": {
-            "dice": "1d12",
+            "dice": "1d12 + [STR]",
             "damage": "Slashing"
           },
           "halfAction": null,
@@ -234,11 +214,8 @@
           "name": "Smithing Hammer",
           "category": "melee-weapons",
           "type": "Mace",
-          "stats": [
-            "STR"
-          ],
           "fullAction": {
-            "dice": "1d6",
+            "dice": "1d6 + [STR]",
             "damage": "Bludgeoning"
           },
           "halfAction": {
@@ -261,11 +238,8 @@
           "name": "Warhammer",
           "category": "melee-weapons",
           "type": "Mace",
-          "stats": [
-            "STR"
-          ],
           "fullAction": {
-            "dice": "1d8 - 1d10",
+            "dice": "1d8 or 1d10 + [STR]",
             "damage": "Bludgeoning"
           },
           "halfAction": null,
@@ -281,11 +255,8 @@
           "name": "Great Hammer",
           "category": "melee-weapons",
           "type": "Mace",
-          "stats": [
-            "STR"
-          ],
           "fullAction": {
-            "dice": "1d12",
+            "dice": "1d12 + [STR]",
             "damage": "Bludgeoning"
           },
           "halfAction": null,
@@ -305,12 +276,8 @@
           "name": "Spear",
           "category": "melee-weapons",
           "type": "Polearm",
-          "stats": [
-            "STR",
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d8 - 1d10",
+            "dice": "1d8 or 1d10 + [STR | DEX]",
             "damage": "Piercing"
           },
           "halfAction": {
@@ -341,11 +308,8 @@
           "name": "Halberd",
           "category": "melee-weapons",
           "type": "Polearm",
-          "stats": [
-            "STR"
-          ],
           "fullAction": {
-            "dice": "1d10",
+            "dice": "1d10 + [STR]",
             "damage": "Slashing or Piercing"
           },
           "halfAction": {
@@ -379,11 +343,8 @@
           "name": "Shortbow",
           "category": "ranged-weapons",
           "type": "Bow",
-          "stats": [
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d6",
+            "dice": "1d6 + [DEX]",
             "damage": "Piercing"
           },
           "halfAction": {
@@ -406,11 +367,8 @@
           "name": "Longbow",
           "category": "ranged-weapons",
           "type": "Bow",
-          "stats": [
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d8",
+            "dice": "1d8 + [DEX]",
             "damage": "Piercing"
           },
           "halfAction": null,
@@ -430,12 +388,8 @@
           "name": "Light Crossbow",
           "category": "ranged-weapons",
           "type": "Crossbow",
-          "stats": [
-            "STR",
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d6",
+            "dice": "1d6 + [STR | DEX]",
             "damage": "Piercing"
           },
           "halfAction": null,
@@ -459,12 +413,8 @@
           "name": "Heavy Crossbow",
           "category": "ranged-weapons",
           "type": "Crossbow",
-          "stats": [
-            "STR",
-            "DEX"
-          ],
           "fullAction": {
-            "dice": "1d8",
+            "dice": "1d8 + [STR | DEX]",
             "damage": "Piercing"
           },
           "halfAction": null,
@@ -492,7 +442,7 @@
           "category": "spell-foci",
           "type": "Staff",
           "fullAction": {
-            "dice": "1d4 (STR or DEX)",
+            "dice": "1d4 + [STR | DEX]",
             "damage": "Bludgeoning"
           },
           "halfAction": null,
@@ -502,8 +452,8 @@
               "value": null
             }
           ],
-          "proficiencyBonus": "+1 to Spell Attack Rolls.",
-          "expertiseBonus": "+3 to Spell Attack Rolls."
+          "proficiencyBonus": "Add you Proficiency bonus to Spell Attack rolls.",
+          "expertiseBonus": "Add you Expertise bonus to Spell Attack rolls."
         },
         {
           "id": "wooden-effigy",
@@ -514,7 +464,7 @@
           "halfAction": null,
           "attributes": [],
           "proficiencyBonus": "+1 Spell Save DC. Once per turn gain 1 Mana when you inflict an ailment on or defeat an enemy.",
-          "expertiseBonus": "Gain 3 Mana instead."
+          "expertiseBonus": "+2 Spell Save DC. Gain 3 Mana instead."
         }
       ]
     },
@@ -597,12 +547,7 @@
           "weight": "Heavy",
           "ac": "+2",
           "spellAc": "+1",
-          "attributes": [
-            {
-              "name": "Heavy",
-              "value": "15"
-            }
-          ],
+          "requirements": "15 STR",
           "penalty": "Cannot cast spells, -3m Movement.",
           "proficiencyBonus": "+1 AC, +1 Spell AC, -1m Movement",
           "expertiseBonus": "+1 AC, +2 Spell AC"

@@ -55,12 +55,12 @@
       "name": "Guardian",
       "abilityType": null,
       "cost": null,
-      "body": "Allies standing within your Melee range gain +1 to their AC and Spell AC. This increases by +1 at Sentinel levels 3, 6, and 9."
+      "body": "While having a shield equipped, allies standing within your Melee range gain +1 to their AC and Spell AC. This increases by +1 at Sentinel levels 3, 6, and 9."
     },
     {
-      "id": "vanguard-stride",
+      "id": "vanguard-step",
       "level": 2,
-      "name": "Vanguard Stride",
+      "name": "Vanguard Step",
       "abilityType": null,
       "cost": null,
       "body": "Once per turn you gain 4m of movement that can only be used to move towards allies. Moving towards allies with any form of movement allows you to ignore Difficult Terrain."

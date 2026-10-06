@@ -32,11 +32,32 @@ const slug = (s) =>
 const clean = (s) => s.replace(/\\([*[\]_])/g, "$1").replace(/\s+/g, " ").trim();
 const none = (v) => (v == null || /^none\.?$/i.test(v.trim()) ? null : v.trim());
 
-/** "1d6 | Slashing or Piercing" → { dice, damage }; "None" → null */
+const DAMAGE_TYPES = "Slashing|Piercing|Bludgeoning|Physical|Fire|Cold|Lightning|Aether|Poison|Psychic|Entropic|Water|Void|Acid|Radiant|Necrotic|Force|Thunder";
+
+/** Index of the first "|" that isn't inside [...] or (...), e.g. not the one in "[STR | DEX]". */
+function topLevelPipe(s) {
+  let depth = 0;
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (c === "[" || c === "(") depth++;
+    else if (c === "]" || c === ")") depth = Math.max(0, depth - 1);
+    else if (c === "|" && depth === 0) return i;
+  }
+  return -1;
+}
+
+/**
+ * "1d6 | Slashing or Piercing"                         → { dice: "1d6", damage: "Slashing or Piercing" }
+ * "1d6 or 1d8 + [STR | DEX] Slashing or Piercing"      → { dice: "1d6 or 1d8 + [STR | DEX]", damage: "Slashing or Piercing" }
+ * "None"                                               → null
+ */
 function attack(v) {
   if (!none(v)) return null;
-  const [dice, damage] = v.split("|").map((x) => x.trim());
-  return { dice, damage: damage || null };
+  const i = topLevelPipe(v);
+  if (i >= 0) return { dice: v.slice(0, i).trim(), damage: v.slice(i + 1).trim() || null };
+  // no separator: split off a trailing damage type if there is one
+  const m = v.match(new RegExp(`^(.*?)\\s+((?:${DAMAGE_TYPES})(?:\\s*(?:or|and|,|/)\\s*(?:${DAMAGE_TYPES}))*)\\.?$`, "i"));
+  return m ? { dice: m[1].trim(), damage: m[2].trim() } : { dice: v.trim(), damage: null };
 }
 
 /** "Light, Crit 1, Range - 12m" → [{ name: "Light", value: null }, { name: "Crit", value: "1" }, ...] */
