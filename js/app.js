@@ -27,6 +27,7 @@ const state = {
   equipment: null,      // data/equipment.json
   info: null,           // data/info.json
   equipFilter: null,    // null = show all categories, otherwise a category id
+  glossaryOpen: null,   // equipment attribute glossary; null = open on desktop, closed on phones
   showDrafts: readPref("arkadia.showDrafts") === "1",
   tagFilter: null,
   query: "",
@@ -713,7 +714,9 @@ function magicPage(sub) {
 function attrChip(a) {
   const def = state.equipment.attributes.find((d) => d.name.toLowerCase() === a.name.toLowerCase());
   const label = a.value ? `${a.name} ${a.value}` : a.name;
-  return `<span class="attr${def ? " has-def" : ""}"${def ? ` title="${esc(`${def.name}${def.param ? ` - ${def.param}` : ""}: ${def.text}`)}"` : ""}>${esc(label)}</span>`;
+  if (!def) return `<span class="attr">${esc(label)}</span>`;
+  const text = `${def.name}${def.param ? ` - ${def.param}` : ""}: ${def.text}`;
+  return `<button type="button" class="attr has-def" title="${esc(text)}" data-def="${esc(text)}" aria-expanded="false">${esc(label)}</button>`;
 }
 
 function equipRow(label, value) {
@@ -779,10 +782,10 @@ function equipmentPage() {
       ${d.intro ? `<div class="lede">${md(d.intro)}</div>` : ""}
     </header>
     ${d.attributes.length ? `
-      <section class="facet glossary" aria-labelledby="glossary-h">
-        <h2 id="glossary-h">Equipment attributes</h2>
+      <details class="facet glossary"${state.glossaryOpen ?? window.innerWidth > 760 ? " open" : ""}>
+        <summary><h2>Equipment attributes</h2></summary>
         <dl>${d.attributes.map((a) => `<div><dt>${esc(a.name)}${a.param ? ` <span>${esc(a.param)}</span>` : ""}</dt><dd>${md(a.text).replace(/^<p>|<\/p>$/g, "")}</dd></div>`).join("")}</dl>
-      </section>` : ""}
+      </details>` : ""}
     ${filter}
     ${content}`;
 }
@@ -847,7 +850,7 @@ function plainText(el) {
   const words = (n) => [...n.childNodes].map((x) => x.textContent.replace(/\s+/g, " ").trim()).filter(Boolean).join(" ");
   const walk = (n) => {
     if (n.nodeType === 3) { out.push(n.nodeValue.replace(/\s+/g, " ")); return; }
-    if (n.nodeType !== 1 || n.matches(".copy-btn, .copy-tip, [hidden], svg, .level-divider")) return;
+    if (n.nodeType !== 1 || n.matches(".copy-btn, .copy-tip, .attr-def, [hidden], svg, .level-divider")) return;
     for (const [sel, sep] of JOINED) {
       if (n.matches(sel)) {
         const parts = [...n.children].map((c) => (c.matches(".equip-rows, ul, .body, .up-text, .trait-text") ? plainText(c).replace(/\n+/g, " ") : words(c))).filter(Boolean);
@@ -1143,6 +1146,20 @@ main.addEventListener("click", (e) => {
     });
     return;
   }
+  const attr = e.target.closest(".attr.has-def");
+  if (attr) {
+    const row = attr.parentElement;
+    const open = row.nextElementSibling?.classList.contains("attr-def") ? row.nextElementSibling : null;
+    const same = open && open.dataset.for === attr.textContent;
+    open?.remove();
+    row.querySelectorAll(".attr").forEach((a) => a.setAttribute("aria-expanded", "false"));
+    if (!same) {
+      row.insertAdjacentHTML("afterend", `<p class="attr-def" data-for="${esc(attr.textContent)}">${esc(attr.dataset.def)}</p>`);
+      attr.setAttribute("aria-expanded", "true");
+    }
+    packMasonry();
+    return;
+  }
   const jump = e.target.closest(".ba-jump button");
   if (jump) {
     const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1171,6 +1188,18 @@ draftToggle.addEventListener("change", () => {
   state.showDrafts = draftToggle.checked;
   writePref("arkadia.showDrafts", state.showDrafts ? "1" : "0");
   render();
+});
+
+main.addEventListener("toggle", (e) => {
+  if (e.target.matches?.("details.glossary")) state.glossaryOpen = e.target.open;
+}, true);
+
+// Touch screens: the first tap on a card reveals its copy corner; tapping the corner then copies.
+main.addEventListener("pointerdown", (e) => {
+  if (e.pointerType === "mouse" || e.target.closest(".copy-btn")) return;
+  const card = e.target.closest(".copyable");
+  for (const c of main.querySelectorAll(".copyable.touched")) if (c !== card) c.classList.remove("touched");
+  card?.classList.add("touched");
 });
 
 main.addEventListener("keydown", (e) => {

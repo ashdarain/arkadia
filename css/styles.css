@@ -496,7 +496,12 @@ mark { background: var(--accent-dim); color: #fff; padding: 0 2px; border-radius
 
 .equip-head .lede { max-width: 90ch; font-size: .95rem; }
 .glossary { padding: 14px 18px 16px; margin-bottom: 22px; --cut: 16px; }
-.glossary h2 { font-size: 1.15rem; margin-bottom: 10px; }
+.glossary h2 { font-size: 1.15rem; display: inline; }
+.glossary summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+.glossary summary::-webkit-details-marker { display: none; }
+.glossary summary::after { content: ""; width: 7px; height: 7px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg) translateY(-2px); transition: transform .15s ease; }
+.glossary[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+.glossary[open] summary { margin-bottom: 10px; }
 .glossary dl { margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px 24px; }
 .glossary dl > div { font-size: .84rem; line-height: 1.45; }
 .glossary dt { display: inline; font-weight: 700; color: var(--text); }
@@ -534,7 +539,9 @@ mark { background: var(--accent-dim); color: #fff; padding: 0 2px; border-radius
 .equip-rows.bonuses { margin-top: 8px; }
 .attrs { display: flex; flex-wrap: wrap; gap: 5px; margin: -2px 0 9px; }
 .attr { font-size: .74rem; font-weight: 700; padding: 0 6px; line-height: 1.6; border-radius: var(--radius); color: var(--accent); background: var(--accent-dim); }
-.attr.has-def { cursor: help; text-decoration: underline dotted rgba(179, 166, 255, .5); text-underline-offset: 2px; }
+.attr.has-def { font-family: var(--body); border: 0; cursor: pointer; text-decoration: underline dotted rgba(179, 166, 255, .5); text-underline-offset: 2px; }
+.attr.has-def[aria-expanded="true"] { color: var(--bg); background: var(--accent); text-decoration: none; }
+.attr-def { margin: -4px 0 9px; padding: 6px 9px; font-size: .8rem; line-height: 1.45; color: #c8ccd9; background: var(--bg); border-left: 2px solid var(--accent); border-radius: var(--radius); }
 
 /* ---------- Magic stats ---------- */
 
@@ -615,7 +622,13 @@ mark { background: var(--accent-dim); color: #fff; padding: 0 2px; border-radius
 .copy-btn:hover, .copy-btn:focus-visible { background: var(--copy); }
 .copy-btn:focus-visible { outline: none; }
 .copy-btn.done { opacity: 1; background: var(--resource); }
-@media (hover: none) { .copy-btn { opacity: .5; } }
+/* touch screens: hidden (and not tappable) until the card itself has been tapped */
+@media (hover: none) {
+  .copyable { --copy-size: calc(max(var(--cut, 0px), 12px) + 16px); }
+  .copy-btn { opacity: 0 !important; pointer-events: none; }
+  .copyable.touched > .copy-btn { opacity: 1 !important; pointer-events: auto; }
+  .copy-tip { display: none; }   /* no label on touch screens; the corner's flash confirms the copy */
+}
 
 /* "Copy to clipboard" label beside the corner while it's hovered */
 .copy-tip {
@@ -718,6 +731,10 @@ mark { background: var(--accent-dim); color: #fff; padding: 0 2px; border-radius
   .level-table th, .level-table td { padding: 8px 10px; }
   .entry-tabs { flex-wrap: wrap; }
   .race-grid { grid-template-columns: minmax(0, 1fr); }
+  .points-table th, .points-table td { padding: 3px 6px; }
+  .filter button, .ba-jump button { padding: 8px 12px; }
+  .toggle { flex-direction: column; gap: 3px; }
+  .toggle::after { content: "Hidden"; font-size: .72rem; font-weight: 600; }
   .ascends { text-align: left; }
   .class-watermark { left: 50%; width: 80vw; }
   .crystal-facts { justify-content: flex-start; }
