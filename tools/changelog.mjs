@@ -6,6 +6,11 @@
  * and a readable Markdown note is written to log/YYYY-MM-DD_HH-MM.md if anything changed.
  *
  * In the log:  ~~removed words~~  ==added words==   (Obsidian shows == as a highlight)
+ *
+ * Renames: when an item vanishes and a new one appears in the same list (or a
+ * class/crystal file is swapped for a new one), their contents are compared. If
+ * they're mostly the same, it's logged as one "Renamed" line plus whatever else
+ * changed, instead of a separate "Removed" and "Added".
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -62,6 +67,50 @@ function keyed(arr) {
 }
 const isObjArray = (a) => Array.isArray(a) && a.some((x) => x && typeof x === "object");
 
+// ---------- rename detection ----------
+
+const NAME_KEYS = new Set(["id", "name", "title"]);
+/** How sure we need to be (0–1) that a removed + added pair is really one renamed item. */
+const RENAME_THRESHOLD = 0.6;
+
+/** Every word in an item except its name, lowercased (a bag of words). */
+function words(x, out = []) {
+  if (x === null || x === undefined) return out;
+  if (typeof x !== "object") { out.push(...plain(String(x)).toLowerCase().split(/[^\p{L}\p{N}+-]+/u).filter(Boolean)); return out; }
+  for (const [k, v] of Object.entries(x)) if (!NAME_KEYS.has(k) && !IGNORE_KEYS.has(k)) words(v, out);
+  return out;
+}
+/** Overlap of two bags of words: 1 = identical, 0 = nothing shared. */
+function overlap(a, b) {
+  if (!a.length && !b.length) return 1;
+  const count = new Map();
+  for (const w of a) count.set(w, (count.get(w) ?? 0) + 1);
+  let shared = 0;
+  for (const w of b) { const n = count.get(w); if (n) { shared++; count.set(w, n - 1); } }
+  return (2 * shared) / (a.length + b.length);
+}
+const named = (x) => x && typeof x === "object" && (x.name || x.title);
+
+/**
+ * Pair removed items with added ones that look like the same thing under a new name.
+ * Mostly judged by content; a shared word in the name helps a little. Best pairs first.
+ */
+function findRenames(removed, added) {
+  const nameWords = (x) => plain(named(x)).toLowerCase().split(" ");
+  const pairs = [];
+  for (const [ka, a] of removed) for (const [kb, b] of added) {
+    if (!named(a) || !named(b)) continue;
+    const wa = words(a), wb = words(b);
+    if (wa.length + wb.length < 4) continue;               // too little content to judge
+    const score = 0.85 * overlap(wa, wb) + 0.15 * overlap(nameWords(a), nameWords(b));
+    if (score >= RENAME_THRESHOLD) pairs.push({ ka, kb, a, b, score });
+  }
+  pairs.sort((x, y) => y.score - x.score);
+  const usedA = new Set(), usedB = new Set(), out = [];
+  for (const p of pairs) if (!usedA.has(p.ka) && !usedB.has(p.kb)) { usedA.add(p.ka); usedB.add(p.kb); out.push(p); }
+  return out;
+}
+
 // ---------- word diff for changed text ----------
 
 function wordDiff(a, b) {
@@ -100,15 +149,22 @@ function describe(v) {
   return short(plain(String(v)), 80);
 }
 
-function diff(a, b, trail, out, noun = "") {
+function diff(a, b, trail, out, noun = "", renamed = false) {
   if (JSON.stringify(a) === JSON.stringify(b)) return;
   const where = trail.join(" › ");
   const at = (x) => [where, labelOf(x)].filter(Boolean).join(" › ");
   if (isObjArray(a) || isObjArray(b)) {
     const A = keyed(a ?? []), B = keyed(b ?? []);
     const what = noun ? `${noun}: ` : "";
-    for (const [k, x] of B) if (!A.has(k)) out.push(`**Added** ${what}${at(x)}`);
-    for (const [k, x] of A) if (!B.has(k)) out.push(`**Removed** ${what}${at(x)}`);
+    const added = new Map([...B].filter(([k]) => !A.has(k)));
+    const removed = new Map([...A].filter(([k]) => !B.has(k)));
+    for (const r of findRenames(removed, added)) {
+      removed.delete(r.ka); added.delete(r.kb);
+      out.push(`**Renamed** ${what}${at(r.a)} → ${labelOf(r.b)}`);
+      diff(r.a, r.b, [...trail, labelOf(r.b)], out, "", true);
+    }
+    for (const x of added.values()) out.push(`**Added** ${what}${at(x)}`);
+    for (const x of removed.values()) out.push(`**Removed** ${what}${at(x)}`);
     for (const [k, x] of A) if (B.has(k)) diff(x, B.get(k), [...trail, labelOf(x)], out);
     return;
   }
@@ -122,7 +178,7 @@ function diff(a, b, trail, out, noun = "") {
   }
   if (a && b && typeof a === "object" && typeof b === "object") {
     for (const key of new Set([...Object.keys(a), ...Object.keys(b)])) {
-      if (IGNORE_KEYS.has(key)) continue;
+      if (IGNORE_KEYS.has(key) || (renamed && NAME_KEYS.has(key))) continue;
       if (NOUNS[key] && (isObjArray(a[key]) || isObjArray(b[key]))) diff(a[key], b[key], trail, out, NOUNS[key]);
       else diff(a[key], b[key], [...trail, LABELS[key] ?? key], out);
     }
@@ -146,7 +202,22 @@ export function buildChangelog(before, after) {
   const sections = new Map();
   const add = (sec, line) => { if (!sections.has(sec)) sections.set(sec, []); sections.get(sec).push(line); };
 
+  // a renamed class or crystal note shows up as one file gone and a new one in the same folder
+  const folder = (f) => f.includes("/") ? f.slice(0, f.lastIndexOf("/")) : "";
+  const gone = new Map(Object.keys(before).filter((f) => !(f in after)).map((f) => [f, before[f]]));
+  const fresh = new Map(Object.keys(after).filter((f) => !(f in before)).map((f) => [f, after[f]]));
+  const renamedFiles = findRenames(gone, fresh).filter((r) => folder(r.ka) && folder(r.ka) === folder(r.kb));
+  for (const r of renamedFiles) {
+    const [sec] = sectionOf(r.kb, r.b);
+    add(sec, `**Renamed** ${labelOf(r.a)} → ${labelOf(r.b)}`);
+    const lines = [];
+    diff(r.a, r.b, [labelOf(r.b)], lines, "", true);
+    for (const l of lines) add(sec, l);
+  }
+  const skip = new Set(renamedFiles.flatMap((r) => [r.ka, r.kb]));
+
   for (const file of new Set([...Object.keys(before), ...Object.keys(after)])) {
+    if (skip.has(file)) continue;
     const a = before[file], b = after[file];
     const [sec, name] = sectionOf(file, b ?? a);
     if (!a) { add(sec, `**Added** ${name ?? file}`); continue; }
