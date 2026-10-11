@@ -3,7 +3,8 @@
   "id": "assassin",
   "name": "Assassin",
   "tags": [
-    "stealth"
+    "stealth",
+    "offensive"
   ],
   "description": null,
   "healthPerLevel": {
@@ -70,7 +71,7 @@
       "name": "Coup de Grace",
       "abilityType": null,
       "cost": null,
-      "body": "Whenever you defeat an enemy, you next Attack or Spell Attack roll this combat gains +4 to Crit chance."
+      "body": "Whenever you defeat an enemy, you next Attack or Spell Attack roll this combat gains **+4** to **Crit** chance. Coup de Grace is a *Strong Buff*."
     },
     {
       "id": "disengage",

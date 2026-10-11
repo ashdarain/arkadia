@@ -75,6 +75,14 @@
       "body": "Choose a **pairs** of **Non-Physical** Damage Types, whenever you deal damage in the first of a pair, it’s converted to the second type of that damage in that pair. Choose an **additional pair** at Sage Levels 4, 7 and 10. There can be overlap between the pairs (you can have both Lightning → Aether and Cold → Aether as pairs). You can swap all pairs around with a Long Rest Action."
     },
     {
+      "id": "meditation",
+      "level": 2,
+      "name": "Meditation",
+      "abilityType": null,
+      "cost": null,
+      "body": "Increase the Dice Class for Mana gained from Respites. The Dice Class is increased further at Player levels 8, 14 and 20."
+    },
+    {
       "id": "philosophize",
       "level": 3,
       "name": "Philosophize",

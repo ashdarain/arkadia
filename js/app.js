@@ -30,6 +30,7 @@ const state = {
   glossaryOpen: null,   // equipment attribute glossary; null = open on desktop, closed on phones
   showDrafts: readPref("arkadia.showDrafts") === "1",
   tagFilter: null,
+  magicFilters: {},     // magic overview: group key -> Set of picked values (see MAGIC_FILTERS)
   query: "",
   sectionTab: {},       // "classId/sectionId" -> active entry id (e.g. which Samurai stance is open)
   lastPage: {},         // tab -> last page opened in it, so the sidebar returns you there
@@ -276,7 +277,7 @@ function classSubtabs(activeId) {
 // data/class-summaries.json: { "<class-id>": { "summary": "...", "icon": "<svg shapes>" } } (a plain string is also accepted)
 const summaryOf = (c) => { const s = state.summaries[c.id]; return (typeof s === "string" ? s : s?.summary) ?? c.description ?? null; };
 const classIcon = (c, cls = "class-icon") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${state.summaries[c.id]?.icon ?? ICONS.classes}</svg>`;
-const chipsFor = (c) => c.tags.length ? `<div class="chips">${c.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join("")}</div>` : "";
+const chipsFor = (c, lit = null) => c.tags.length ? `<div class="chips">${c.tags.map((t) => `<span class="chip${t === lit ? " lit" : ""}">${esc(t)}</span>`).join("")}</div>` : "";
 
 /** "1d8 + 3" — the part that matters at a glance. */
 function hpCore(hp) {
@@ -287,7 +288,8 @@ function hpCore(hp) {
 
 function classOverview() {
   const tags = [...new Set(state.classes.flatMap((c) => c.tags))].sort();
-  const shown = state.tagFilter ? state.classes.filter((c) => c.tags.includes(state.tagFilter)) : state.classes;
+  const f = state.tagFilter;
+  const hits = f ? state.classes.filter((c) => c.tags.includes(f)).length : 0;
   return `
     ${classSubtabs(null)}
     <header class="page-head">
@@ -296,16 +298,17 @@ function classOverview() {
     <div class="filter" role="group" aria-label="Filter by tag">
       <button type="button" data-tag="" aria-pressed="${!state.tagFilter}">All</button>
       ${tags.map((t) => `<button type="button" data-tag="${esc(t)}" aria-pressed="${state.tagFilter === t}">${esc(t)}</button>`).join("")}
+      ${f ? `<span class="filter-count">${hits} of ${state.classes.length}</span>` : ""}
     </div>
-    <div class="roster">
-      ${shown.map((c) => `
-        <a class="facet" href="#/classes/${c.id}">
+    <div class="roster${f ? " filtering" : ""}">
+      ${state.classes.map((c) => `
+        <a class="facet${f && c.tags.includes(f) ? " match" : ""}" href="#/classes/${c.id}">
           <div class="roster-top">
             <h2>${classIcon(c)}${esc(c.name)}</h2>
             ${c.healthPerLevel ? `<span class="roster-hp" title="Health per level">${hpCore(c.healthPerLevel)}</span>` : ""}
           </div>
           ${summaryOf(c) ? `<p class="summary">${esc(summaryOf(c))}</p>` : ""}
-          ${chipsFor(c)}
+          ${chipsFor(c, f)}
         </a>`).join("")}
     </div>`;
 }
@@ -587,27 +590,73 @@ function magicSubtabs(activeId) {
     </nav>`;
 }
 
+/* Magic overview filters. Each group is a set of picked values: a crystal
+   lights up when it matches at least one pick in every group that has picks. */
+const STAT_ORDER = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
+const MAGIC_FILTERS = [
+  { key: "tier", label: "Tier", values: (c) => (c.tier ? [String(c.tier)] : []) },
+  { key: "tag", label: "Tags", values: (c) => c.keywords ?? [] },
+  { key: "damage", label: "Damage", values: (c) => damageTypesOf(c) },
+  { key: "stat", label: "Stats", values: (c) => c.stats ?? [] },
+];
+const magicPicks = (key) => (state.magicFilters[key] ??= new Set());
+const magicFiltering = () => MAGIC_FILTERS.some((g) => magicPicks(g.key).size);
+const crystalMatches = (c) => MAGIC_FILTERS.every((g) => {
+  const picks = magicPicks(g.key);
+  return !picks.size || g.values(c).some((v) => picks.has(v));
+});
+/** True if this value of this crystal is one of the active picks (lights up the matching chip). */
+const litFor = (key, v) => magicPicks(key).has(v) ? " lit" : "";
+
+function magicFilterBar() {
+  const crystals = state.magic.crystals;
+  const order = (key, list) => key === "tier" ? list.sort((a, b) => a - b)
+    : key === "stat" ? list.sort((a, b) => STAT_ORDER.indexOf(a) - STAT_ORDER.indexOf(b))
+    : list.sort();
+  const groups = MAGIC_FILTERS.map((g) => {
+    const vals = order(g.key, [...new Set(crystals.flatMap(g.values))]);
+    if (!vals.length) return "";
+    return `
+      <div class="fgroup fgroup-${g.key}" role="group" aria-label="Filter by ${g.label.toLowerCase()}">
+        <span class="fgroup-label">${g.label}</span>
+        ${vals.map((v) => `<button type="button" data-mfilter="${g.key}" data-value="${esc(v)}" aria-pressed="${magicPicks(g.key).has(v)}">${esc(v)}</button>`).join("")}
+      </div>`;
+  }).join("");
+  const on = magicFiltering();
+  const hits = on ? crystals.filter(crystalMatches).length : 0;
+  return `
+    <div class="filter-bar">
+      ${groups}
+      <div class="fbar-end">
+        ${on ? `<span class="filter-count">${hits} of ${crystals.length}</span><button type="button" class="fclear" data-mfilter-clear>Clear</button>` : ""}
+      </div>
+    </div>`;
+}
+
 function magicOverview() {
+  const on = magicFiltering();
   return `
     ${magicSubtabs(null)}
     <header class="page-head">
       <h1>Magic</h1>
     </header>
-    <div class="roster">
+    ${magicFilterBar()}
+    <div class="roster${on ? " filtering" : ""}">
       ${state.magic.crystals.map((c) => {
         const shown = c.spells.filter(spellInScope);
+        const dmg = damageTypesOf(c);
         return `
-        <a class="facet crystal-card" href="#/magic/${c.id}" style="--crystal: ${crystalColor(c)}">
+        <a class="facet crystal-card${on && crystalMatches(c) ? " match" : ""}" href="#/magic/${c.id}" style="--crystal: ${crystalColor(c)}">
           <div class="roster-top">
             <h2>${gem}${esc(c.name)}</h2>
-            ${c.tier ? `<span class="chip">Tier ${c.tier}</span>` : ""}
+            ${c.tier ? `<span class="chip${litFor("tier", String(c.tier))}">Tier ${c.tier}</span>` : ""}
           </div>
-          ${c.stats?.length ? `<div class="crystal-stats"><span class="hp-label">Stats</span>${statPills(c)}</div>` : ""}
+          ${c.stats?.length ? `<div class="crystal-stats"><span class="hp-label">Stats</span>${c.stats.map((st) => `<span class="stat-pill${litFor("stat", st)}">${esc(st)}</span>`).join("")}</div>` : ""}
           <p class="summary">
-            ${shown.length} spell${shown.length === 1 ? "" : "s"}${damageTypesOf(c).length ? `, ${damageTypesOf(c).map(esc).join(" and ")} damage` : ""}.
+            ${shown.length} spell${shown.length === 1 ? "" : "s"}${dmg.length ? `, ${dmg.map((d) => `<span class="dmg${litFor("damage", d)}">${esc(d)}</span>`).join(" and ")} damage` : ""}.
             ${c.ascendsInto.length ? `<br>Ascends into ${c.ascendsInto.map(esc).join(", ")}.` : ""}
           </p>
-          ${c.keywords.length ? `<div class="chips">${c.keywords.map((k) => `<span class="chip">${esc(k)}</span>`).join("")}</div>` : ""}
+          ${c.keywords.length ? `<div class="chips">${c.keywords.map((k) => `<span class="chip${litFor("tag", k)}">${esc(k)}</span>`).join("")}</div>` : ""}
         </a>`;
       }).join("")}
     </div>`;
@@ -1172,6 +1221,18 @@ main.addEventListener("click", (e) => {
   if (eq) {
     state.equipFilter = eq.dataset.equip || null;
     if (location.hash !== "#/equipment") history.replaceState(null, "", "#/equipment");
+    render();
+    return;
+  }
+  const mf = e.target.closest("[data-mfilter]");
+  if (mf) {
+    const picks = magicPicks(mf.dataset.mfilter);
+    picks.has(mf.dataset.value) ? picks.delete(mf.dataset.value) : picks.add(mf.dataset.value);
+    render();
+    return;
+  }
+  if (e.target.closest("[data-mfilter-clear]")) {
+    state.magicFilters = {};
     render();
     return;
   }

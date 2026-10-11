@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T05:53:13.981Z",
+  "generatedAt": "2026-10-11T11:26:39.826Z",
   "id": "fire",
   "name": "Fire",
   "tier": 1,
@@ -25,7 +25,7 @@
     {
       "id": "burn",
       "name": "Burn",
-      "body": "Burn is a stackable Weak Debuff that deals 1d6 fire damage. At the start of turn make a CON save and take the damage on fail, then reduce the number of stacks by 1. Applying Burn again increases the number of stacks by that amount.",
+      "body": "Burn is a stackable Weak Debuff that deals **1d6**+[STAT] Fire damage. At the start of turn make a CON save and take the damage on fail, then reduce the number of stacks by 1. The Save DC is 13 or the caster’s DC, whichever is higher. Applying Burn again increases the number of stacks by that amount.",
       "source": "Conditions"
     }
   ],

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T05:53:13.981Z",
+  "generatedAt": "2026-10-11T11:26:39.826Z",
   "id": "ice",
   "name": "Ice",
   "tier": 1,
@@ -183,24 +183,24 @@
       "id": "frostforge",
       "name": "Frostforge",
       "ba": 15,
-      "ca": "4",
+      "ca": "3",
       "mana": "1+",
       "concentration": null,
       "tags": [],
       "body": "Conjure a weapon made of ice to use in a single Action granting various effects, which typically shatters upon use. Damage dice scales by 1 die per 10 Ice CA. Frostforge requires an empty hand to use.\n- **Dagger** - As a Half Action make a Melee Spell Attack to deal 1d4 Cold damage on hit and impale a frozen knife into the target. Each knife lasts 3 turns and at the start of the enemies turn they must make a CON save or gain 1 Chill. The target may use a Full Action to pull the knife out of their body, shattering it.\n- **Sword** - As a Reaction you may attempt to parry a melee attack. Make a Spell Attack Roll, and if it’s equal to or higher than the incoming attack, you successfully parry it and gain 1 Frost Charge.\n- **Axe** - +2 Mana. As a Full Action make a Melee Spell Attack to lodge a large frozen axe into an enemy. If the attack hits, deal 1d8 Cold damage and the target must make a CON save or be Frozen for 1 turn.\n- **Javelin** - As a Full Action hurl an icy spear at an enemy or empty ground within 10m. Make a Ranged Spell Attack to deal 1d6 Cold Damage on hit. If the attack misses or targets the ground, create a 1m sized Ice Object (Pillar) on empty ground within 1m of the target.\n- **Shield** - +1 Mana. As a Reaction, consume 1 Frost Charge to negate 1d12 damage from a single Spell or Attack. Gain 1 Frost Charge per 10 damage negated. *Damage blocked does not scale like the other Actions.*",
       "upgrades": [
         {
-          "ca": "3",
+          "ca": "4",
           "variant": null,
           "text": "Damage Dice Class increases by +1 at Player Levels 6, 12 and 18."
         },
         {
           "ca": "3",
           "variant": null,
-          "text": "You may consume Frost Charges to enhance Frostforge actions.\n- **Dagger** - Consume 1 charge allows for an immediate second strike and to impale another knife. Roll damage separately.\n- **Sword** - If you successfully parry, consume 1 charge to immediately counterattack dealing 1d8 Cold damage.\n- **Axe** - Each charge consumed decreases the target’s CON save by -2.\n- **Javelin** - Deal 1d6 more Cold damage per charge consumed. If you have Shape Ice unlocked you change the type of Object created (use Shape Ice for reference).\n- **Shield** - You may consume additional charges to increase the damage blocked by 1d12 per charge."
+          "text": "You may consume Frost Charges to enhance Frostforge actions.\n- **Dagger** - Consuming 1 charge allows for an immediate second strike and to impale another knife. Roll damage separately.\n- **Sword** - If you successfully parry, consume 1 charge to immediately counterattack dealing 1d8 Cold damage.\n- **Axe** - Each charge consumed decreases the target’s CON save by -2.\n- **Javelin** - Deal 1d6 more Cold damage per charge consumed. If you have Shape Ice unlocked you change the type of Object created (use Shape Ice for reference).\n- **Shield** - You may consume additional charges to increase the damage blocked by 1d12 per charge."
         },
         {
-          "ca": "5",
+          "ca": "4",
           "variant": null,
           "text": "Gain access to the following weapons and Actions:\n- **Lance** - +1 Mana. As a Full Action make a Melee Spell Attack to any enemy within +1m to your Melee Range, dealing 1d8 Cold damage on hit, then the target must make CON save or gain 1 Chill. If you consume Frost Charges while making this action, you may travel in a straight line 3m per charge. The lance pierces and attacks all enemies within 1m of the line.\n- **Hammer** - +1 Mana. As a Full Action make a Melee Spell Attack against enemies or Objects to slam a massive hammer upon them dealing 1d8 Cold Damage. If you consume 1 Frost charge, the target must make a CON save with Advantage or become Stunned for 1 turn. This attack Crits on a Nat 16 against Frozen creatures, and Crits on a Nat 11 against Objects. If you destroy an Ice Object this way, it deals Cold Damage equal to the damage deal to each enemy around it in a 2m AoE. Each charge consumed increases the AoE by +1m each.\n- **Greatsword** - As a Full Action, spin around in a circle making a Melee Spell Attack against all enemies within Melee Range with a -4 penalty. This spin attack may be repeated per Frost Charge consumed, costing +1 more Mana and -1 roll penalty per repeat. *The first repeat has a -5 penalty and 2 Mana cost, the third has a -6 penalty and 3 Mana cost, etc.*\n- **Scythe** - +1 Mana. As a Reaction, instead of an Attack of Opportunity, make a Melee Spell Attack against an enemy attempting to move out of your Melee Range. On hit deal 1d10 Cold damage and pull the target towards you within Melee Range, Immobilizing them until the end of their turn. Then you may either heal or gain Frost charges. Heal for half the damage dealt, gain 1 charge per 8 damage deal. When gaining charges, always gain at least 1.\n- **Chakram** - +2 Mana. As a Half Action make a Ranged Spell Attack against an enemy within 5m to deal 1d6 Cold damage. Regardless of whether the attack hit, the chakram bounces to another enemy within 5m with another attack roll. Each target hit must make a CON save or gain 1 Chill. You may consume charges to make the chakram bounce multiple times, but it cannot to the same target twice in a row."
         }
@@ -210,7 +210,7 @@
       "id": "summon-cryo-sigil",
       "name": "Summon Cryo Sigil",
       "ba": 15,
-      "ca": "5",
+      "ca": "4",
       "mana": "4",
       "concentration": null,
       "tags": [],

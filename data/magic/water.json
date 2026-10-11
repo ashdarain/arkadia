@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T05:53:13.981Z",
+  "generatedAt": "2026-10-11T11:26:39.826Z",
   "id": "water",
   "name": "Water",
   "tier": 2,
@@ -23,13 +23,13 @@
     {
       "id": "immobilize",
       "name": "Immobilize",
-      "body": "Immobilized creatures cannot move and fail any AGI rolls.",
+      "body": "Immobilized creatures cannot move and fail AGI rolls. You can still Teleport while immobilized.",
       "source": "Conditions"
     },
     {
       "id": "disarm",
       "name": "Disarm",
-      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci.",
+      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci or items equipped in their hands.",
       "source": "Conditions"
     },
     {

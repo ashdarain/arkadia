@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T05:53:13.962Z",
+  "generatedAt": "2026-10-11T11:26:39.804Z",
   "source": "Races.md",
   "intro": "One of your d20 rolls in Character Creation is assigned to your race, the outcome of which determines how many points you get to spend on racial traits. (Racial traits have a Cost - Trait description). Unique traits cannot be taken with other unique traits of the same type.",
   "pointsTable": [
@@ -73,9 +73,14 @@
               "text": "Proficiency in any two Skills, Ineptitude in another."
             },
             {
-              "cost": 4,
+              "cost": 3,
               "unique": null,
               "text": "Expertise in any Skill, Ineptitude in two others."
+            },
+            {
+              "cost": 4,
+              "unique": null,
+              "text": "Expertise in any singular equipment type."
             },
             {
               "cost": 2,

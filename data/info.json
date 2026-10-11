@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T05:53:14.014Z",
+  "generatedAt": "2026-10-11T11:26:39.863Z",
   "source": "Basic Info.md",
   "panels": [
     {
@@ -26,7 +26,7 @@
         {
           "id": "full-actions",
           "title": "Full Actions",
-          "body": "- **Sprint:** Double your Movement based non temporary bonuses.\n- **Grapple:** If you have a free arm, you may attempt to Grapple a creature. They made a STR or AGI save based on your Save DC of 8 + STR + Proficiency Bonus. Creatures grappled have 0 Movement and have Disadvantage attacking anyone but you. You can drag to move the target, but each movement costs double, unless they are at least 2 Size Classes smaller than you. You can only grapple targets up to 1 Size Class above you. Creatures grappled by you can use a Half Action or Extra Action to make the AGI or STR save again to escape your grapple."
+          "body": "- **Respite:** Gain 1d4+[STAT] Mana, where STAT is any Stat from a Crystal with the most CA used.\n- **Sprint:** Double your Movement based non temporary bonuses.\n- **Grapple:** If you have a free arm, you may attempt to Grapple a creature. They made a STR or AGI save based on your Save DC of 8 + STR + Proficiency Bonus. Creatures grappled have 0 Movement and have Disadvantage attacking anyone but you. You can drag to move the target, but each movement costs double, unless they are at least 2 Size Classes smaller than you. You can only grapple targets up to 1 Size Class above you. Creatures grappled by you can use a Half Action or Extra Action to make the AGI or STR save again to escape your grapple."
         },
         {
           "id": "half-actions",
@@ -152,6 +152,13 @@
       "title": "Stealth",
       "important": false,
       "body": "Stealth gives you Advantage the first hit against enemies that are unaware of you, then breaks Stealth. Ending your turn in line of sight to an enemy reveals you as well.",
+      "sections": []
+    },
+    {
+      "id": "dual-wielding",
+      "title": "Dual Wielding",
+      "important": false,
+      "body": "On your turn if you spend at least two **Half Actions** attacking from two different **Light** weapons, you can use an **Extra Action** to make another Half Action-valued attack with either of your weapons.",
       "sections": []
     },
     {

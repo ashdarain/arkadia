@@ -63,7 +63,7 @@
       "name": "Quick Enchant: Ranged",
       "abilityType": null,
       "cost": null,
-      "body": "You may cast Enchant Weapon - Ranged spells as an Extra Action."
+      "body": "You may cast **Enchant Weapon - Ranged** spells as an Extra Action."
     },
     {
       "id": "prolonged-enchantment-ranged",
@@ -79,7 +79,7 @@
       "name": "Arcane Sharpshooter",
       "abilityType": null,
       "cost": null,
-      "body": "Abilities that apply to Ranged Attacks also apply to Ranged Spell Attacks. Add your **Proficiency Bonus** to your Ranged Spell Attack rolls. All Ranged Spell Attacks may use DEX instead of the other stats required for Attack and Damage rolls. At Arcane Archer Level 10, combine both DEX+INT to the rolls."
+      "body": "Abilities that apply to Ranged Attacks also apply to Ranged Spell Attacks. Add your **Proficiency Bonus** to your Ranged Spell Attack rolls.\n\nAll **Ranged Spell Attacks** may use DEX instead of the other stats required for Attack and Damage rolls. At Arcane Archer Level 10, your Ranged Spell Attacks use both DEX + INT to spell and damage rolls."
     },
     {
       "id": "flash-aspect",
@@ -87,7 +87,7 @@
       "name": "Flash Aspect",
       "abilityType": null,
       "cost": null,
-      "body": "Whenever you make a Ranged Attack, you may spend Mana to instantly apply an enchantment to the attack. Any **Enchant Weapon - Ranged** you’ve learned can be applied this way. This Enchantment only lasts for one attack, and **does not** replace the previously applied Enchantment; it only temporarily overrides it. Mana cost depends on the Crystal type, Tier 1 -> 1 Mana, Tier 2 -> 2 Mana, Tier 3 -> 3 Mana. At Arcane Archer Level 7, the mana cost is reduced to Tier 1 -> 1 Mana, Tier 2 -> 1 Mana, Tier 3 -> 2 Mana."
+      "body": "Whenever you make a Ranged Attack, you may spend Mana to instantly apply an enchantment to the attack. Any **Enchant Weapon - Ranged** you’ve learned can be applied this way. This Enchantment only lasts for one attack, and **does not** replace the previously applied Enchantment; it temporarily overrides it instead.\n\nMana cost depends on the Crystal type, Tier 1 -> 1 Mana, Tier 2 -> 2 Mana, Tier 3 -> 3 Mana. At Arcane Archer Level 6, the mana cost is reduced to Tier 1 -> 1 Mana, Tier 2 -> 1 Mana, Tier 3 -> 2 Mana."
     }
   ],
   "abilityGroups": [],

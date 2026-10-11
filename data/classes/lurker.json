@@ -49,28 +49,28 @@
       "body": "Gain Proficiencies in any three weapons of your choice, as well as Light and Medium armours."
     },
     {
-      "id": "patient-anticipation",
+      "id": "patience",
       "level": 1,
-      "name": "Patient Anticipation",
+      "name": "Patience",
       "abilityType": null,
       "cost": null,
-      "body": "After all creatures rolled for Initiative, you may lower the d20 value of yours to a 1 or 0."
-    },
-    {
-      "id": "delayed-assault",
-      "level": 1,
-      "name": "Delayed Assault",
-      "abilityType": null,
-      "cost": null,
-      "body": "The first **Attack** roll you make against an enemy each Round that already had their turn, gains **+1d6**."
+      "body": "After all creatures roll for Initiative, you may lower the d20 value of your Initiative to a 1 or 0."
     },
     {
       "id": "watching-carefully",
-      "level": 2,
+      "level": 1,
       "name": "Watching Carefully",
       "abilityType": null,
       "cost": null,
-      "body": "The first time a **Attack** or **Spell Attack** roll is made against you each turn, if your turn has not started yet, the attack is made with **Disadvantage**. This does not conflict nor count towards Enhanced Disengage (you can use both)."
+      "body": "The first 2 Attack or Spell Attacks made against you each Round before your turn have **Disadvantage**. The number of disadvantaged attacks increases by +1 at Lurker levels 4, 6, 8 and 10. This does not conflict nor count towards Enhanced Disengage (you can use both)."
+    },
+    {
+      "id": "delayed-assault",
+      "level": 2,
+      "name": "Delayed Assault",
+      "abilityType": null,
+      "cost": null,
+      "body": "The first **Attack** roll you make against each enemy that already had their turn, gains **+1d6**."
     },
     {
       "id": "lying-in-wait",
@@ -78,7 +78,7 @@
       "name": "Lying in Wait",
       "abilityType": null,
       "cost": null,
-      "body": "Once per enemy when you make an Attack or Spell Attack towards a target that already had their turn, add **+1d6** damage to the attack. The damage type is equal to the most prominent damage type from the attack. Damage increases by **+1d6** at Lurker levels 3, 5, 7 and 9. At Lurker Level 10 and Player Level 17, increase the Damage Dice Class by **+1**."
+      "body": "Once per enemy when you make an Attack or Spell Attack towards a target that already had their turn, add **+1d6** damage to the attack. The damage type is equal to the most prominent damage type from the attack. Damage increases by **+1d6** at Lurker levels 3, 5, 7 and 9. At Lurker Level 10 and Player Level 17, increase the **Damage Dice Class** by **+1**."
     },
     {
       "id": "enhanced-disengage",
@@ -86,7 +86,7 @@
       "name": "Enhanced Disengage",
       "abilityType": null,
       "cost": null,
-      "body": "You can preform Disengage as an Extra Action. Attacks of Opportunity made against you are made with Disadvantage if the attacker’s turn has already passed. This does not conflict nor count towards Watching Carefully (you can use both)."
+      "body": "You can preform Disengage as an Extra Action. Attacks of Opportunity made against you are made with **Disadvantage** if the attacker’s turn has already passed. This does not conflict nor count towards Watching Carefully (you can use both)."
     },
     {
       "id": "cunning-stealth",
@@ -99,17 +99,7 @@
   ],
   "abilityGroups": [],
   "sections": [],
-  "drafts": [
-    {
-      "id": "later",
-      "level": null,
-      "name": "later",
-      "abilityType": null,
-      "cost": null,
-      "body": "additional turn at the end of the round",
-      "draftReason": "no level"
-    }
-  ],
+  "drafts": [],
   "designerNotes": [],
   "source": "Classes/Lurker.md"
 }

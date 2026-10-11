@@ -54,7 +54,7 @@
       "name": "Take Aim",
       "abilityType": null,
       "cost": null,
-      "body": "If you haven’t moved on your turn yet, you may reduce your movement speed by -8m this turn. If you do all *Full Action* ranged Attacks this turn gain **Advantage**. *Half Action* ranged Attacks gain **+1d4** to Attack rolls instead, upgrading to **+1d6** at Marksman Level 6."
+      "body": "If you haven’t moved on your turn yet, you may reduce your movement speed by -8m. If you do all *Full Action* ranged Attacks this turn gain **Advantage**. *Half Action* ranged Attacks gain **+1d4** to Attack rolls instead, upgrading to **+1d6** at Marksman Level 6."
     },
     {
       "id": "overwatch",

@@ -38,7 +38,7 @@ export default {
   notes: {
     magicFolder: "Magic",
     races: "Races.md",
-    equipment: "Weapons & Armour.md",
+    equipment: "Equipment.md",
     info: "Basic Info.md",
   },
 };

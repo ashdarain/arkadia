@@ -55,7 +55,7 @@
       "name": "Guardian",
       "abilityType": null,
       "cost": null,
-      "body": "While having a shield equipped, allies standing within your Melee range gain +1 to their AC and Spell AC. This increases by +1 at Sentinel levels 3, 6, and 9."
+      "body": "While having a shield equipped, allies standing within **1m** of you gain **+1** to their **AC** and **Spell AC**. This increases by +1 at Sentinel levels 4, 7, and 10."
     },
     {
       "id": "vanguard-step",
@@ -79,7 +79,7 @@
       "name": "Bulwark",
       "abilityType": null,
       "cost": null,
-      "body": "If you have a Medium or larger shield equipped, as an **Extra** or **Half Action** you can hunker down giving cover to allies adjacent but not in front of you. You can +**2 AC** and **+1 Spell AC** until the start of your next turn. AC and Spell AC increases by **+1** at Sentinel Levels *5* and *8*. Allies to the side of you Half Cover, allies behind you have Full Cover. If they ally is 2 or more Size Classes above you, they do not gain the benefits of cover (A Medium creature can make cover for a Large creature but not a Huge one). Moving or being knocked prone breaks this formation and the cover."
+      "body": "If you have a Medium or Large shield equipped, as an **Extra** or **Half Action** you can hunker down giving cover to allies adjacent but not in front of you. You gain +**2 AC** and **+1 Spell AC** until the start of your next turn, where Bulwark ends. AC and Spell AC increases by **+1** at Sentinel Levels *5* and *8*. Allies behind you have **Full Cover** while allies to the side of you have **Half Cover**. **Attack of Opportunities** you make while in Bulwark have **Disadvantage**. If the ally is 2 or more *Size Classes* above you, they do not gain the benefits of cover (*A Medium creature can make cover for a Large creature but not a Huge one*). You may end Bulwark whenever during your turn, but being knocked *Prone* or failing **AGI** saves also ends the effect."
     },
     {
       "id": "taunting-cry",
@@ -87,7 +87,7 @@
       "name": "Taunting Cry",
       "abilityType": null,
       "cost": null,
-      "body": "As an *Extra* or *Half Action* shout at an enemy. They must make a WIS save or become **Taunted** towards you until the end of their next turn. The Save DC is equal to your **8 + Proficiency Bonus + AC on equipped Shield + CHA**."
+      "body": "As an *Extra* or *Half Action* shout at an enemy. They must make a WIS save or become **Taunted** towards you until the end of their next turn. The Save DC is equal to **8 + Proficiency bonus + AC on equipped Shield + CHA**. At Sentinel Level 9 add your **Expertise** bonus instead.\n\n![[Conditions#Taunt]]"
     }
   ],
   "abilityGroups": [],
