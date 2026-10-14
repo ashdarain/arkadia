@@ -19,6 +19,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import CONFIG from "../config.mjs";
+import { expandEmbeds } from "./embeds.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SRC = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.notes.equipment}`;
@@ -164,7 +165,7 @@ if (!fs.existsSync(SRC)) {
   console.error(`Equipment note not found: ${SRC}`);
   process.exit(1);
 }
-const { data, warnings } = parse(fs.readFileSync(SRC, "utf8"));
+const { data, warnings } = parse(expandEmbeds(fs.readFileSync(SRC, "utf8"), path.dirname(path.resolve(SRC)), (w) => console.warn(`  ! ${w}`)));
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
 

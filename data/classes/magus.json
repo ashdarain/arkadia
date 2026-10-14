@@ -25,8 +25,8 @@
     {
       "level": 2,
       "ca": {
-        "total": 10,
-        "gain": 4
+        "total": 9,
+        "gain": 3
       },
       "grants": null
     },
@@ -34,7 +34,7 @@
       "level": 3,
       "ca": {
         "total": 14,
-        "gain": 4
+        "gain": 5
       },
       "grants": null
     }
@@ -50,12 +50,12 @@
       "body": "Gain Proficiencies in all Spell Foci, and Proficiency in Light armour. At Magus Level 3 gain Expertise in Staves."
     },
     {
-      "id": "charge-infusion",
+      "id": "critical-spells",
       "level": 2,
-      "name": "Charge Infusion",
+      "name": "Critical Spells",
       "abilityType": null,
       "cost": null,
-      "body": "Once per turn if an effect would cause you to gain **Charges**, spend **1 Mana** to gain **+1** additional Charges. At Player Levels 6, 10, 14, and 18 the maximum of Charges can you gain is increased by +1, but costs 1 Mana per charge generated. You may choose less than the maximum."
+      "body": "When casting a spell that doesn’t require an Attack roll, roll a **d20**. Regardless of the outcome, the spell’s effect does not normally change, however if you roll a **Nat 20** the spell **crits**, its damage is doubled and enemies effected by the spell fail any relevant Save. This d20 roll is affected by your Crit Chance with spells, so if you have +2 to Crit Chance, spells crit on an 18 or higher."
     },
     {
       "id": "expansive-casting",
@@ -66,12 +66,12 @@
       "body": "Increase the **range** of all spells by **+2m**. This is increased by an additional **+2m** at Magus Levels 4, 6, 8, and 10.\n\nCategorize AoE spells in 2 categories, **Small** and **Large**. Small spells have an circular radius 3m or less, diameter 6m or less, a rectangular area less than 25m, a cone with no dimension greater than 4m, etc. Large spells are anything larger. All **Small** spells gain **+1m** to their radius (+2m to their diameter), or **+1m** in *length* and *width*. All Large spells gain **+2m** to their radius, (+4 to their diameter), or **+2m** in *length* and *width*. Small spells gain additional **+1m** to all sizes (+2 for diameter) at Magus Levels **5** and **8**. Large spells gain additional **+2m** (+4m for diameter) at the same levels."
     },
     {
-      "id": "critical-spells",
+      "id": "charge-infusion",
       "level": 2,
-      "name": "Critical Spells",
+      "name": "Charge Infusion",
       "abilityType": null,
       "cost": null,
-      "body": "When casting a spell that doesn’t require an Attack roll, roll a **d20**. Regardless of the outcome, the spell’s effect does not normally change, however if you roll a **Nat 20** the spell **crits**, its damage is doubled and enemies effected by the spell fail any relevant Save. This d20 roll is affected by your Crit Chance with spells, so if you have +2 to Crit Chance, spells crit on an 18 or higher."
+      "body": "Once per turn if an effect would cause you to gain **Charges**, spend **1 Mana** to gain **+1** additional Charges. At Player Levels 6, 10, 14, and 18 the maximum of Charges can you gain is increased by +1, but costs 1 Mana per charge generated. You may choose less than the maximum."
     },
     {
       "id": "charge-regulation",

@@ -14,6 +14,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import CONFIG from "../config.mjs";
+import { expandEmbeds } from "./embeds.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SRC = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.notes.info}`;
@@ -75,7 +76,7 @@ if (!fs.existsSync(SRC)) {
   console.error(`Info note not found: ${SRC}`);
   process.exit(1);
 }
-const panels = parse(fs.readFileSync(SRC, "utf8"));
+const panels = parse(expandEmbeds(fs.readFileSync(SRC, "utf8"), path.dirname(path.resolve(SRC)), (w) => console.warn(`  ! ${w}`)));
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify({ schemaVersion: SCHEMA_VERSION, generatedAt: new Date().toISOString(), source: path.basename(SRC), panels }, null, 2) + "\n");
 

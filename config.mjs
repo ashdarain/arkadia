@@ -40,5 +40,6 @@ export default {
     races: "Races.md",
     equipment: "Equipment.md",
     info: "Basic Info.md",
+    conditions: "Conditions.md",
   },
 };

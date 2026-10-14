@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-11T11:26:39.863Z",
+  "generatedAt": "2026-10-14T11:39:47.543Z",
   "source": "Basic Info.md",
   "panels": [
     {
@@ -79,7 +79,7 @@
         {
           "id": "concentration",
           "title": "Concentration",
-          "body": "You can either Concentrate on one Major Concentration spell or two Minor Concentration spells. These are interchangeable like Full and Half Actions. You can break Concentration any time you want.\n\n**Breaking Concentration:** Whenever you take damage make a CON Save, you have a chance to Break Concentration. When you’re concentrating on multiple spells at a time, choose which one breaks.\n- Minor Concentration: Save DC = 10 or half damage taken rounded up, whichever is higher.\n- Major Concentration: Save DC = 8 + [STAT] + Proficiency Bonus, or half damage taken rounded up, whichever is higher."
+          "body": "You can either Concentrate on one Major Concentration spell or two Minor Concentration spells. These are interchangeable like Full and Half Actions. You can break Concentration any time you want.\n\n**Breaking Concentration:** Whenever you take damage make a CON Save, you have a chance to Break Concentration. When you’re concentrating on multiple spells at a time, choose which one breaks.\n- Minor Concentration: Save DC = 10 or half damage taken rounded up, whichever is higher. (Needs rework)\n- Major Concentration: Save DC = 8 + [STAT] + Proficiency Bonus, or half damage taken rounded up, whichever is higher."
         },
         {
           "id": "learning-spells",

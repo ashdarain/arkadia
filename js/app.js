@@ -26,6 +26,7 @@ const state = {
   magic: null,          // data/magic/*.json
   equipment: null,      // data/equipment.json
   info: null,           // data/info.json
+  conditions: null,     // data/conditions.json
   equipFilter: null,    // null = show all categories, otherwise a category id
   glossaryOpen: null,   // equipment attribute glossary; null = open on desktop, closed on phones
   showDrafts: readPref("arkadia.showDrafts") === "1",
@@ -52,6 +53,7 @@ const ICONS = {
   classes: '<path d="M12 3 4 6v6c0 4.5 3.4 7.8 8 9 4.6-1.2 8-4.5 8-9V6z"/><path d="M9 12l2 2 4-4"/>',
   magic: '<path d="M12 2 19 9 12 22 5 9z"/><path d="M5 9h14M12 2 9.5 9 12 22l2.5-13z"/>',
   equipment: '<path d="M14.5 3.5 20.5 3.5 20.5 9.5 10 20 4 14z"/><path d="M7 17l-3 3M8.5 12.5l3 3"/>',
+  conditions: '<path d="M2.5 12h4l2.2-5.5 4.3 11 2.6-7 1.6 1.5h4.3"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/>',
 };
 
@@ -61,6 +63,7 @@ const TABS = [
   { id: "classes", label: "Classes" },
   { id: "magic", label: "Magic" },
   { id: "equipment", label: "Equipment" },
+  { id: "conditions", label: "Conditions" },
   { id: "search", label: "Search" },
 ];
 
@@ -85,6 +88,19 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
 /** Minimal Markdown: paragraphs, line breaks, "- " lists, **bold**, *italic*. */
 function md(src) {
   if (!src) return "";
+  // ":::embed Name … :::" blocks (from ![[Note#Heading]] in the notes) become titled sub-boxes
+  if (src.includes(":::embed")) {
+    const parts = src.split(/^:::embed[ \t]*(.*)\n([\s\S]*?)\n?^:::[ \t]*$/m);
+    return parts.map((part, i) =>
+      i % 3 === 0 ? mdBlocks(part)
+      : i % 3 === 1 ? `<aside class="embed"><h4>${esc(part)}</h4>${mdBlocks(parts[i + 1])}</aside>`
+      : "").join("");
+  }
+  return mdBlocks(src);
+}
+
+function mdBlocks(src) {
+  if (!src || !src.trim()) return "";
   const inline = (s) => esc(s)
     .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
     .replace(/\*([^*\n]+?)\*/g, "<em>$1</em>");
@@ -115,7 +131,7 @@ function md(src) {
   }).join("");
 }
 
-const plain = (s) => String(s ?? "").replace(/\*\*?|__?/g, "");
+const plain = (s) => String(s ?? "").replace(/^:::(embed[ \t]*)?/gm, "").replace(/\*\*?|__?/g, "");
 
 function groupBy(list, key) {
   const map = new Map();
@@ -168,6 +184,10 @@ async function loadData() {
     const ir = await fetch(`${DATA_ROOT}/info.json`, { cache: "no-cache" });
     if (ir.ok) state.info = await ir.json();
   } catch { /* info page falls back to "work in progress" */ }
+  try {
+    const cr = await fetch(`${DATA_ROOT}/conditions.json`, { cache: "no-cache" });
+    if (cr.ok) state.conditions = await cr.json();
+  } catch { /* conditions page falls back to "work in progress" */ }
   state.byId = new Map(classes.map((c) => [c.id, c]));
 }
 
@@ -347,7 +367,7 @@ function levelTable(cls) {
     <section class="block">
       <div class="facet level-table-wrap">
         <table class="level-table">
-          <thead><tr><th scope="col">Level</th><th scope="col">CA</th><th scope="col">Features and abilities</th></tr></thead>
+          <thead><tr><th scope="col">Level</th><th scope="col">CA</th><th scope="col">Features and Abilities</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>
@@ -360,7 +380,7 @@ function featurePanel(cls, f, { draft = false } = {}) {
     draft && `<span class="badge draft">Draft</span>`,
     !draft && beyond(f.level) && `<span class="badge draft">Above level ${CONFIG.maxLevel}</span>`,
   ].filter(Boolean).join("");
-  const title = f.name ? `<h3>${esc(f.name)}</h3>` : `<h3 class="untitled">Unnamed feature</h3>`;
+  const title = f.name ? `<h3>${esc(f.name)}</h3>` : `<h3 class="untitled">Unnamed Feature</h3>`;
   return `
     <article class="facet panel feature${draft || beyond(f.level) ? " draft-panel" : ""}" id="${anchorId(cls.id, (draft ? "draft-" : "") + f.id)}">
       ${title}
@@ -649,7 +669,7 @@ function magicOverview() {
   return `
     ${magicSubtabs(null)}
     <header class="page-head">
-      <h1>Magic</h1>
+      <h1>Crystal Magic</h1>
     </header>
     ${magicFilterBar()}
     <div class="roster${on ? " filtering" : ""}">
@@ -894,6 +914,40 @@ function infoPage() {
     ${masonry(panels.map(infoPanel), 260, 4, "span-masonry info-grid")}`;
 }
 
+/* ---------------- Conditions ---------------- */
+
+/** "Weak Debuff" → the tag on a condition card; colour says buff/debuff, fill says strong. */
+const conditionTag = (c) =>
+  `<span class="cond-tag ${esc(c.kind)}${c.strength === "strong" ? " strong" : ""}">${esc(c.label)}</span>`;
+const conditionByName = (name) =>
+  state.conditions?.conditions.find((c) => c.name.toLowerCase() === String(name).trim().toLowerCase());
+
+function conditionsPage() {
+  const d = state.conditions;
+  if (!d) return wipPage({ label: "Conditions", wip: "Conditions haven't been generated yet. Run updateFromDocs.bat in the Website folder." });
+  const cards = d.conditions.map((c) => `
+    <article class="facet condition ${esc(c.kind)}" id="condition--${c.id}">
+      <div class="condition-head">
+        <h2>${esc(c.name)}</h2>
+        ${conditionTag(c)}
+      </div>
+      ${c.body ? `<div class="body">${md(c.body)}</div>` : '<p class="empty">No description yet.</p>'}
+    </article>`);
+  return `
+    <header class="page-head"><h1>Conditions</h1></header>
+    ${cards.length ? masonry(cards, 260, 4) : '<p class="empty">No conditions yet.</p>'}`;
+}
+
+/** Embedded sections named after a condition (e.g. "Taunt" in a class feature) link to it. */
+function linkConditionEmbeds() {
+  if (!state.conditions) return;
+  for (const h of main.querySelectorAll(".embed > h4")) {
+    const c = conditionByName(h.textContent);
+    if (!c || h.querySelector("a")) continue;
+    h.innerHTML = `<a href="#/conditions/${c.id}">${esc(c.name)}</a>${conditionTag(c)}`;
+  }
+}
+
 /* ---------------- Copy to clipboard ---------------- */
 
 // Cards that get a copy button (search results deliberately left out).
@@ -903,6 +957,7 @@ const COPYABLE = [
   ".feature", ".ability", ".mechanic", ".entry", ".option",      // classes (and crystal conditions)
   ".spell",                                                     // magic
   ".equip",                                                     // equipment
+  ".condition",                                                 // conditions
 ].join(", ");
 
 /** The card's cut-off corner becomes the copy button: it fills in on hover and copies on click. */
@@ -973,7 +1028,7 @@ function buildSearchIndex() {
       items.push({ group, kind: "Mechanic", title: m.name, text: plain(m.body), href: at("mech-" + m.id) });
     }
     for (const f of c.features) {
-      items.push({ group, kind: `Level ${f.level} feature`, title: f.name, text: plain(f.body), href: at(f.id), level: f.level });
+      items.push({ group, kind: `Level ${f.level} Feature`, title: f.name, text: plain(f.body), href: at(f.id), level: f.level });
     }
     for (const a of allAbilities(c)) {
       items.push({ group, kind: `Level ${a.level} ${a.group.resource} ability`, title: a.name, text: plain(a.body), href: at(a.id),
@@ -989,7 +1044,7 @@ function buildSearchIndex() {
       }
     }
     for (const d of c.drafts) {
-      items.push({ group, kind: "Draft", title: d.name || "Unnamed feature", text: plain(d.body), href: at("draft-" + d.id), draft: true });
+      items.push({ group, kind: "Draft", title: d.name || "Unnamed Feature", text: plain(d.body), href: at("draft-" + d.id), draft: true });
     }
     for (const it of items) if (it.group === group) it.extra = `${it.extra ?? ""} ${c.name} ${c.tags.join(" ")}`;
   }
@@ -1026,6 +1081,12 @@ function buildSearchIndex() {
       for (const s of p.sections) {
         items.push({ group, kind: p.title, title: s.title, text: plain(s.body), href: `#/info/${p.id}--${s.id}` });
       }
+    }
+  }
+  if (state.conditions) {
+    const group = { key: "conditions", name: "Conditions", href: "#/conditions" };
+    for (const c of state.conditions.conditions) {
+      items.push({ group, kind: c.label, title: c.name, text: plain(c.body), href: `#/conditions/${c.id}` });
     }
   }
   if (state.equipment) {
@@ -1110,7 +1171,7 @@ function searchPage() {
       ${icon("search")}
       <input id="q" type="search" placeholder="Search rules, races, classes, spells and equipment" value="${esc(state.query)}" autocomplete="off" aria-label="Search">
     </div>
-    <p class="search-scope">Searching basic info, races, combat classes, magic and equipment.</p>
+    <p class="search-scope">Searching basic info, races, combat classes, magic, equipment and conditions.</p>
     <div class="results" id="results">${searchResults(state.query)}</div>`;
 }
 
@@ -1140,6 +1201,7 @@ function render() {
   else if (tab === "search") html = searchPage();
   else if (tab === "races") html = racesPage();
   else if (tab === "info") html = infoPage();
+  else if (tab === "conditions") html = conditionsPage();
   else if (tab === "magic") { const r = magicPage(sub); html = r.html; title = r.title ?? title; }
   else if (tab === "equipment") {
     if (sub) state.equipFilter = null; // a link to one item opens the full view so it's visible
@@ -1163,6 +1225,7 @@ function render() {
   const view = `${tab}/${sub ?? ""}`;
   main.innerHTML = html;
   document.title = `${title} · Arkadia`;
+  linkConditionEmbeds();
   addCopyButtons();
   packMasonry();
   stickColumns();
@@ -1172,6 +1235,7 @@ function render() {
   const targetId = tab === "races" && sub ? `race--${sub}`
     : tab === "equipment" && sub ? `equip--${sub}`
     : tab === "info" && sub ? `info--${sub}`
+    : tab === "conditions" && sub ? `condition--${sub}`
     : anchor ? anchorId(sub, anchor) : null;
   if (targetId) {
     const el = document.getElementById(targetId);

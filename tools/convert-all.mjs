@@ -21,6 +21,8 @@ console.log("");
 await import("./convert-equipment.mjs");
 console.log("");
 await import("./convert-info.mjs");
+console.log("");
+await import("./convert-conditions.mjs");
 
 const log = writeChangelog(before, snapshot(DATA), path.join(ROOT, "log"));
 console.log(log ? `\nPatch notes written to ${path.relative(ROOT, log)}` : "\nNo data changes since the last update.");

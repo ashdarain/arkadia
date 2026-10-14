@@ -610,6 +610,41 @@ mark { background: var(--accent-dim); color: #fff; padding: 0 2px; border-radius
 .info-panel.important { font-size: 1rem; padding: 20px 22px; --cut: 20px; border-left: 2px solid var(--accent); }
 .info-panel.important h2 { font-size: 1.75rem; margin-bottom: 10px; }
 .info-panel .masonry { margin-top: 12px; }
+/* ---------- Conditions ---------- */
+
+.condition { padding: 16px 18px; font-size: .92rem; line-height: 1.55; scroll-margin-top: 16px; }
+.condition.flash { animation: flash 1.6s ease-out; }
+.condition-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-right: 12px; margin-bottom: 8px; }
+.condition h2 { font-size: 1.3rem; margin: 0; }
+.condition .body { color: #c8ccd9; }
+/* buffs read green-blue, debuffs read rose; a strong one is filled, a weak one outlined */
+.cond-tag {
+  --tag: var(--muted);
+  flex: none;
+  font: 600 .74rem/1.6 var(--body); white-space: nowrap;
+  padding: 0 7px;
+  color: var(--tag); border: 1px solid color-mix(in srgb, var(--tag) 55%, transparent); border-radius: var(--radius);
+}
+.cond-tag.buff { --tag: var(--resource); }
+.cond-tag.debuff { --tag: #e58fa0; }
+.cond-tag.strong { color: var(--bg); background: var(--tag); border-color: var(--tag); }
+.condition.debuff { box-shadow: inset 0 2px 0 color-mix(in srgb, #e58fa0 55%, var(--seam)); }
+.condition.buff { box-shadow: inset 0 2px 0 color-mix(in srgb, var(--resource) 55%, var(--seam)); }
+.embed > h4 { display: flex; align-items: baseline; gap: 8px; }
+.embed > h4 a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--seam-strong); }
+.embed > h4 a:hover { border-bottom-color: var(--text); }
+.embed > h4 .cond-tag { font-size: .68rem; }
+
+/* Embedded note sections (![[Conditions#Taunt]]) shown inside a feature, spell, etc. */
+.embed {
+  margin: 10px 0 2px; padding: 9px 12px 10px;
+  background: var(--bg);
+  border: 1px solid var(--seam); border-left: 2px solid var(--seam-strong); border-radius: var(--radius);
+  font-size: .92em;
+}
+.crystal-page .embed { border-left-color: color-mix(in srgb, var(--crystal) 60%, transparent); }
+.embed h4 { margin: 0 0 4px; font: 400 1.02rem var(--display); color: var(--text); }
+.embed p:last-child { margin-bottom: 0; }
 .info-sub { background: var(--bg); border: 1px solid var(--seam); border-radius: var(--radius); padding: 11px 13px; font-size: .9em; scroll-margin-top: 16px; }
 .info-sub h3 { font: 700 .98rem var(--body); color: var(--text); margin-bottom: 4px; }
 .info-sub .body { color: #bfc3d1; }

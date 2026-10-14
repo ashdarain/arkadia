@@ -8,7 +8,7 @@ All settings live in one file, `config.mjs`, read by both the site and the conve
 - `playtest`: what playtesters see by default (max class level, max spell BA, spells hidden by name ending)
 - `classes`: which class notes are converted (required tag, excluded tags)
 - `crystals`: which crystals are converted, in order, each with its colour on the site
-- `notes`: file names of the races, equipment and info notes
+- `notes`: file names of the races, equipment, info and conditions notes
 
 After editing it, refresh the browser. If you changed which notes are read (vault, classes, crystals),
 run `updateFromDocs.bat` too.
@@ -121,6 +121,23 @@ each `### Heading` inside it a sub box. A line containing only `*Important*` mak
 (important panels are shown first, two per row). Text, bullet lists and tables are shown as written.
 Any `# ` section (e.g. `# Notes`) is ignored.
 
+### Conditions
+
+```
+node tools/convert-conditions.mjs
+```
+
+Reads `A:/Obsidian/Arkadia/Conditions.md`, writes `data/conditions.json` (one file for all of them).
+`# Buffs` / `# Debuffs` say what kind a condition is, `## Weak …` / `## Strong …` how strong, and each
+`### Name` under them is one condition, so it gets a tag like "Weak Debuff". Empty sections are fine.
+
+### Embeds
+
+A line that is only an Obsidian embed, like `![[Conditions#Taunt]]`, is replaced by that section of the
+other note and shown as a sub box (`tools/embeds.mjs`, used by every converter). If the embedded section is
+a condition, its title links to the Conditions page. In a crystal's `# Overview`, embeds become mechanics
+as before.
+
 ## Files
 
 | Path                         | What it is                                      |
@@ -141,6 +158,9 @@ Any `# ` section (e.g. `# Notes`) is ignored.
 | `data/equipment.json`        | Generated equipment data (don't edit by hand)   |
 | `tools/convert-info.mjs`     | Basic Info.md → JSON converter                  |
 | `data/info.json`             | Generated info panels (don't edit by hand)      |
+| `tools/convert-conditions.mjs`| Conditions.md → JSON converter                 |
+| `data/conditions.json`       | Generated conditions (don't edit by hand)       |
+| `tools/embeds.mjs`           | Fills in `![[Note#Heading]]` embeds for the converters |
 | `data/magic/`                | Generated spell data, one file per crystal (don't edit by hand) |
 | `tools/convert-classes.mjs`  | Notes → JSON converter                          |
 | `tools/serve.mjs`            | Local server                                    |

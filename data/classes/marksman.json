@@ -46,7 +46,7 @@
       "name": "Marksman in Arms",
       "abilityType": null,
       "cost": null,
-      "body": "Either gain Proficiencies in all ranged weapons, or Expertise in a single ranged weapon. Also gain Proficiencies in Light and Medium armour."
+      "body": "Either gain Proficiencies in all ranged weapons. Gain Proficiencies in Light and Medium armour. At Marksman Level 4 gain Expertise in a ranged weapon of your choice."
     },
     {
       "id": "take-aim",
@@ -62,7 +62,7 @@
       "name": "Overwatch",
       "abilityType": null,
       "cost": null,
-      "body": "As a **Half Action** mark a cone up to **10m** in length and **5m** wide, watching over the area. If your Attack Range is less than 10m, then the cone’s length becomes your Attack Range. Until your next turn, whenever an enemy enters the cone, you may use a Reaction to make an attack equivalent to your Full Action ranged attack. Alternatively, you may instead choose to overwatch a single target within your Attack Range. If that target moves, makes an Attack, or casts a Spell, you may use your Reaction to attack them like above."
+      "body": "As a **Half Action** mark a cone up to **10m** in length **and** 5m wide, watching over the area. If your Attack Range is less than 10m, then the cone’s length becomes your Attack Range. Until your next turn, whenever an enemy enters the cone, you may use a **Reaction** to make an attack equivalent to your **Full Action** ranged attack. Alternatively, you may instead choose to overwatch a single target within your Attack Range. If that target moves, makes an Attack, or casts a Spell, you may use your Reaction to attack them instead."
     },
     {
       "id": "high-ground",
@@ -70,7 +70,7 @@
       "name": "High Ground",
       "abilityType": null,
       "cost": null,
-      "body": "If you are at least 2m above the target of your ranged attacks, deal +1d4 Physical damage with your ranged attacks. Deal an additional +1d4 per 2m above your target, capping out at 10m. Damage Dice class increases to +1d6 at Marksman Level 6."
+      "body": "If you are at least **2m** above the target of your ranged attacks, deal **+1d4** Physical damage with your ranged attacks. Deal an additional **+1d4** per 2m above your target, capping out at 10m. Damage Dice Class increases to **+1d6** at Marksman Level 6."
     },
     {
       "id": "quick-draw",
@@ -86,7 +86,7 @@
       "name": "Heavy Shots",
       "abilityType": null,
       "cost": null,
-      "body": "Increase the Damage Dice Class for Full Action ranged weapon attacks by +1."
+      "body": "Increase the Damage Dice Class by **+1** for Full Action ranged weapon attacks Dice Class increases by a further **+1** at Marksman levels 7 and 10, and Player Levels 14 and 20."
     }
   ],
   "abilityGroups": [],

@@ -24,6 +24,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import CONFIG from "../config.mjs";
+import { expandEmbeds } from "./embeds.mjs";
 
 // Which crystals to convert, in display order: set in config.mjs.
 const CRYSTALS = CONFIG.crystals.map((c) => c.name);
@@ -219,7 +220,9 @@ function parseCrystal(md, name) {
       const tier = title.match(/^BA\s*(\d+)/i);
       if (b.depth === 2 && tier) { tierBa = Number(tier[1]); continue; }
       if (b.depth >= 3) {
-        const spell = parseSpell(title, b.lines, tierBa, spellIds);
+        // embeds in spell text become sub-boxes (overview embeds above become mechanics instead)
+        const lines = expandEmbeds(b.lines.join("\n"), VAULT, (w) => warnings.push(w)).split("\n");
+        const spell = parseSpell(title, lines, tierBa, spellIds);
         if (spell.draftReason) crystal.drafts.push(spell);
         else crystal.spells.push(spell);
       }

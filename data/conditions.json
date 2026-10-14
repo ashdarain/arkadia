@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-14T11:39:47.555Z",
+  "source": "Conditions.md",
+  "conditions": [
+    {
+      "id": "burn",
+      "name": "Burn",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "Burn is a stackable Weak Debuff that deals **1d6**+[STAT] Fire damage. At the start of turn make a CON save and take the damage on fail, then reduce the number of stacks by 1. The Save DC is 13 or the caster’s DC, whichever is higher. Applying Burn again increases the number of stacks by that amount."
+    },
+    {
+      "id": "chill",
+      "name": "Chill",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "Chill is a stackable Weak Debuff that decreases movement speed by half rounded down, as well as decreasing Attack Rolls and AC by -1 per stack. Chill stacks up to **6** times. 1 stack of Chill is removed at the end of turn, and for every 8 Fire damage taken. Any creature affected by Chill can use a Full Action to warm themselves up and remove 3 stacks of Chill. This action may be restricted in certain conditions (environment, spell effects, etc)."
+    },
+    {
+      "id": "freeze",
+      "name": "Freeze",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "Freeze (or being Frozen) is a Weak Debuff that Immobilizes affected creature and prevents them from taking Actions. Freeze can last multiple turns and 1 turn is removed from the duration for every 16 Fire damage taken. Anyone can use a Full Action to make a [SAVE] and warm up a frozen creature to reduce the number of turns by -2. This action may be restricted in certain conditions (environment, spell effects, etc). Freezing an frozen target increases the duration based on the strength of the freeze applied."
+    },
+    {
+      "id": "immobilize",
+      "name": "Immobilize",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "Immobilized creatures cannot move and fail AGI rolls. You can still Teleport while immobilized."
+    },
+    {
+      "id": "disarm",
+      "name": "Disarm",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci or items equipped in their hands."
+    },
+    {
+      "id": "fear",
+      "name": "Fear",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "A creature that is Feared against a enemy cannot willingly move towards the enemy while it has line of sight of the enemy, and it makes attack/spell attack rolls against the enemy with Disadvantage. Fear is a Weak Debuff."
+    },
+    {
+      "id": "taunt",
+      "name": "Taunt",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "A taunted creature must make all attack rolls and target all spells towards the enemy who taunted them."
+    },
+    {
+      "id": "paranoia",
+      "name": "Paranoia",
+      "kind": "debuff",
+      "strength": "strong",
+      "label": "Strong Debuff",
+      "body": "A Paranoid creature does not act normally during their turn. They must use all actions attacking or casting spells against the closest creature, including allies. Paranoia is a Strong Debuff."
+    }
+  ]
+}

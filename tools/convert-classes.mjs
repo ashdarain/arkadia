@@ -13,10 +13,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import CONFIG from "../config.mjs";
+import { expandEmbeds } from "./embeds.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SRC_DIR = process.argv[2] ?? `${CONFIG.vault}/${CONFIG.classes.folder}`;
 const OUT_DIR = path.resolve(process.argv[3] ?? path.join(HERE, "..", "data", "classes"));
+const VAULT = path.dirname(path.resolve(SRC_DIR)); // ![[Note#Heading]] embeds are looked up here
 
 const REQUIRED_TAG = CONFIG.classes.requiredTag.toLowerCase();
 const EXCLUDED_TAGS = CONFIG.classes.excludedTags.map((t) => t.toLowerCase());
@@ -302,7 +304,7 @@ for (const f of fs.readdirSync(OUT_DIR)) if (f.endsWith(".json")) fs.unlinkSync(
 const index = [];
 const skipped = [];
 for (const file of fs.readdirSync(SRC_DIR).filter((f) => f.endsWith(".md")).sort()) {
-  const md = fs.readFileSync(path.join(SRC_DIR, file), "utf8");
+  const md = expandEmbeds(fs.readFileSync(path.join(SRC_DIR, file), "utf8"), VAULT, (w) => console.warn(`  ! ${file}: ${w}`));
   const { cls, tags, report } = parseClass(md, file);
 
   const bad = tags.find((t) => EXCLUDED_TAGS.includes(t));

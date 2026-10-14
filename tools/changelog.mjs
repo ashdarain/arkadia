@@ -23,7 +23,7 @@ const LABELS = { body: "text", ca: "CA", ba: "BA", spellAc: "Spell AC", ac: "AC"
 const NOUNS = { groups: "group", races: "race", categories: "category", items: "item", panels: "panel", sections: "section",
   entries: "entry", options: "option", features: "feature", abilityGroups: "ability group", abilities: "ability", spells: "spell",
   traits: "trait", upgrades: "upgrade", drafts: "draft", mechanics: "mechanic", levels: "level", attributes: "attribute",
-  pointsTable: "points row" };
+  pointsTable: "points row", conditions: "condition" };
 
 /** Read every JSON file under data/ into { "classes/samurai.json": {...}, ... }. */
 export function snapshot(dataDir) {
@@ -194,7 +194,7 @@ function diff(a, b, trail, out, noun = "", renamed = false) {
 function sectionOf(file, data) {
   if (file.startsWith("classes/")) return ["Classes", data?.name ?? file];
   if (file.startsWith("magic/")) return ["Magic", data?.name ?? file];
-  const top = { "races.json": "Races", "equipment.json": "Equipment", "info.json": "Info", "class-summaries.json": "Class summaries" }[file];
+  const top = { "races.json": "Races", "equipment.json": "Equipment", "info.json": "Info", "conditions.json": "Conditions", "class-summaries.json": "Class summaries" }[file];
   return [top ?? file, null];
 }
 
@@ -220,15 +220,15 @@ export function buildChangelog(before, after) {
     if (skip.has(file)) continue;
     const a = before[file], b = after[file];
     const [sec, name] = sectionOf(file, b ?? a);
-    if (!a) { add(sec, `**Added** ${name ?? file}`); continue; }
-    if (!b) { add(sec, `**Removed** ${name ?? file}`); continue; }
+    if (!a) { add(sec, `**Added** ${name ?? sec}`); continue; }
+    if (!b) { add(sec, `**Removed** ${name ?? sec}`); continue; }
     const lines = [];
     diff(a, b, name ? [name] : [], lines);
     for (const l of lines) add(sec, l);
   }
   if (!sections.size) return null;
 
-  const order = ["Info", "Races", "Classes", "Class summaries", "Magic", "Equipment"];
+  const order = ["Info", "Races", "Classes", "Class summaries", "Magic", "Equipment", "Conditions"];
   const keys = [...sections.keys()].sort((x, y) => (order.indexOf(x) + 1 || 99) - (order.indexOf(y) + 1 || 99));
   return keys.map((k) => `## ${k}\n\n${sections.get(k).map((l) => `- ${l}`).join("\n")}`).join("\n\n");
 }

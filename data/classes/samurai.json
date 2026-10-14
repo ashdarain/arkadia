@@ -66,7 +66,7 @@
       "name": "Stances",
       "abilityType": null,
       "cost": null,
-      "body": "**Mid Stance:** Gain +1 AC against Melee attacks. Whenever a Melee attack misses, you may Parry it as a Reaction, allowing you to move 1m and counterattack. This attack’s Attack and Damage rolls lose any Stat and Proficiency bonuses. You may move first and then attack, or vice-versa.\n\n**Raised Stance:** You have -4 AC, -2 to attack rolls, and +1d8 to Melee damage rolls. Damage increase by +1d8 at 5th and 10th level Samurai.\n\n**Draw Stance:** Whenever an enemy within your attack range makes a Melee attack against you, you may use a Reaction to counterattack. Make an attack roll with [DEX] against the target, and if you roll higher than them, their attack fails. Otherwise both of you attack.\n\n**Hidden Stance:** The first attack you make against each enemy each turn cannot be reacted to."
+      "body": "**Mid Stance:** Gain **+1 AC** against Melee attacks. Whenever a Melee attack misses, you may **Parry** it as a Reaction, allowing you to move  **counterattack** then move up to **1m**. This counterattack’s Attack and Damage rolls lose any Stat bonuses.\n\n**Raised Stance:** You have **-4 AC**, **+1d8** to Full Action Melee damage rolls, and **+1d4** to Half Action Melee attacks. All attacks in this stance must use **STR** for Attack and Damage rolls. Bonus damage Dice Count increases by **+1** at Samurai Levels 4, 7 and 10.\n\n**Draw Stance:** Whenever an enemy within your attack range makes a **Melee** attack against you, you may use a **Reaction** to **counterattack**. The counterattack is a Full Action-style attack using [DEX] for both Attack and Damage rolls, and if you roll higher than their, their attack **misses**. Otherwise both of you attack, with the enemy attacking first.\n\n**Hidden Stance:** Attacks made in this stance cannot be reacted to."
     },
     {
       "id": "alternating-stance-bonus",
@@ -74,7 +74,7 @@
       "name": "Alternating Stance Bonus",
       "abilityType": null,
       "cost": null,
-      "body": "At the start of each turn after you choose to change Stances, mark which Stance you are in. At the start of your turn if you are not in the same Stance as your last turn, all Melee attacks gain **+1d4** to hit. This bonus increases to **+1d6** at 6th level Samurai, and to **+1d8** at 12th level Samurai."
+      "body": "During the start of you turn after changing stances, mark which stance you’re in. Then if you’re in a different stance than the last marked stance, the first attack you make this turn gains **+1d4** to Attack and Damage rolls. This bonus increases to **+1d6** at 6th level Samurai, and to **+1d8** at 12th level Samurai."
     },
     {
       "id": "stance-swap",
@@ -82,7 +82,7 @@
       "name": "Stance Swap",
       "abilityType": null,
       "cost": null,
-      "body": "After defeating an enemy on your turn, you may change Stances as an Extra Action."
+      "body": "After defeating or landing a Crit on an enemy on your turn, you may change Stances as an Extra Action."
     }
   ],
   "abilityGroups": [],
@@ -97,37 +97,37 @@
           "name": "Mid Stance",
           "subtitle": "Chūdan",
           "flavor": "Hold your blade proudly in front of you, balancing offence and defence.",
-          "body": "Gain **+1 AC** against Melee attacks. Whenever a Melee attack misses, you may **Parry** it as a Reaction, allowing you to move **1m** and **counterattack**. This counterattack’s Attack and Damage rolls lose any Stat and Proficiency bonuses. You may move first and then attack, or vice-versa.",
+          "body": "Gain **+1 AC** against Melee attacks. Whenever a Melee attack misses, you may **Parry** it as a Reaction, allowing you to move  **counterattack** then move up to **1m**. This counterattack’s Attack and Damage rolls lose any Stat bonuses.",
           "options": [
             {
               "id": "defensive-posture",
               "name": "Defensive Posture",
-              "body": "Gain another +2 AC against Melee attacks."
+              "body": "Gain an additional **+2 AC** against **Melee** attacks."
             },
             {
               "id": "deflect-projectiles",
               "name": "Deflect Projectiles",
-              "body": "As a Reaction you may deflect any Small Projectile coming towards you."
+              "body": "As a **Reaction** you may deflect and **destroy** any **Small Projectile** coming towards you."
             },
             {
               "id": "samurai-s-talent",
               "name": "Samurai's Talent",
-              "body": "The counterattack no longer loses Proficiency bonuses (still doesn’t gain stat bonuses)"
+              "body": "The counterattack no longer loses Stat bonuses."
             },
             {
               "id": "counterflow",
               "name": "Counterflow",
-              "body": "Whenever you Parry an attack, you may change Stances immediately before OR after counterattacking."
+              "body": "Whenever you Parry an attack, you may change Stances immediately after counterattacking."
             },
             {
               "id": "focused-retaliation",
               "name": "Focused Retaliation",
-              "body": "If an enemy attacked you since your last turn, your next Melee attack against them gets +1d6 to hit."
+              "body": "If an enemy attacked you since your last turn, your next Melee attack against them gets **+1d6** to hit."
             },
             {
               "id": "flurry-of-slashes",
               "name": "Flurry of Slashes",
-              "body": "Once per Short Rest you may spend multiple Half Actions to power up a special attack. For each Half Action spent, this attack gains +2 hits. You may attack any number of enemies any number of times, using your movement to travel between them. After each hit you gain +1m of free movement that must be used right away. Your attacks have -4 to hit and deal 1d6 flat damage. If your weapon is enchanted, each hit costs 1 mana."
+              "body": "Once per Short Rest you may spend multiple Half Actions to power up a special attack. For each Half Action spent, this attack gains +2 hits. You may attack any number of enemies any number of times, using your movement to travel between them. After each hit you gain +1m of free movement that must be used right away. Your attacks have -4 to hit and deal 1d6 flat damage. If your weapon is enchanted, each hit costs 1 mana. You do not proc Attack of Opportunities with this movement."
             }
           ]
         },
@@ -136,37 +136,37 @@
           "name": "Raised Stance",
           "subtitle": "Jōdan",
           "flavor": "Raise your blade above your head in this high-risk high-reward aggressive Stance. Strike fear into your enemies as you advance with total resolve and absolute conviction.",
-          "body": "You have **-4 AC**, **-2** to attack rolls, and **+1d8** to Melee damage rolls, and double your [STR] to attacks and damage. Damage increase by **+1d8** at 5th and 10th level Samurai.",
+          "body": "You have **-4 AC**, **+1d8** to Full Action Melee damage rolls, and **+1d4** to Half Action Melee attacks. All attacks in this stance must use **STR** for Attack and Damage rolls. Bonus damage Dice Count increases by **+1** at Samurai Levels 4, 7 and 10.",
           "options": [
             {
               "id": "overwhelming-assault",
               "name": "Overwhelming Assault",
-              "body": "Add +2 to your Melee attack roll for each time you've attacked the same enemy this turn. (Your second attack would have +2, your third would have +4, etc.)"
+              "body": "Add **+2** to your Melee attack roll for each time you've attacked the same enemy this turn. (*Your second attack would have +2, your third would have +4, etc.*)"
             },
             {
               "id": "intimidating-stride",
               "name": "Intimidating Stride",
-              "body": "Add +1d6 to the attack roll for the first Melee attack you make against an enemy if you've moved at least 3m towards the target this turn (towards means each movement bring you closer to the target)."
+              "body": "Add **+1d6** to the **Attack** roll for the first **Melee** attack you make against an enemy if you've moved at least 3m towards the target this turn (towards means each movement brings you closer to the target)."
             },
             {
               "id": "fearsome-bellow",
               "name": "Fearsome Bellow",
-              "body": "Once per Short Rest whenever you defeat an enemy, you may take an Extra Action on that turn to shout and instill fear into the hearts of your enemies. Each enemy within 10m must pass a DC 12+[STR] WIS save or be Feared for 2 turns."
+              "body": "Once per Short Rest whenever you defeat an enemy, you may use an **Extra Action** on the same turn to shout and instill fear into the hearts of your enemies. Each enemy within **8m** must pass a DC 12+[STR] **WIS** save or be **Feared** for 2 turns."
             },
             {
               "id": "sweeping-blade",
               "name": "Sweeping Blade",
-              "body": "Increase the range of your Melee attacks by +1m. If you make an Melee attack against a target that isn't next to you, move 1m towards them if possible."
+              "body": "Increase the range of your Melee attacks by **+1m**. If you make an Melee attack against a target that isn't next to you, before attacking you may move **1m** towards them if possible."
             },
             {
               "id": "fracturing-blow",
               "name": "Fracturing Blow",
-              "body": "Whenever you miss a Melee attack within 4 AC, the target must pass a DC 12+[STR] STR save or be Disarmed for 1 turn (e.g. if the target AC is 18, a 15-17 roll is required for this to trigger)."
+              "body": "Whenever you miss a **Melee** attack within 4 AC, the target must pass a DC 12+[STR] STR save or be **Disarmed** for 1 turn (*e.g. if the target AC is 18, a 14-17 roll is required for this to trigger*)."
             },
             {
               "id": "measured-aggression",
               "name": "Measured Aggression",
-              "body": "Decrease the AC and attack roll penalty by +2."
+              "body": "Decrease the AC penalty to **-2 AC** instead."
             }
           ]
         },
@@ -175,37 +175,37 @@
           "name": "Draw Stance",
           "subtitle": "Iai",
           "flavor": "Sheath your blade as you prepare for the enemy, ensuring a quick and calculated response.",
-          "body": "Whenever an enemy within your attack range makes a Melee attack against you, you may use a Reaction to counterattack. Make an attack roll with [DEX] against the target, and if you roll higher than them, their attack fails. Otherwise both of you attack.",
+          "body": "Whenever an enemy within your attack range makes a **Melee** attack against you, you may use a **Reaction** to **counterattack**. The counterattack is a Full Action-style attack using [DEX] for both Attack and Damage rolls, and if you roll higher than their, their attack **misses**. Otherwise both of you attack, with the enemy attacking first.",
           "options": [
             {
               "id": "counter-swap",
               "name": "Counter Swap",
-              "body": "Whenever you Counterattack, you may immediately change Stances."
+              "body": "Whenever you Counterattack, you may immediately change Stances after."
             },
             {
               "id": "foresight-counter",
               "name": "Foresight Counter",
-              "body": "You have advantage on your counterattack rolls."
+              "body": "You have **advantage** on your counterattack rolls."
             },
             {
               "id": "ranged-slash",
               "name": "Ranged Slash",
-              "body": "You may make an attack against any target within 10m using whichever attack Action you can make a Melee attack with. If your blade is Enchanted, the ranged slash is Magical and deals whatever damage the Enchantment grants. Otherwise it deals Physical Slashing damage. This attack is considered Melee."
+              "body": "You may make a Full Action attack against any target within 8m. If your blade is Enchanted, the ranged slash is Magical and deals whatever damage the Enchantment grants. Otherwise it deals Physical Slashing damage. This attack is considered Melee."
             },
             {
               "id": "hilt-bump",
               "name": "Hilt Bump",
-              "body": "Instead of your regular Counterattack, you may choose to counterattack with your hilt. This attack uses [DEX], has a +2 to the attack roll, and deals 1d4+[STR] bludgeoning damage. If you successfully negate the oncoming attack, the attacker is stunned for 1 turn."
+              "body": "Instead of your regular **Counterattack**, you may choose to counterattack with your **hilt**. This attack uses [DEX], has a +2 to the attack roll, and deals 1d4+[STR] Bludgeoning damage. If you successfully negate the oncoming attack, the attacker is **Stunned** for 1 turn."
             },
             {
               "id": "you-re-already-dead",
               "name": "You're Already Dead",
-              "body": "Once per short rest as a Full Action gain 5m of movement and prepare an attack, which involves running past enemies. From your total movement least 3m of must be moving towards an enemy, and afterwards at least 2m of must be moving away from an enemy. For all the enemies you pass within your attack range, make a Melee attack against them. These attacks gain +5 to Crit."
+              "body": "Once per Short Rest as a **Full Action** gain **5m** to your movement and prepare an attack, which involves running past enemies. From the total movement you spent least **2m** of must be moving towards an enemy, and afterwards at least **2m** of must be moving away from an enemy. For all the enemies you pass within your attack range, make a Melee attack against them. These attacks deal Full Action damage but lose **Stat** bonuses to Attack and Damage rolls. These attacks gain **+5** to **Crit**."
             },
             {
               "id": "sheathed-enchantment",
               "name": "Sheathed Enchantment",
-              "body": "You may cast Enchant Weapon spells as an Extra Action if you are enchanting a shortsword, longsword, or katana."
+              "body": "You may cast Enchant Weapon - Melee spells as an **Extra Action** if you are enchanting a shortsword, longsword, or katana. If you can already Enchant as an Extra Action, you can Enchant as a Free Action once per turn."
             }
           ]
         },
@@ -214,22 +214,22 @@
           "name": "Hidden Stance",
           "subtitle": "Waki",
           "flavor": "Hide the length of your blade behind your body, ready to strike at a moment's notice.",
-          "body": "Attacks in this stance cannot be reacted to.",
+          "body": "Attacks made in this stance cannot be reacted to.",
           "options": [
             {
               "id": "elusive-evasion",
               "name": "Elusive Evasion",
-              "body": "Whenever an enemy misses a Melee attack against you, gain +2 AC against further attacks from them until the start of your next turn. This effect stacks and can affect multiple enemies."
+              "body": "Whenever an enemy misses a Melee attack against you, gain **+2 AC** against further attacks from them until the start of your next turn. This effect stacks and can affect multiple enemies separately."
             },
             {
               "id": "insidious-intent",
               "name": "Insidious Intent",
-              "body": "Whenever you make an attack against an enemy, they cannot react to anything you do until the start of your next turn."
+              "body": "The first attack you make against each enemy each round gains **+3** to **Crit**."
             },
             {
               "id": "lurking-lunge",
               "name": "Lurking Lunge",
-              "body": "If you did not make any Melee attacks since the start of your last turn, your next attack gains +1d4 to hit and +1d6 damage."
+              "body": "**Attack of Opportunities** use **Free Reactions** instead of your regular Reaction."
             },
             {
               "id": "deceptive-deflection",
@@ -239,12 +239,12 @@
             {
               "id": "rapid-retreat",
               "name": "Rapid Retreat",
-              "body": "You may Disengage as a Free Action."
+              "body": "You may Disengage as a Free Action up to 3 times a turn."
             },
             {
               "id": "forebearing-finale",
               "name": "Forebearing Finale",
-              "body": "Once per Short Rest if you've been in Hidden Stance since the start of your last turn, you may use a Full Action to perform a Melee attack that automatically crits on hit."
+              "body": "Once per Short Rest if you've been in Hidden Stance since the start of your last turn, you may use a **Full Action** to perform a Melee attack that automatically Crits on hit."
             }
           ]
         }

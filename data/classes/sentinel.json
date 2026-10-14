@@ -63,7 +63,7 @@
       "name": "Vanguard Step",
       "abilityType": null,
       "cost": null,
-      "body": "Once per turn you gain 4m of movement that can only be used to move towards allies. Moving towards allies with any form of movement allows you to ignore Difficult Terrain."
+      "body": "Once per turn you gain **4m** of movement that can only be used to move towards allies. Additionally, any form of movement towards allies with allows you to **ignore** Difficult Terrain."
     },
     {
       "id": "intercept",
@@ -87,7 +87,7 @@
       "name": "Taunting Cry",
       "abilityType": null,
       "cost": null,
-      "body": "As an *Extra* or *Half Action* shout at an enemy. They must make a WIS save or become **Taunted** towards you until the end of their next turn. The Save DC is equal to **8 + Proficiency bonus + AC on equipped Shield + CHA**. At Sentinel Level 9 add your **Expertise** bonus instead.\n\n![[Conditions#Taunt]]"
+      "body": "As an *Extra* or *Half Action* shout at an enemy. They must make a WIS save or become **Taunted** towards you until the end of their next turn. The Save DC is equal to **8 + Proficiency bonus + AC on equipped Shield + CHA**. At Sentinel Level 9 add your **Expertise** bonus instead.\n\n:::embed Taunt\nA taunted creature must make all attack rolls and target all spells towards the enemy who taunted them.\n:::"
     }
   ],
   "abilityGroups": [],

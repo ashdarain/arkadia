@@ -54,7 +54,7 @@
       "name": "Skirmish",
       "abilityType": null,
       "cost": null,
-      "body": "Gain a secondary pool of **6m** of Movement that can only be used outside of your turn during a **Skirmish**. A Skirmish a pseudo-turn that you can enter by interrupting another creature’s turn, before their turn starts. You can Skirmish **1 time** per round, but this increases by **+1** at Skirmisher Levels 3, 6 and 9, and Player Levels 13 and 17. Skirmish don’t count as regular turns, so any start-of-turn or end-of-turn effects apply.\n\nThe amount of movement you can use during Skirmishes resets at the start of your turn, and increases **+4m** at Skirmisher Levels 4, 7 and 10. Any bonuses to Movement also apply Skirmish Movement. Dashing or Sprinting during a Skirmish only applies to Skirmish Movement."
+      "body": "Gain a secondary pool of **6m** of Movement that can only be used outside of your turn during a Skirmish. A **Skirmish** a pseudo-turn that you can enter by interrupting another creature’s turn, before their turn starts. You can Skirmish **1 time** per round, but this increases by **+1** at Skirmisher Levels 3, 6 and 9, and Player Levels 13 and 17. Skirmish don’t count as regular turns, so any start-of-turn or end-of-turn effects **don't** apply.\n\nThe amount of movement you can use during Skirmishes resets at the start of your turn, and increases **+4m** at Skirmisher Levels 4, 7 and 10. Any bonuses to Movement also apply Skirmish Movement. Dashing or Sprinting during a Skirmish only applies to Skirmish Movement."
     },
     {
       "id": "disengage",
@@ -94,7 +94,7 @@
       "name": "Acceleration",
       "abilityType": null,
       "cost": null,
-      "body": "During your turn you can use a Half Action or Extra Action to add a Half Action that’s used during Skirmishes. (Remember that two Half Actions can combine into a Full Action and vice-versa)"
+      "body": "Use a **Half Action** or **Extra Action** during your turn to gain a **Half Action** during **Skirmishes**. (*Reminder: two Half Actions can combine into a Full Action, even during Skirmishes*)"
     }
   ],
   "abilityGroups": [],
