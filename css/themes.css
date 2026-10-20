@@ -1,0 +1,261 @@
+/* ==========================================================
+   Arkadia — colour themes
+   Each theme is one block of colour values; styles.css only refers to them by name.
+   The reader picks a theme on the Settings page (js/settings.js lists them).
+   The first block is the default, used when no theme is picked; a theme that leaves a value
+   out gets the default's.
+   Crystal, buff/debuff and race colours are not themed.
+   ========================================================== */
+
+:root, [data-theme="amethyst"] {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: #15171f;            /* abyss: page background */
+  --panel: #1b1e28;         /* slate: cards */
+  --panel-2: #222634;       /* raised slate: hovered / selected */
+  --sidebar-bg: #171a23;
+  --glass: color-mix(in srgb, var(--bg) 94%, transparent);   /* sticky bars over scrolling content */
+  --seam: #2e3344;          /* borders */
+  --seam-strong: #3c4256;
+
+  /* Highlights */
+  --accent: #b3a6ff;        /* amethyst: navigation, "you are here", levels */
+  --accent-dim: #3a3560;
+  --resource: #7fd1c7;      /* aquamarine: resource costs, trait points */
+  --resource-dim: #1f3a3a;
+  --draft: #d9a75a;         /* amber: unfinished and hidden content */
+  --draft-dim: #4a3d26;
+  --draft-bg: #2e2618;      /* "Draft" badge */
+  --draft-panel: #1b1a1d;   /* draft card background */
+  --draft-text: #b8b2a6;
+  --note-bg: #1c1b1f;       /* designer notes */
+  --note-text: #d6cdbd;
+
+  /* Text, brightest first */
+  --text-strong: #f1f2f8;   /* bold */
+  --text: #dfe2ec;          /* frost: headings, main text */
+  --text-em: #c9cde0;       /* italics */
+  --text-body: #c8ccd9;     /* card body text */
+  --text-ability: #c3c7d5;  /* ability card text */
+  --text-soft: #bfc3d1;     /* text in sub boxes */
+  --text-dim: #b9bdcc;      /* spell upgrades, search snippets */
+  --text-lede: #b4b9ca;     /* class intro, glossary */
+  --text-summary: #aeb3c4;  /* class / crystal summaries on overviews */
+  --muted: #8b91a5;         /* mist: labels, secondary text */
+  --hint: #6c7286;          /* small print */
+  --faint: #5d6378;         /* "none" placeholders */
+  --mark-text: #fff;        /* search matches */
+
+  /* Equipment weight chips */
+  --weight-light: #b6c2a9;
+  --weight-medium: #d1c18e;
+  --weight-heavy: #e0a17f;
+
+  /* Kept the same in every theme */
+  --debuff: #e58fa0;        /* rose: debuff conditions */
+
+  /* How much crystal / debuff coloured text is mixed toward the text colour (light themes need some) */
+  --ink-mix: 0%;
+  --src-ink-mix: 40%;       /* condition source buttons */
+}
+
+/* Near-black, high contrast, a cool silver accent: good on phones and in dark rooms. */
+[data-theme="obsidian"] {
+  color-scheme: dark;
+  --bg: #0b0c0f;
+  --panel: #121419;
+  --panel-2: #191c23;
+  --sidebar-bg: #0e1013;
+  --glass: color-mix(in srgb, var(--bg) 94%, transparent);
+  --seam: #252830;
+  --seam-strong: #343842;
+  --accent: #c7d4ea;
+  --accent-dim: #2b3240;
+  --resource: #8fdcb8;
+  --resource-dim: #183026;
+  --draft: #e2b766;
+  --draft-dim: #4d3f22;
+  --draft-bg: #2a2212;
+  --draft-panel: #15140f;
+  --draft-text: #bcb4a3;
+  --note-bg: #16150f;
+  --note-text: #dcd3c1;
+  --text-strong: #ffffff;
+  --text: #eceef2;
+  --text-em: #d3d7e0;
+  --text-body: #d0d4dc;
+  --text-ability: #cbcfd8;
+  --text-soft: #c6cad3;
+  --text-dim: #bfc3cc;
+  --text-lede: #babec8;
+  --text-summary: #b2b7c2;
+  --muted: #8d929e;
+  --hint: #6b707b;
+  --faint: #555a64;
+  --mark-text: #fff;
+  --weight-light: #b9c7ab;
+  --weight-medium: #d6c58f;
+  --weight-heavy: #e4a27e;
+  --debuff: #e58fa0;
+}
+
+/* Dark teal slate with a patina-green accent; costs read as brass so they stay distinct from it. */
+[data-theme="verdigris"] {
+  color-scheme: dark;
+  --bg: #0f1716;
+  --panel: #142020;
+  --panel-2: #1a2928;
+  --sidebar-bg: #111b1a;
+  --glass: color-mix(in srgb, var(--bg) 94%, transparent);
+  --seam: #243634;
+  --seam-strong: #314845;
+  --accent: #6fd6b0;
+  --accent-dim: #1d3d34;
+  --resource: #e3c27a;
+  --resource-dim: #3a3020;
+  --draft: #e0936a;
+  --draft-dim: #4c3326;
+  --draft-bg: #2f2119;
+  --draft-panel: #181a17;
+  --draft-text: #bcae9f;
+  --note-bg: #171c19;
+  --note-text: #d9cdbb;
+  --text-strong: #f2f7f5;
+  --text: #dde9e5;
+  --text-em: #c6d6d1;
+  --text-body: #c5d3cf;
+  --text-ability: #c0cec9;
+  --text-soft: #bccac5;
+  --text-dim: #b6c4bf;
+  --text-lede: #b1c0bb;
+  --text-summary: #aabab4;
+  --muted: #88a19a;
+  --hint: #66807a;
+  --faint: #536963;
+  --mark-text: #fff;
+  --weight-light: #b6c7a5;
+  --weight-medium: #d6c48b;
+  --weight-heavy: #e3a07b;
+  --debuff: #e58fa0;
+}
+
+/* Night sky: deep indigo with starlight gold; drafts turn coral so they don't blend into the gold. */
+[data-theme="astral"] {
+  color-scheme: dark;
+  --bg: #0e1126;
+  --panel: #151a33;
+  --panel-2: #1c2240;
+  --sidebar-bg: #11152c;
+  --glass: color-mix(in srgb, var(--bg) 94%, transparent);
+  --seam: #262d4d;
+  --seam-strong: #353e64;
+  --accent: #e8c872;
+  --accent-dim: #3d3522;
+  --resource: #7cd4df;
+  --resource-dim: #19343c;
+  --draft: #ee9a78;
+  --draft-dim: #4f3027;
+  --draft-bg: #33211c;
+  --draft-panel: #191a2c;
+  --draft-text: #c2b2ab;
+  --note-bg: #1a1a2e;
+  --note-text: #ddcfc8;
+  --text-strong: #f7f5ec;
+  --text: #e4e3ee;
+  --text-em: #cfd0e2;
+  --text-body: #cbcde0;
+  --text-ability: #c5c7db;
+  --text-soft: #c0c3d8;
+  --text-dim: #babdd2;
+  --text-lede: #b4b8cf;
+  --text-summary: #adb1c9;
+  --muted: #8b90b0;
+  --hint: #6a6f8f;
+  --faint: #545978;
+  --mark-text: #fff;
+}
+
+/* Light: warm paper, ink-dark text, an oxblood accent. For daytime and bright tables. */
+[data-theme="parchment"] {
+  color-scheme: light;
+  --bg: #efe7d8;
+  --panel: #faf6ee;
+  --panel-2: #f2eadb;
+  --sidebar-bg: #e8dfcd;
+  --glass: color-mix(in srgb, var(--bg) 94%, transparent);
+  --seam: #d8cbb3;
+  --seam-strong: #c2b192;
+  --accent: #8e3a2c;
+  --accent-dim: #ecd4c9;
+  --resource: #2c6b63;
+  --resource-dim: #d5e8e2;
+  --draft: #9a6410;
+  --draft-dim: #dcc08a;
+  --draft-bg: #f2e1bf;
+  --draft-panel: #f7efe0;
+  --draft-text: #66573c;
+  --note-bg: #f4e9d4;
+  --note-text: #5a4930;
+  --text-strong: #17110a;
+  --text: #2a2218;
+  --text-em: #463b2d;
+  --text-body: #392f23;
+  --text-ability: #3d3327;
+  --text-soft: #43392c;
+  --text-dim: #4d4335;
+  --text-lede: #524739;
+  --text-summary: #5a4e3f;
+  --muted: #74685a;
+  --hint: #8b7f6c;
+  --faint: #a59781;
+  --mark-text: #17110a;
+  --weight-light: #4f6b37;
+  --weight-medium: #8a6a12;
+  --weight-heavy: #a4482a;
+  --debuff: #e58fa0;
+  /* crystal and debuff colours are made for dark pages; as text on paper, mix them toward the ink */
+  --ink-mix: 60%;
+  --src-ink-mix: 65%;
+}
+
+/* Light and cool: blue-white like packed snow, slate ink, a cobalt accent. A crisp counterpart to Parchment. */
+[data-theme="glacier"] {
+  color-scheme: light;
+  --bg: #e6ecf1;
+  --panel: #f8fafc;
+  --panel-2: #edf2f6;
+  --sidebar-bg: #dde5ec;
+  --glass: color-mix(in srgb, var(--bg) 94%, transparent);
+  --seam: #c9d4de;
+  --seam-strong: #aebdcb;
+  --accent: #2c4a9e;
+  --accent-dim: #d3dcf2;
+  --resource: #17695f;
+  --resource-dim: #d1ebe6;
+  --draft: #96580c;
+  --draft-dim: #dcc29a;
+  --draft-bg: #f4e6cd;
+  --draft-panel: #f6f3ec;
+  --draft-text: #5f5240;
+  --note-bg: #f2ece0;
+  --note-text: #4f4433;
+  --text-strong: #0b1220;
+  --text: #1b2330;
+  --text-em: #34404f;
+  --text-body: #2a3441;
+  --text-ability: #2e3846;
+  --text-soft: #343e4c;
+  --text-dim: #3d4756;
+  --text-lede: #434e5d;
+  --text-summary: #4b5666;
+  --muted: #64707f;
+  --hint: #7d8896;
+  --faint: #a0abb8;
+  --mark-text: #0b1220;
+  --weight-light: #4a6a33;
+  --weight-medium: #86650f;
+  --weight-heavy: #a1462a;
+  --ink-mix: 60%;
+  --src-ink-mix: 65%;
+}

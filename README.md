@@ -105,7 +105,7 @@ pulled in from the vault), `# Spells` holds `## BA N+` tiers and `### Spell` ent
 
 What playtesters see by default is set under `playtest` in `config.mjs`:
 `maxClassLevel` (class levels), `maxSpellBA` (spell tiers) and `hideSpellsEndingWith` (e.g. Talents).
-Everything else appears when "Show drafts & hidden content" is switched on.
+Everything else appears when "Show drafts & hidden content" is switched on (Settings tab, bottom of the sidebar).
 
 ### Equipment
 
@@ -155,11 +155,13 @@ as before.
 | `config.local.mjs`           | Private settings, not in git (vault path)       |
 | `config.local.example.mjs`   | Template for `config.local.mjs`                 |
 | `index.html`                 | Page shell and sidebar                          |
-| `css/styles.css`             | Theme, colours and layout                       |
+| `css/themes.css`             | Colour themes, one block of colours each        |
+| `css/styles.css`             | Layout and styling (uses the theme's colours)   |
 | `js/app.js`                  | Tabs, routing, clicks and start-up              |
 | `js/core.js`                 | Shared settings, state, Markdown, masonry layout, data loading |
 | `js/classes.js`, `js/magic.js`, `js/races.js`, `js/equipment.js`, `js/info.js`, `js/conditions.js`, `js/search.js` | One file per page |
 | `js/copy.js`                 | Copy-to-clipboard corner                        |
+| `js/settings.js`             | Settings page: hidden content switch, theme picker (list of themes) |
 | `data/classes/`              | Generated class JSON (don't edit by hand)       |
 | `data/class-summaries.json`  | Per class: one-line `summary` and `icon` (SVG shapes on a 24×24 grid; edit freely) |
 | `data/races.json`            | Generated race data (don't edit by hand)        |
@@ -208,3 +210,15 @@ Everything else stays a feature on the left.
 
 The level table on each class page is built from the note's level table plus every
 feature and ability's level, so adding levels 4–10 later needs no website changes.
+
+## Themes
+
+The Settings tab lets each reader pick a colour theme (saved in their browser). A theme is one block of
+colour values in `css/themes.css`; `styles.css` only refers to those colours by name. The first block is the
+default, and any colour a theme leaves out falls back to it.
+
+To add a theme: copy a block in `css/themes.css`, give it a new `[data-theme="name"]` and change the colours,
+then add `{ id: "name", name: "Name", blurb: "..." }` to `THEMES` in `js/settings.js`. Its card on the Settings
+page draws a small preview from its own colours. For a light theme, set `color-scheme: light` and raise
+`--ink-mix` / `--src-ink-mix` so crystal and debuff coloured text stays readable on a pale page.
+

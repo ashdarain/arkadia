@@ -17,7 +17,7 @@ export const CONFIG = {
 const DATA_ROOT = "data";
 export const main = document.getElementById("main");
 export const nav = document.getElementById("nav");
-export const draftToggle = document.getElementById("toggle-drafts");
+export const navFoot = document.getElementById("nav-foot");
 
 export const state = {
   classes: [],          // full class objects, in index order
@@ -54,6 +54,7 @@ export const ICONS = {
   magic: '<path d="M12 2 19 9 12 22 5 9z"/><path d="M5 9h14M12 2 9.5 9 12 22l2.5-13z"/>',
   equipment: '<path d="M14.5 3.5 20.5 3.5 20.5 9.5 10 20 4 14z"/><path d="M7 17l-3 3M8.5 12.5l3 3"/>',
   conditions: '<path d="M2.5 12h4l2.2-5.5 4.3 11 2.6-7 1.6 1.5h4.3"/>',
+  settings: '<path d="M12 2.8 19.9 7.4v9.2L12 21.2 4.1 16.6V7.4z"/><circle cx="12" cy="12" r="3.2"/>',
   search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/>',
 };
 

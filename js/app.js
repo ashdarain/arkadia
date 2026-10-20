@@ -2,8 +2,8 @@
    Each page lives in its own file next to this one; shared pieces are in core.js. */
 
 import {
-  anchorId, CONFIG, draftToggle, esc, flash, icon, jumpTo, loadData,
-  main, nav, packMasonry, state, stickColumns, writePref,
+  anchorId, esc, flash, icon, jumpTo, loadData,
+  main, nav, navFoot, packMasonry, state, stickColumns,
 } from "./core.js";
 import { classesPage } from "./classes.js";
 import { racesPage } from "./races.js";
@@ -13,25 +13,33 @@ import { infoPage } from "./info.js";
 import { conditionsPage, linkConditionEmbeds } from "./conditions.js";
 import { addCopyButtons, copyText, plainText } from "./copy.js";
 import { searchPage, searchResults } from "./search.js";
+import { settingsChanged, settingsPage } from "./settings.js";
 
 /* ---------------- Tabs ---------------- */
 
 const TABS = [
   { id: "info", label: "Info" },
-  { id: "races", label: "Races" },
   { id: "classes", label: "Classes" },
   { id: "magic", label: "Magic" },
+  { id: "races", label: "Races" },
   { id: "equipment", label: "Equipment" },
   { id: "conditions", label: "Conditions" },
   { id: "search", label: "Search" },
+  { id: "settings", label: "Settings", foot: true },   // foot: sits at the bottom of the sidebar
 ];
 
 function renderNav(active) {
   // Clicking the tab you're on goes to its front page; other tabs return to where you left them.
-  nav.innerHTML = TABS.map((t) => `
-    <a href="${t.id !== active && state.lastPage[t.id] || `#/${t.id}`}" ${t.id === active ? 'aria-current="page"' : ""}>
-      ${icon(t.id)}<span>${t.label}</span>
-    </a>`).join("");
+  const link = (t) => {
+    // while hidden content is shown, Settings carries a small amber dot as a reminder
+    const dot = t.id === "settings" && state.showDrafts;
+    return `
+    <a href="${t.id !== active && state.lastPage[t.id] || `#/${t.id}`}" ${t.id === active ? 'aria-current="page"' : ""}${dot ? ' title="Hidden content is shown"' : ""}>
+      ${icon(t.id)}<span>${t.label}</span>${dot ? '<span class="nav-dot"><span class="sr-only"> (hidden content shown)</span></span>' : ""}
+    </a>`;
+  };
+  nav.innerHTML = TABS.filter((t) => !t.foot).map(link).join("");
+  navFoot.innerHTML = TABS.filter((t) => t.foot).map(link).join("");
 }
 
 /* ---------------- Router ---------------- */
@@ -60,6 +68,7 @@ function render() {
   else if (tab === "races") html = racesPage();
   else if (tab === "info") html = infoPage();
   else if (tab === "conditions") html = conditionsPage();
+  else if (tab === "settings") html = settingsPage();
   else if (tab === "magic") { const r = magicPage(sub); html = r.html; title = r.title ?? title; }
   else if (tab === "equipment") {
     if (sub) state.equipFilter = null; // a link to one item opens the full view so it's visible
@@ -210,13 +219,10 @@ main.addEventListener("click", (e) => {
   render();
 });
 
-draftToggle.checked = state.showDrafts;
-document.getElementById("toggle-label").innerHTML =
-  `Show drafts &amp; hidden content<small>Level ${CONFIG.maxLevel + 1}+, BA ${CONFIG.maxBA + 15}+, Talents</small>`;
-draftToggle.addEventListener("change", () => {
-  state.showDrafts = draftToggle.checked;
-  writePref("arkadia.showDrafts", state.showDrafts ? "1" : "0");
-  render();
+// Settings page switches. The page itself doesn't need redrawing (so keyboard focus stays put);
+// other pages pick the change up when you open them, and the sidebar dot updates now.
+main.addEventListener("change", (e) => {
+  if (settingsChanged(e.target)) renderNav(parseRoute().tab);
 });
 
 main.addEventListener("toggle", (e) => {
