@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T11:39:47.543Z",
+  "generatedAt": "2026-10-20T12:09:15.531Z",
   "source": "Basic Info.md",
   "panels": [
     {
       "id": "character-creation",
       "title": "Character Creation",
       "important": true,
-      "body": "During the entirety of character creation, you have 1 Reroll that can be used to reroll any grouped dice roll (4d20, 1d12, etc.)\n\n**Step 1:** Start by roll **4d20**, you will use these d20s to **draft** different aspects of your character. If the sum of your 5d20 roll is 42 or less, reroll the *lowest die*. Keeping doing this until the sum is higher than 42.\n\nThen finalize your rolls by choosing one of the following:\n- Add **+1** to any single d20, up to 20.\n- **Reroll** both the **lowest** and **highest** roll, you must keep the new rolls. This does not count towards your single reroll stated above.\n\n**Step 2:** Use three of the d20s and assign them to **Crystal**, **Race**, and **Stats** in any order. You’ll notice that you have an extra d20 left over. You may use a 4th d20 to get another Crystal if you set aside a d20 with a value of 20. (Talk to your DM)\n\n**Step 3:** Choose 4 Skill Proficiencies, or 3 Skill Proficiencies and 1 Weapon, Armor, or Shield Proficiency.",
+      "body": "During the entirety of character creation, you have 1 Reroll that can be used to reroll any grouped dice roll (4d20, 1d12, etc.)\n\n**Step 1:** Start by rolling **4d20**, you will use these d20s to **draft** different aspects of your character. If the sum of your 5d20 roll is 42 or less, reroll the *lowest die*. Keeping doing this until the sum is higher than 42.\n\nThen finalize your rolls by choosing one of the following:\n- Add **+1** to any single d20, up to 20.\n- **Reroll** both the **lowest** and **highest** roll, you must keep the new rolls. This does not count towards your single reroll stated above.\n\n**Step 2:** Use three of the d20s and assign them to **Crystal**, **Race**, and **Stats** in any order. You’ll notice that you have an extra d20 left over. You may use a 4th d20 to get another Crystal if you set aside a d20 with a value of 20. (Talk to your DM)\n\n**Step 3:** Choose 4 Skill Proficiencies, or 3 Skill Proficiencies and 1 Weapon, Armor, or Shield Proficiency.",
       "sections": []
     },
     {
@@ -26,7 +26,7 @@
         {
           "id": "full-actions",
           "title": "Full Actions",
-          "body": "- **Respite:** Gain 1d4+[STAT] Mana, where STAT is any Stat from a Crystal with the most CA used.\n- **Sprint:** Double your Movement based non temporary bonuses.\n- **Grapple:** If you have a free arm, you may attempt to Grapple a creature. They made a STR or AGI save based on your Save DC of 8 + STR + Proficiency Bonus. Creatures grappled have 0 Movement and have Disadvantage attacking anyone but you. You can drag to move the target, but each movement costs double, unless they are at least 2 Size Classes smaller than you. You can only grapple targets up to 1 Size Class above you. Creatures grappled by you can use a Half Action or Extra Action to make the AGI or STR save again to escape your grapple."
+          "body": "- **Respite:** Choose one of the following:\n\t- Recover **1d4+[STAT] Mana**, where STAT is any Stat from a Crystal with the most CA used.\n\t- Recover **1d6+CON Health**.\n\t- Dispell 1 Minor Debuff\n- **Sprint:** Double your Movement based non temporary bonuses.\n- **Grapple:** If you have a free arm, you may attempt to Grapple a creature. They made a STR or AGI save based on your Save DC of 8 + STR + Proficiency Bonus. Creatures grappled have 0 Movement and have Disadvantage attacking anyone but you. You can drag to move the target, but each movement costs double, unless they are at least 2 Size Classes smaller than you. You can only grapple targets up to 1 Size Class above you. Creatures grappled by you can use a Half Action or Extra Action to make the AGI or STR save again to escape your grapple."
         },
         {
           "id": "half-actions",
@@ -137,7 +137,7 @@
       "id": "initiative",
       "title": "Initiative",
       "important": false,
-      "body": "Initiative is always rolled with AGI.",
+      "body": "At the start of Combat roll Initiative with a 1d20+AGI.",
       "sections": []
     },
     {

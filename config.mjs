@@ -1,14 +1,23 @@
 /**
  * Arkadia — site settings.
  *
- * This one file is read by the website (js/app.js) and by every converter in tools/.
- * After changing it: refresh the browser. If you changed `vault`, `classes` or `crystals`,
+ * This one file is read by the website (js/core.js) and by every converter in tools/.
+ * After changing it: refresh the browser. If you changed `classes` or `crystals`,
  * also run updateFromDocs.bat so the data is regenerated.
+ *
+ * Private settings (like where your vault is) live in config.local.mjs, which is not
+ * committed to git. Copy config.local.example.mjs to config.local.mjs to create it.
+ * Only the converters read it: the website never loads it, so anything you put there
+ * stays off GitHub Pages. Its settings are added to (and can override) the ones below.
  */
-export default {
-  // Where your Obsidian vault lives. Converters read their notes from here.
-  vault: "A:/Obsidian/Arkadia",
+const local = typeof window === "undefined"
+  ? (await import("./config.local.mjs").catch((err) => {
+      if (err.code !== "ERR_MODULE_NOT_FOUND") throw err; // a typo inside the file should still be reported
+      throw new Error("config.local.mjs is missing. Copy config.local.example.mjs to config.local.mjs and set your vault path in it.");
+    })).default
+  : {};
 
+export default {
   // What playtesters see by default. Everything beyond this appears when
   // "Show drafts & hidden content" is switched on in the sidebar.
   playtest: {
@@ -42,4 +51,6 @@ export default {
     info: "Basic Info.md",
     conditions: "Conditions.md",
   },
+
+  ...local,
 };

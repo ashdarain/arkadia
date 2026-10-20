@@ -47,7 +47,7 @@
       "name": "Spellblade at Arms",
       "abilityType": null,
       "cost": null,
-      "body": "Gain Proficiencies in one weapon types and a shield type, or three weapon types. Also gain Proficiencies in Light and Medium armor."
+      "body": "Gain Proficiencies in one weapon types and a shield type, or two weapon types. Also gain Proficiencies in Light and Medium armor."
     },
     {
       "id": "siphoning-strike",
@@ -87,7 +87,7 @@
       "name": "Spellstrike Points & Abilities",
       "abilityType": null,
       "cost": null,
-      "body": "Gain maximum **Spellstrike Points** equal to your *Spellblade Level*. These points reset to full after a Short or Long Rest and can be used on various Spellstrike abilities list below.\n\nGain **+2** Spellstrike Points when *starting combat*, up to your maximum. This increases by **+1** at Spellblade Levels 6 and 9. This also increases by **+1** at Player Levels 13 and 17.\n\nYou can only have a maximum of **2 readied** at a time. Use a Long Rest Action to swap them out. This maximum increases by **+1** at Spellblade Levels 5, 7 and 9."
+      "body": "Gain maximum **Spellstrike Points** equal to your *Spellblade Level*. These points reset to full after a Short or Long Rest and can be used on various Spellstrike abilities. All Spellstrike abilities deal Magical damage.\n\nGain **+2** Spellstrike Points at the start of combat, up to your maximum. This increases by **+1** at Spellblade Levels 6 and 9, as well as Player Levels 13 and 17. Choose **2 Spellstrike** abilities readied that you have access to during combat.\n\nThe maximum number of readied Spellstrike abilities learned increases by +1 at Spellblade Levels 5, 7 and 9. Use a Long or Short Rest Action to swap any number of Spellstrike Abilities out with the others."
     },
     {
       "id": "signature-spells-spellblade",
@@ -124,7 +124,7 @@
           "level": 3,
           "name": "Pinpoint Blade",
           "cost": "1 Spellstrike Point",
-          "body": "Spend **1 Spellstrike Point** to have your Melee attack hit against Spell AC instead of regular AC. You may also have your Melee Spell Attack hit against regular AC instead of Spell AC."
+          "body": "Spend **1 Spellstrike Point** to have your Melee attack hit against **Spell AC** instead of Physical AC. Alternatively, you may also choose to have Melee Spell Attack hit against Physical AC instead of Spell AC. If both AC and Spell ACs are the same, refund the Spellstrike Points."
         },
         {
           "id": "doubling-strike",

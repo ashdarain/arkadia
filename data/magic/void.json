@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T11:39:47.510Z",
+  "generatedAt": "2026-10-20T12:09:15.497Z",
   "id": "void",
   "name": "Void",
   "tier": 3,
@@ -29,7 +29,7 @@
     {
       "id": "paranoia",
       "name": "Paranoia",
-      "body": "A Paranoid creature does not act normally during their turn. They must use all actions attacking or casting spells against the closest creature, including allies. Paranoia is a Strong Debuff.",
+      "body": "A Paranoid creature does not act normally during their turn. They must use all **Actions** attacking or casting Spells against the closest creature, **including allies**. Paranoia is a *Strong Debuff*.",
       "source": "Conditions"
     },
     {

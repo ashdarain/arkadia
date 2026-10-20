@@ -2,9 +2,8 @@
 
 ## Settings: `config.mjs`
 
-All settings live in one file, `config.mjs`, read by both the site and the converters:
+Shared settings live in `config.mjs`, read by both the site and the converters:
 
-- `vault`: where your Obsidian vault is
 - `playtest`: what playtesters see by default (max class level, max spell BA, spells hidden by name ending)
 - `classes`: which class notes are converted (required tag, excluded tags)
 - `crystals`: which crystals are converted, in order, each with its colour on the site
@@ -12,6 +11,16 @@ All settings live in one file, `config.mjs`, read by both the site and the conve
 
 After editing it, refresh the browser. If you changed which notes are read (vault, classes, crystals),
 run `updateFromDocs.bat` too.
+
+### Private settings: `config.local.mjs`
+
+Anything that shouldn't be on GitHub goes in `config.local.mjs`, which `.gitignore` keeps out of git:
+
+- `vault`: where your Obsidian vault is
+
+Only the converters read it (through `config.mjs`, which adds its settings on top of its own); the
+website never loads it, and `tools/serve.mjs` won't serve it to other devices. On a new computer or a
+fresh clone, copy `config.local.example.mjs` to `config.local.mjs` and fill it in.
 
 ## Running it locally
 
@@ -22,8 +31,8 @@ Opening `index.html` directly won't work: browsers block the data files on `file
 
 ## Letting playtesters see it
 
-- **Same network (e.g. at the table):** `node tools/serve.mjs --lan` prints an address like
-  `http://192.168.1.20:8080` that phones and laptops on your Wi-Fi can open.
+- **Same network (e.g. at the table):** double-click `startLan.bat` (or run `node tools/serve.mjs --lan`).
+  It prints an address like `http://192.168.1.20:8080` that phones and laptops on your Wi-Fi can open.
 - **Over the internet:** the site is plain static files, so any static host works
   (GitHub Pages, Netlify, Cloudflare Pages, or your own web server). Upload everything
   except `tools/`. Nothing needs building.
@@ -94,8 +103,8 @@ pulled in from the vault), `# Spells` holds `## BA N+` tiers and `### Spell` ent
 `***BA | CA | Mana | Concentration***` line and `N CA - Upgrade` lines. Any other `#` section
 (Notes, Ideas...) is ignored. Spells with no cost line become drafts.
 
-What playtesters see by default is set in `CONFIG` at the top of `js/app.js`:
-`maxLevel` (class levels), `maxBA` (spell tiers) and `hiddenSpells` (e.g. Talents).
+What playtesters see by default is set under `playtest` in `config.mjs`:
+`maxClassLevel` (class levels), `maxSpellBA` (spell tiers) and `hideSpellsEndingWith` (e.g. Talents).
 Everything else appears when "Show drafts & hidden content" is switched on.
 
 ### Equipment
@@ -142,10 +151,15 @@ as before.
 
 | Path                         | What it is                                      |
 | ---------------------------- | ----------------------------------------------- |
-| `config.mjs`                 | All settings (see top of this README)           |
+| `config.mjs`                 | Shared settings (see top of this README)        |
+| `config.local.mjs`           | Private settings, not in git (vault path)       |
+| `config.local.example.mjs`   | Template for `config.local.mjs`                 |
 | `index.html`                 | Page shell and sidebar                          |
 | `css/styles.css`             | Theme, colours and layout                       |
-| `js/app.js`                  | Tabs, class pages, search                       |
+| `js/app.js`                  | Tabs, routing, clicks and start-up              |
+| `js/core.js`                 | Shared settings, state, Markdown, masonry layout, data loading |
+| `js/classes.js`, `js/magic.js`, `js/races.js`, `js/equipment.js`, `js/info.js`, `js/conditions.js`, `js/search.js` | One file per page |
+| `js/copy.js`                 | Copy-to-clipboard corner                        |
 | `data/classes/`              | Generated class JSON (don't edit by hand)       |
 | `data/class-summaries.json`  | Per class: one-line `summary` and `icon` (SVG shapes on a 24×24 grid; edit freely) |
 | `data/races.json`            | Generated race data (don't edit by hand)        |
@@ -165,8 +179,8 @@ as before.
 | `tools/convert-classes.mjs`  | Notes → JSON converter                          |
 | `tools/serve.mjs`            | Local server                                    |
 
-Tabs marked WIP (Info, Magic, Equipment) show a placeholder until their data exists.
-To change a placeholder message, edit the `TABS` list near the top of `js/app.js`.
+A page whose data file is missing shows a "work in progress" placeholder until `updateFromDocs.bat`
+has been run. To add a new page: write `js/<page>.js`, then add it to `TABS` and `render()` in `js/app.js`.
 
 ## Class JSON shape
 

@@ -53,7 +53,7 @@
       "name": "Arcane Surge",
       "abilityType": null,
       "cost": null,
-      "body": "The first time each round you cast **3 spells** in one turn, gain **+2 Mana**. Mana gained this way increases **+1** at Player Levels 4, 8, 12, 16, and 20."
+      "body": "The first time each round you cast **3 spells** in a single turn, gain **+2 Mana**. Mana gained this way increases **+1** at Spellslinger levels 4 and 8, as all as Player Levels 12, 16, and 20."
     },
     {
       "id": "alacrity-points-and-abilities",
@@ -69,7 +69,7 @@
       "name": "Spell Cascade",
       "abilityType": null,
       "cost": null,
-      "body": "Keep track of the last 5 spells you’ve cast. Whenever you cast a spell, if you’ve already cast a spell this combat and that spell is different from the last 5 spells you’ve cast, gain 1 stack of Cascade, up to a maximum of 5. When you repeat a spell within the last 5, remove all stacks of Cascade after the spell is cast, then reset the spells you were keeping track of.\n\nFor each stack of Cascade, gain +1 to Spell Attack rolls. For every 2 stacks of Cascade, gain +1 to your Spell Save DC. During your turn you may consume 2 stacks of Cascade to cast a Half Action spell as a Free Action, or consume 4 stacks to cast a Full Action spell as a Free Action."
+      "body": "Keep track of the last **5 spells** you’ve cast. Whenever you cast a spell, if you’ve already cast a spell this combat and that spell is different from the last 5 spells you’ve cast, gain **1 stack** of **Cascade**, up to a maximum of **5**. When you repeat a spell within the last 5 recorded, remove all stacks of Cascade after the cast, then reset the spells you were keeping track of.\n\nFor each stack of Cascade, gain **+1** to **Spell Attack** rolls. For every 2 stacks of Cascade, gain +1 to your Spell Save DC. During your turn you may **consume 2 stacks** of Cascade to cast a *Half Action* spell as a **Free Action**, or **consume 4 stacks** to cast a *Full Action* spell as a **Free Action**. These Free Action spells count towards your Cascade stacks and still cost Mana."
     }
   ],
   "abilityGroups": [

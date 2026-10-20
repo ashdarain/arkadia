@@ -32,8 +32,8 @@ const TYPES = {
   ".woff2": "font/woff2",
 };
 
-// Only serve what the site needs; keep tools/ and dotfiles private.
-const BLOCKED = /^\/(tools|node_modules)(\/|$)|\/\./;
+// Only serve what the site needs; keep tools/, private settings and dotfiles private.
+const BLOCKED = /^\/(tools|node_modules)(\/|$)|^\/config\.local\.mjs$|\/\./;
 
 const server = http.createServer((req, res) => {
   let urlPath;
