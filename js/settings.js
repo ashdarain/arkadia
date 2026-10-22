@@ -72,7 +72,7 @@ export function settingsPage() {
         <span class="toggle-track" aria-hidden="true"></span>
         <span class="switch-text">
           <span class="switch-name">Show drafts &amp; hidden content</span>
-          <small>Class levels ${CONFIG.maxLevel + 1}+, spells at BA ${CONFIG.maxBA + 15}+, Talents,${hiddenList()} unfinished drafts and designer notes. Anything hidden from playtesters is marked in amber when shown.</small>
+          <small>Class levels ${CONFIG.maxLevel + 1}+, spells at BA ${CONFIG.maxBA + 15}+, Talents, unfinished drafts and designer notes. Anything hidden from playtesters is marked in amber when shown.</small>
         </span>
       </label>
     </section>`;
