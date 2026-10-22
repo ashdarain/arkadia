@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:09:15.497Z",
+  "generatedAt": "2026-10-21T09:36:26.178Z",
   "crystals": [
     {
       "id": "fire",
@@ -31,6 +31,35 @@
       "file": "ice.json"
     },
     {
+      "id": "wind",
+      "name": "Wind",
+      "tier": 1,
+      "damageTypes": [
+        "aether",
+        "physical"
+      ],
+      "stats": [
+        "AGI",
+        "DEX",
+        "INT"
+      ],
+      "file": "wind.json"
+    },
+    {
+      "id": "mind",
+      "name": "Mind",
+      "tier": 2,
+      "damageTypes": [
+        "psychic"
+      ],
+      "stats": [
+        "WIS",
+        "CHA",
+        "INT"
+      ],
+      "file": "mind.json"
+    },
+    {
       "id": "lightning",
       "name": "Lightning",
       "tier": 2,
@@ -50,6 +79,7 @@
       "tier": 2,
       "damageTypes": [
         "aether",
+        "cold",
         "physical"
       ],
       "stats": [

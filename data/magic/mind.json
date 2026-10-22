@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "id": "mind",
+  "name": "Mind",
+  "tier": 2,
+  "damageTypes": [
+    "psychic"
+  ],
+  "keywords": [
+    "fear",
+    "taunt",
+    "charm"
+  ],
+  "theme": "Light purple/Lavender",
+  "stats": [
+    "WIS",
+    "CHA",
+    "INT"
+  ],
+  "ascendsInto": [],
+  "mechanics": [
+    {
+      "id": "foresight",
+      "name": "Foresight",
+      "body": "When you have Foresight, you can spend 1 stack of Foresight to reroll an Attack or Damage roll. At the end of your turn lose 2 stacks of Foresight. Minor Dispells remove 2 stacks of Foresight.",
+      "source": "Conditions"
+    },
+    {
+      "id": "fear",
+      "name": "Fear",
+      "body": "A creature that is Feared against a enemy cannot willingly move towards the enemy while it has line of sight of the enemy, and it makes attack/spell attack rolls against the enemy with Disadvantage. Fear is a Weak Debuff.",
+      "source": "Conditions"
+    },
+    {
+      "id": "taunt",
+      "name": "Taunt",
+      "body": "A taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn.",
+      "source": "Conditions"
+    },
+    {
+      "id": "charm",
+      "name": "Charm",
+      "body": "A charmed creature treats its charmer as **friendly** and an ally, it cannot make attacks against them and any AoE abilities that don’t affect allies also don’t affect its charmer. If the charmer damages or negatively affects the creature, Charm ends completely. Charm can last multiple turns, and applying Charm to an already charmed creature increases the duration.",
+      "source": "Conditions"
+    }
+  ],
+  "spells": [
+    {
+      "id": "mind-blast",
+      "name": "Mind Blast",
+      "ba": 0,
+      "ca": "2",
+      "mana": "1*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action** make a Ranged Spell Attack targeting a creature within **8m** using the sheer power of your mind. On hit, it deals **1d10** Psychic damage. Damage increases by **+1d10** per 18 Mind CA and every 4 Player Levels.\n\n***0 Mana Cast:*** As a **Full Action** make a Ranged Spell Attack targeting a creature within **6m**, dealing **1d8** Psychic damage on hit. Damage increases by **+1d8** per 24 Mind CA and every 5 Player Levels.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "If Mind Blast hits, the target must make a WIS save or become **Feared** from you for 1 turn. *This upgrade does not apply to the 0 Mana Cast.*"
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "You may cast Mind Blast as a **Reaction** when you are hit by a Ranged Attack or damaged by a spell."
+        }
+      ]
+    },
+    {
+      "id": "analyze",
+      "name": "Analyze",
+      "ba": 0,
+      "ca": "2",
+      "mana": "1+",
+      "concentration": null,
+      "tags": [],
+      "body": "As an **Extra Action** scan a creature with your mind revealing their strengths and weaknesses. Your DM gives you information on its **Physical** and **Spell ACs**, **Vulnerabilities** and **Resistances**, as well as information about the **Stats** and any special abilities it possesses. **Analyzed** is a *Strong Debuff* placed on the enemy that will last for a day or until the creature are defeated. Repeatedly Analyzing a target does not refresh or extent the duration. *Once a creature is Analyzed, you can ask the DM for any of of the above information at any time.*",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Analyze now also reveals the creature’s remaining **Health** and **Mana** (if any)."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "As you cast Analyze you may peer into the creature’s mind to divine its intentions. The next **Martial** or **Spell Attack** roll it makes is made with **Disadvantage**. *+1 Mana cost if used.*"
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-mind",
+      "name": "Enchant Weapon: Mind",
+      "ba": 0,
+      "ca": "4",
+      "mana": "2",
+      "concentration": null,
+      "tags": [],
+      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Convert all your weapon’s damage to Psychic and add **+1d8** Psychic damage to Full Action attacks or **+1d4** to Half Action attacks. Added damage Dice Count increases by **+1** per 18 Mind CA, and every 4 Player Levels.\n\n**Ranged**: Convert all your weapon’s damage to Psychic and add **+1d6** Psychic damage to Full Action attacks or **+1d4** to Half Action attacks. Added damage Dice Count increases by **+1** per 12 Mind CA, and every 4 Player Levels.\n\n**Spell Focus**: +2 to Save DCs for spells you cast that inflict Fear, Taunt, Charm or Paranoia. **+1d6** Psychic damage to all Full Action spells cast, increasing by **+1d6** per 12 Mind CA and every 4 Player Levels.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "The first Enchant Martial or Spell Attack roll each turn against a **Feared** enemy has Advantage."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Attack rolls from Enchanted attacks or spells against enemies **Charmed** by you have **+5** to **Crit**."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Whenever you defeat an enemy with Psychic damage from an Enchanted attack or spell, all other enemies within **2m** must make a **WIS** save or become **Feared** by you."
+        },
+        {
+          "ca": "2",
+          "variant": "Melee or Ranged",
+          "text": "Enemies you **Crit** with Enchanted Melee or Ranged attacks become Feared by you."
+        }
+      ]
+    },
+    {
+      "id": "invade-thoughts",
+      "name": "Invade Thoughts",
+      "ba": 0,
+      "ca": "3",
+      "mana": "1+",
+      "concentration": null,
+      "tags": [],
+      "body": "Choose a creature within **10m** penetrating their mind and sowing false emotions into their psyche. The target must make an **INT** save or become inflicted by one of the following Debuffs and dealt Psychic damage based on the Action used. Each Action has a different Mana Cost. The target takes half damage and does not receive the debuff on passing the save. Damage **Dice Count** increases by **+1** per 12 Psychic CA and per 4 Player Levels.\n- **Half Action** to inflict **Fear** for 1 turn and deal **1d6** Psychic damage, *2 Mana*.\n- **Full Action** to inflict **Charm** for 2 turns and deal **1d8** Psychic damage, *3 Mana*.\n- **Extra Action** to **Taunt** for 1 turn and deal **1d6** Psychic damage, *1 Mana*.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Debuffs applied last **+1** turns, which increases an additional **+1** per 24 Psychic CA."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Increase the damage **Dice Class** by **+1** for all Actions."
+        }
+      ]
+    },
+    {
+      "id": "a-moment-of-retrospection",
+      "name": "A Moment of Retrospection",
+      "ba": 0,
+      "ca": "3",
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Passive"
+      ],
+      "body": "Increase the **Dice Class** for **Mana** gained from **Respites**.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Double a **Stat** modifier added to Mana gained from Respites."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per combat, you may Respite to gain Mana as a **Half Action**."
+        }
+      ]
+    },
+    {
+      "id": "grant-insight",
+      "name": "Grant Insight",
+      "ba": 15,
+      "ca": "3",
+      "mana": "3",
+      "concentration": "Minor Concentration",
+      "tags": [],
+      "body": "As a **Full Action** target yourself or an ally within **12m** granting them a mental boon. When you cast Grant Insight and at the start of the target’s turn while you’re concentrating on this spell, the target gains **1** stack of **Foresight**. Grant **+1** additional stack of Foresight per 24 Mind CA.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Grant Insight can target 2 creatures."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Whenever an ally loses any amount of **Foresight** from a Dispell or their turn ending, you gain that much instead."
+        }
+      ]
+    },
+    {
+      "id": "mind-drain",
+      "name": "Mind Drain",
+      "ba": 15,
+      "ca": "3",
+      "mana": "3",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action** make a Melee Spell Attack to latch onto a creature’s mind draining them of their sanity. Deal **2d8** Psychic damage on it, increasing by **+2d8** per 24 Mind CA, and **+1d8** per 4 Player Levels. For every **8** Psychic damage dealt, gain **+1 Mana**. The enemy also loses that much mana if applicable.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "For every **12** damage dealt, perform a **Minor Dispell** on yourself."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Until the end of your **next turn**, enemies hit by Mind Drain have Disadvantage with Save DCs that cause them to be inflicted by a Debuff."
+        }
+      ]
+    }
+  ],
+  "drafts": [],
+  "source": "Magic/Mind.md"
+}

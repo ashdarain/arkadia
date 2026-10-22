@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:09:15.497Z",
+  "generatedAt": "2026-10-21T09:36:26.178Z",
   "id": "ice",
   "name": "Ice",
   "tier": 1,
@@ -51,7 +51,9 @@
       "ca": "Auto",
       "mana": null,
       "concentration": null,
-      "tags": [],
+      "tags": [
+        "Passive"
+      ],
       "body": "Being attuned to Ice magic grants you a multitude of boons and abilities based your investment into the Ice Crystal. These abilities apply to non-combat situations, however those with Action costs may be used in combat.\n**0+ Ice CA**:\n- Ice Objects you create a immune to Psychic and Poison damage, resistant to Cold damage, and are vulnerable to Fire damage. Unless otherwise stated these Objects last until Long Rest, 10 turns in hot environments, or until you lose consciousness. During your turn you may instantly destroy anything you created from ice.\n- Chill food and drink to prevent spoilage.\n- You walk atop of snow and ice cannot cause you to slip.\n**20+ Ice CA**:\n- Whenever you preform an Intimidation check, you may chill the nearby surroundings to gain +2 to the roll.\n- Gain Advantage on Survival checks in cold environments.\n- As a Half Action or Extra Action, you gain the ability to walk on water for 10 minutes. This costs 1 Mana.\n- Create igloo-like shelters in non-hot environments that can house up to 4 Medium or 2 Large creatures. These shelters last 1 day or until you lose consciousness, and are considered Ice Objects. 3 Mana per structure.\n**40+ Ice CA**:\n- Whenever you use the Sprint action, once per turn at the end of your movement you may instantly create a temporary ice sled and slide for up to 5m in a straight line. Outside of combat you can use this sled to travel faster downhill than your companions.\n- Dip your hands into a body of water an create frozen path with an area of 12m per 1 Mana spent. This path lasts for 10 minutes in slow-moving or still water, or 2 minutes in fast-moving water.\n- Sculpt small, intricate sculptures or jewellery made of ice. The more detailed, the longer the craft time. These items last for a week at most and cost 1 mana.\n- Negative effects of Ice Objects do not affect you.\n**60+ Ice CA**:\n- You cannot be Chilled.\n- Gain Advantage on all Saves that cause you to become Frozen.\n- Gain resistance against the first source of Fire or Cold damage you receive each turn. If you are already resistant to Fire or Cold damage, gain immunity to that damage instead. The first source refers to all damage taken from a single Action or environmental effect.\n- You may move through Ice Objects as if they are difficult terrain. You cannot preform Actions inside of Ice Objects, and any damage to the object is deal to you.\n\nIf there are any other Ice-related abilities you wish to use, ask your DM!",
       "upgrades": []
     },
@@ -62,7 +64,9 @@
       "ca": "Auto",
       "mana": null,
       "concentration": null,
-      "tags": [],
+      "tags": [
+        "Frost Charges"
+      ],
       "body": "Frost Charges and gained and used by the Ice Crystal to empower Ice Spells, and behave like a stackable Strong Buff. You have a max of 3 Frost Charges and gain +1 max charges per 10 Ice CA, and +1 per 4 Player levels. All Frost charges expire after a Long Rest. Gain charges by:\n- 1 whenever you cause an enemy to have 1, 3, or 5 stacks of Chill.\n- 2 whenever you Freeze an unfrozen enemy.\n- 3 whenever you Crit dealing Cold damage.",
       "upgrades": [
         {
@@ -165,7 +169,9 @@
       "ca": "3",
       "mana": null,
       "concentration": null,
-      "tags": [],
+      "tags": [
+        "Passive"
+      ],
       "body": "NEEDS REWORK (keep it in anyways)\nWhenever you deal Cold damage to a target, after all spell, attack and ailment effects of the Action resolve, you may consume stacks of Chill on them for a chance to inflict Freeze. The chilled target must make a CON+5 save and becomes Frozen for 1 turn. For each stack of Chill consumed beyond the first, the the target get -3 to their CON save.",
       "upgrades": [
         {

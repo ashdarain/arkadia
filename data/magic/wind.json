@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "id": "wind",
+  "name": "Wind",
+  "tier": 1,
+  "damageTypes": [
+    "aether",
+    "physical"
+  ],
+  "keywords": [
+    "wip"
+  ],
+  "theme": "Semi-light green",
+  "stats": [
+    "AGI",
+    "DEX",
+    "INT"
+  ],
+  "ascendsInto": [
+    "Tempest"
+  ],
+  "mechanics": [],
+  "spells": [
+    {
+      "id": "galeforce",
+      "name": "Galeforce",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2",
+      "concentration": "Major Concentration",
+      "tags": [],
+      "body": "As a **Full Action** conjure heavy winds around you, choosing a cardinal direction (North, East, South and West) for those winds to flow against. With a **6m** radius AoE of you, enemies moving straight or diagonally towards the chosen direction treats their movement as **Difficult Terrain**. Radius increases by **+2m** per 20 Wind CA. Galeforce moves with you and reaches all heights within the AoE.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Instead of Galeforce centering around you, choose a point within 6m as its origin. It cannot move from this point."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Allies gain **3m** of *Free Movement* that can only be used when moving straight or diagonally **opposite** of the chosen direction. Movement increases by **+1m** per 20 Wind CA."
+        }
+      ]
+    }
+  ],
+  "drafts": [],
+  "source": "Magic/Wind.md"
+}

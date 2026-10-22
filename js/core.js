@@ -11,7 +11,10 @@ export const CONFIG = {
   maxLevel: SETTINGS.playtest.maxClassLevel,
   maxBA: SETTINGS.playtest.maxSpellBA,
   hiddenSpells: SETTINGS.playtest.hideSpellsEndingWith.map((w) => new RegExp(`${escapeRe(w)}$`, "i")),
-  crystalColors: Object.fromEntries(SETTINGS.crystals.map((c) => [idOf(c.name), c.color])),
+  hiddenClasses: new Set((SETTINGS.playtest.hiddenClasses ?? []).map(idOf)),
+  hiddenCrystals: new Set((SETTINGS.playtest.hiddenCrystals ?? []).map(idOf)),
+  // crystal id -> { color, lightColor } (lightColor may be missing)
+  crystalColors: Object.fromEntries(SETTINGS.crystals.map((c) => [idOf(c.name), { color: c.color, lightColor: c.lightColor }])),
 };
 
 const DATA_ROOT = "data";
@@ -45,6 +48,15 @@ export const beyond = (level) => level != null && level > CONFIG.maxLevel;
 /** Spells shown to playtesters by default: BA within the cap and not a hidden type (Talents). */
 export const spellByDefault = (s) => (s.ba ?? 0) <= CONFIG.maxBA && !CONFIG.hiddenSpells.some((re) => re.test(s.name));
 export const spellInScope = (s) => state.showDrafts || spellByDefault(s);
+
+/** Whole classes / crystals hidden from playtesters (hiddenClasses, hiddenCrystals in config.mjs). */
+export const classHidden = (c) => CONFIG.hiddenClasses.has(c.id) || CONFIG.hiddenClasses.has(idOf(c.name));
+export const crystalHidden = (c) => CONFIG.hiddenCrystals.has(c.id) || CONFIG.hiddenCrystals.has(idOf(c.name));
+/** The classes and crystals shown right now: hidden ones only appear with drafts switched on. */
+export const shownClasses = () => state.classes.filter((c) => state.showDrafts || !classHidden(c));
+export const shownCrystals = () => (state.magic?.crystals ?? []).filter((c) => state.showDrafts || !crystalHidden(c));
+/** Badge for a hidden class or crystal that's being shown. */
+export const hiddenBadge = `<span class="badge draft">Hidden</span>`;
 
 
 export const ICONS = {

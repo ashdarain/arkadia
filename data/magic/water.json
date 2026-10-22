@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:09:15.497Z",
+  "generatedAt": "2026-10-21T09:36:26.178Z",
   "id": "water",
   "name": "Water",
   "tier": 2,
   "damageTypes": [
     "aether",
+    "cold",
     "physical"
   ],
   "keywords": [
@@ -23,7 +24,7 @@
     {
       "id": "immobilize",
       "name": "Immobilize",
-      "body": "Immobilized creatures cannot move and fail AGI rolls. You can still Teleport while immobilized.",
+      "body": "Immobilized creatures **cannot move** and fail any **AGI** rolls. You can still Teleport while immobilized.",
       "source": "Conditions"
     },
     {
@@ -67,10 +68,10 @@
       "name": "Bubble",
       "ba": 0,
       "ca": "3",
-      "mana": "3",
+      "mana": "2",
       "concentration": "Major Concentration*",
       "tags": [],
-      "body": "As a **Full Action** conjure a large sphere of water entirely engulfing a creature **Medium** or smaller. If the creature fails an **AGI** save, they become **Immobilized** for up to *10 turns* or until you lose **Concentration**. Creatures immobilized this way have **Disadvantage** on AGI **saves** and Disadvantage on all **Attack** and **Spell Attack Rolls**. A creature may use a **Half Action** to attempt escaping the bubble using a **STR** save.\n\nAs an **Extra Action** or **Half Action**, you can consume **2 Aqua Charges** to flood their lungs with water, dealing **2d8** Aether damage. Damage increases by **+1d8** per 12 Water CA.",
+      "body": "As a **Full Action** conjure a large sphere of water entirely engulfing a creature **Medium** or smaller. If the creature fails an **AGI** save, they become **Immobilized** for up to *10 turns* or until you lose **Concentration**. Creatures immobilized this way have **Disadvantage** on AGI **saves** and Disadvantage on all **Attack** and **Spell Attack Rolls**. A creature may use a **Half Action** to attempt escaping the bubble using a **STR** save.\n\nAs an **Extra Action** or **Half Action**, you can consume **2 Aqua Charges** to flood their lungs with water, dealing **2d8** Cold damage. Damage increases by **+1d8** per 12 Water CA.",
       "upgrades": [
         {
           "ca": "2",
@@ -89,10 +90,10 @@
       "name": "Aquatic Lash",
       "ba": 0,
       "ca": "2",
-      "mana": "3",
+      "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "As a **Full Action** make a Melee Spell Attack against an enemy within 6m whipping them with a torrent of water, dealing **1d6** Bludgeoning damage and **1d6** Aether damage on it. Both damages types increase by **+1d6** per 12 Water CA.\n\nIf the spell hits, you can consume up to **4 Aqua Charges** to move the creature in any cardinal direction, **2m** per **1 Charge** consumed.",
+      "body": "As a **Full Action** make a Melee Spell Attack against an enemy within 6m whipping them with a torrent of water, dealing **1d6** Cold damage and **1d6** Aether damage on it. Both damages types increase by **+1d6** per 12 Water CA.\n\nIf the spell hits, you can consume **1-4 Aqua Charges** to move the creature in any cardinal direction, **2m** per Charge consumed.",
       "upgrades": [
         {
           "ca": "3",
@@ -111,7 +112,7 @@
       "name": "Rejuvenating Spring",
       "ba": 0,
       "ca": "3",
-      "mana": "3*",
+      "mana": "2*",
       "concentration": null,
       "tags": [],
       "body": "As a **Full Action** target yourself or an ally, giving them a sip of healing water. The target gains **+1d8** Health. The healing Dice *Class* increases by +1 per 24 Water CA.\n\nYou may consume any number of **Aqua Charges** to increase the healing Dice *Count* by +1 per 2 Charges consumed this way.",

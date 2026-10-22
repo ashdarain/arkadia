@@ -4,7 +4,7 @@
    The reader picks a theme on the Settings page (js/settings.js lists them).
    The first block is the default, used when no theme is picked; a theme that leaves a value
    out gets the default's.
-   Crystal, buff/debuff and race colours are not themed.
+   Crystal colours come from config.mjs (color, and lightColor for the light themes).
    ========================================================== */
 
 :root, [data-theme="amethyst"] {
@@ -52,12 +52,10 @@
   --weight-medium: #d1c18e;
   --weight-heavy: #e0a17f;
 
-  /* Kept the same in every theme */
-  --debuff: #e58fa0;        /* rose: debuff conditions */
+  --debuff: #e58fa0;        /* rose: debuff conditions (the light themes use a deeper rose) */
 
-  /* How much crystal / debuff coloured text is mixed toward the text colour (light themes need some) */
-  --ink-mix: 0%;
-  --src-ink-mix: 40%;       /* condition source buttons */
+  /* How much a condition's source-button text is mixed toward the text colour */
+  --src-ink-mix: 40%;
 }
 
 /* Near-black, high contrast, a cool silver accent: good on phones and in dark rooms. */
@@ -210,13 +208,10 @@
   --hint: #8b7f6c;
   --faint: #a59781;
   --mark-text: #17110a;
-  --weight-light: #4f6b37;
-  --weight-medium: #8a6a12;
-  --weight-heavy: #a4482a;
-  --debuff: #e58fa0;
-  /* crystal and debuff colours are made for dark pages; as text on paper, mix them toward the ink */
-  --ink-mix: 60%;
-  --src-ink-mix: 65%;
+  --weight-light: #3f5a28;
+  --weight-medium: #765a08;
+  --weight-heavy: #94391d;
+  --debuff: #a83a52;
 }
 
 /* Light and cool: blue-white like packed snow, slate ink, a cobalt accent. A crisp counterpart to Parchment. */
@@ -253,9 +248,8 @@
   --hint: #7d8896;
   --faint: #a0abb8;
   --mark-text: #0b1220;
-  --weight-light: #4a6a33;
-  --weight-medium: #86650f;
-  --weight-heavy: #a1462a;
-  --ink-mix: 60%;
-  --src-ink-mix: 65%;
+  --weight-light: #3b5a26;
+  --weight-medium: #73560a;
+  --weight-heavy: #92381e;
+  --debuff: #a8344f;
 }

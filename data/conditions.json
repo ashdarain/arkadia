@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:09:15.544Z",
+  "generatedAt": "2026-10-21T09:36:26.229Z",
   "source": "Conditions.md",
   "conditions": [
     {
@@ -9,11 +9,12 @@
       "kind": "buff",
       "strength": "weak",
       "label": "Weak Buff",
-      "body": "When you have Foresight, you can spend 1 Stack to reroll and an Attack or Damage roll. At the end of your turn lose 1 Stack of Foresight. Minor Dispells remove 2 Stacks of Foresight.",
+      "body": "When you have Foresight, you can spend 1 stack of Foresight to reroll an Attack or Damage roll. At the end of your turn lose 2 stacks of Foresight. Minor Dispells remove 2 stacks of Foresight.",
       "sources": [
         "Mind",
         "Sage",
-        "Oracle"
+        "Oracle",
+        "Time"
       ]
     },
     {
@@ -55,7 +56,7 @@
       "kind": "debuff",
       "strength": "weak",
       "label": "Weak Debuff",
-      "body": "Immobilized creatures cannot move and fail AGI rolls. You can still Teleport while immobilized.",
+      "body": "Immobilized creatures **cannot move** and fail any **AGI** rolls. You can still Teleport while immobilized.",
       "sources": [
         "Water"
       ]
@@ -80,8 +81,18 @@
       "label": "Weak Debuff",
       "body": "A creature that is Feared against a enemy cannot willingly move towards the enemy while it has line of sight of the enemy, and it makes attack/spell attack rolls against the enemy with Disadvantage. Fear is a Weak Debuff.",
       "sources": [
+        "Mind",
         "Void"
       ]
+    },
+    {
+      "id": "charm",
+      "name": "Charm",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "A charmed creature treats its charmer as **friendly** and an ally, it cannot make attacks against them and any AoE abilities that don’t affect allies also don’t affect its charmer. If the charmer damages or negatively affects the creature, Charm ends completely. Charm can last multiple turns, and applying Charm to an already charmed creature increases the duration.",
+      "sources": []
     },
     {
       "id": "taunt",
@@ -91,7 +102,8 @@
       "label": "Weak Debuff",
       "body": "A taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn.",
       "sources": [
-        "Sentinel"
+        "Sentinel",
+        "Mind"
       ]
     },
     {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:09:15.497Z",
+  "generatedAt": "2026-10-21T09:36:26.178Z",
   "id": "lightning",
   "name": "Lightning",
   "tier": 2,
@@ -18,7 +18,9 @@
     "CHA",
     "INT"
   ],
-  "ascendsInto": [],
+  "ascendsInto": [
+    "Tempest"
+  ],
   "mechanics": [
     {
       "id": "shock",
@@ -47,7 +49,9 @@
       "ca": "1",
       "mana": null,
       "concentration": null,
-      "tags": [],
+      "tags": [
+        "Passive"
+      ],
       "body": "During combat gain Static Charges whenever you preform certain actions in combat. Specific **Static Discharge** spells may be triggered when reaching a certain number of Static Charges and meeting a condition. Charges are gained after all the effects of the action is resolved. Half of your Charges (rounded down) are lost during a Short or Long Test, and you have a maximum of 30 Charges.\n\nGain 1 Charge whenever you perform a Half Action. Gain 2 Charges whenever you perform a Full Action. Gain 1 Charge for every 5m you move in a single Move Action. Aside from movement, in order to gain a Charge, the actions must be from Lightning spells and attacks,  spells and attacks from Lightning-Ascended magic, or Actions that deal Lightning damage.",
       "upgrades": [
         {
@@ -182,7 +186,9 @@
       "ca": "2",
       "mana": null,
       "concentration": null,
-      "tags": [],
+      "tags": [
+        "Passive"
+      ],
       "body": "**Static Discharge:** Whenever you deal Lightning damage to a target, you may consume *4 Static Charges* to cast *Thunderbolt* on target as an *Immediate Action*. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades, otherwise it is cast normally. *Mana Cost* still applies. If multiple targets are dealt Lightning damage with a single Action, you may consume the charges multiple times to repeatedly cast Thunderbolt with consecutive Immediate Actions.",
       "upgrades": [
         {
@@ -204,7 +210,9 @@
       "ca": "4",
       "mana": null,
       "concentration": null,
-      "tags": [],
+      "tags": [
+        "Passive"
+      ],
       "body": "***Static Discharge:*** Whenever you deal Lightning damage, you may consume *3 Static Charges* to deal an additional *1d8* *Aether* Damage the target. Damage increase by *+1d8* per 12 Lightning CA. This damage only applies to one target per Action.",
       "upgrades": [
         {

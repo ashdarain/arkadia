@@ -405,6 +405,7 @@ mark { background: var(--accent-dim); color: var(--mark-text); padding: 0 2px; b
 .roster.filtering > a:not(.match) { opacity: .42; }
 .roster.filtering > a:not(.match):hover { opacity: .8; }
 .roster.filtering > a.match { --hl: var(--accent); border-color: var(--hl); --facet-line: var(--hl); }
+.roster.filtering.reorder > a.match { order: -1; }   /* when the list runs off screen, matches move to the front (app.js adds .reorder) */
 .roster.filtering > a.crystal-card.match { --hl: var(--crystal); }
 .chip.lit { color: var(--accent); border-color: var(--accent); }
 .crystal-card .chip.lit { color: var(--crystal-ink); border-color: var(--crystal); }
@@ -486,8 +487,8 @@ mark { background: var(--accent-dim); color: var(--mark-text); padding: 0 2px; b
 
 /* ---------- Magic ---------- */
 
-/* Crystal colour used for text. Equal to --crystal on the dark themes; light themes mix in some ink (--ink-mix). */
-* { --crystal-ink: color-mix(in srgb, var(--crystal, var(--accent)), var(--text) var(--ink-mix)); }
+/* Crystal colour used for text. The light themes already get a darker crystal colour (lightColor in config.mjs). */
+* { --crystal-ink: var(--crystal, var(--accent)); }
 
 .crystal-gem { width: .8em; height: .8em; margin-right: .3em; vertical-align: -.02em; }
 .crystal-gem path { fill: var(--crystal, var(--accent)); }
@@ -497,9 +498,12 @@ mark { background: var(--accent-dim); color: var(--mark-text); padding: 0 2px; b
 .crystal-head .chips { margin-top: 14px; }
 .ascends { font: 400 1.35rem/1.2 var(--display); color: var(--text); text-align: right; }
 
+.subtabs a.hidden-page { color: var(--draft); }   /* a hidden class or crystal, shown with drafts on */
+.roster-top h2 .badge { margin-left: 8px; font-family: var(--body); vertical-align: 3px; }
+.class-head h1 .badge { margin-left: 12px; font-family: var(--body); font-size: .8rem; vertical-align: 8px; }
 .subtabs a.crystal-tab[aria-current="page"] { border-bottom-color: var(--crystal); }
 .subtabs a.crystal-tab:hover { border-bottom-color: color-mix(in srgb, var(--crystal) 45%, transparent); }
-.mechanics-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); align-items: start; margin-top: 18px; }
+.crystal-mechanics > .masonry { margin-top: 18px; }   /* mechanics stack in columns like the spells below */
 .crystal-mechanics .mechanic { border-left-color: var(--crystal); }
 .crystal-divider { color: var(--crystal-ink); }
 .crystal-divider.beyond { color: var(--draft); }
@@ -610,9 +614,10 @@ mark { background: var(--accent-dim); color: var(--mark-text); padding: 0 2px; b
 .equip-type { font-size: .76rem; color: var(--muted); letter-spacing: .02em; }
 .equip-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -2px 0 8px; }
 .equip-sub .chip { font-size: .72rem; padding: 0 6px; }
-.equip-sub .weight-light { color: var(--weight-light); }
-.equip-sub .weight-medium { color: var(--weight-medium); }
-.equip-sub .weight-heavy { color: var(--weight-heavy); }
+.equip-sub [class*="weight-"] { font-weight: 700; color: var(--w); border-color: color-mix(in srgb, var(--w) 50%, transparent); background: color-mix(in srgb, var(--w) 12%, transparent); }
+.equip-sub .weight-light { --w: var(--weight-light); }
+.equip-sub .weight-medium { --w: var(--weight-medium); }
+.equip-sub .weight-heavy { --w: var(--weight-heavy); }
 .equip-stats { font-weight: 700; font-size: .78rem; color: var(--muted); }
 .ac-pair { display: flex; gap: 18px; margin: 2px 0 8px; }
 .ac-pair > div { display: flex; align-items: baseline; gap: 5px; }
@@ -664,7 +669,7 @@ mark { background: var(--accent-dim); color: var(--mark-text); padding: 0 2px; b
   flex: none;
   font: 600 .74rem/1.6 var(--body); white-space: nowrap;
   padding: 0 7px;
-  color: color-mix(in srgb, var(--tag), var(--text) var(--ink-mix)); border: 1px solid color-mix(in srgb, var(--tag) 55%, transparent); border-radius: var(--radius);
+  color: var(--tag); border: 1px solid color-mix(in srgb, var(--tag) 55%, transparent); border-radius: var(--radius);
 }
 .cond-tag.buff { --tag: var(--resource); }
 .cond-tag.debuff { --tag: var(--debuff); }
@@ -952,8 +957,6 @@ mark { background: var(--accent-dim); color: var(--mark-text); padding: 0 2px; b
   .fgroup button, .fclear { padding: 4px 10px; }
   .fgroup-tier button { padding: 4px 0; min-width: 36px; }
   .fbar-end { border-left: 0; border-top: 1px solid var(--seam); }
-  /* one column: matches slide to the top while a filter is on */
-  .roster.filtering > a.match { order: -1; }
 
   /* magic */
   .ascends { text-align: left; }

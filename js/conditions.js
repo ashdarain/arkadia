@@ -1,7 +1,7 @@
 /* Conditions page, and links from embedded conditions elsewhere. */
 
 import {
-  classHref, crystalHref, esc, escapeRe, inScope, main, masonry,
+  classHidden, classHref, crystalHidden, crystalHref, esc, escapeRe, inScope, main, masonry,
   md, plain, spellInScope, state, wipPage,
 } from "./core.js";
 import { allAbilities, classIcon } from "./classes.js";
@@ -26,13 +26,13 @@ function conditionSource(name, condition) {
     const at = (anchor) => crystalHref(crystal.id, anchor);
     const mech = crystal.mechanics.find((m) => m.name.toLowerCase() === condition.name.toLowerCase());
     const spell = !mech && crystal.spells.filter(spellInScope).find((sp) => mentions(sp.body));
-    return { name: crystal.name, color: crystalColor(crystal), icon: gem,
+    return { name: crystal.name, color: crystalColor(crystal), icon: gem, hidden: !state.showDrafts && crystalHidden(crystal),
       href: at(mech ? "mech-" + mech.id : spell?.id) };
   }
   const cls = state.classes.find((c) => c.name.toLowerCase() === key);
   if (cls) {
     const hit = [...cls.features, ...allAbilities(cls)].filter((f) => inScope(f.level)).find((f) => mentions(f.body));
-    return { name: cls.name, color: null, icon: classIcon(cls), href: classHref(cls.id, hit?.id) };
+    return { name: cls.name, color: null, icon: classIcon(cls), hidden: !state.showDrafts && classHidden(cls), href: classHref(cls.id, hit?.id) };
   }
   return { name, color: null, icon: "", href: null };   // not on the site (yet)
 }
@@ -52,7 +52,7 @@ export function conditionsPage() {
   const d = state.conditions;
   if (!d) return wipPage({ label: "Conditions", wip: "Conditions haven't been generated yet. Run updateFromDocs.bat in the Website folder." });
   const cards = d.conditions.map((c) => {
-    const sources = (c.sources ?? []).map((name) => conditionSource(name, c));
+    const sources = (c.sources ?? []).map((name) => conditionSource(name, c)).filter((s) => !s.hidden);
     return `
     <article class="facet condition ${esc(c.kind)}" id="condition--${c.id}"${sourceBar(sources)}>
       <div class="condition-head">

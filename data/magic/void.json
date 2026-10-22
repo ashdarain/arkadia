@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:09:15.497Z",
+  "generatedAt": "2026-10-21T09:36:26.178Z",
   "id": "void",
   "name": "Void",
   "tier": 3,
@@ -134,7 +134,7 @@
         {
           "ca": "4",
           "variant": null,
-          "text": "You may cast this spell as a **Full Action** which increases the Damage Dice Class by **+1**. If you Breach the Veil with this cast instead of Fearing, the failed save inflicts **Paranoia** creature until the end of their next turn. This is another alternate cast and does not gain AoE from the other Upgrade."
+          "text": "You may cast this spell as a **Full Action** which increases the Damage Dice Class by **+1**. If you Breach the Veil with this cast the failed save inflicts **Paranoia** on the creature instead of Fear until the end of their next turn. This is an alternate cast and does not gain AoE from the other Upgrade."
         }
       ]
     }

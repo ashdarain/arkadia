@@ -83,6 +83,7 @@ function render() {
   addCopyButtons();
   packMasonry();
   stickColumns();
+  fitRosters();
   markCurrentTier();
 
   const targetId = tab === "races" && sub ? `race--${sub}`
@@ -107,6 +108,7 @@ function render() {
   document.fonts?.ready.then(() => {
     packMasonry();
     stickColumns();
+    fitRosters();
     if (target?.isConnected && window.scrollY === jumpedAt) jumpTo(target);
   });
 
@@ -253,6 +255,15 @@ window.addEventListener("hashchange", () => {
   render();
 });
 
+/** While a filter is on, matches move to the front of the list, but only when the list doesn't
+    already fit on screen (a phone, or a zoomed-in desktop). Reordering doesn't change its height. */
+function fitRosters() {
+  for (const r of main.querySelectorAll(".roster.filtering")) {
+    const bottom = r.getBoundingClientRect().bottom + window.scrollY;
+    r.classList.toggle("reorder", bottom > window.innerHeight);
+  }
+}
+
 /** Mark the BA button for the tier currently at the top of the screen. */
 function markCurrentTier() {
   const bar = main.querySelector(".ba-jump");
@@ -273,7 +284,7 @@ main.addEventListener("animationend", (e) => {
 let resizeTimer;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => { packMasonry(); stickColumns(); }, 120);
+  resizeTimer = setTimeout(() => { packMasonry(); stickColumns(); fitRosters(); }, 120);
 });
 
 /* ---------------- Boot ---------------- */

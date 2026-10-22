@@ -1,8 +1,8 @@
 /* Combat classes: the overview roster and each class page. */
 
 import {
-  anchorId, beyond, classHref, CONFIG, designerNotes, esc, groupBy, ICONS,
-  inScope, masonry, md, plain, state,
+  anchorId, beyond, classHidden, classHref, CONFIG, designerNotes, esc, groupBy, hiddenBadge, ICONS,
+  inScope, masonry, md, plain, shownClasses, state,
 } from "./core.js";
 
 function classSubtabs(activeId) {
@@ -10,7 +10,7 @@ function classSubtabs(activeId) {
     <nav class="subtabs" aria-label="Classes">
       <a href="#/classes" ${!activeId ? 'aria-current="page"' : ""}>Overview</a>
       <span class="sep" aria-hidden="true"></span>
-      ${state.classes.map((c) => `<a href="#/classes/${c.id}" ${c.id === activeId ? 'aria-current="page"' : ""}>${esc(c.name)}</a>`).join("")}
+      ${shownClasses().map((c) => `<a href="#/classes/${c.id}"${classHidden(c) ? ' class="hidden-page"' : ""} ${c.id === activeId ? 'aria-current="page"' : ""}>${esc(c.name)}</a>`).join("")}
     </nav>`;
 }
 
@@ -27,10 +27,11 @@ function hpCore(hp) {
 }
 
 function classOverview() {
-  const tags = [...new Set(state.classes.flatMap((c) => c.tags))].sort();
+  const classes = shownClasses();
+  const tags = [...new Set(classes.flatMap((c) => c.tags))].sort();
   const f = state.tagFilter, on = f.size > 0;
   const isMatch = (c) => c.tags.some((t) => f.has(t));
-  const hits = state.classes.filter(isMatch).length;
+  const hits = classes.filter(isMatch).length;
   return `
     ${classSubtabs(null)}
     <header class="page-head">
@@ -39,13 +40,13 @@ function classOverview() {
     <div class="filter" role="group" aria-label="Filter by tag">
       <button type="button" data-tag="" aria-pressed="${!on}">All</button>
       ${tags.map((t) => `<button type="button" data-tag="${esc(t)}" aria-pressed="${f.has(t)}">${esc(t)}</button>`).join("")}
-      ${on ? `<span class="filter-count">${hits} of ${state.classes.length}</span>` : ""}
+      ${on ? `<span class="filter-count">${hits} of ${classes.length}</span>` : ""}
     </div>
     <div class="roster${on ? " filtering" : ""}">
-      ${state.classes.map((c) => `
-        <a class="facet${on && isMatch(c) ? " match" : ""}" href="#/classes/${c.id}">
+      ${classes.map((c) => `
+        <a class="facet${on && isMatch(c) ? " match" : ""}${classHidden(c) ? " draft-panel" : ""}" href="#/classes/${c.id}">
           <div class="roster-top">
-            <h2>${classIcon(c)}${esc(c.name)}</h2>
+            <h2>${classIcon(c)}${esc(c.name)}${classHidden(c) ? hiddenBadge : ""}</h2>
             ${c.healthPerLevel ? `<span class="roster-hp" title="Health per level">${hpCore(c.healthPerLevel)}</span>` : ""}
           </div>
           ${summaryOf(c) ? `<p class="summary">${esc(summaryOf(c))}</p>` : ""}
@@ -234,7 +235,7 @@ function classPage(cls) {
     ${classSubtabs(cls.id)}
     <header class="class-head">
       <div>
-        <h1>${esc(cls.name)}</h1>
+        <h1>${esc(cls.name)}${classHidden(cls) ? hiddenBadge : ""}</h1>
         ${summaryOf(cls) ? `<p class="lede">${esc(summaryOf(cls))}</p>` : ""}
         ${chipsFor(cls)}
       </div>
@@ -253,7 +254,8 @@ function classPage(cls) {
 /** #/classes, #/classes/<id> and #/classes/<id>/<anchor>. */
 export function classesPage(sub, anchor) {
   if (!sub) return { html: classOverview() };
-  const cls = state.byId.get(sub);
+  const cls = shownClasses().find((c) => c.id === sub);
+  if (!cls && state.byId.has(sub)) return { html: classOverview() };   // a hidden class, with drafts off
   if (!cls) return { html: `${classSubtabs(null)}<div class="error"><h1>Class not found</h1><p>There's no class called “${esc(sub)}”. Pick one from the list above.</p></div>` };
   if (anchor) {
     // a link into a tabbed section (e.g. one Samurai stance) opens that tab

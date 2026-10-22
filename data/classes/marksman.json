@@ -7,9 +7,9 @@
   ],
   "description": null,
   "healthPerLevel": {
-    "raw": "1d8+2+CON",
+    "raw": "1d8+3+CON",
     "dice": "1d8",
-    "flat": 2,
+    "flat": 3,
     "stat": "CON"
   },
   "levels": [

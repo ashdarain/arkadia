@@ -1,11 +1,25 @@
 /* Magic: the crystal overview (with its filters) and each crystal page. */
 
 import {
-  anchorId, beyond, CONFIG, esc, groupBy, masonry, md, spellByDefault,
-  spellInScope, state, wipPage,
+  anchorId, beyond, CONFIG, crystalHidden, esc, groupBy, hiddenBadge, masonry, md, shownCrystals,
+  spellByDefault, spellInScope, state, wipPage,
 } from "./core.js";
+import { THEMES } from "./settings.js";
 
-export const crystalColor = (c) => CONFIG.crystalColors[c.id] ?? "var(--accent)";
+/* Each crystal's colour is a CSS variable (--crystal-fire …) that the light themes redefine with
+   the crystal's lightColor, so a page doesn't need redrawing when the theme changes. */
+export const crystalColor = (c) => CONFIG.crystalColors[c.id] ? `var(--crystal-${c.id})` : "var(--accent)";
+{
+  const entries = Object.entries(CONFIG.crystalColors);
+  const lightThemes = THEMES.filter((t) => t.light).map((t) => `[data-theme="${t.id}"]`).join(", ");
+  const style = document.createElement("style");
+  style.id = "crystal-colours";
+  style.textContent =
+    `:root { ${entries.map(([id, c]) => `--crystal-${id}: ${c.color};`).join(" ")} }\n` +
+    // crystals without a lightColor keep their normal colour on the light themes too
+    (lightThemes ? `${lightThemes} { ${entries.filter(([, c]) => c.lightColor).map(([id, c]) => `--crystal-${id}: ${c.lightColor};`).join(" ")} }` : "");
+  document.head.append(style);
+}
 const damageTypesOf = (c) => c.damageTypes ?? (c.damageType ? [c.damageType] : []);
 export const gem = `<svg class="crystal-gem" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 19 9 12 22 5 9z"/><path class="cut" d="M5 9h14M12 2 9.5 9 12 22l2.5-13z"/></svg>`;
 
@@ -18,7 +32,7 @@ function magicSubtabs(activeId) {
     <nav class="subtabs" aria-label="Crystals">
       <a href="#/magic" ${!activeId ? 'aria-current="page"' : ""}>Overview</a>
       <span class="sep" aria-hidden="true"></span>
-      ${state.magic.crystals.map((c) => `<a class="crystal-tab" style="--crystal: ${crystalColor(c)}" href="#/magic/${c.id}" ${c.id === activeId ? 'aria-current="page"' : ""}>${esc(c.name)}</a>`).join("")}
+      ${shownCrystals().map((c) => `<a class="crystal-tab${crystalHidden(c) ? " hidden-page" : ""}" style="--crystal: ${crystalColor(c)}" href="#/magic/${c.id}" ${c.id === activeId ? 'aria-current="page"' : ""}>${esc(c.name)}</a>`).join("")}
     </nav>`;
 }
 
@@ -46,7 +60,7 @@ const crystalMatches = (c) => MAGIC_FILTERS.some((g) => g.values(c).some((v) => 
 const litFor = (key, v) => magicPicks(key).has(v) ? " lit" : "";
 
 function magicFilterBar() {
-  const crystals = state.magic.crystals;
+  const crystals = shownCrystals();
   const groups = MAGIC_FILTERS.map((g) => {
     const vals = [...new Set(crystals.flatMap(g.values))].sort(g.sort);
     if (!vals.length) return "";
@@ -79,13 +93,13 @@ function magicOverview() {
     </header>
     ${magicFilterBar()}
     <div class="roster${on ? " filtering" : ""}">
-      ${state.magic.crystals.map((c) => {
+      ${shownCrystals().map((c) => {
         const shown = c.spells.filter(spellInScope);
         const dmg = damageTypesOf(c);
         return `
-        <a class="facet crystal-card${on && crystalMatches(c) ? " match" : ""}" href="#/magic/${c.id}" style="--crystal: ${crystalColor(c)}">
+        <a class="facet crystal-card${on && crystalMatches(c) ? " match" : ""}${crystalHidden(c) ? " draft-panel" : ""}" href="#/magic/${c.id}" style="--crystal: ${crystalColor(c)}">
           <div class="roster-top">
-            <h2>${gem}${esc(c.name)}</h2>
+            <h2>${gem}${esc(c.name)}${crystalHidden(c) ? hiddenBadge : ""}</h2>
             ${c.tier ? `<span class="chip${litFor("tier", String(c.tier))}">Tier ${c.tier}</span>` : ""}
           </div>
           ${c.stats?.length ? `<div class="crystal-stats"><span class="hp-label">Stats</span>${c.stats.map((st) => `<span class="stat-pill${litFor("stat", st)}">${esc(st)}</span>`).join("")}</div>` : ""}
@@ -131,13 +145,11 @@ function crystalPage(c) {
   const mechanics = c.mechanics.length ? `
     <div class="crystal-mechanics">
       <h2>Mechanics</h2>
-      <div class="mechanics-grid">
-        ${c.mechanics.map((m) => `
-          <article class="facet panel mechanic" id="${anchorId(c.id, "mech-" + m.id)}">
-            <h3>${esc(m.name)}</h3>
-            <div class="body">${md(m.body)}</div>
-          </article>`).join("")}
-      </div>
+      ${masonry(c.mechanics.map((m) => `
+        <article class="facet panel mechanic" id="${anchorId(c.id, "mech-" + m.id)}">
+          <h3>${esc(m.name)}</h3>
+          <div class="body">${md(m.body)}</div>
+        </article>`), 300)}
     </div>` : "";
   // every spell on the page by name, grouped like the page (BA tiers, then drafts)
   const indexGroups = [
@@ -168,7 +180,7 @@ function crystalPage(c) {
     <div class="crystal-page" style="--crystal: ${crystalColor(c)}">
       <header class="class-head crystal-head">
         <div>
-          <h1>${gem}${esc(c.name)}</h1>
+          <h1>${gem}${esc(c.name)}${crystalHidden(c) ? hiddenBadge : ""}</h1>
           <div class="chips">
             ${c.tier ? filterLink("tier", String(c.tier), `Tier ${c.tier}`, "chip", `Show all Tier ${c.tier} crystals`) : ""}
             ${damageTypesOf(c).map((t) => filterLink("damage", t, `${t} damage`, "chip", `Show crystals that deal ${t} damage`)).join("")}
@@ -206,9 +218,10 @@ function crystalPage(c) {
 }
 
 export function magicPage(sub) {
-  if (!state.magic) return { html: wipPage({ label: "Magic", wip: "Magic data hasn't been generated yet. Run updateFromDocs.bat in the Website folder." }) };
+  if (!state.magic) return { html: wipPage({ label: "Magic", wip: "Magic data hasn't been generated yet" }) };
   if (!sub) return { html: magicOverview() };
-  const c = state.magic.crystals.find((x) => x.id === sub);
+  const c = shownCrystals().find((x) => x.id === sub);
+  if (!c && state.magic.crystals.some((x) => x.id === sub)) return { html: magicOverview() };   // hidden, with drafts off
   if (!c) return { html: `${magicSubtabs(null)}<div class="error"><h1>Crystal not found</h1><p>There's no crystal called “${esc(sub)}”. Pick one from the list above.</p></div>` };
   return { html: crystalPage(c), title: c.name };
 }

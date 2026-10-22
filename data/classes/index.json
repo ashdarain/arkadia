@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-20T12:09:15.471Z",
+  "generatedAt": "2026-10-21T09:36:26.150Z",
   "classes": [
     {
       "id": "arcane-archer",
@@ -11,9 +11,9 @@
       ],
       "file": "arcane-archer.json",
       "healthPerLevel": {
-        "raw": "1d6+4+CON",
+        "raw": "1d6+5+CON",
         "dice": "1d6",
-        "flat": 4,
+        "flat": 5,
         "stat": "CON"
       }
     },
@@ -26,9 +26,9 @@
       ],
       "file": "assassin.json",
       "healthPerLevel": {
-        "raw": "1d6+2+CON",
+        "raw": "1d6+4+CON",
         "dice": "1d6",
-        "flat": 2,
+        "flat": 4,
         "stat": "CON"
       }
     },
@@ -41,8 +41,8 @@
       ],
       "file": "captain.json",
       "healthPerLevel": {
-        "raw": "1d8+4+CON",
-        "dice": "1d8",
+        "raw": "1d10+4+CON",
+        "dice": "1d10",
         "flat": 4,
         "stat": "CON"
       }
@@ -70,9 +70,9 @@
       ],
       "file": "magus.json",
       "healthPerLevel": {
-        "raw": "1d6+3+CON",
+        "raw": "1d6+4+CON",
         "dice": "1d6",
-        "flat": 3,
+        "flat": 4,
         "stat": "CON"
       }
     },
@@ -84,9 +84,9 @@
       ],
       "file": "marksman.json",
       "healthPerLevel": {
-        "raw": "1d8+2+CON",
+        "raw": "1d8+3+CON",
         "dice": "1d8",
-        "flat": 2,
+        "flat": 3,
         "stat": "CON"
       }
     },
@@ -144,9 +144,9 @@
       ],
       "file": "skirmisher.json",
       "healthPerLevel": {
-        "raw": "1d8+2+CON",
+        "raw": "1d8+3+CON",
         "dice": "1d8",
-        "flat": 2,
+        "flat": 3,
         "stat": "CON"
       }
     },
@@ -159,9 +159,9 @@
       ],
       "file": "spellblade.json",
       "healthPerLevel": {
-        "raw": "1d8+3+CON",
+        "raw": "1d8+4+CON",
         "dice": "1d8",
-        "flat": 3,
+        "flat": 4,
         "stat": "CON"
       }
     },
@@ -173,9 +173,9 @@
       ],
       "file": "spellslinger.json",
       "healthPerLevel": {
-        "raw": "1d6+4+CON",
+        "raw": "1d6+5+CON",
         "dice": "1d6",
-        "flat": 4,
+        "flat": 5,
         "stat": "CON"
       }
     }

@@ -7,9 +7,9 @@
   ],
   "description": null,
   "healthPerLevel": {
-    "raw": "1d6+4+CON",
+    "raw": "1d6+5+CON",
     "dice": "1d6",
-    "flat": 4,
+    "flat": 5,
     "stat": "CON"
   },
   "levels": [
@@ -84,21 +84,21 @@
           "level": 2,
           "name": "Quickened Spell",
           "cost": "1 Alacrity Point",
-          "body": "Spend *1 Alacrity Point* to cast a **Full Action** spell as as a **Half Action**. This spell **loses Stat bonuses** to *Attack Rolls*, *Damage Rolls* and your Stat bonus to *Spell Save DCs*. Quickened spells also have a *-4m* range reduction if its base range is 10m or greater, or a *-2m* reduction if its base range is less than 10m. At Spellslinger Level 6, you no longer lose and Stat bonuses. At Spellslinger Level 9 you no longer lose range."
+          "body": "Spend *1 Alacrity Point* to cast a **Full Action** spell as as a **Half Action**. This spell **loses Stat bonuses** to *Attack Rolls*, *Damage Rolls* and your Stat bonus to *Spell Save DCs*. Quickened spells also have a *-4m* range reduction if its base range is 10m or greater, or a *-2m* reduction if its base range is less than 10m. At Spellslinger Level 6, you no longer lose and Stat bonuses. At Spellslinger Level 9 you no longer lose range. *The spell is still considered to be cast as a Full Action this way for the purposes Crystal abilities and non-Spellslinger features.*"
         },
         {
           "id": "instant-spell",
           "level": 2,
           "name": "Instant Spell",
           "cost": "1 Alacrity Point",
-          "body": "Spend *1 Alacrity Point* to cast a **Half or Extra Action** spell as a **Free Action**. This can only be done *once per turn*. You can use this ability on spells which already had their Action cost reduced by Spellslinger or other sources."
+          "body": "Spend *1 Alacrity Point* to cast a **Half or Extra Action** spell as a **Free Action**. This can only be done *once per turn*. You can use this ability on spells which already had their Action cost reduced by Spellslinger or other sources. The spell is still considered to be cast as a **Full Action** this way for the purposes Crystal abilities and non-Spellslinger features. *The spell is still considered to be cast as a Half or Extra Action this way for the purposes Crystal abilities and non-Spellslinger features.*"
         },
         {
           "id": "reactive-spell",
           "level": 2,
           "name": "Reactive Spell",
           "cost": "1–2 Alacrity Points",
-          "body": "As a Reaction you can spend Alacrity Points to cast a spell in response being attacked or targeted by an enemy Spell or ability. Spend *2 Alacrity Points* to cast a Full Action spell, or *1 Alacrity Point* to cast a Half or Extra Action spell."
+          "body": "As a Reaction you can spend Alacrity Points to cast a spell in response being attacked or targeted by an enemy Spell or ability. Spend *2 Alacrity Points* to cast a Full Action spell, or *1 Alacrity Point* to cast a Half or Extra Action spell. *The spell is still considered to be cast as a Full Action this way for the purposes Crystal abilities and non-Spellslinger features.*"
         },
         {
           "id": "cheaper-spell",

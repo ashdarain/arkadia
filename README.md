@@ -4,9 +4,11 @@
 
 Shared settings live in `config.mjs`, read by both the site and the converters:
 
-- `playtest`: what playtesters see by default (max class level, max spell BA, spells hidden by name ending)
+- `playtest`: what playtesters see by default (max class level, max spell BA, spells hidden by name ending,
+  and whole classes or crystals to hide)
 - `classes`: which class notes are converted (required tag, excluded tags)
-- `crystals`: which crystals are converted, in order, each with its colour on the site
+- `crystals`: which crystals are converted, in order, each with its colour on the site (`color`), plus an
+  optional `lightColor` for the light themes (pale colours need one; without it `color` is used everywhere)
 - `notes`: file names of the races, equipment, info and conditions notes
 
 After editing it, refresh the browser. If you changed which notes are read (vault, classes, crystals),
@@ -104,7 +106,10 @@ pulled in from the vault), `# Spells` holds `## BA N+` tiers and `### Spell` ent
 (Notes, Ideas...) is ignored. Spells with no cost line become drafts.
 
 What playtesters see by default is set under `playtest` in `config.mjs`:
-`maxClassLevel` (class levels), `maxSpellBA` (spell tiers) and `hideSpellsEndingWith` (e.g. Talents).
+`maxClassLevel` (class levels), `maxSpellBA` (spell tiers), `hideSpellsEndingWith` (e.g. Talents), and
+`hiddenClasses` / `hiddenCrystals` (whole classes or crystals by name, e.g. `["Mind", "Wind"]`). A hidden class or
+crystal disappears from its tab, the overview, the filters, search and condition source buttons; it's still
+converted, so it shows up (with a Hidden badge) once drafts are switched on.
 Everything else appears when "Show drafts & hidden content" is switched on (Settings tab, bottom of the sidebar).
 
 ### Equipment
@@ -219,6 +224,6 @@ default, and any colour a theme leaves out falls back to it.
 
 To add a theme: copy a block in `css/themes.css`, give it a new `[data-theme="name"]` and change the colours,
 then add `{ id: "name", name: "Name", blurb: "..." }` to `THEMES` in `js/settings.js`. Its card on the Settings
-page draws a small preview from its own colours. For a light theme, set `color-scheme: light` and raise
-`--ink-mix` / `--src-ink-mix` so crystal and debuff coloured text stays readable on a pale page.
+page draws a small preview from its own colours. For a light theme, set `color-scheme: light`, give it a
+deeper `--debuff`, and add `light: true` to its line in `THEMES` so crystals switch to their `lightColor`.
 

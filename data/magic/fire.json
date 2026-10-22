@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T12:09:15.497Z",
+  "generatedAt": "2026-10-21T09:36:26.178Z",
   "id": "fire",
   "name": "Fire",
   "tier": 1,
@@ -74,6 +74,28 @@
       ]
     },
     {
+      "id": "lesser-fireball",
+      "name": "Lesser Fireball",
+      "ba": 0,
+      "ca": "2",
+      "mana": "1+",
+      "concentration": null,
+      "tags": [],
+      "body": "**Basic Cast**: As a Full Action make a ranged spell attack hurling a ball of fire towards any target within 12m, dealing **1d8** Fire damage. Lesser Fireball is a Small Projectile. Damage increases by *+1d8* per 10 Fire CA.\n\n**Empowered Cast**: Consume 1 Blaze Charge as a Half Action to make a ranged spell attack to hurling a ball of fire towards any target within 8m, dealing 2d6 fire damage. Damage increases by *+1d6* per 10 Fire CA.\n\n**0 Mana Cast:** You may cast Less Fireball for *0 Mana*, if you do it deals *1d6* Fire damage instead and the range is lowered to *6m*. Damage increases by *+1d6* per 20 Fire CA.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "You may have Lesser Fireball fork and hit two different targets within 6m of each other, making separate attack rolls for each target. *+1 Mana Cost if used*."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may have Lesser Fireball barrage each target hitting them 2 more times, costing +1 additional Blaze Charge. Make each Attack Roll separately. The subsequent Attack Rolls are reduced by -2, then -3.  *+1 Mana Cost if used*."
+        }
+      ]
+    },
+    {
       "id": "enchant-weapon-fire",
       "name": "Enchant Weapon: Fire",
       "ba": 0,
@@ -102,28 +124,6 @@
           "ca": "4",
           "variant": null,
           "text": "Whenever you apply Burn with a spell or attack from an Enchanted weapon, apply +1 stack of Burn."
-        }
-      ]
-    },
-    {
-      "id": "lesser-fireball",
-      "name": "Lesser Fireball",
-      "ba": 0,
-      "ca": "2",
-      "mana": "1+",
-      "concentration": null,
-      "tags": [],
-      "body": "**Basic Cast**: As a Full Action make a ranged spell attack hurling a ball of fire towards any target within 12m, dealing **1d8** Fire damage. Lesser Fireball is a Small Projectile. Damage increases by *+1d8* per 10 Fire CA.\n\n**Empowered Cast**: Consume 1 Blaze Charge as a Half Action to make a ranged spell attack to hurling a ball of fire towards any target within 8m, dealing 2d6 fire damage. Damage increases by *+1d6* per 10 Fire CA.\n\n**0 Mana Cast:** You may cast Less Fireball for *0 Mana*, if you do it deals *1d6* Fire damage instead and the range is lowered to *6m*. Damage increases by *+1d6* per 20 Fire CA.",
-      "upgrades": [
-        {
-          "ca": "2",
-          "variant": null,
-          "text": "You may have Lesser Fireball fork and hit two different targets within 6m of each other, making separate attack rolls for each target. *+1 Mana Cost if used*."
-        },
-        {
-          "ca": "3",
-          "variant": null,
-          "text": "You may have Lesser Fireball barrage each target hitting them 2 more times, costing +1 additional Blaze Charge. Make each Attack Roll separately. The subsequent Attack Rolls are reduced by -2, then -3.  *+1 Mana Cost if used*."
         }
       ]
     },

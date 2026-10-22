@@ -1,6 +1,8 @@
 /* Search page and its index. */
 
-import { classHref, crystalHref, esc, escapeRe, groupBy, icon, inScope, plain, spellByDefault, state } from "./core.js";
+import {
+  classHidden, classHref, crystalHidden, crystalHref, esc, escapeRe, groupBy, icon, inScope, plain, spellByDefault, state,
+} from "./core.js";
 import { allAbilities } from "./classes.js";
 
 let searchIndex = null;
@@ -32,7 +34,10 @@ function buildSearchIndex() {
     for (const d of c.drafts) {
       items.push({ group, kind: "Draft", title: d.name || "Unnamed Feature", text: plain(d.body), href: at("draft-" + d.id), draft: true });
     }
-    for (const it of items) if (it.group === group) it.extra = `${it.extra ?? ""} ${c.name} ${c.tags.join(" ")}`;
+    for (const it of items) if (it.group === group) {
+      it.extra = `${it.extra ?? ""} ${c.name} ${c.tags.join(" ")}`;
+      if (classHidden(c)) it.hiddenPage = true;   // a hidden class: only found with drafts on
+    }
   }
   if (state.races) {
     const group = { key: "races", name: "Races", href: "#/races" };
@@ -58,6 +63,7 @@ function buildSearchIndex() {
       for (const s of c.drafts) {
         items.push({ group, kind: "Draft spell", title: s.name, text: plain(s.body), href: at("draft-" + s.id), draft: true });
       }
+      if (crystalHidden(c)) for (const it of items) if (it.group === group) it.hiddenPage = true;
     }
   }
   if (state.info) {
@@ -117,7 +123,7 @@ function runSearch(query) {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
   if (!terms.length) return { terms, hits: [] };
   const hits = searchIndex
-    .filter((it) => (state.showDrafts || (!it.draft && !it.hidden)) && inScope(it.level) && terms.every((t) => it.hay.includes(t)))
+    .filter((it) => (state.showDrafts || (!it.draft && !it.hidden && !it.hiddenPage)) && inScope(it.level) && terms.every((t) => it.hay.includes(t)))
     .map((it) => {
       const title = it.title.toLowerCase();
       const score = terms.reduce((s, t) => s + (title.includes(t) ? 10 : 0) + (title.startsWith(t) ? 5 : 0), 0);
@@ -139,7 +145,7 @@ export function searchResults(query) {
       <section class="result-group">
         <h2><a href="${list[0].group.href}">${esc(list[0].group.name)}</a></h2>
         ${list.map((h) => `
-          <a class="facet result${h.draft ? " draft-panel" : ""}" href="${h.href}">
+          <a class="facet result${h.draft || h.hiddenPage ? " draft-panel" : ""}" href="${h.href}">
             <div class="top"><h3>${highlight(h.title, terms)}</h3><span class="kind">${esc(h.kind)}</span></div>
             <p>${highlight(snippet(h.text, terms), terms)}</p>
           </a>`).join("")}

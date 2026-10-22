@@ -17,7 +17,7 @@
  *   ### Spell name
  *   ***BA 15 | 3 CA | 2+ Mana | Major Concentration***
  *   description...
- *   	**3 CA - Upgrade - Melee**: upgrade text
+ *   	**3 CA - Upgrade - Melee**: upgrade text   (anything after "Upgrade" is a label: "Upgrade Melee or Ranged")
  * Other # sections (Notes, Ideas, ...) are ignored.
  */
 import fs from "node:fs";
@@ -120,7 +120,9 @@ function parseMeta(line) {
   return meta;
 }
 
-const UPGRADE = /^\**\s*(?:(\d+\+?|X)\s*CA\s*-\s*)?Upgrade(?:\s*-\s*([^*:]+?))?\s*\**\s*:\s*\**\s*(.*)$/i;
+// Everything between "Upgrade" and the colon is the upgrade's label, with or without a dash:
+// "3 CA - Upgrade - Melee:", "2 CA - Upgrade Melee or Ranged:", "Upgrade - 3 CA:" (a cost, not a label)
+const UPGRADE = /^\**\s*(?:(\d+\+?|X)\s*CA\s*-\s*)?Upgrade(?:\s*[-–—]\s*|\s+)?([^*:]*?)\s*\**\s*:\s*\**\s*(.*)$/i;
 
 function parseSpell(title, lines, tierBa, used) {
   const content = [...lines];
@@ -135,7 +137,7 @@ function parseSpell(title, lines, tierBa, used) {
     const m = raw.trim().match(UPGRADE);
     if (m) {
       // accepts "3 CA - Upgrade - Melee" and "Upgrade - 3 CA"
-      let ca = m[1] ?? null, variant = m[2]?.trim() ?? null;
+      let ca = m[1] ?? null, variant = m[2]?.trim() || null;
       const caVariant = variant?.match(/^(\d+\+?|X)\s*CA$/i);
       if (caVariant) { ca = caVariant[1]; variant = null; }
       upgrades.push({ ca, variant, lines: [m[3]] });
