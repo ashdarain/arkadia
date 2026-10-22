@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.216Z",
+  "generatedAt": "2026-10-22T09:03:53.075Z",
   "source": "Basic Info.md",
   "panels": [
     {
@@ -79,7 +79,7 @@
         {
           "id": "concentration",
           "title": "Concentration",
-          "body": "You can either Concentrate on one Major Concentration spell or two Minor Concentration spells. These are interchangeable like Full and Half Actions. You can break Concentration any time you want.\n\n**Breaking Concentration:** Whenever you take damage make a CON Save, you have a chance to Break Concentration. When you’re concentrating on multiple spells at a time, choose which one breaks.\n- Minor Concentration: Save DC = 10 or half damage taken rounded up, whichever is higher. (Needs rework)\n- Major Concentration: Save DC = 8 + [STAT] + Proficiency Bonus, or half damage taken rounded up, whichever is higher."
+          "body": "You can either Concentrate on one Major Concentration spell or two Minor Concentration spells. These are interchangeable like Full and Half Actions. You can break your own Concentration at any time. If a spell doesn’t mention how long it lasts, assume 10 turns. Any damage taken equal to or under your CON modifier does not break Concentration.\n\n**Breaking Concentration:** Whenever you take damage make a CON Save, you have a chance to Break Concentration. When you’re concentrating on multiple spells at a time, choose which one breaks. STAT refers to the highest Stat the associated Crystal uses.\n- Minor Concentration: Save DC = 10 or half damage taken rounded up, whichever is higher. (Needs rework)\n- Major Concentration: Save DC = 13 - [STAT] - Proficiency Bonus, or half damage taken rounded up, whichever is higher."
         },
         {
           "id": "learning-spells",
@@ -158,14 +158,14 @@
       "id": "dual-wielding",
       "title": "Dual Wielding",
       "important": false,
-      "body": "On your turn if you spend at least two **Half Actions** attacking from two different **Light** weapons, you can use an **Extra Action** to make another Half Action-valued attack with either of your weapons.",
+      "body": "On your turn if you spend at least two **Half Actions** attacking from two different **Light** weapons, you can use an **Extra Action** to make another Half attack with either of your weapons.",
       "sections": []
     },
     {
       "id": "cover",
       "title": "Cover",
       "important": false,
-      "body": "- **Full Cover:** Cannot be targeted by ranged spells/attacks.\n- **Half Cover:** +3 to AC Spell AC from ranged attacks/spells, +3 to AGI saves coming from the opposite side of cover.\n- **Quarter Cover:** Similar bonuses as Half Cover but +1 instead of +3.",
+      "body": "- **Full Cover:** Cannot be targeted by ranged spells/attacks.\n- **Half Cover:** +3 to AC Spell AC from ranged attacks/spells, +3 to AGI saves coming from the opposite side of cover.\n- **Quarter Cover:** +1 to AC Spell AC from ranged attacks/spells, +1 to AGI saves coming from the opposite side of cover.",
       "sections": []
     },
     {

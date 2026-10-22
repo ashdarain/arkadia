@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "generatedAt": "2026-10-22T09:03:53.034Z",
   "id": "mind",
   "name": "Mind",
   "tier": 2,
@@ -35,13 +35,13 @@
     {
       "id": "taunt",
       "name": "Taunt",
-      "body": "A taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn.",
+      "body": "A taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn. Taunt is a Weak Debuff.",
       "source": "Conditions"
     },
     {
       "id": "charm",
       "name": "Charm",
-      "body": "A charmed creature treats its charmer as **friendly** and an ally, it cannot make attacks against them and any AoE abilities that don’t affect allies also don’t affect its charmer. If the charmer damages or negatively affects the creature, Charm ends completely. Charm can last multiple turns, and applying Charm to an already charmed creature increases the duration.",
+      "body": "A charmed creature treats its charmer as **friendly** and an ally, it cannot make attacks against them and any AoE abilities that don’t affect allies also don’t affect its charmer. If the charmer damages or negatively affects the creature, Charm ends completely. Charm can last multiple turns, and applying Charm to an already charmed creature increases the duration. Charm is a Weak Debuff.",
       "source": "Conditions"
     }
   ],
@@ -91,19 +91,36 @@
       ]
     },
     {
+      "id": "clarity",
+      "name": "Clarity",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action** choose an ally (not yourself) within **6m**, granting them **1d6** Mana. Mana gained increases by **+1d6** per 24 Mind CA.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may have the target gain **Advantage** on their next Martial or Spell Attack roll. *+1 Mana cost if used*."
+        }
+      ]
+    },
+    {
       "id": "enchant-weapon-mind",
       "name": "Enchant Weapon: Mind",
       "ba": 0,
-      "ca": "4",
-      "mana": "2",
+      "ca": "5",
+      "mana": "3",
       "concentration": null,
       "tags": [],
-      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Convert all your weapon’s damage to Psychic and add **+1d8** Psychic damage to Full Action attacks or **+1d4** to Half Action attacks. Added damage Dice Count increases by **+1** per 18 Mind CA, and every 4 Player Levels.\n\n**Ranged**: Convert all your weapon’s damage to Psychic and add **+1d6** Psychic damage to Full Action attacks or **+1d4** to Half Action attacks. Added damage Dice Count increases by **+1** per 12 Mind CA, and every 4 Player Levels.\n\n**Spell Focus**: +2 to Save DCs for spells you cast that inflict Fear, Taunt, Charm or Paranoia. **+1d6** Psychic damage to all Full Action spells cast, increasing by **+1d6** per 12 Mind CA and every 4 Player Levels.",
+      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 18 Mind CA, and every 4 Player Levels.\n\n**Ranged**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 12 Mind CA, and every 4 Player Levels.\n\n**Spell Focus**: +2 to Save DCs for spells you cast that inflict Fear, Taunt, Charm or Paranoia. **+1d6** Psychic damage to all Full Action spells cast, increasing by **+1d6** per 12 Mind CA and every 4 Player Levels.",
       "upgrades": [
         {
           "ca": "2",
           "variant": null,
-          "text": "The first Enchant Martial or Spell Attack roll each turn against a **Feared** enemy has Advantage."
+          "text": "The first Enchant Martial or Spell Attack roll each turn has Advantage against a **Feared** enemy, or an enemy **Taunted** by you."
         },
         {
           "ca": "3",
@@ -130,7 +147,7 @@
       "mana": "1+",
       "concentration": null,
       "tags": [],
-      "body": "Choose a creature within **10m** penetrating their mind and sowing false emotions into their psyche. The target must make an **INT** save or become inflicted by one of the following Debuffs and dealt Psychic damage based on the Action used. Each Action has a different Mana Cost. The target takes half damage and does not receive the debuff on passing the save. Damage **Dice Count** increases by **+1** per 12 Psychic CA and per 4 Player Levels.\n- **Half Action** to inflict **Fear** for 1 turn and deal **1d6** Psychic damage, *2 Mana*.\n- **Full Action** to inflict **Charm** for 2 turns and deal **1d8** Psychic damage, *3 Mana*.\n- **Extra Action** to **Taunt** for 1 turn and deal **1d6** Psychic damage, *1 Mana*.",
+      "body": "Choose a creature within **10m** penetrating their mind and sowing false emotions into their psyche. The target must make an **INT** save or become inflicted by one of the following Debuffs and dealt Psychic damage based on the Action used. Each Action has a different Mana Cost. The target takes half damage and does not receive the debuff on passing the save. Damage **Dice Count** increases by **+1** per 12 Psychic CA and per 4 Player Levels.\n- *2 Mana*, **Half Action** to inflict **Fear** for 1 turn and deal **1d6** Psychic damage.\n- *3 Mana*, **Full Action** to inflict **Charm** for 2 turns and deal **1d8** Psychic damage.\n- *1 Mana*, **Extra Action** to **Taunt** for 1 turn and deal **1d6** Psychic damage.",
       "upgrades": [
         {
           "ca": "3",
@@ -141,30 +158,6 @@
           "ca": "4",
           "variant": null,
           "text": "Increase the damage **Dice Class** by **+1** for all Actions."
-        }
-      ]
-    },
-    {
-      "id": "a-moment-of-retrospection",
-      "name": "A Moment of Retrospection",
-      "ba": 0,
-      "ca": "3",
-      "mana": null,
-      "concentration": null,
-      "tags": [
-        "Passive"
-      ],
-      "body": "Increase the **Dice Class** for **Mana** gained from **Respites**.",
-      "upgrades": [
-        {
-          "ca": "2",
-          "variant": null,
-          "text": "Double a **Stat** modifier added to Mana gained from Respites."
-        },
-        {
-          "ca": "3",
-          "variant": null,
-          "text": "Once per combat, you may Respite to gain Mana as a **Half Action**."
         }
       ]
     },
@@ -211,8 +204,57 @@
           "text": "Until the end of your **next turn**, enemies hit by Mind Drain have Disadvantage with Save DCs that cause them to be inflicted by a Debuff."
         }
       ]
+    },
+    {
+      "id": "a-moment-of-introspection",
+      "name": "A Moment of Introspection",
+      "ba": 15,
+      "ca": "3",
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Passive"
+      ],
+      "body": "Increase the **Dice Class** for **Mana** gained from **Respites**.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Double a **Stat** modifier added to Mana gained from Respites."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per combat, you may Respite to gain Mana as a **Half Action**."
+        }
+      ]
     }
   ],
   "drafts": [],
+  "signatureSpells": [
+    {
+      "id": "mental-fortitude",
+      "name": "Mental Fortitude",
+      "class": "Warden",
+      "ba": null,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": "Minor Concentration",
+      "tags": [],
+      "body": "As a **Full Action** target yourself or an ally within **8m**. The target gains **+3** to **Spell AC**, and make **WIS**, **INT** or **CHA** saves with **Advantage** while affected by this spell. Spell AC gained increases by **+1** at Warden Levels 5 and 8. Mental Fortitude lasts for 3 turns or until you lose Concentration. If you **Respite** to gain Mana during this spell, the protected ally gains Mana equal to half as much as you did, rounded up.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Enemy that miss with a spell or attack against the protected target, or cause the target to make a WIS, INT or CHA save and they pass, the enemy makes a **WIS** save or become **Feared** from the target."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "If an ally is the target of this spell, at the start of their turn you may spend 1 Mana to grant them **1d4** Mana, or spend 1 Mana to dispel them of Taunt, Fear, Blind or Charm."
+        }
+      ]
+    }
+  ],
   "source": "Magic/Mind.md"
 }

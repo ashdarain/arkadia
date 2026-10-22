@@ -63,6 +63,12 @@ function buildSearchIndex() {
       for (const s of c.drafts) {
         items.push({ group, kind: "Draft spell", title: s.name, text: plain(s.body), href: at("draft-" + s.id), draft: true });
       }
+      for (const s of c.signatureSpells ?? []) {
+        const cls = state.classes.find((x) => x.name.toLowerCase() === String(s.class ?? "").toLowerCase());
+        items.push({ group, kind: `Signature spell${s.class ? ` · ${s.class}` : ""}`, title: s.name, href: at(s.id),
+          text: plain([s.body, ...s.upgrades.map((u) => u.text)].join(" ")), extra: `${c.name} ${s.class ?? ""} signature`,
+          draft: !!s.draftReason, hidden: !spellByDefault(s), hiddenPage: !!cls && classHidden(cls) });
+      }
       if (crystalHidden(c)) for (const it of items) if (it.group === group) it.hiddenPage = true;
     }
   }

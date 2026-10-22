@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "generatedAt": "2026-10-22T09:03:53.034Z",
   "id": "fire",
   "name": "Fire",
   "tier": 1,
@@ -8,7 +8,8 @@
     "fire"
   ],
   "keywords": [
-    "burn"
+    "burn",
+    "charges"
   ],
   "theme": "Reddish - Orange",
   "stats": [
@@ -598,5 +599,6 @@
     }
   ],
   "drafts": [],
+  "signatureSpells": [],
   "source": "Magic/Fire.md"
 }

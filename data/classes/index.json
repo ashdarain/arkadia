@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-21T09:36:26.150Z",
+  "generatedAt": "2026-10-22T09:03:53.003Z",
   "classes": [
     {
       "id": "arcane-archer",
@@ -55,9 +55,9 @@
       ],
       "file": "lurker.json",
       "healthPerLevel": {
-        "raw": "1d8+3+CON",
+        "raw": "1d8+4+CON",
         "dice": "1d8",
-        "flat": 3,
+        "flat": 4,
         "stat": "CON"
       }
     },
@@ -176,6 +176,22 @@
         "raw": "1d6+5+CON",
         "dice": "1d6",
         "flat": 5,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "warden",
+      "name": "Warden",
+      "tags": [
+        "defensive",
+        "spellcaster",
+        "support"
+      ],
+      "file": "warden.json",
+      "healthPerLevel": {
+        "raw": "1d6+7+CON",
+        "dice": "1d6",
+        "flat": 7,
         "stat": "CON"
       }
     }

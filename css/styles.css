@@ -566,6 +566,34 @@ mark { background: var(--accent-dim); color: var(--mark-text); padding: 0 2px; b
 .index-names button:hover, .index-names button:focus-visible { color: var(--text); border-color: var(--crystal); outline: none; }
 .index-group.beyond .index-names button { border-style: dashed; color: var(--muted); }
 
+/* Signature spells: on a crystal page, each names its class; on a class page, each names its crystal */
+.sig-lede { margin: 2px 0 12px; color: var(--muted); font-size: .88rem; }
+.sig-link {
+  display: inline-flex; align-items: center; gap: 6px; margin: -2px 0 10px;
+  font: 700 .84rem/1.5 var(--body); text-decoration: none;
+  padding: 2px 10px 2px 8px; border-radius: var(--radius);
+  color: var(--accent); background: var(--accent-dim); border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  transition: background-color .12s ease, color .12s ease;
+}
+.sig-link svg { width: 15px; height: 15px; flex: none; }
+.sig-link .class-icon { margin: 0; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+a.sig-link:hover, a.sig-link:focus-visible { color: var(--bg); background: var(--accent); outline: none; }
+.sig-link.crystal-sig { color: color-mix(in srgb, var(--crystal-ink), var(--text) 30%); background: color-mix(in srgb, var(--crystal) 14%, transparent); border-color: color-mix(in srgb, var(--crystal) 55%, transparent); }
+.sig-link.crystal-sig .crystal-gem path { fill: var(--crystal); }
+a.sig-link.crystal-sig:hover, a.sig-link.crystal-sig:focus-visible { color: var(--bg); background: var(--crystal); }
+a.sig-link.crystal-sig:hover .crystal-gem path { fill: var(--bg); }
+.sig-link.hidden-page { color: var(--draft); background: var(--draft-bg); border-color: var(--draft-dim); }
+.sig-link.missing { color: var(--muted); background: none; border-style: dashed; border-color: var(--seam-strong); }
+.col-systems > .signature-block:not(:first-child) { margin-top: 40px; padding-top: 34px; border-top: 1px solid var(--seam); }
+.sig-names { margin-top: 16px; gap: 8px; }
+.sig-names button { font: 600 .98rem/1.4 var(--body); padding: 6px 14px; color: color-mix(in srgb, var(--crystal-ink), var(--text) 30%); border-color: color-mix(in srgb, var(--crystal) 50%, transparent); }
+.sig-names button[aria-expanded="true"] { color: var(--bg); background: var(--crystal); border-color: var(--crystal); }
+.sig-names button.draft { border-style: dashed; }
+.sig-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; margin-top: 14px; }   /* two per row */
+@media (max-width: 560px) { .sig-cards { grid-template-columns: minmax(0, 1fr); } }
+.sig-cards:not(:has(.sig-card:not([hidden]))) { margin-top: 0; }
+.sig-card .copyable { --copy: var(--crystal); }
+
 /* Header chips / stat pills that open the overview filtered to that value */
 .filter-link { position: relative; text-decoration: none; cursor: pointer; transition: border-color .12s ease, color .12s ease; }
 .crystal-head .chip.filter-link:hover { color: var(--text); border-color: var(--crystal); }

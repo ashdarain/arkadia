@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.229Z",
+  "generatedAt": "2026-10-22T09:03:53.087Z",
   "source": "Conditions.md",
   "conditions": [
     {
@@ -56,7 +56,7 @@
       "kind": "debuff",
       "strength": "weak",
       "label": "Weak Debuff",
-      "body": "Immobilized creatures **cannot move** and fail any **AGI** rolls. You can still Teleport while immobilized.",
+      "body": "Immobilized creatures **cannot move** and fail any **AGI** rolls. You can still Teleport while immobilized. Immobilize is a Weak Debuff.",
       "sources": [
         "Water"
       ]
@@ -67,7 +67,7 @@
       "kind": "debuff",
       "strength": "weak",
       "label": "Weak Debuff",
-      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci or items equipped in their hands.",
+      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci or items equipped in their hands. Disarm is a Weak Debuff.",
       "sources": [
         "Water",
         "Samurai"
@@ -91,8 +91,10 @@
       "kind": "debuff",
       "strength": "weak",
       "label": "Weak Debuff",
-      "body": "A charmed creature treats its charmer as **friendly** and an ally, it cannot make attacks against them and any AoE abilities that don’t affect allies also don’t affect its charmer. If the charmer damages or negatively affects the creature, Charm ends completely. Charm can last multiple turns, and applying Charm to an already charmed creature increases the duration.",
-      "sources": []
+      "body": "A charmed creature treats its charmer as **friendly** and an ally, it cannot make attacks against them and any AoE abilities that don’t affect allies also don’t affect its charmer. If the charmer damages or negatively affects the creature, Charm ends completely. Charm can last multiple turns, and applying Charm to an already charmed creature increases the duration. Charm is a Weak Debuff.",
+      "sources": [
+        "Mind"
+      ]
     },
     {
       "id": "taunt",
@@ -100,7 +102,7 @@
       "kind": "debuff",
       "strength": "weak",
       "label": "Weak Debuff",
-      "body": "A taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn.",
+      "body": "A taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn. Taunt is a Weak Debuff.",
       "sources": [
         "Sentinel",
         "Mind"
@@ -126,6 +128,17 @@
       "body": "Electrocuted creatures lose a **Full Action** during their turn.  Electrocution is a *Weak Debuff* that dispells at the end of turn.",
       "sources": [
         "Lightning"
+      ]
+    },
+    {
+      "id": "blind",
+      "name": "Blind",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "A blinded creature makes Physical and Spell attack rolls with Disadvantage, has -2 to AC, and automatically fail AGI and DEX saves, or saves that directly require eyesight. Blind is a Weak Debuff and can last multiple turns.",
+      "sources": [
+        "Light"
       ]
     },
     {

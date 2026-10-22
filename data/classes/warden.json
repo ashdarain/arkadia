@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "id": "warden",
+  "name": "Warden",
+  "tags": [
+    "defensive",
+    "spellcaster",
+    "support"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d6+7+CON",
+    "dice": "1d6",
+    "flat": 7,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 3,
+        "gain": 3
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 7,
+        "gain": 4
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 11,
+        "gain": 4
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "warden-at-arms",
+      "level": 1,
+      "name": "Warden at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in medium and heavy shields, as well as medium and heavy armour. Gain Proficiencies in any two Piercing or Bludgeoning weapons."
+    },
+    {
+      "id": "adaptive-defense",
+      "level": 1,
+      "name": "Adaptive Defense",
+      "abilityType": null,
+      "cost": null,
+      "body": "At the start of combat and as an **Extra Action**, you may swap your **AC** and **Spell AC** values."
+    },
+    {
+      "id": "defensive-spellcasting",
+      "level": 1,
+      "name": "Defensive Spellcasting",
+      "abilityType": null,
+      "cost": null,
+      "body": "Attacks of Opportunity against you from spellcasting within melee range are made with Disadvantage."
+    },
+    {
+      "id": "signature-spells-warden",
+      "level": 2,
+      "name": "Signature Spells: Warden",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain access to the Warden Signature Spells for each magic type."
+    },
+    {
+      "id": "arcane-adaptation",
+      "level": 2,
+      "name": "Arcane Adaptation",
+      "abilityType": null,
+      "cost": null,
+      "body": "Choose a Non-Physical damage type, you can Resistance in that damage type. Choose another Resistance at Warden Levels 5, 8, and 10. (*Non-Physical damage type are Fire, Cold, Lightning, Aether, Radiant, Entropic, Psychic, Necrotic*)."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [],
+  "source": "Classes/Warden.md"
+}

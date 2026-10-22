@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "generatedAt": "2026-10-22T09:03:53.034Z",
   "id": "wind",
   "name": "Wind",
   "tier": 1,
@@ -35,7 +35,7 @@
         {
           "ca": "2",
           "variant": null,
-          "text": "Instead of Galeforce centering around you, choose a point within 6m as its origin. It cannot move from this point."
+          "text": "Instead of Galeforce centering around you, choose a point within **6m** as its origin. It cannot move from this point."
         },
         {
           "ca": "3",
@@ -46,5 +46,6 @@
     }
   ],
   "drafts": [],
+  "signatureSpells": [],
   "source": "Magic/Wind.md"
 }

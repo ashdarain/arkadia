@@ -87,7 +87,7 @@
       "name": "Taunting Cry",
       "abilityType": null,
       "cost": null,
-      "body": "As an *Extra* or *Half Action* shout at an enemy. They must make a WIS save or become **Taunted** towards you until the end of their next turn. The Save DC is equal to **8 + Proficiency bonus + AC on equipped Shield + CHA**. At Sentinel Level 9 add your **Expertise** bonus instead.\n\n:::embed Taunt\nA taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn.\n:::"
+      "body": "As an *Extra* or *Half Action* shout at an enemy. They must make a WIS save or become **Taunted** towards you until the end of their next turn. The Save DC is equal to **8 + Proficiency bonus + AC on equipped Shield + CHA**. At Sentinel Level 9 add your **Expertise** bonus instead.\n\n:::embed Taunt\nA taunted creature must make all attack rolls and target all spells towards the enemy who taunted them until the end of their turn. Taunt is a Weak Debuff.\n:::"
     }
   ],
   "abilityGroups": [],

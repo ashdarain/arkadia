@@ -1,10 +1,11 @@
 /* Magic: the crystal overview (with its filters) and each crystal page. */
 
 import {
-  anchorId, beyond, CONFIG, crystalHidden, esc, groupBy, hiddenBadge, masonry, md, shownCrystals,
-  spellByDefault, spellInScope, state, wipPage,
+  anchorId, beyond, classHidden, classHref, CONFIG, crystalHidden, crystalHref, esc, groupBy, hiddenBadge, masonry, md, shownCrystals,
+  signatureSpells, spellByDefault, spellInScope, state, wipPage,
 } from "./core.js";
 import { THEMES } from "./settings.js";
+import { classIcon } from "./classes.js";
 
 /* Each crystal's colour is a CSS variable (--crystal-fire …) that the light themes redefine with
    the crystal's lightColor, so a page doesn't need redrawing when the theme changes. */
@@ -113,7 +114,19 @@ function magicOverview() {
     </div>`;
 }
 
-function spellCard(c, s, { draft = false } = {}) {
+/** The big link on a signature spell: to its class (on a crystal page) or its crystal (on a class page). */
+export function signatureLink({ crystal, spell, cls }, toCrystal) {
+  if (toCrystal) {
+    return `<a class="sig-link crystal-sig" href="${crystalHref(crystal.id, spell.id)}">${gem}${esc(crystal.name)}</a>`;
+  }
+  const hiddenCls = cls && classHidden(cls);
+  return cls
+    ? `<a class="sig-link${hiddenCls ? " hidden-page" : ""}" href="${classHref(cls.id)}">${classIcon(cls, "class-icon")}${esc(cls.name)}</a>`
+    : `<span class="sig-link missing">${esc(spell.class ?? "No class given")}</span>`;
+}
+
+export function spellCard(c, s, { draft = false, label = "", id = null } = {}) {
+  draft ||= !!s.draftReason && s.class !== undefined;   // a signature spell missing its class or cost line
   const hidden = !draft && !spellByDefault(s);
   const meta = [
     s.ca && `<span class="chip ca-chip" ${s.ca === "Auto" ? 'title="Learned automatically"' : ""}>${s.ca === "Auto" ? "Auto" : `${esc(s.ca)} CA`}</span>`,
@@ -124,8 +137,9 @@ function spellCard(c, s, { draft = false } = {}) {
     hidden && `<span class="badge draft">Hidden by default</span>`,
   ].filter(Boolean).join("");
   return `
-    <article class="facet spell${draft || hidden ? " draft-panel" : ""}" id="${anchorId(c.id, (draft ? "draft-" : "") + s.id)}">
+    <article class="facet spell${label ? " signature" : ""}${draft || hidden ? " draft-panel" : ""}" id="${id ?? anchorId(c.id, (draft && !label ? "draft-" : "") + s.id)}">
       <h3>${esc(s.name)}</h3>
+      ${label}
       ${meta ? `<div class="meta">${meta}</div>` : ""}
       ${s.body ? `<div class="body">${md(s.body)}</div>` : '<p class="empty">No description yet.</p>'}
       ${s.upgrades.length ? `
@@ -142,6 +156,8 @@ function spellCard(c, s, { draft = false } = {}) {
 function crystalPage(c) {
   const shown = c.spells.filter(spellInScope);
   const tiers = [...groupBy(shown, (s) => s.ba ?? 0).entries()].sort((a, b) => a[0] - b[0]);
+  const sigs = signatureSpells().filter((x) => x.crystal === c);
+  const sigId = anchorId(c.id, "signature");
   const mechanics = c.mechanics.length ? `
     <div class="crystal-mechanics">
       <h2>Mechanics</h2>
@@ -154,6 +170,7 @@ function crystalPage(c) {
   // every spell on the page by name, grouped like the page (BA tiers, then drafts)
   const indexGroups = [
     ...tiers.map(([ba, list]) => ({ label: `BA ${ba}`, beyond: ba > CONFIG.maxBA, spells: list, draft: false })),
+    ...(sigs.length ? [{ label: "Signature Spells", beyond: false, spells: sigs.map((x) => x.spell), draft: false }] : []),
     ...(state.showDrafts && c.drafts.length ? [{ label: "Drafts", beyond: true, spells: c.drafts, draft: true }] : []),
   ];
   const spellIndex = indexGroups.length ? `
@@ -203,15 +220,22 @@ function crystalPage(c) {
       ${top}
       <section class="block">
         <h2>Spells</h2>
-        ${tiers.length > 1 ? `
+        ${tiers.length + (sigs.length ? 1 : 0) > 1 ? `
           <nav class="ba-jump" aria-label="Jump to spell tier">
             ${tiers.map(([ba]) => `<button type="button" data-jump="${anchorId(c.id, `ba-${ba}`)}"${ba > CONFIG.maxBA ? ' class="beyond"' : ""}>BA ${ba}</button>`).join("")}
+            ${sigs.length ? `<button type="button" data-jump="${sigId}">Signature Spells</button>` : ""}
           </nav>` : ""}
         ${tiers.map(([ba, list]) => `
           <div class="ability-level ba-tier" id="${anchorId(c.id, `ba-${ba}`)}">
             <div class="level-divider crystal-divider${ba > CONFIG.maxBA ? " beyond" : ""}"><span>BA ${ba}</span></div>
             ${masonry(list.map((s) => spellCard(c, s)), 290, 3)}
-          </div>`).join("") || '<p class="empty">No spells yet.</p>'}
+          </div>`).join("") || (sigs.length ? "" : '<p class="empty">No spells yet.</p>')}
+        ${sigs.length ? `
+          <div class="ability-level ba-tier" id="${sigId}">
+            <div class="level-divider crystal-divider"><span>Signature Spells</span></div>
+            <p class="sig-lede">Each can only be learned by the class listed.</p>
+            ${masonry(sigs.map((x) => spellCard(c, x.spell, { label: signatureLink(x, false) })), 290, 3)}
+          </div>` : ""}
       </section>
       ${drafts}
     </div>`;

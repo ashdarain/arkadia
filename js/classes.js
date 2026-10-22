@@ -2,8 +2,9 @@
 
 import {
   anchorId, beyond, classHidden, classHref, CONFIG, designerNotes, esc, groupBy, hiddenBadge, ICONS,
-  inScope, masonry, md, plain, shownClasses, state,
+  inScope, masonry, md, plain, shownClasses, signatureSpells, state,
 } from "./core.js";
+import { crystalColor, signatureLink, spellCard } from "./magic.js";
 
 function classSubtabs(activeId) {
   return `
@@ -224,7 +225,25 @@ function systemColumn(cls) {
     </section>`;
   }).join("");
 
-  return mechanics + groups + sections;
+  return mechanics + groups + sections + signatureSection(cls);
+}
+
+/** Right column: this class's signature spells as a list of names (one colour per crystal); a name opens the spell. */
+function signatureSection(cls) {
+  const sigs = signatureSpells().filter((x) => x.cls === cls);
+  if (!sigs.length) return "";
+  const idOf = (x) => anchorId(cls.id, `sig-${x.crystal.id}-${x.spell.id}`);
+  return `
+    <section class="block signature-block">
+      <h2>Signature Spells - ${esc(cls.name)}${classHidden(cls) ? hiddenBadge : ""}</h2>
+      <p class="lede">Usable once you've unlocked the Signature Spell feature for this class.</p>
+      <div class="index-names sig-names">
+        ${sigs.map((x) => `<button type="button" class="${x.spell.draftReason ? "draft" : ""}" style="--crystal: ${crystalColor(x.crystal)}" data-sig-toggle="${idOf(x)}" aria-controls="${idOf(x)}" aria-expanded="${state.sigOpen.has(idOf(x))}">${esc(x.spell.name)}</button>`).join("")}
+      </div>
+      <div class="sig-cards">
+        ${sigs.map((x) => `<div class="sig-card" style="--crystal: ${crystalColor(x.crystal)}"${state.sigOpen.has(idOf(x)) ? "" : " hidden"}>${spellCard(x.crystal, x.spell, { label: signatureLink(x, true), id: idOf(x) })}</div>`).join("")}
+      </div>
+    </section>`;
 }
 
 function classPage(cls) {
@@ -257,6 +276,7 @@ export function classesPage(sub, anchor) {
   const cls = shownClasses().find((c) => c.id === sub);
   if (!cls && state.byId.has(sub)) return { html: classOverview() };   // a hidden class, with drafts off
   if (!cls) return { html: `${classSubtabs(null)}<div class="error"><h1>Class not found</h1><p>There's no class called “${esc(sub)}”. Pick one from the list above.</p></div>` };
+  if (anchor?.startsWith("sig-")) state.sigOpen.add(anchorId(cls.id, anchor));   // a link to a signature spell opens it
   if (anchor) {
     // a link into a tabbed section (e.g. one Samurai stance) opens that tab
     for (const s of cls.sections) {

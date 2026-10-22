@@ -99,11 +99,23 @@ node tools/convert-magic.mjs
 
 Reads `A:/Obsidian/Arkadia/Magic/<Crystal>.md`, writes one file per crystal to `data/magic/`
 (`fire.json`, `ice.json`, ...) plus `data/magic/index.json`, which the site uses to find them. Only the crystals
-listed in `CRYSTALS` at the top of the script are converted (currently Fire, Ice, Lightning).
+listed under `crystals` in `config.mjs` are converted.
 Layout follows Fire.md: `# Overview` becomes mechanics (embeds like `![[Conditions#Burn]]` are
 pulled in from the vault), `# Spells` holds `## BA N+` tiers and `### Spell` entries with a
 `***BA | CA | Mana | Concentration***` line and `N CA - Upgrade` lines. Any other `#` section
 (Notes, Ideas...) is ignored. Spells with no cost line become drafts.
+
+`# Signature Spells` (see Water.md) holds spells only one class can learn. Each is a `### Spell` with the class
+name on its own line between the title and the cost line:
+
+```
+### Water Spear
+Spellblade
+***4 CA | 3 Mana***
+```
+
+They're shown at the bottom of the crystal page (labelled with their class) and in a Signature Spells list on
+that class's page (labelled with their crystal). One missing its class or cost line only shows with drafts on.
 
 What playtesters see by default is set under `playtest` in `config.mjs`:
 `maxClassLevel` (class levels), `maxSpellBA` (spell tiers), `hideSpellsEndingWith` (e.g. Talents), and

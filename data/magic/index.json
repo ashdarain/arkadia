@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "generatedAt": "2026-10-22T09:03:53.034Z",
   "crystals": [
     {
       "id": "fire",
@@ -44,6 +44,20 @@
         "INT"
       ],
       "file": "wind.json"
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "tier": 1,
+      "damageTypes": [
+        "radiant"
+      ],
+      "stats": [
+        "CON",
+        "WIS",
+        "INT"
+      ],
+      "file": "light.json"
     },
     {
       "id": "mind",

@@ -18,6 +18,10 @@
  *   ***BA 15 | 3 CA | 2+ Mana | Major Concentration***
  *   description...
  *   	**3 CA - Upgrade - Melee**: upgrade text   (anything after "Upgrade" is a label: "Upgrade Melee or Ranged")
+ *   # Signature Spells  → spells only one class can use
+ *   ### Water Spear
+ *   Spellblade          → the class, on its own line between the title and the cost line
+ *   ***4 CA | 3 Mana***
  * Other # sections (Notes, Ideas, ...) are ignored.
  */
 import fs from "node:fs";
@@ -124,9 +128,15 @@ function parseMeta(line) {
 // "3 CA - Upgrade - Melee:", "2 CA - Upgrade Melee or Ranged:", "Upgrade - 3 CA:" (a cost, not a label)
 const UPGRADE = /^\**\s*(?:(\d+\+?|X)\s*CA\s*-\s*)?Upgrade(?:\s*[-–—]\s*|\s+)?([^*:]*?)\s*\**\s*:\s*\**\s*(.*)$/i;
 
-function parseSpell(title, lines, tierBa, used) {
+function parseSpell(title, lines, tierBa, used, { signature = false } = {}) {
   const content = [...lines];
   while (content.length && !content[0].trim()) content.shift();
+  // signature spells name their class on the line before the cost line
+  let cls = null;
+  if (signature && content.length && !parseMeta(content[0])) {
+    cls = unwiki(content.shift()).replace(/[*_]/g, "").trim() || null;
+    while (content.length && !content[0].trim()) content.shift();
+  }
   const meta = content.length ? parseMeta(content[0]) : null;
   if (meta) content.shift();
 
@@ -151,6 +161,7 @@ function parseSpell(title, lines, tierBa, used) {
   const spell = {
     id: uniqueId(slug(name), used),
     name,
+    ...(signature ? { class: cls } : {}),
     ba: meta?.ba ?? tierBa,
     ca: meta?.ca ?? null,
     mana: meta?.mana ?? null,
@@ -159,7 +170,8 @@ function parseSpell(title, lines, tierBa, used) {
     body: tidy(body),
     upgrades: upgrades.map((u) => ({ ca: u.ca, variant: u.variant, text: tidy(u.lines) })),
   };
-  if (!meta) spell.draftReason = "no cost line";
+  if (signature && !cls) spell.draftReason = "no class line";
+  else if (!meta) spell.draftReason = "no cost line";
   else if (!spell.body) spell.draftReason = "no description";
   return spell;
 }
@@ -181,12 +193,13 @@ function parseCrystal(md, name) {
     mechanics: [],
     spells: [],
     drafts: [],
+    signatureSpells: [],   // { ...spell, class: "Spellblade" }; ones with a draftReason only show with drafts on
     source: `Magic/${name}.md`,
   };
   const warnings = [];
   const mechIds = new Set(), spellIds = new Set();
 
-  let section = null; // "overview" | "spells" | null (ignored)
+  let section = null; // "overview" | "spells" | "signature" | null (ignored)
   let tierBa = 0;
   for (const b of blocks(md)) {
     const title = b.title.trim();
@@ -202,20 +215,27 @@ function parseCrystal(md, name) {
     }
     if (b.depth === 1) {
       const t = title.toLowerCase();
-      section = t === "overview" ? "overview" : t === "spells" ? "spells" : null;
+      section = t === "overview" ? "overview" : t === "spells" ? "spells" : /^signature spells?$/.test(t) ? "signature" : null;
       continue;
     }
     if (section === "overview") {
-      const own = [];
+      // keep the note's order: the heading's own text goes where it starts, embeds where they sit
+      const own = [], items = [];
+      let ownAt = -1;
       for (const l of b.lines) {
         const e = l.trim().match(/^!\[\[([^\]]+)\]\]$/);
-        if (!e) { own.push(l); continue; }
+        if (!e) {
+          own.push(l);
+          if (ownAt < 0 && l.trim()) ownAt = items.length;
+          continue;
+        }
         const found = resolveEmbed(e[1]);
-        if (found) crystal.mechanics.push({ id: uniqueId(slug(found.name), mechIds), name: found.name, body: found.body, source: e[1].split("#")[0] });
+        if (found) items.push({ name: found.name, body: found.body, source: e[1].split("#")[0] });
         else warnings.push(`embed not found: ${e[1]}`);
       }
       const text = tidy(own);
-      if (text) crystal.mechanics.push({ id: uniqueId(slug(title), mechIds), name: title, body: text, source: null });
+      if (text) items.splice(ownAt < 0 ? items.length : ownAt, 0, { name: title, body: text, source: null });
+      for (const m of items) crystal.mechanics.push({ id: uniqueId(slug(m.name), mechIds), ...m });
       continue;
     }
     if (section === "spells") {
@@ -228,6 +248,12 @@ function parseCrystal(md, name) {
         if (spell.draftReason) crystal.drafts.push(spell);
         else crystal.spells.push(spell);
       }
+    }
+    if (section === "signature" && b.depth >= 3) {
+      const lines = expandEmbeds(b.lines.join("\n"), VAULT, (w) => warnings.push(w)).split("\n");
+      const spell = parseSpell(title, lines, null, spellIds, { signature: true });
+      if (spell.draftReason) warnings.push(`signature spell "${spell.name}": ${spell.draftReason}`);
+      crystal.signatureSpells.push(spell);
     }
   }
   // Hint: damage types the spells mention that aren't tagged on the note (you decide if they belong).
@@ -259,7 +285,8 @@ for (const name of CRYSTALS) {
   crystals.push(crystal);
   const byBa = [...new Set(crystal.spells.map((s) => s.ba))].sort((a, b) => a - b)
     .map((ba) => `BA ${ba}: ${crystal.spells.filter((s) => s.ba === ba).length}`).join(", ");
-  console.log(`✓ ${name.padEnd(10)} ${crystal.spells.length} spells (${byBa})${crystal.drafts.length ? `, ${crystal.drafts.length} draft` : ""}`);
+  const sig = crystal.signatureSpells.map((s) => `${s.name} (${s.class ?? "no class"})`).join(", ");
+  console.log(`✓ ${name.padEnd(10)} ${crystal.spells.length} spells (${byBa})${crystal.drafts.length ? `, ${crystal.drafts.length} draft` : ""}${sig ? `, signature: ${sig}` : ""}`);
   for (const w of warnings) console.log(`    ! ${w}`);
 }
 

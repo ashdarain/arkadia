@@ -23,7 +23,7 @@ const LABELS = { body: "text", ca: "CA", ba: "BA", spellAc: "Spell AC", ac: "AC"
 const NOUNS = { groups: "group", races: "race", categories: "category", items: "item", panels: "panel", sections: "section",
   entries: "entry", options: "option", features: "feature", abilityGroups: "ability group", abilities: "ability", spells: "spell",
   traits: "trait", upgrades: "upgrade", drafts: "draft", mechanics: "mechanic", levels: "level", attributes: "attribute",
-  pointsTable: "points row", conditions: "condition" };
+  pointsTable: "points row", conditions: "condition", signatureSpells: "signature spell" };
 
 /** Read every JSON file under data/ into { "classes/samurai.json": {...}, ... }. */
 export function snapshot(dataDir) {

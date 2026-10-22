@@ -39,6 +39,7 @@ export const state = {
   magicFilters: {},     // magic overview: group key -> Set of picked values (see MAGIC_FILTERS)
   query: "",
   sectionTab: {},       // "classId/sectionId" -> active entry id (e.g. which Samurai stance is open)
+  sigOpen: new Set(),   // class pages: signature spells opened from the name list (their anchor ids)
   lastPage: {},         // tab -> last page opened in it, so the sidebar returns you there
 };
 
@@ -55,6 +56,19 @@ export const crystalHidden = (c) => CONFIG.hiddenCrystals.has(c.id) || CONFIG.hi
 /** The classes and crystals shown right now: hidden ones only appear with drafts switched on. */
 export const shownClasses = () => state.classes.filter((c) => state.showDrafts || !classHidden(c));
 export const shownCrystals = () => (state.magic?.crystals ?? []).filter((c) => state.showDrafts || !crystalHidden(c));
+/**
+ * Signature spells (a crystal's # Signature Spells, each tied to one class) shown right now, as
+ * { crystal, spell, cls }. cls is the class object, or null if the note names a class the site doesn't have.
+ * Left out: drafts (no class/cost line) unless drafts are on, and anything from a hidden class or crystal.
+ */
+export function signatureSpells() {
+  const byName = new Map(state.classes.map((c) => [c.name.toLowerCase(), c]));
+  return shownCrystals().flatMap((crystal) => (crystal.signatureSpells ?? []).map((spell) => ({
+    crystal, spell, cls: byName.get(String(spell.class ?? "").toLowerCase()) ?? null,
+  }))).filter(({ spell, cls }) =>
+    state.showDrafts || (!spell.draftReason && spellByDefault(spell) && !(cls && classHidden(cls))));
+}
+
 /** Badge for a hidden class or crystal that's being shown. */
 export const hiddenBadge = `<span class="badge draft">Hidden</span>`;
 

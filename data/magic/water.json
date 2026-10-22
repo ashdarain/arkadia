@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "generatedAt": "2026-10-22T09:03:53.034Z",
   "id": "water",
   "name": "Water",
   "tier": 2,
@@ -11,7 +11,8 @@
   ],
   "keywords": [
     "immobilize",
-    "disarm"
+    "disarm",
+    "charges"
   ],
   "theme": "Deep blue",
   "stats": [
@@ -22,22 +23,22 @@
   "ascendsInto": [],
   "mechanics": [
     {
+      "id": "aqua-charges",
+      "name": "Aqua Charges",
+      "body": "Aqua Charges are gained during Short and Long Rests, and some during the start of combat to empower your Water spells in various ways.",
+      "source": null
+    },
+    {
       "id": "immobilize",
       "name": "Immobilize",
-      "body": "Immobilized creatures **cannot move** and fail any **AGI** rolls. You can still Teleport while immobilized.",
+      "body": "Immobilized creatures **cannot move** and fail any **AGI** rolls. You can still Teleport while immobilized. Immobilize is a Weak Debuff.",
       "source": "Conditions"
     },
     {
       "id": "disarm",
       "name": "Disarm",
-      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci or items equipped in their hands.",
+      "body": "Disarmed creatures cannot make Attack actions, although they can still cast spells but do not gain the benefit of a spell Foci or items equipped in their hands. Disarm is a Weak Debuff.",
       "source": "Conditions"
-    },
-    {
-      "id": "aqua-charges",
-      "name": "Aqua Charges",
-      "body": "Aqua Charges are gained during Short and Long Rests, and some during the start of combat to empower your Water spells in various ways.",
-      "source": null
     }
   ],
   "spells": [
@@ -131,5 +132,22 @@
     }
   ],
   "drafts": [],
+  "signatureSpells": [
+    {
+      "id": "item",
+      "name": "",
+      "class": "Warden",
+      "ba": null,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "CA"
+      ],
+      "body": "",
+      "upgrades": [],
+      "draftReason": "no description"
+    }
+  ],
   "source": "Magic/Water.md"
 }

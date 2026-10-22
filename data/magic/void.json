@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T09:36:26.178Z",
+  "generatedAt": "2026-10-22T09:03:53.034Z",
   "id": "void",
   "name": "Void",
   "tier": 3,
@@ -21,6 +21,12 @@
   "ascendsInto": [],
   "mechanics": [
     {
+      "id": "the-void-dimension",
+      "name": "The Void Dimension",
+      "body": "The Void Dimension is a space of existence that lies on top of the real world, invisible and untouchable for most beings. All objects and terrain is mirrored in shadow within the monochrome Void, creatures in the real world are represented as cloudy Shadow Remnants within this dimension. See the **Pierce the Veil** spell for more details.",
+      "source": null
+    },
+    {
       "id": "fear",
       "name": "Fear",
       "body": "A creature that is Feared against a enemy cannot willingly move towards the enemy while it has line of sight of the enemy, and it makes attack/spell attack rolls against the enemy with Disadvantage. Fear is a Weak Debuff.",
@@ -31,12 +37,6 @@
       "name": "Paranoia",
       "body": "A Paranoid creature does not act normally during their turn. They must use all **Actions** attacking or casting Spells against the closest creature, **including allies**. Paranoia is a *Strong Debuff*.",
       "source": "Conditions"
-    },
-    {
-      "id": "the-void-dimension",
-      "name": "The Void Dimension",
-      "body": "The Void Dimension is a space of existence that lies on top of the real world, invisible and untouchable for most beings. All objects and terrain is mirrored in shadow within the monochrome Void, creatures in the real world are represented as cloudy Shadow Remnants within this dimension. See the **Pierce the Veil** spell for more details.",
-      "source": null
     }
   ],
   "spells": [
@@ -48,7 +48,7 @@
       "mana": "1*",
       "concentration": null,
       "tags": [],
-      "body": "As a **Half Action** or **Extra Action** enter the Void dimension. This is a space of existence that lies on top of the real world, invisible and untouchable for most beings. All objects and terrain is mirrored in shadow within the monochrome Void, creatures in the real world are represented as cloudy Shadow Remnants within this dimension. While in the Void you can move freely, attack other Remnants and cast spells. Certain creatures and beings with special abilities or Truesight can see and target you while you’re in the Void.\n\nWhen you cast Pierce the Veil to enter the Void, leave behind a **Void Remnant**, a shadowy figure in your shape, in the same position as you were in the real world. It has the same ACs, Resistances, etc. as you. **All damage the and effects the Remnant receives are inflicted to you.** This Remnant is **Resistant** to all **Non-magical** damage, but can only move when you command it to. Use a **Half** or **Extra Action** to make the Remnant move, take cover, etc. It has a base movement equal to yours and cannot exceed it. Enemies that you pull into the Void can make a **Full Action** **WIS** save to escape the Void, and typically leave behind their own Void Remnant which is also Resistant to Non-magical damage.\n\nWhen you start your turn inside the Void, pay 2 Mana or be forcibly kicked out. Returning you to your where your current position would be in the real world. You may use a **Half** or **Extra Action** to leave the void for 0 Mana. Whenever you leave the Void, all Void Remnants of yours disappears and all enemies you pulled in come back into the real world.\n\nEffects that reference “**Breach(ing) the Veil**” refer to when you when you use a spell, ability or attack from inside the Void to target outside in the real world, or **vice-versa**. When you *Breach the Veil* from within the Void, leave behind a temporary Void Remnant from your location into the real world until the end of your turn. These Remnants cannot overlap but you can make multiple of them. Enemies can react against to the temporary Remnants.",
+      "body": "As a **Half Action** or **Extra Action** enter the Void dimension. This is a space of existence that lies on top of the real world, invisible and untouchable for most beings. All objects and terrain is mirrored in shadow within the monochrome Void, creatures in the real world are represented as cloudy Shadow Remnants within this dimension. While in the Void you can move freely, attack other Remnants and cast spells. Certain creatures and beings with special abilities or Truesight can see and target you while you’re in the Void.\n\nWhen you cast Pierce the Veil to enter the Void, leave behind a **Void Remnant**, a shadowy figure in your shape, in the same position as you were in the real world. It has the same ACs, Resistances, etc. as you. **All damage the and effects the Remnant receives are inflicted to you.** This Remnant is **Resistant** to all **Non-magical** damage, but can only move when you command it to. Use a **Half** or **Extra Action** to make the Remnant move, take cover, etc. It has a base movement equal to yours and cannot exceed it. Enemies that you pull into the Void can make a **Full Action** **WIS** save to escape the Void, and typically leave behind their own Void Remnant which is also Resistant to Non-magical damage.\n\nWhen you start your turn inside the Void, pay 2 Mana or be forcibly kicked out. Returning you to your where your current position would be in the real world. You may use a **Half** or **Extra Action** to leave the void for 0 Mana. Whenever you leave the Void, all Void Remnants of yours disappears and all enemies you pulled in come back into the real world.\n\nEffects that reference “**Breach(ing) the Veil**” refer to when you when you use a spell, ability or attack from inside the Void to target outside in the real world, or **vice-versa**. When you *Breach the Veil* from within the Void, leave behind a temporary Void Remnant from your location into the real world until the end of your turn. These Remnants cannot overlap but you can make multiple of them. Enemies can react to the temporary Remnants.",
       "upgrades": [
         {
           "ca": "3",
@@ -140,5 +140,6 @@
     }
   ],
   "drafts": [],
+  "signatureSpells": [],
   "source": "Magic/Void.md"
 }

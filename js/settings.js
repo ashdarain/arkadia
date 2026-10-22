@@ -63,7 +63,7 @@ export function settingsPage() {
           </label>`).join("")}
       </div>
       <!-- <p class="settings-note">Crystal, buff and debuff colours stay the same in every theme.</p>-->
-    </section>    
+    </section>
 
     <section class="block settings-block">
       <h2>Content</h2>

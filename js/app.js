@@ -175,6 +175,19 @@ main.addEventListener("click", (e) => {
     location.hash = "#/magic";
     return;
   }
+  const sig = e.target.closest("[data-sig-toggle]");
+  if (sig) {
+    const id = sig.dataset.sigToggle, card = document.getElementById(id);
+    const open = !state.sigOpen.has(id);
+    open ? state.sigOpen.add(id) : state.sigOpen.delete(id);
+    sig.setAttribute("aria-expanded", open);
+    if (card) {
+      card.parentElement.hidden = !open;
+      if (open) flash(card);
+    }
+    stickColumns();
+    return;
+  }
   const spellJump = e.target.closest("[data-spell-jump]");
   if (spellJump) {
     const el = document.getElementById(spellJump.dataset.spellJump);
