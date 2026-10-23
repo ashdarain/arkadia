@@ -24,8 +24,8 @@ export default {
     maxClassLevel: 3,                 // class features/abilities above this level are hidden
     maxSpellBA: 15,                   // spells above this Base Acuity tier are hidden
     hideSpellsEndingWith: ["Talent"], // e.g. "Firemaker's Talent"
-    hiddenClasses: ["Warden"],                // whole classes to hide, by name, e.g. ["Lurker"]
-    hiddenCrystals: ["Wind", "Mind", "Light"], // whole crystals to hide, by name
+    hiddenClasses: [],                // whole classes to hide, by name, e.g. ["Lurker"]
+    hiddenCrystals: ["Wind"],         // whole crystals to hide, by name
   },
 
   // Class notes: which ones are converted.
@@ -49,6 +49,7 @@ export default {
     { name: "Lightning", color: "#f2d85c", lightColor: "#ccb23f" },
     { name: "Water", color: "#245fb1" },
     { name: "Void", color: "#633a8f" },
+    { name: "Blood", color: "#862029" },
   ],
 
   // Other notes, relative to the vault.

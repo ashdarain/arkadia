@@ -240,9 +240,8 @@ function signatureSection(cls) {
       <div class="index-names sig-names">
         ${sigs.map((x) => `<button type="button" class="${x.spell.draftReason ? "draft" : ""}" style="--crystal: ${crystalColor(x.crystal)}" data-sig-toggle="${idOf(x)}" aria-controls="${idOf(x)}" aria-expanded="${state.sigOpen.has(idOf(x))}">${esc(x.spell.name)}</button>`).join("")}
       </div>
-      <div class="sig-cards">
-        ${sigs.map((x) => `<div class="sig-card" style="--crystal: ${crystalColor(x.crystal)}"${state.sigOpen.has(idOf(x)) ? "" : " hidden"}>${spellCard(x.crystal, x.spell, { label: signatureLink(x, true), id: idOf(x) })}</div>`).join("")}
-      </div>
+      ${masonry(sigs.map((x) => spellCard(x.crystal, x.spell, { label: signatureLink(x, true), id: idOf(x) })
+        .replace("<article ", `<article style="--crystal: ${crystalColor(x.crystal)}"${state.sigOpen.has(idOf(x)) ? "" : " hidden"} `)), 230, 2, "sig-cards")}
     </section>`;
 }
 

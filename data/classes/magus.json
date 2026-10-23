@@ -103,8 +103,6 @@
       "draftReason": "no name"
     }
   ],
-  "designerNotes": [
-    "staves need expertise bonus"
-  ],
+  "designerNotes": [],
   "source": "Classes/Magus.md"
 }

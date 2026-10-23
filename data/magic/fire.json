@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "id": "fire",
   "name": "Fire",
   "tier": 1,
@@ -231,7 +231,7 @@
         {
           "ca": "4",
           "variant": null,
-          "text": "Increase the Damage Dice Class by +1 for Detonate. +1 Mana Cost."
+          "text": "Increase the Damage Dice Tier Dice Tier by +1 for Detonate. +1 Mana Cost."
         },
         {
           "ca": "2",
@@ -336,7 +336,7 @@
       "mana": "6",
       "concentration": null,
       "tags": [],
-      "body": "You may only have 1 set of Fire Elementals active at one time. When you cast this spell again, or whenever you choose to, all previously summoned Fire Elementals die.\n\n**Basic Cast**: As a Full Action, Summon a Fire Elemental within 3m. It has 4d8 Health, 5m hovering movement speed, resistance to Fire damage, and vulnerability to Cold Damage. It gains the following Summon Actions:\n1) Fire Elemental fires a balls of flame towards any target within 12m, dealing 2d6 Fire damage.\n2) Fire Elemental Burns brightly, dealing 1d8 Fire damage to each enemy within 2m.\n\n**Empowered Cast**: You may consume any number of Blaze Charges to improve the capabilities of Summon Fire Elemental. You can apply the same effects multiple times:\n• 2 Blaze Charges to increase Fire Elemental HP by +3d8\n• 1 Blaze Charge to increase the damage Dice count by +1 for all attacks\n• 3 Blaze Charges to increase the damage Dice Class for all rolls regarding the Fire Elemental\n• 1 Blaze Charges to explode on death, dealing 2d12 Fire damage to all creatures 4m, CON save to take half damage (this is an attack)\n• 3 Blaze Charges for +1 Summon Action\n• 5 Blaze Charges for +1 Fire Elemental summoned",
+      "body": "You may only have 1 set of Fire Elementals active at one time. When you cast this spell again, or whenever you choose to, all previously summoned Fire Elementals die.\n\n**Basic Cast**: As a Full Action, Summon a Fire Elemental within 3m. It has 4d8 Health, 5m hovering movement speed, resistance to Fire damage, and vulnerability to Cold Damage. It gains the following Summon Actions:\n1) Fire Elemental fires a balls of flame towards any target within 12m, dealing 2d6 Fire damage.\n2) Fire Elemental Burns brightly, dealing 1d8 Fire damage to each enemy within 2m.\n\n**Empowered Cast**: You may consume any number of Blaze Charges to improve the capabilities of Summon Fire Elemental. You can apply the same effects multiple times:\n• 2 Blaze Charges to increase Fire Elemental HP by +3d8\n• 1 Blaze Charge to increase the damage Dice Tier count by +1 for all attacks\n• 3 Blaze Charges to increase the damage Dice Tier Dice Tier for all rolls regarding the Fire Elemental\n• 1 Blaze Charges to explode on death, dealing 2d12 Fire damage to all creatures 4m, CON save to take half damage (this is an attack)\n• 3 Blaze Charges for +1 Summon Action\n• 5 Blaze Charges for +1 Fire Elemental summoned",
       "upgrades": [
         {
           "ca": "5",
@@ -346,7 +346,7 @@
         {
           "ca": "4",
           "variant": null,
-          "text": "Increase the Dice Class for HP and Attack rolls. +2 to Mana cost if used."
+          "text": "Increase the Dice Tier Dice Tier for HP and Attack rolls. +2 to Mana cost if used."
         }
       ]
     },
@@ -358,7 +358,7 @@
       "mana": "5+",
       "concentration": null,
       "tags": [],
-      "body": "***Basic Cast***: As a Full Action create a large ball of fire and hurl at any point or target within 12m. On impact it explodes in a 3m diameter circle dealing 6d8 Fire damage. Each creature in the blast may make a AGI save to take half damage. Greater Fireball is a Large Projectile.\n\n**Empowered Cast**: When using the basic cast, you may expend Blaze Charges to empower the fireball, the same effect may be applied multiple times:\n• 1 Blaze Charge to increase the damage  Dice Count by +1\n• 2 Blaze Charges to increase the AoE by +1m and the Cast range by +3m.\n• 3 Blaze Charges to increase the damage Dice Class by +1.",
+      "body": "***Basic Cast***: As a Full Action create a large ball of fire and hurl at any point or target within 12m. On impact it explodes in a 3m diameter circle dealing 6d8 Fire damage. Each creature in the blast may make a AGI save to take half damage. Greater Fireball is a Large Projectile.\n\n**Empowered Cast**: When using the basic cast, you may expend Blaze Charges to empower the fireball, the same effect may be applied multiple times:\n• 1 Blaze Charge to increase the damage  Dice Tier Count by +1\n• 2 Blaze Charges to increase the AoE by +1m and the Cast range by +3m.\n• 3 Blaze Charges to increase the damage Dice Tier Dice Tier by +1.",
       "upgrades": [
         {
           "ca": "3",
@@ -380,7 +380,7 @@
       "mana": null,
       "concentration": null,
       "tags": [],
-      "body": "Increase the damage Dice Class by +1 for Burn applied by you, and add your [STAT] to the damage. When multiple Burns are triggered, only add your [STAT] once. Increase the damage Dice Class by +1 per 30 Fire CA.\n\nWithin 50m of you, if your Burn damage is higher than the Burn already on an enemy, yours overwrites it. Whenever a weaker Burn is applied to an enemy with your Burn already applied, it is upgraded to your higher damaging one.",
+      "body": "Increase the damage Dice Tier Dice Tier by +1 for Burn applied by you, and add your [STAT] to the damage. When multiple Burns are triggered, only add your [STAT] once. Increase the damage Dice Tier Dice Tier by +1 per 30 Fire CA.\n\nWithin 50m of you, if your Burn damage is higher than the Burn already on an enemy, yours overwrites it. Whenever a weaker Burn is applied to an enemy with your Burn already applied, it is upgraded to your higher damaging one.",
       "upgrades": [
         {
           "ca": "2",

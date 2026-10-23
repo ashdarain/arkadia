@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "id": "water",
   "name": "Water",
   "tier": 2,
@@ -99,7 +99,7 @@
         {
           "ca": "3",
           "variant": null,
-          "text": "If you **defeat** and enemy with this spell, drain their body of water gaining **Aqua Charges** depending on their **Size Class**. 1 for Tiny, 2 for Small or Medium, 4 for Large and 6 for Huge, and 12 for Gigantic."
+          "text": "If you **defeat** and enemy with this spell, drain their body of water gaining **Aqua Charges** depending on their **Size Dice Tier**. 1 for Tiny, 2 for Small or Medium, 4 for Large and 6 for Huge, and 12 for Gigantic."
         },
         {
           "ca": "5",
@@ -116,7 +116,7 @@
       "mana": "2*",
       "concentration": null,
       "tags": [],
-      "body": "As a **Full Action** target yourself or an ally, giving them a sip of healing water. The target gains **+1d8** Health. The healing Dice *Class* increases by +1 per 24 Water CA.\n\nYou may consume any number of **Aqua Charges** to increase the healing Dice *Count* by +1 per 2 Charges consumed this way.",
+      "body": "As a **Full Action** target yourself or an ally, giving them a sip of healing water. The target gains **+1d8** Health. The healing Dice Tier *Dice Tier* increases by +1 per 24 Water CA.\n\nYou may consume any number of **Aqua Charges** to increase the healing Dice Tier *Count* by +1 per 2 Charges consumed this way.",
       "upgrades": [
         {
           "ca": "3",
@@ -134,19 +134,16 @@
   "drafts": [],
   "signatureSpells": [
     {
-      "id": "item",
-      "name": "",
+      "id": "aquatic-shield",
+      "name": "Aquatic Shield",
       "class": "Warden",
       "ba": null,
-      "ca": null,
+      "ca": "3",
       "mana": null,
       "concentration": null,
-      "tags": [
-        "CA"
-      ],
-      "body": "",
-      "upgrades": [],
-      "draftReason": "no description"
+      "tags": [],
+      "body": "- bubble that gives u resistance\n- takes a certain number of hits",
+      "upgrades": []
     }
   ],
   "source": "Magic/Water.md"

@@ -78,7 +78,7 @@
       "name": "Lying in Wait",
       "abilityType": null,
       "cost": null,
-      "body": "Once per enemy when you make an Attack or Spell Attack towards a target that already had their turn, add **+1d6** damage to the attack. The damage type is equal to the most prominent damage type from the attack. Damage increases by **+1d6** at Lurker levels 3, 5, 7 and 9. At Lurker Level 10 and Player Level 17, increase the **Damage Dice Class** by **+1**."
+      "body": "Once per enemy when you make an Attack or Spell Attack towards a target that already had their turn, add **+1d6** damage to the attack. The damage type is equal to the most prominent damage type from the attack. Damage increases by **+1d6** at Lurker levels 3, 5, 7 and 9. At Lurker Level 10 and Player Level 17, increase the **Damage Dice Tier Dice Tier** by **+1**."
     },
     {
       "id": "enhanced-disengage",

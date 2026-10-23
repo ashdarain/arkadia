@@ -3,6 +3,7 @@
   "id": "marksman",
   "name": "Marksman",
   "tags": [
+    "offensive",
     "ranged"
   ],
   "description": null,
@@ -70,7 +71,7 @@
       "name": "High Ground",
       "abilityType": null,
       "cost": null,
-      "body": "If you are at least **2m** above the target of your ranged attacks, deal **+1d4** Physical damage with your ranged attacks. Deal an additional **+1d4** per 2m above your target, capping out at 10m. Damage Dice Class increases to **+1d6** at Marksman Level 6."
+      "body": "If you are at least **2m** above the target of your ranged attacks, deal **+1d4** Physical damage with your ranged attacks. Deal an additional **+1d4** per 2m above your target, capping out at 10m. Damage Dice Tier Dice Tier increases to **+1d6** at Marksman Level 6."
     },
     {
       "id": "quick-draw",
@@ -86,7 +87,7 @@
       "name": "Heavy Shots",
       "abilityType": null,
       "cost": null,
-      "body": "Increase the Damage Dice Class by **+1** for Full Action ranged weapon attacks Dice Class increases by a further **+1** at Marksman levels 7 and 10, and Player Levels 14 and 20."
+      "body": "Increase the Damage Dice Tier Dice Tier by **+1** for Full Action ranged weapon attacks Dice Tier Dice Tier increases by a further **+1** at Marksman levels 7 and 10, and Player Levels 14 and 20."
     }
   ],
   "abilityGroups": [],

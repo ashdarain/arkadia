@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "id": "bladedancer",
+  "name": "Bladedancer",
+  "tags": [
+    "offensive",
+    "melee",
+    "speed"
+  ],
+  "description": null,
+  "healthPerLevel": {
+    "raw": "1d8+4+CON",
+    "dice": "1d8",
+    "flat": 4,
+    "stat": "CON"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "ca": {
+        "total": 4,
+        "gain": 4
+      },
+      "grants": null
+    },
+    {
+      "level": 2,
+      "ca": {
+        "total": 6,
+        "gain": 2
+      },
+      "grants": null
+    },
+    {
+      "level": 3,
+      "ca": {
+        "total": 9,
+        "gain": 3
+      },
+      "grants": null
+    }
+  ],
+  "mechanics": [],
+  "features": [
+    {
+      "id": "bladedancer-at-arms",
+      "level": 1,
+      "name": "Bladedancer at Arms",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain Proficiencies in all Melee weapons with the Light attribute. Gain Proficiencies in Light and Medium armour. At Bladedancer Levels 4, 7 and 10, choose Melee Light weapon you have proficiency in and gain Expertise with that weapon instead."
+    },
+    {
+      "id": "flurry-of-slashes",
+      "level": 1,
+      "name": "Flurry of Slashes",
+      "abilityType": null,
+      "cost": null,
+      "body": "As a **Full Action**, make **3 Half Attacks** against a single target, making separate rolls for each attack. The second attack gets **+1** to attack rolls while the third one gains **+2** instead. At Bladedancer Level 5, the second attack gains **+2** instead, while the third one gains **+4**. At Bladedancer Level 10, the second attack gains **+4** instead, while the third one gains **+6**.\n\nThese attacks count as regular **Half Attacks** for the purposes of Enchantments and other abilities and effects. If the target is defeated before all three attacks, you cannot use the remaining attacks on other enemies."
+    },
+    {
+      "id": "enhanced-dual-wielding",
+      "level": 2,
+      "name": "Enhanced Dual-Wielding",
+      "abilityType": null,
+      "cost": null,
+      "body": "Add Stat modifiers to damage rolls from Half Attacks while you are dual-wielding."
+    },
+    {
+      "id": "escalating-attacks",
+      "level": 2,
+      "name": "Escalating Attacks",
+      "abilityType": null,
+      "cost": null,
+      "body": "Every attack deals bonus **+1** damage per attack you’ve already made this turn, even if they missed. This bonus damage is equal to however the highest damage of the attack. Damage per previous attack increases by **+1** at Bladedancer levels 4 and 8."
+    },
+    {
+      "id": "deflect-and-parry",
+      "level": 3,
+      "name": "Deflect & Parry",
+      "abilityType": null,
+      "cost": null,
+      "body": "Gain +1 **Physical AC** and **Spell AC** while you are dual-wielding. Both AC values increase by **+1** at Blade Dancer 6 and 9."
+    },
+    {
+      "id": "fervor",
+      "level": 3,
+      "name": "Fervor",
+      "abilityType": null,
+      "cost": null,
+      "body": "When you preform three attacks a turn without moving between the attacks, gain 1 stack of **Fervor**. For each stack of Fervor, you have **+1** to **Crit** chance with Melee attacks. When you successfully land a critical hit with a Melee attack, lose all stacks of Fervor."
+    }
+  ],
+  "abilityGroups": [],
+  "sections": [],
+  "drafts": [],
+  "designerNotes": [],
+  "source": "Classes/Bladedancer.md"
+}

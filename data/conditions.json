@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.087Z",
+  "generatedAt": "2026-10-23T12:50:41.267Z",
   "source": "Conditions.md",
   "conditions": [
     {
@@ -26,6 +26,18 @@
       "body": "Burn is a stackable Weak Debuff that deals **1d6** Fire damage per stack consumed. At the start of turn make a **CON** save and take the damage on fail. On fail remove up to **2 stacks** if able, or only 1 stack if the roll succeeded. The Save DC is **13** or the caster’s DC, whichever is higher. The caster also adds **[STAT]** to damage total damage rolls. Minor Dispells remove 3 stacks of Burn.",
       "sources": [
         "Fire"
+      ]
+    },
+    {
+      "id": "bleed",
+      "name": "Bleed",
+      "kind": "debuff",
+      "strength": "weak",
+      "label": "Weak Debuff",
+      "body": "Bleed is a stackable Weak Debuff that deals damage whenever the bleeding creature performs an Action. When the they perform a *Full Action* or *Reaction* they take **1d6** Physical damage. When they perform a *Half* or *Extra Action*, they take **1d4** Physical damage instead. Any of those Actions removes 1 stack of bleed. The caster also adds **[STAT]** to damage total damage rolls. 1 stack of Bleed is removed per 3 Health healed.  3 stacks of Bleed are removed with a Minor Dispell. All stacks of Bleed are removed during a Long or Short Rest.",
+      "sources": [
+        "Wind",
+        "Blood"
       ]
     },
     {

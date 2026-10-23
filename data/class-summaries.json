@@ -48,7 +48,11 @@
     "icon": "<path d='M15 4l1.5 4.5L21 10l-4.5 1.5L15 16l-1.5-4.5L9 10l4.5-1.5z'/><path d='M2 13h5M4 17h6M3 9h3'/>"
   },
   "warden": {
-    "summary": "A defensive spellcaster that focuses on protecting themselves and allies.",
-    "icon": ""
+    "summary": "A defensive spellcaster that focuses on protecting themselves and allies, gaining access to their own set of spells.",
+    "icon": "<path d='M12 6.5l3.5 4-3.5 6.5-3.5-6.5z'/><path d='M8.5 10.5h7'/><path d='M6.5 5C4 8.5 4 15.5 6.5 19'/><path d='M17.5 5c2.5 3.5 2.5 10.5 0 14'/><path d='M3.5 8.5c-1 2.3-1 4.7 0 7M20.5 8.5c1 2.3 1 4.7 0 7'/>"
+  },
+  "bladedancer": {
+    "summary": "Attack fast and attack often; a master of dual-wielding.",
+    "icon": "<path d='M14.5 17.5C9 13 5 8 3 3c4.5 2.5 9.5 6.5 14 11.5'/><path d='M13 19l6-6'/><path d='M16 16l4 4'/><path d='M19 21l2-2'/><path d='M14.5 6.5C16.5 5 18.8 3.8 21 3c-.8 2.2-2 4.5-3.5 6.5'/><path d='M5 14l4 4'/><path d='M7 17l-3 3'/><path d='M3 19l2 2'/>"
   }
 }

@@ -3,7 +3,8 @@
   "id": "skirmisher",
   "name": "Skirmisher",
   "tags": [
-    "movement"
+    "movement",
+    "speed"
   ],
   "description": "Skirmisher excels in moving around the battlefield and acting out of turn.",
   "healthPerLevel": {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.062Z",
+  "generatedAt": "2026-10-23T12:50:41.242Z",
   "source": "Equipment.md",
   "intro": "Equipment only have **penalties** if you are **not proficient** in them. For melee weapons, you can only make **Half Action** attacks if your weapon has **Light** or **Dexterous**. Ranged weapons require 2 hands to use unless they have the **One-handed** attribute.",
   "attributes": [
@@ -42,7 +42,7 @@
     {
       "name": "Unwieldy",
       "param": null,
-      "text": "Using this weapon with one hand lowers the damage Dice Class by -1."
+      "text": "Using this weapon with one hand lowers the damage Dice Tier Dice Tier by -1."
     },
     {
       "name": "Dexterous",

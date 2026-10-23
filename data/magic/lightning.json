@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "id": "lightning",
   "name": "Lightning",
   "tier": 2,
@@ -69,7 +69,7 @@
         {
           "ca": "3",
           "variant": null,
-          "text": "Once per Round when an enemy is defeated, if they they were damaged or affected by any of the spell or attacks listed above since the start of last Round, gain charges based on their Size Class. 1 Charge for Medium or smaller, 2 Charges for Large, and 3 Charges for Huge or bigger."
+          "text": "Once per Round when an enemy is defeated, if they they were damaged or affected by any of the spell or attacks listed above since the start of last Round, gain charges based on their Size Dice Tier. 1 Charge for Medium or smaller, 2 Charges for Large, and 3 Charges for Huge or bigger."
         },
         {
           "ca": "6",
@@ -167,7 +167,7 @@
       "mana": "2+",
       "concentration": null,
       "tags": [],
-      "body": "As a *Full Action* make a *Melee Spell Attack* striking an enemy with a blade conjured from lightning, dealing **1d8** Lightning damage on hit. The target must pass a *CON* save or gain *Shock*. Then Arcing Strike chains to multiple targets, dealing **1d4** Lightning damage to each target in the chain. Choose a different target within 6m of the previous target in the chain, repeating for the number of chains you have. You cannot repeat targets, each target must be *unique*. For each enemy in the chain, you may forgo the damage to inflict *Shock* instead. Arcing Strike starts with a base chain amount of *2*.\n\nThe primary strike damage increases by **+1d8** per 12 Lightning CA, chain damage increases by **+1d4** per 12 Lightning CA, and number of chains increase by **+1** per 2 Player Levels\n\nAs you cast Arcing Strike, you may *remove* any number of specific ailments from the initial target to gain specific bonuses. Remove *Shock* to gain **+1d4** to your Attack roll. Remove all *Electrocute* to increase the damage *Dice Class* for the main strike and subsequent chains. Remove *Paralysis* to guarantee a **Crit**. (Chain damage is also affected by Crit).",
+      "body": "As a *Full Action* make a *Melee Spell Attack* striking an enemy with a blade conjured from lightning, dealing **1d8** Lightning damage on hit. The target must pass a *CON* save or gain *Shock*. Then Arcing Strike chains to multiple targets, dealing **1d4** Lightning damage to each target in the chain. Choose a different target within 6m of the previous target in the chain, repeating for the number of chains you have. You cannot repeat targets, each target must be *unique*. For each enemy in the chain, you may forgo the damage to inflict *Shock* instead. Arcing Strike starts with a base chain amount of *2*.\n\nThe primary strike damage increases by **+1d8** per 12 Lightning CA, chain damage increases by **+1d4** per 12 Lightning CA, and number of chains increase by **+1** per 2 Player Levels\n\nAs you cast Arcing Strike, you may *remove* any number of specific ailments from the initial target to gain specific bonuses. Remove *Shock* to gain **+1d4** to your Attack roll. Remove all *Electrocute* to increase the damage *Dice Tier Dice Tier* for the main strike and subsequent chains. Remove *Paralysis* to guarantee a **Crit**. (Chain damage is also affected by Crit).",
       "upgrades": [
         {
           "ca": "3",
@@ -225,7 +225,7 @@
         {
           "ca": "3",
           "variant": null,
-          "text": "You may pay *2 Mana* when triggering Where There’s Lightning… to increase the damage *Dice Class* of Aether Damage."
+          "text": "You may pay *2 Mana* when triggering Where There’s Lightning… to increase the damage *Dice Tier Dice Tier* of Aether Damage."
         }
       ]
     },
@@ -528,7 +528,7 @@
         {
           "ca": "5",
           "variant": null,
-          "text": "You may consume Static Charges to enhance this spell:\n- Per 3 charges consumed, increase the damage *Dice Count* by *+1* for all damage Overcurrent deals.\n- Per 5 charges consumed, increase the range and radius of all Overcurrent effects by *+1m*.\n- If at least 10 charges are consumed, all damage dealt by Overcurrent becomes *Pure damage*."
+          "text": "You may consume Static Charges to enhance this spell:\n- Per 3 charges consumed, increase the damage *Dice Tier Count* by *+1* for all damage Overcurrent deals.\n- Per 5 charges consumed, increase the range and radius of all Overcurrent effects by *+1m*.\n- If at least 10 charges are consumed, all damage dealt by Overcurrent becomes *Pure damage*."
         }
       ]
     }

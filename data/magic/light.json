@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "id": "light",
   "name": "Light",
   "tier": 1,
@@ -80,7 +80,7 @@
       "mana": "1*",
       "concentration": null,
       "tags": [],
-      "body": "As a **Full Action** make a Ranged Spell Attack shooting a beam of concentrated light towards a a creature within **12m**, dealing **1d8** Radiant damage on hit. Damage increases by **+1d8** per 15 Light CA and every 4 Player Levels. Spend any number of **Shine Charges** to empower this spell:\n- 1 Charge to add **+4m** of range to Ray of Light.\n- 2 Charges to increases the damage Dice Count by **+1**.\n\n***0 Mana Cast:*** As a **Half Action** make a Ranged Spell Attack shooting a smaller beam of concentrated light towards a creature within **6m**, dealing **1d6** Radiant damage on hit. Damage increases by **+1d6**. The 0 Mana Cast cannot use Shine Charges to empower it.",
+      "body": "As a **Full Action** make a Ranged Spell Attack shooting a beam of concentrated light towards a a creature within **12m**, dealing **1d8** Radiant damage on hit. Damage increases by **+1d8** per 15 Light CA and every 4 Player Levels. Spend any number of **Shine Charges** to empower this spell:\n- 1 Charge to add **+4m** of range to Ray of Light.\n- 2 Charges to increases the damage Dice Tier Count by **+1**.\n\n***0 Mana Cast:*** As a **Half Action** make a Ranged Spell Attack shooting a smaller beam of concentrated light towards a creature within **6m**, dealing **1d6** Radiant damage on hit. Damage increases by **+1d6**. The 0 Mana Cast cannot use Shine Charges to empower it.",
       "upgrades": [
         {
           "ca": "2",
@@ -102,7 +102,7 @@
       "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Full Attacks gain Flat **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Ranged**: Full Attacks gain Flat **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Spell Focus**: **+4m** to range of Light spells and all spells that deal Radiant damage. Spell Attack rolls gain **+2**, or **+1d6** if the target is Blinded.",
+      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Full Attacks gain Flat **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Tier Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Ranged**: Full Attacks gain Flat **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Tier Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Spell Focus**: **+4m** to range of Light spells and all spells that deal Radiant damage. Spell Attack rolls gain **+2**, or **+1d6** if the target is Blinded.",
       "upgrades": [
         {
           "ca": "4",
@@ -112,12 +112,12 @@
         {
           "ca": "3",
           "variant": "Melee or Ranged",
-          "text": "You can spend **3 Shine Charges** to increase the Radiant damage **Dice Class** by **+1** from Enchanted Martial Attacks."
+          "text": "You can spend **3 Shine Charges** to increase the Radiant damage **Dice Tier Dice Tier** by **+1** from Enchanted Martial Attacks."
         },
         {
           "ca": "5",
           "variant": "Spell Foci",
-          "text": "You can spend **1 Shine Charge** when casting a Radiant damage dealing spell while Enchanted to increase the damage **Dice Count** by **+1** each."
+          "text": "You can spend **1 Shine Charge** when casting a Radiant damage dealing spell while Enchanted to increase the damage **Dice Tier Count** by **+1** each."
         }
       ]
     },
@@ -129,7 +129,7 @@
       "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "As a **Full Action** choose a friendly creature within **3m**, they are healed for **1d6** Health. Healing is increased by **+1d6** per 20 Light CA and every 6 Player Levels. Spend **2 Shine Charges**, increase the healing **Dice Count** by **+1** each. Spend **1 Shine Charge** to increase Healing Light’s range by **+3m**.",
+      "body": "As a **Full Action** choose a friendly creature within **3m**, they are healed for **1d6** Health. Healing is increased by **+1d6** per 20 Light CA and every 6 Player Levels. Spend **2 Shine Charges**, increase the healing **Dice Tier Count** by **+1** each. Spend **1 Shine Charge** to increase Healing Light’s range by **+3m**.",
       "upgrades": [
         {
           "ca": "2",
@@ -139,7 +139,7 @@
         {
           "ca": "3",
           "variant": null,
-          "text": "Spend **3 Shine Charges** to increase the healing **Dice Class** by **+1** each time."
+          "text": "Spend **3 Shine Charges** to increase the healing **Dice Tier Dice Tier** by **+1** each time."
         }
       ]
     },
@@ -151,12 +151,12 @@
       "mana": "3",
       "concentration": null,
       "tags": [],
-      "body": "As a **Full Action** choose a point within **8m** to conjure a brief but blinding flash of light. Each creature within a **4m** diameter AoE of that point makes a **DEX** Save or becomes **Blinded** for 1 turn. This spell also deals **2d6** Radiant damage to each creature on fail, or half on success. Damage increases by **+1d6** per 10 Light CA.\n\nYou may spend any number of Shine Charges to empower Flashbang:\n- 2 Charges to increase the diameter by **+2m**.\n- 1 Charge to increase the damage **Dice Count** by **+1.**\n- 3 Charges to increase the **Blind** duration by 1 turn.",
+      "body": "As a **Full Action** choose a point within **8m** to conjure a brief but blinding flash of light. Each creature within a **4m** diameter AoE of that point makes a **DEX** Save or becomes **Blinded** for 1 turn. This spell also deals **2d6** Radiant damage to each creature on fail, or half on success. Damage increases by **+1d6** per 10 Light CA.\n\nYou may spend any number of Shine Charges to empower Flashbang:\n- 2 Charges to increase the diameter by **+2m**.\n- 1 Charge to increase the damage **Dice Tier Count** by **+1.**\n- 3 Charges to increase the **Blind** duration by 1 turn.",
       "upgrades": [
         {
           "ca": "2",
           "variant": null,
-          "text": "Spend **4 Charges** to increase the damage Dice Class by **+1** each."
+          "text": "Spend **4 Charges** to increase the damage Dice Tier Dice Tier by **+1** each."
         },
         {
           "ca": "3",
@@ -173,7 +173,7 @@
       "mana": "2",
       "concentration": "Major Concentration",
       "tags": [],
-      "body": "As a **Full Action** create a **3m** diameter AoE pool of warm light within **6m** of you. Any friendly creature that starts their turn in the glow is healed for **1d4** Health, healing is increased by **+1d4** per 15 Light CA. As a **Free Action** you can imbue the glow with **3 Shine Charges** to increase the healing **Dice Count** by **+1** until the start of your next turn. Remedial Glow lasts up to 5 turns, or until Concentration is broken.",
+      "body": "As a **Full Action** create a **3m** diameter AoE pool of warm light within **6m** of you. Any friendly creature that starts their turn in the glow is healed for **1d4** Health, healing is increased by **+1d4** per 15 Light CA. As a **Free Action** you can imbue the glow with **3 Shine Charges** to increase the healing **Dice Tier Count** by **+1** until the start of your next turn. Remedial Glow lasts up to 5 turns, or until Concentration is broken.",
       "upgrades": [
         {
           "ca": "2",
@@ -222,7 +222,7 @@
         {
           "ca": "3",
           "variant": null,
-          "text": "Spend Shine Charges to improve the effects of Spotlight:\n- 3 Charges to extend the **duration** of Spotlight by **1 turn** each.\n- 3 Charges to make the creature **Blind** while under the spotlight.\n- 2 Charges to increase the damage **Dice Class** by **+1**."
+          "text": "Spend Shine Charges to improve the effects of Spotlight:\n- 2 Charges to extend the **duration** of Spotlight by **1 turn** each.\n- 2 Charges to make the creature **Blind** while under the spotlight. +1 turn of Blind per 2 Charges spent after.\n- 3 Charges to increase the damage **Dice Tier Dice Tier** by **+1**."
         },
         {
           "ca": "1",
@@ -259,14 +259,14 @@
       "body": "As a **Full Action** target yourself or an ally within **6m**, enshrouding them in bright light. All Melee attacks made against them are made with **Disadvantage**, and all Ranged Martial and Spell Attack rolls get a **-6** penalty. Light Protect Thee lasts up to 3 turns, or when you break Concentration. If an enemy within **8m** successfully hits the protected target, they must make a **DEX** save or take **1d8** Radiant Damage or half on pass. Damage increases by **+1d8** per 15 Light CA, and at Warden Levels 4, 6, 8 and 10.",
       "upgrades": [
         {
-          "ca": "2",
+          "ca": "3",
           "variant": null,
           "text": "Spend **3 Shine Charges** to target a **another** creature with Light Protect Thee, *+1 Mana Cost per each creature protected .*"
         },
         {
-          "ca": "3",
+          "ca": "2",
           "variant": null,
-          "text": "Enemies that fail the DEX save also become Blinded for 1 turn. Blind duration increases by **+1** turn at Warden Levels 5 and 8."
+          "text": "Enemies that fail the **DEX** save also become **Blinded** for 1 turn. Blind duration increases by **+1** turn at Warden Levels 5 and 8."
         }
       ]
     }

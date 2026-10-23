@@ -589,10 +589,10 @@ a.sig-link.crystal-sig:hover .crystal-gem path { fill: var(--bg); }
 .sig-names button { font: 600 .98rem/1.4 var(--body); padding: 6px 14px; color: color-mix(in srgb, var(--crystal-ink), var(--text) 30%); border-color: color-mix(in srgb, var(--crystal) 50%, transparent); }
 .sig-names button[aria-expanded="true"] { color: var(--bg); background: var(--crystal); border-color: var(--crystal); }
 .sig-names button.draft { border-style: dashed; }
-.sig-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; margin-top: 14px; }   /* two per row */
-@media (max-width: 560px) { .sig-cards { grid-template-columns: minmax(0, 1fr); } }
-.sig-cards:not(:has(.sig-card:not([hidden]))) { margin-top: 0; }
-.sig-card .copyable { --copy: var(--crystal); }
+.signature-block > .sig-cards { margin-top: 14px; }   /* a masonry grid: up to two columns, open cards stack */
+.signature-block > .sig-cards:not(:has(.spell:not([hidden]))) { margin-top: 0; }
+.sig-cards .spell[hidden] { display: none; }
+.sig-cards .copyable { --copy: var(--crystal); }
 
 /* Header chips / stat pills that open the overview filtered to that value */
 .filter-link { position: relative; text-decoration: none; cursor: pointer; transition: border-color .12s ease, color .12s ease; }

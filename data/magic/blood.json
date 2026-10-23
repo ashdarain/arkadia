@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "id": "blood",
+  "name": "Blood",
+  "tier": 3,
+  "damageTypes": [
+    "aether",
+    "necrotic"
+  ],
+  "keywords": [
+    "charges",
+    "lifesteal",
+    "bleed"
+  ],
+  "theme": "Crimson",
+  "stats": [
+    "CON",
+    "CHA",
+    "INT"
+  ],
+  "ascendsInto": [],
+  "mechanics": [
+    {
+      "id": "blood-charges",
+      "name": "Blood Charges",
+      "body": "Read the blood charges section lol.",
+      "source": null
+    },
+    {
+      "id": "bleed",
+      "name": "Bleed",
+      "body": "Bleed is a stackable Weak Debuff that deals damage whenever the bleeding creature performs an Action. When the they perform a *Full Action* or *Reaction* they take **1d6** Physical damage. When they perform a *Half* or *Extra Action*, they take **1d4** Physical damage instead. Any of those Actions removes 1 stack of bleed. The caster also adds **[STAT]** to damage total damage rolls. 1 stack of Bleed is removed per 3 Health healed.  3 stacks of Bleed are removed with a Minor Dispell. All stacks of Bleed are removed during a Long or Short Rest.",
+      "source": "Conditions"
+    }
+  ],
+  "spells": [
+    {
+      "id": "blood-charges",
+      "name": "Blood Charges",
+      "ba": 0,
+      "ca": "Auto",
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "Once per turn, whenever you lose or take any amount damage to your (non-temporary) **Health**, gain **1 Blood Charge**. You have a maximum of 3 Blood Charges which increases by **+1** per 20 Blood CA and at Player Levels 6, 12 and 18.\n\nBlood Charges are used to empower various Blood spells. These Charges are only lost after you are defeated (all Charges are lost) or when you choose to spend them. Some Blood spells cost **Health** as well as Mana. Unless otherwise stated, this Health cost triggers gaining **Blood Charges**. Additionally, this Health loss is Pure damage, it cannot be negated by any form of protection, and it bypasses temporary Health. Spending Blood Charges typically happens as you cast a spell as the cost, so if a spell fails you might waste a Charge.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per round if you are at half Health (rounded up) or lower, if you were to gain an Blood Charge, gain **+1** additional Blood Charge. Gain an additional **+1** Blood Charge this way per 30 Blood CA, and at Player Levels 9 and 18."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "At the start of your turn, if you have 0 Blood Charges, you may take 1d4+[STAT] Pure damage. This damage bypasses all protection and temporary Health. STAT must be your highest stat used for Blood."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You can produce up to **2 Blood Charges** a turn."
+        }
+      ]
+    },
+    {
+      "id": "hemophagia",
+      "name": "Hemophagia",
+      "ba": 0,
+      "ca": "3",
+      "mana": "X",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action**, swallow the blood you’ve been accumulating to heal yourself. Consume any amount of Blood Charges to heal yourself for **1d8** Health per Charge consumed. This spell costs X mana, where X is **twice** the amount of Charges consumed.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "For every **2 Charges** consumed, reduce the Mana Cost of this spell by **-1**."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "You may instead consume Charges to heal an ally within **2m**, however they only gain half the healing rolled, rounded up."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-blood",
+      "name": "Enchant Weapon: Blood",
+      "ba": 0,
+      "ca": "4",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee attacks deal bonus Flat **Necrotic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Blood CA and every 3 Player Levels. On hit, you may spend **1 Blood Charge** to gain **+1d6** Health for Full Attacks, or **+1d4** for Half Attacks. Healing Dice Count increases by **+1** per 30 Blood CA.\n\n**Ranged**: Enchanted Ranged attacks deal bonus Flat **Aether** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Blood CA and every 4 Player Levels. On hit, you may spend **1 Blood Charge** to gain **+1d6** Health for Full Attacks, or **+1d4** for Half Attacks. Healing Dice Count increases by **+1** per 30 Blood CA.\n\n**Spell Focus**: When healing for an Enchanted spell by any means, increase the healing Dice Tier by **+1**. Enchanted spells that deal Necrotic or Aether damage gain **+1d4** to Attack rolls.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": "Melee",
+          "text": "Increase the damage Dice Tier for the bonus damage gained from Enchanted Melee attacks by **+1**. Increase it by an additional **+1** per 30 Blood CA. *+1 Mana cost.*"
+        },
+        {
+          "ca": "4",
+          "variant": "Ranged",
+          "text": "Increase the damage Dice Tier for the bonus damage gained from Enchanted Ranged attacks by **+1**. Increase it by an additional **+1** per 30 Blood CA. *+1 Mana cost.*"
+        },
+        {
+          "ca": "4",
+          "variant": "Spell Focus",
+          "text": "Casting an Enchanted AoE spell that deals Physical, Aether or Necrotic damage allows you to spend **1 Blood Charge** to gain **3 Health** per enemy damaged."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "When attacking with Enchanted Melee or Ranged, you can choose between Aether or Necrotic for the bonus damage."
+        }
+      ]
+    },
+    {
+      "id": "sanguine-shot",
+      "name": "Sanguine Shot",
+      "ba": 0,
+      "ca": "2",
+      "mana": "1+",
+      "concentration": null,
+      "tags": [
+        "2* Health"
+      ],
+      "body": "As a **Half Action** make a Ranged Spell Attack against a target within **8m**. On hit deal **1d8** Aether or Necrotic damage on hit, increasing by **+1d8** per 20 Blood CA.\n\nAs a **Full Action** consume **1 Blood Charge** to make a Ranged Spell Attack dealing **1d10** Aether or Necrotic damage and applying 2 stacks of **Bleed** on hit. Damage increases **+1d10** and Bleed stacks increase by **+1** per 15 Blood CA. *This cast **does not** cost Health. +1 to Mana Cost.*\n\n**0 Mana Cast:** As a **Half Action** make a Ranged Spell Attack against a target within **8m**, dealing **1d6** Aether or Necrotic. *This cast still costs 2 Health.*",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "For the **Full Action** cast, instead of inflicting bleed, you may heal **1d6** Health on hit. Healing increases by **+1d6** per 20 Blood CA. *This cast **does not** cost Health. +1 to Mana Cost.*"
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may pay an additional **+2** Health to increase the Dice Tier for Half Action cast of Sanguine Shot."
+        }
+      ]
+    },
+    {
+      "id": "crimson-cleave",
+      "name": "Crimson Cleave",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [
+        "3+ Health"
+      ],
+      "body": "As a **Full Action** make a Melee Spell Attack dealing **1d6** Aether and **1d6** Necrotic damage, both increasing by **+1d6** per 20 Blood CA, and every 5 Player Levels.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "You may spend **1 Blood Charge** to convert all the damage to Aether, if so the target is inflicted with **Bleed** stacks equal to the number of Aether damage Dice rolled. Alternatively, you may spend **1 Blood Charge** to convert all the damage to Necrotic, if so heal **1d4** Health for each Necrotic damage Dice rolled. Only inflict Bleed or Heal if the spell successfully hits the target."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Each enemy adjacent to the target must make an **AGI** save taking the same amount of damage on fail. *+1 Mana Cost, +1 Health Cost*"
+        }
+      ]
+    },
+    {
+      "id": "pool-of-blood",
+      "name": "Pool of Blood",
+      "ba": 15,
+      "ca": "4",
+      "mana": "3",
+      "concentration": "Major Concentration",
+      "tags": [],
+      "body": "As a **Full Action** conjure a pool of blood on the floor within **8m** of you. The pool has a **4m** diameter AoE, which increases by **+1m** per 20 Blood CA. Once per turn if a creature enters or starts their turn within the pool, they gain 1 stack of Bleed, increasing by **+1** per 20 Blood CA. Additionally, the first spell or attack each round that deals Aether or Necrotic damage to each enemy within the pool gains **+1** to damage Dice Count of either Aether or Necrotic damage. This effect resets at the start of your turn. Pool of Blood lasts up to *5 rounds* or until you lose Concentration.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "When casting this spell, spend **+1 Blood Charge** to give each enemy standing inside Vulnerability to **Aether** or **Necrotic** damage, or you can spend **2 Charges** to give them Vulnerabilities to both damage types."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Consume **2 Blood Charges** as a Free Action to teleport anywhere within the pool, as long as you are *20m* or closer to the pool."
+        }
+      ]
+    },
+    {
+      "id": "sanguine-bond",
+      "name": "Sanguine Bond",
+      "ba": 15,
+      "ca": "3",
+      "mana": "3",
+      "concentration": "Minor Concentration",
+      "tags": [],
+      "body": "As an **Extra Action** form a blood-bond with any ally within **15m**. Whenever you consume **Blood Charges** to heal yourself, the bonded ally also heals as much. This bond lasts 10 rounds, until you break Concentration, or if the distance between you and the bonded ally is greater than **15m**.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Once per round whenever that ally takes damage to their Health, you gain 1 Blood Charge."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per turn whenever the bonded ally gains Health, you gain that much Health."
+        }
+      ]
+    },
+    {
+      "id": "hemostasis",
+      "name": "Hemostasis",
+      "ba": 15,
+      "ca": "4",
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Passive"
+      ],
+      "body": "Once per Long Rest when you are defeated, as you fall consume all Blood Charges to revive yourself gaining **1d6** Health per Charge consumed. If you have no Blood Charges this spell has no effect. Being revived this way disables all Action and Movement until the start of your next turn.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Increase the Dice Tier for health restored by **+1**."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "If an ally within **5m** of you, or the ally you’re bonded with via Sanguine Bond is defeated, you may consume all Blood Charges to revive them instead. This counts towards Hemostasis’s restrictions, so no one can be revived again until a Long Rest."
+        }
+      ]
+    },
+    {
+      "id": "blood-magic",
+      "name": "Blood Magic",
+      "ba": 15,
+      "ca": "5",
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Passive"
+      ],
+      "body": "You can use a certain amount of **Health** instead of Mana for casting spells for any Crystal you are attuned with. The maximum amount of Health that can be used is **half your Blood CA**, rounded up. This Maximum resets when you perform a Long Rest or Level Up. You cannot use temporary Health for spells, and the health damage is considered Pure and bypasses all protections. Damage from Blood Magic **does not** give you Blood Charges.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Instead of the max Health consumed limit being half your Blood CA, it’s now your full **Blood CA**."
+        },
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Once per turn casting a spell with Health via Blood Magic can grant you a Blood Charge. This does not exceed the normal amount of Blood Charges you make each turn."
+        }
+      ]
+    }
+  ],
+  "drafts": [
+    {
+      "id": "blood-sport",
+      "name": "Blood Sport",
+      "ba": 30,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "- Being below 50% hp grants boons",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    },
+    {
+      "id": "leech",
+      "name": "Leech",
+      "ba": 30,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "- passive to make healing better\n- heal when people bleed near you?",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    },
+    {
+      "id": "sanguimancy",
+      "name": "Sanguimancy",
+      "ba": 45,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "- spend mana to gain blood charges",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    }
+  ],
+  "signatureSpells": [
+    {
+      "id": "blood-barrier",
+      "name": "Blood Barrier",
+      "class": "Warden",
+      "ba": null,
+      "ca": "3",
+      "mana": "3",
+      "concentration": null,
+      "tags": [
+        "X Health"
+      ],
+      "body": "As a **Full Action**, target yourself or an ally within **6m** protecting them with a barrier of blood, granting them Temporary Health, based on how much Health you spent on this spell. Per 3 Health spent, the target gains **1d8** Temporary Health. Casting this on a creature that already has Temp Health from Blood Barrier removes all of it before applying this spell again.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "When this Temporary Health is fully removed, each enemy within **2m** of protected ally gains 3 stacks of **Bleed**, **+1** stack per 20 Blood CA."
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Once per turn if the protected target defeats an enemy, you may spend **1 Blood Charge** to heal yourself by **+1d8**. Healing increases by **+1d8** per 30 Blood CA and per 6 Player Levels of the protected target."
+        }
+      ]
+    }
+  ],
+  "source": "Magic/Blood.md"
+}

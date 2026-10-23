@@ -320,7 +320,7 @@ function packGrid(grid) {
   cards.forEach((card, i) => {
     const k = totals.indexOf(Math.min(...totals));
     cols[k].appendChild(card);
-    totals[k] += heights[i] + gap;
+    if (!card.hidden) totals[k] += heights[i] + gap;   // closed cards (signature spells) take no room
   });
 }
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.008Z",
+  "generatedAt": "2026-10-23T12:50:41.186Z",
   "source": "Races.md",
   "intro": "One of your d20 rolls in Character Creation is assigned to your race, the outcome of which determines how many points you get to spend on racial traits. (Racial traits have a Cost - Trait description). Unique traits cannot be taken with other unique traits of the same type.",
   "pointsTable": [
@@ -304,7 +304,7 @@
             {
               "cost": 2,
               "unique": null,
-              "text": "Your claws are sharper and count as an Unarmed Slashing Melee weapons. You are Proficient with this ‘Weapon’, use DEX as its base Stat, and it can be enchanted. Base damage with a Full Action **1d6**, or **1d4** as a Half Action. Claws can be used as Dual-wielding. *Damage Dice Count* increases by **+1** at Player Levels 4, 8, 12, 16 and 20."
+              "text": "Your claws are sharper and count as an Unarmed Slashing Melee weapons. You are Proficient with this ‘Weapon’, use DEX as its base Stat, and it can be enchanted. Base damage with a Full Action **1d6**, or **1d4** as a Half Action. Claws can be used as Dual-wielding. *Damage Dice Tier Count* increases by **+1** at Player Levels 4, 8, 12, 16 and 20."
             }
           ]
         },
@@ -357,12 +357,12 @@
             {
               "cost": 2,
               "unique": null,
-              "text": "As a Full Action when you Sprint, you may instead **Stampede**. This doubles your movement like Sprint, however you can only move in a straight line. Each enemy must make a STR save with Save DC of **8 + STR + Proficiency Bonus**. Each creature that fails gets knocked prone and takes **1d6** Bludgeoning damage. *Damage Dice Class* increases by +1 at Player Levels 6, 12 and 18. Every **8m** you can move with Stampede (not how much you actually moved) increases *Damage Dice Count* by **+1**."
+              "text": "As a Full Action when you Sprint, you may instead **Stampede**. This doubles your movement like Sprint, however you can only move in a straight line. Each enemy must make a STR save with Save DC of **8 + STR + Proficiency Bonus**. Each creature that fails gets knocked prone and takes **1d6** Bludgeoning damage. *Damage Dice Tier Dice Tier* increases by +1 at Player Levels 6, 12 and 18. Every **8m** you can move with Stampede (not how much you actually moved) increases *Damage Dice Tier Count* by **+1**."
             },
             {
               "cost": 3,
               "unique": null,
-              "text": "Your hooves can kick harder becoming stronger and count as an Unarmed Bludgeoning Melee weapon. You are Proficient with this ‘Weapon, use STR as the base stat, and it can be enchanted. Base damage with a Full Action **1d8**, or **1d4** as a Half Action. *Damage Dice Count* increases by **+1** at Player Levels 4, 8, 12, 16 and 20. When you kick an enemy, you may choose to attempt to knockback them up to 3m away. Doing so requires them to pass a **STR** save against your Save DC of **8 + STR + Proficiency Bonus**."
+              "text": "Your hooves can kick harder becoming stronger and count as an Unarmed Bludgeoning Melee weapon. You are Proficient with this ‘Weapon, use STR as the base stat, and it can be enchanted. Base damage with a Full Action **1d8**, or **1d4** as a Half Action. *Damage Dice Tier Count* increases by **+1** at Player Levels 4, 8, 12, 16 and 20. When you kick an enemy, you may choose to attempt to knockback them up to 3m away. Doing so requires them to pass a **STR** save against your Save DC of **8 + STR + Proficiency Bonus**."
             }
           ]
         },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "id": "void",
   "name": "Void",
   "tier": 3,
@@ -56,14 +56,14 @@
           "text": "You can make your Void Remnant move with a Free Action, but every 2m it moves consumes 1m of your Movement. Its movement cannot exceed its base Movement."
         },
         {
-          "ca": "5",
+          "ca": "3",
           "variant": null,
           "text": "Choose 4 Magical damage types, your Void Remnant is resistant to those types. You can change these damage types with a Short Rest Action."
         },
         {
-          "ca": "5",
+          "ca": "4",
           "variant": null,
-          "text": "You’re considered to be in Stealth when Breaching the Veil from the Void."
+          "text": "You may spend **+1** additional Mana to start your turn in Stealth while you’re in the Void dimension."
         },
         {
           "ca": "4",
@@ -91,6 +91,38 @@
           "ca": "0",
           "variant": null,
           "text": "When you Breach the Veil with this spell, idk something happens."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-void",
+      "name": "Enchant Weapon: Void",
+      "ba": 0,
+      "ca": "4",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee attacks deal bonus Flat **Entropic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 3 Player Levels.\n\n**Ranged**: Enchanted Ranged attacks deal bonus Flat **Entropic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 4 Player Levels.\n\n**Spell Focus**: Enchanted spells that deal Entropic or Psychic damage gain **+2** to Attack rolls, increasing by **+1** per 20 Void CA and every 4 Player Levels. Enchanted spells that cause creatures to be **Feared** make those saves with **Disadvantage**.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": "All",
+          "text": "Enchanted Melee or Ranged attacks that **Breach the Veil** gain **+1** Dice Tier to the bonus damage. Enchanted spells that **Beach the Veil** increase their damage Dice Count by **+1**, and an additional **+1** per 20 Void CA. *+1 to Mana Cost*."
+        },
+        {
+          "ca": "4",
+          "variant": "Melee",
+          "text": "Enchanted Melee attacks deal an additional bonus Flat **Psychic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 3 Player Levels. *+1 Mana Cost*."
+        },
+        {
+          "ca": "4",
+          "variant": "Ranged",
+          "text": "Enchanted Ranged attacks deal an additional bonus Flat **Psychic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 4 Player Levels. *+1 Mana Cost*."
+        },
+        {
+          "ca": "4",
+          "variant": "Spell Focus",
+          "text": "When an Enchanted spell causes an enemy to become Feared, if that creature is already Feared by you, instead they make a **WIS** save becoming **Paranoid** for 1 turn on fail. If they pass the save, their Fear is extended by 1 turn instead."
         }
       ]
     },
@@ -134,12 +166,58 @@
         {
           "ca": "4",
           "variant": null,
-          "text": "You may cast this spell as a **Full Action** which increases the Damage Dice Class by **+1**. If you Breach the Veil with this cast the failed save inflicts **Paranoia** on the creature instead of Fear until the end of their next turn. This is an alternate cast and does not gain AoE from the other Upgrade."
+          "text": "You may cast this spell as a **Full Action** which increases the Damage Dice Tier Dice Tier by **+1**. If you Breach the Veil with this cast the failed save inflicts **Paranoia** on the creature instead of Fear until the end of their next turn. This is an alternate cast and does not gain AoE from the other Upgrade."
+        }
+      ]
+    },
+    {
+      "id": "void-gate",
+      "name": "Void Gate",
+      "ba": 15,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": "Major Concentration",
+      "tags": [],
+      "body": "As a **Full Action** conjure two throbbing dark gates linking them together through twisted Void magic. Pick a empty spot within **3m**, and another within **15m** to create the gates. Each gate is a Void Object 1m in size, with **4d8** Health each rolled separately. Health increases by **+2d8** per 20 Void CA. They are Immune to Entropic and Psychic damage and Resistant to Non-Magical damage. If either of them are destroyed, both are destroyed and the spell ends. Both gates appear in the real world, and in the Void.\n\nAny ranged attack or ranged spell from yourself or an ally has its range extended by the distance between the gates, i.e. if a 12m attack took 3m to get to the one gate, it has 9m of range left after leaving the other gate. A melee attack from yourself or an ally from one gate can target any creature adjacent to the other gate.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You, your Remnant, or an ally can spend **1 Mana** and **2m** of movement to enter one gate and exit anywhere adjacent to the other gate. Any creature that can **Pierce the Veil** can choose exit out of the Void through the second gate, or into the real world if they started in the Void. Enemies can cross through gate using a *Full Action*, but they take **1d12** Entropic damage doing so and can only exit into the same dimension. *+2 to Mana cost.*"
+        },
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Your attacks and spells can Breach the Veil through a gate, targeting or affecting enemies crossing dimensions. Attacks or spells that do so gain **+1** to damage **Dice Tier**, however the initial gate your are attacking/casting through takes Flat **1d8** Pure damage."
         }
       ]
     }
   ],
   "drafts": [],
-  "signatureSpells": [],
+  "signatureSpells": [
+    {
+      "id": "watchful-eye",
+      "name": "Watchful Eye",
+      "class": "Warden",
+      "ba": null,
+      "ca": "3",
+      "mana": "3*",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action** target yourself or an ally within **8m**, protecting them with a watchful eye of the Void. Watchful Eye is a *Strong Buff* that lasts for 3 rounds. This spell costs **-2 Mana** if you target yourself. If a creature with Watchful Eye becomes the target of a spell or is attacked, they can make a **Reaction** to *Pierce the Veil* and enter the Void dimension, leaving behind a **Void Remnant** of their own. The attack or spell is then made against the Remnant instead of the initial target. Watchful Eye continues to last even it’s triggered right away and protected target immediately returns to the real world.\n\nIf they don’t have a Void Crystal, they don’t gain up the upgrades you have regarding the Void. However their Remnant gains the basic abilities like being able to move with Half or Extra Actions, and gaining **Resistances** to all Non-Magical damage types, following the same rules as your un-upgraded ones. Allies in the Void can Breach the Veil and make attacks, leaving behind temporary Remnants like you. At the start of an allies turn inside the Void, they must pay **3 Mana** or be forcefully exited. If Watchful Eye’s duration ends at the end of an ally’s turn, they are also forcefully removed.",
+      "upgrades": [
+        {
+          "ca": "4",
+          "variant": null,
+          "text": "Choose 4 Magical damage types, Remnants created by Watchful Eye are Resistant to these damage types."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "As a **Free Reaction** when Watchful Eye triggers on an ally before the attack hits their Remnant, you can have your Remnant and that ally's’ swap places in the real world. You may also instead choose to swap places with that ally within the Void. Either of these swaps can also be done with an Extra Action."
+        }
+      ]
+    }
+  ],
   "source": "Magic/Void.md"
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "id": "mind",
   "name": "Mind",
   "tier": 2,
@@ -115,7 +115,7 @@
       "mana": "3",
       "concentration": null,
       "tags": [],
-      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 18 Mind CA, and every 4 Player Levels.\n\n**Ranged**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 12 Mind CA, and every 4 Player Levels.\n\n**Spell Focus**: +2 to Save DCs for spells you cast that inflict Fear, Taunt, Charm or Paranoia. **+1d6** Psychic damage to all Full Action spells cast, increasing by **+1d6** per 12 Mind CA and every 4 Player Levels.",
+      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Tier Count increases by **+1** per 18 Mind CA, and every 4 Player Levels.\n\n**Ranged**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Tier Count increases by **+1** per 12 Mind CA, and every 4 Player Levels.\n\n**Spell Focus**: +2 to Save DCs for spells you cast that inflict Fear, Taunt, Charm or Paranoia. **+1d6** Psychic damage to all Full Action spells cast, increasing by **+1d6** per 12 Mind CA and every 4 Player Levels.",
       "upgrades": [
         {
           "ca": "2",
@@ -147,7 +147,7 @@
       "mana": "1+",
       "concentration": null,
       "tags": [],
-      "body": "Choose a creature within **10m** penetrating their mind and sowing false emotions into their psyche. The target must make an **INT** save or become inflicted by one of the following Debuffs and dealt Psychic damage based on the Action used. Each Action has a different Mana Cost. The target takes half damage and does not receive the debuff on passing the save. Damage **Dice Count** increases by **+1** per 12 Psychic CA and per 4 Player Levels.\n- *2 Mana*, **Half Action** to inflict **Fear** for 1 turn and deal **1d6** Psychic damage.\n- *3 Mana*, **Full Action** to inflict **Charm** for 2 turns and deal **1d8** Psychic damage.\n- *1 Mana*, **Extra Action** to **Taunt** for 1 turn and deal **1d6** Psychic damage.",
+      "body": "Choose a creature within **10m** penetrating their mind and sowing false emotions into their psyche. The target must make an **INT** save or become inflicted by one of the following Debuffs and dealt Psychic damage based on the Action used. Each Action has a different Mana Cost. The target takes half damage and does not receive the debuff on passing the save. Damage **Dice Tier Count** increases by **+1** per 12 Psychic CA and per 4 Player Levels.\n- *2 Mana*, **Half Action** to inflict **Fear** for 1 turn and deal **1d6** Psychic damage.\n- *3 Mana*, **Full Action** to inflict **Charm** for 2 turns and deal **1d8** Psychic damage.\n- *1 Mana*, **Extra Action** to **Taunt** for 1 turn and deal **1d6** Psychic damage.",
       "upgrades": [
         {
           "ca": "3",
@@ -157,7 +157,7 @@
         {
           "ca": "4",
           "variant": null,
-          "text": "Increase the damage **Dice Class** by **+1** for all Actions."
+          "text": "Increase the damage **Dice Tier Dice Tier** by **+1** for all Actions."
         }
       ]
     },
@@ -215,7 +215,7 @@
       "tags": [
         "Passive"
       ],
-      "body": "Increase the **Dice Class** for **Mana** gained from **Respites**.",
+      "body": "Increase the **Dice Tier Dice Tier** for **Mana** gained from **Respites**.",
       "upgrades": [
         {
           "ca": "2",
@@ -230,7 +230,20 @@
       ]
     }
   ],
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "mind-control",
+      "name": "Mind Control",
+      "ba": 30,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "yep",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    }
+  ],
   "signatureSpells": [
     {
       "id": "mental-fortitude",

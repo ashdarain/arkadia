@@ -66,7 +66,7 @@
       "name": "Stances",
       "abilityType": null,
       "cost": null,
-      "body": "**Mid Stance:** Gain **+1 AC** against Melee attacks. Whenever a Melee attack misses, you may **Parry** it as a Reaction, allowing you to move  **counterattack** then move up to **1m**. This counterattack’s Attack and Damage rolls lose any Stat bonuses.\n\n**Raised Stance:** You have **-4 AC**, **+1d8** to Full Action Melee damage rolls, and **+1d4** to Half Action Melee attacks. All attacks in this stance must use **STR** for Attack and Damage rolls. Bonus damage Dice Count increases by **+1** at Samurai Levels 4, 7 and 10.\n\n**Draw Stance:** Whenever an enemy within your attack range makes a **Melee** attack against you, you may use a **Reaction** to **counterattack**. The counterattack is a Full Action-style attack using [DEX] for both Attack and Damage rolls, and if you roll higher than their, their attack **misses**. Otherwise both of you attack, with the enemy attacking first.\n\n**Hidden Stance:** Attacks made in this stance cannot be reacted to."
+      "body": "**Mid Stance:** Gain **+1 AC** against Melee attacks. Whenever a Melee attack misses, you may **Parry** it as a Reaction, allowing you to move  **counterattack** then move up to **1m**. This counterattack’s Attack and Damage rolls lose any Stat bonuses.\n\n**Raised Stance:** You have **-4 AC**, **+1d8** to Full Action Melee damage rolls, and **+1d4** to Half Action Melee attacks. All attacks in this stance must use **STR** for Attack and Damage rolls. Bonus damage Dice Tier Count increases by **+1** at Samurai Levels 4, 7 and 10.\n\n**Draw Stance:** Whenever an enemy within your attack range makes a **Melee** attack against you, you may use a **Reaction** to **counterattack**. The counterattack is a Full Action-style attack using [DEX] for both Attack and Damage rolls, and if you roll higher than their, their attack **misses**. Otherwise both of you attack, with the enemy attacking first.\n\n**Hidden Stance:** Attacks made in this stance cannot be reacted to."
     },
     {
       "id": "alternating-stance-bonus",
@@ -136,7 +136,7 @@
           "name": "Raised Stance",
           "subtitle": "Jōdan",
           "flavor": "Raise your blade above your head in this high-risk high-reward aggressive Stance. Strike fear into your enemies as you advance with total resolve and absolute conviction.",
-          "body": "You have **-4 AC**, **+1d8** to Full Action Melee damage rolls, and **+1d4** to Half Action Melee attacks. All attacks in this stance must use **STR** for Attack and Damage rolls. Bonus damage Dice Count increases by **+1** at Samurai Levels 4, 7 and 10.",
+          "body": "You have **-4 AC**, **+1d8** to Full Action Melee damage rolls, and **+1d4** to Half Action Melee attacks. All attacks in this stance must use **STR** for Attack and Damage rolls. Bonus damage Dice Tier Count increases by **+1** at Samurai Levels 4, 7 and 10.",
           "options": [
             {
               "id": "overwhelming-assault",

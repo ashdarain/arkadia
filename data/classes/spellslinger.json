@@ -3,7 +3,8 @@
   "id": "spellslinger",
   "name": "Spellslinger",
   "tags": [
-    "spellcaster"
+    "spellcaster",
+    "speed"
   ],
   "description": null,
   "healthPerLevel": {
@@ -15,17 +16,26 @@
   "levels": [
     {
       "level": 1,
-      "ca": null,
+      "ca": {
+        "total": 4,
+        "gain": 4
+      },
       "grants": null
     },
     {
       "level": 2,
-      "ca": null,
+      "ca": {
+        "total": 8,
+        "gain": 4
+      },
       "grants": null
     },
     {
       "level": 3,
-      "ca": null,
+      "ca": {
+        "total": 12,
+        "gain": 4
+      },
       "grants": null
     }
   ],

@@ -91,7 +91,7 @@
           "level": 1,
           "name": "Inspire Ferocity",
           "cost": "1+ Inspiration Points",
-          "body": "Target gains **+1d6** to their *next* **Attack** roll this combat. If that attack lands, they deal and additional **+1d6** damage. If that ally defeats an enemy from the attack, gain **1 Inspiration Point**. Damage Dice Class of the attack in increased by **+1** at Captain Levels **3, 6, and 9**. For each additional Inspiration Point spend on this, increase the Damage Dice Count by +1."
+          "body": "Target gains **+1d6** to their *next* **Attack** roll this combat. If that attack lands, they deal and additional **+1d6** damage. If that ally defeats an enemy from the attack, gain **1 Inspiration Point**. Damage Dice Tier Dice Tier of the attack in increased by **+1** at Captain Levels **3, 6, and 9**. For each additional Inspiration Point spend on this, increase the Damage Dice Tier Count by +1."
         },
         {
           "id": "inspire-fortitude",

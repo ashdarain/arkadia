@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "crystals": [
     {
       "id": "fire",
@@ -117,6 +117,21 @@
         "INT"
       ],
       "file": "void.json"
+    },
+    {
+      "id": "blood",
+      "name": "Blood",
+      "tier": 3,
+      "damageTypes": [
+        "aether",
+        "necrotic"
+      ],
+      "stats": [
+        "CON",
+        "CHA",
+        "INT"
+      ],
+      "file": "blood.json"
     }
   ]
 }

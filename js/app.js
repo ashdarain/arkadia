@@ -182,7 +182,8 @@ main.addEventListener("click", (e) => {
     open ? state.sigOpen.add(id) : state.sigOpen.delete(id);
     sig.setAttribute("aria-expanded", open);
     if (card) {
-      card.parentElement.hidden = !open;
+      card.hidden = !open;
+      packMasonry();   // open cards stack in two columns like other panels
       if (open) flash(card);
     }
     stickColumns();

@@ -80,7 +80,7 @@
       "name": "Meditation",
       "abilityType": null,
       "cost": null,
-      "body": "Increase the **Dice Class** for Mana gained from **Respites** and add your **WIS** modifier to the roll. The Dice Class is increased further at Player levels 8, 14 and 20."
+      "body": "Increase the **Dice Tier Dice Tier** for Mana gained from **Respites** and add your **WIS** modifier to the roll. The Dice Tier Dice Tier is increased further at Player levels 8, 14 and 20."
     },
     {
       "id": "philosophize",

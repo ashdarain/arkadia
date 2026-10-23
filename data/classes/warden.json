@@ -9,8 +9,8 @@
   ],
   "description": null,
   "healthPerLevel": {
-    "raw": "1d6+7+CON",
-    "dice": "1d6",
+    "raw": "1d8+7+CON",
+    "dice": "1d8",
     "flat": 7,
     "stat": "CON"
   },
@@ -18,8 +18,8 @@
     {
       "level": 1,
       "ca": {
-        "total": 3,
-        "gain": 3
+        "total": 4,
+        "gain": 4
       },
       "grants": null
     },
@@ -27,7 +27,7 @@
       "level": 2,
       "ca": {
         "total": 7,
-        "gain": 4
+        "gain": 3
       },
       "grants": null
     },
@@ -64,7 +64,7 @@
       "name": "Defensive Spellcasting",
       "abilityType": null,
       "cost": null,
-      "body": "Attacks of Opportunity against you from spellcasting within melee range are made with Disadvantage."
+      "body": "Attacks of Opportunity against you from spellcasting are made with Disadvantage."
     },
     {
       "id": "signature-spells-warden",
@@ -81,6 +81,22 @@
       "abilityType": null,
       "cost": null,
       "body": "Choose a Non-Physical damage type, you can Resistance in that damage type. Choose another Resistance at Warden Levels 5, 8, and 10. (*Non-Physical damage type are Fire, Cold, Lightning, Aether, Radiant, Entropic, Psychic, Necrotic*)."
+    },
+    {
+      "id": "protective-ward",
+      "level": 3,
+      "name": "Protective Ward",
+      "abilityType": null,
+      "cost": null,
+      "body": "Whenever you apply a buff on an ally or target an ally with a beneficial spell or ability, gain stacks of **Ward** depending on the Action cost. 2 Stacks for Full Actions and Reactions, 1 Stack for everything else. **Ward** is a *Strong Buff* that reduces the amount of damage you take from any source (*e.g. 3 stacks of Ward reduces all damage by 3*). Increase the stacks of Ward gained by **+1** at Warden Levels 6 and 9, and Player Levels 13 and 17. Whenever you take at least **1 damage** to your Health (after Ward is calculated), remove 1 Stack of ward. 2 Stacks of Ward is removed at the start of your turn. *Pure damage ignores Ward.*"
+    },
+    {
+      "id": "constitution-casting",
+      "level": 3,
+      "name": "Constitution Casting",
+      "abilityType": null,
+      "cost": null,
+      "body": "You may have your Spells cast from any Crystal use **CON** instead of any of the Stats listed."
     }
   ],
   "abilityGroups": [],

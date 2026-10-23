@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T09:03:53.003Z",
+  "generatedAt": "2026-10-23T12:50:41.181Z",
   "classes": [
     {
       "id": "arcane-archer",
@@ -28,6 +28,22 @@
       "healthPerLevel": {
         "raw": "1d6+4+CON",
         "dice": "1d6",
+        "flat": 4,
+        "stat": "CON"
+      }
+    },
+    {
+      "id": "bladedancer",
+      "name": "Bladedancer",
+      "tags": [
+        "offensive",
+        "melee",
+        "speed"
+      ],
+      "file": "bladedancer.json",
+      "healthPerLevel": {
+        "raw": "1d8+4+CON",
+        "dice": "1d8",
         "flat": 4,
         "stat": "CON"
       }
@@ -80,6 +96,7 @@
       "id": "marksman",
       "name": "Marksman",
       "tags": [
+        "offensive",
         "ranged"
       ],
       "file": "marksman.json",
@@ -140,7 +157,8 @@
       "id": "skirmisher",
       "name": "Skirmisher",
       "tags": [
-        "movement"
+        "movement",
+        "speed"
       ],
       "file": "skirmisher.json",
       "healthPerLevel": {
@@ -169,7 +187,8 @@
       "id": "spellslinger",
       "name": "Spellslinger",
       "tags": [
-        "spellcaster"
+        "spellcaster",
+        "speed"
       ],
       "file": "spellslinger.json",
       "healthPerLevel": {
@@ -189,8 +208,8 @@
       ],
       "file": "warden.json",
       "healthPerLevel": {
-        "raw": "1d6+7+CON",
-        "dice": "1d6",
+        "raw": "1d8+7+CON",
+        "dice": "1d8",
         "flat": 7,
         "stat": "CON"
       }

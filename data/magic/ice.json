@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T09:03:53.034Z",
+  "generatedAt": "2026-10-23T12:50:41.213Z",
   "id": "ice",
   "name": "Ice",
   "tier": 1,
@@ -105,7 +105,7 @@
         {
           "ca": "6",
           "variant": null,
-          "text": "Increase the Damage Dice Class for all Enchant Weapon: Ice effects. +2 Mana."
+          "text": "Increase the Damage Dice Tier Dice Tier for all Enchant Weapon: Ice effects. +2 Mana."
         },
         {
           "ca": "5",
@@ -127,7 +127,7 @@
       "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "Conjure a shard of ice as a Full Action and send it flying towards an enemy within 10m using a Ranged Spell Attack, dealing **1d6** Cold damage. On hit, the target must make a CON save or gain 1 stack of Chill. Damage increases by **+1d6** per 10 Ice CA. Ice Bolt is a small projectile. You may consume Frost Charges to enhance and amplify the potency of Ice Bolt. For each charge consumed, increase damage by **+1d6**, and decrease the target’s CON save roll by -2. *Damage Dice Class* increases by **+1** at Player Levels 6, 12 and 18.\n\n**0 Mana Cast:** You may cast Ice Bolt as a **Full Action** for 0 Mana targeting an enemy within 8m using a Ranged Spell Attack, dealing **1d6** Cold Damage on hit. Damage increases by **+1d6** per 20 Ice CA.",
+      "body": "Conjure a shard of ice as a Full Action and send it flying towards an enemy within 10m using a Ranged Spell Attack, dealing **1d6** Cold damage. On hit, the target must make a CON save or gain 1 stack of Chill. Damage increases by **+1d6** per 10 Ice CA. Ice Bolt is a small projectile. You may consume Frost Charges to enhance and amplify the potency of Ice Bolt. For each charge consumed, increase damage by **+1d6**, and decrease the target’s CON save roll by -2. *Damage Dice Tier Dice Tier* increases by **+1** at Player Levels 6, 12 and 18.\n\n**0 Mana Cast:** You may cast Ice Bolt as a **Full Action** for 0 Mana targeting an enemy within 8m using a Ranged Spell Attack, dealing **1d6** Cold Damage on hit. Damage increases by **+1d6** per 20 Ice CA.",
       "upgrades": [
         {
           "ca": "2",
@@ -154,7 +154,7 @@
         {
           "ca": "2",
           "variant": null,
-          "text": "As a Full Action you maybe unleash a barrage of all the icicles remaining at a single target, dealing 1d4 damage per icicle. For every 6 icicles unleashed, increase the Damage Dice Class by one stage. This action ends the spell."
+          "text": "As a Full Action you maybe unleash a barrage of all the icicles remaining at a single target, dealing 1d4 damage per icicle. For every 6 icicles unleashed, increase the Damage Dice Tier Dice Tier by one stage. This action ends the spell."
         },
         {
           "ca": "3",
@@ -195,12 +195,12 @@
       "mana": "1+",
       "concentration": null,
       "tags": [],
-      "body": "Conjure a weapon made of ice to use in a single Action granting various effects, which typically shatters upon use. Damage dice scales by 1 die per 10 Ice CA. Frostforge requires an empty hand to use.\n- **Dagger** - As a Half Action make a Melee Spell Attack to deal 1d4 Cold damage on hit and impale a frozen knife into the target. Each knife lasts 3 turns and at the start of the enemies turn they must make a CON save or gain 1 Chill. The target may use a Full Action to pull the knife out of their body, shattering it.\n- **Sword** - As a Reaction you may attempt to parry a melee attack. Make a Spell Attack Roll, and if it’s equal to or higher than the incoming attack, you successfully parry it and gain 1 Frost Charge.\n- **Axe** - +2 Mana. As a Full Action make a Melee Spell Attack to lodge a large frozen axe into an enemy. If the attack hits, deal 1d8 Cold damage and the target must make a CON save or be Frozen for 1 turn.\n- **Javelin** - As a Full Action hurl an icy spear at an enemy or empty ground within 10m. Make a Ranged Spell Attack to deal 1d6 Cold Damage on hit. If the attack misses or targets the ground, create a 1m sized Ice Object (Pillar) on empty ground within 1m of the target.\n- **Shield** - +1 Mana. As a Reaction, consume 1 Frost Charge to negate 1d12 damage from a single Spell or Attack. Gain 1 Frost Charge per 10 damage negated. *Damage blocked does not scale like the other Actions.*",
+      "body": "Conjure a weapon made of ice to use in a single Action granting various effects, which typically shatters upon use. Damage Dice Tier scales by 1 die per 10 Ice CA. Frostforge requires an empty hand to use.\n- **Dagger** - As a Half Action make a Melee Spell Attack to deal 1d4 Cold damage on hit and impale a frozen knife into the target. Each knife lasts 3 turns and at the start of the enemies turn they must make a CON save or gain 1 Chill. The target may use a Full Action to pull the knife out of their body, shattering it.\n- **Sword** - As a Reaction you may attempt to parry a melee attack. Make a Spell Attack Roll, and if it’s equal to or higher than the incoming attack, you successfully parry it and gain 1 Frost Charge.\n- **Axe** - +2 Mana. As a Full Action make a Melee Spell Attack to lodge a large frozen axe into an enemy. If the attack hits, deal 1d8 Cold damage and the target must make a CON save or be Frozen for 1 turn.\n- **Javelin** - As a Full Action hurl an icy spear at an enemy or empty ground within 10m. Make a Ranged Spell Attack to deal 1d6 Cold Damage on hit. If the attack misses or targets the ground, create a 1m sized Ice Object (Pillar) on empty ground within 1m of the target.\n- **Shield** - +1 Mana. As a Reaction, consume 1 Frost Charge to negate 1d12 damage from a single Spell or Attack. Gain 1 Frost Charge per 10 damage negated. *Damage blocked does not scale like the other Actions.*",
       "upgrades": [
         {
           "ca": "4",
           "variant": null,
-          "text": "Damage Dice Class increases by +1 at Player Levels 6, 12 and 18."
+          "text": "Damage Dice Tier Dice Tier increases by +1 at Player Levels 6, 12 and 18."
         },
         {
           "ca": "3",
@@ -315,7 +315,7 @@
         {
           "ca": "4",
           "variant": null,
-          "text": "Ice Objects you create lose vulnerability to Fire and gain resistances to all other types of damage.\n***2 CA* - Upgrade***: Increase the Health of Ice Objects you create by +1 Dice Count. This upgrade can be taken multiple times."
+          "text": "Ice Objects you create lose vulnerability to Fire and gain resistances to all other types of damage.\n***2 CA* - Upgrade***: Increase the Health of Ice Objects you create by +1 Dice Tier Count. This upgrade can be taken multiple times."
         }
       ]
     },
@@ -459,7 +459,7 @@
       "mana": "8",
       "concentration": null,
       "tags": [],
-      "body": "As a Full Action summon a Large Ice Elemental within 3m. It has 8d8 Health, 5m movement, 1 Summon Action, is resistant to Cold damage and vulnerable to Fire damage. The Ice Elemental gains the following actions:\n- **Frost Breath** - 3x3m cone that deals 2d10 Cold damage and applying 1 Chill to each creature that fails an AGI save, half damage on success.\n- **Impale** - Melee Attack that deals 4d8 Cold damage. If at least 24 damage was dealt, the target makes a CON save or becomes Frozen for 1 turn.\n- **Ice Bolt** - Ranged Attack that deals 3d6 Cold damage and applies 1 Chill.\n\nYou may consume Frost Charges while summoning the elemental to improve its capabilities. Each effect can be taken multiple times.\n- 1 charge for +1d8 Health.\n- 2 charges for +5m movement.\n- 2 charges to lose vulnerability to Fire, if taken twice gain resistance to Fire, three times for immunity.\n- 3 charges to gain +1 Summon Action.\n- 1 charge for +1 Damage Dice Count.",
+      "body": "As a Full Action summon a Large Ice Elemental within 3m. It has 8d8 Health, 5m movement, 1 Summon Action, is resistant to Cold damage and vulnerable to Fire damage. The Ice Elemental gains the following actions:\n- **Frost Breath** - 3x3m cone that deals 2d10 Cold damage and applying 1 Chill to each creature that fails an AGI save, half damage on success.\n- **Impale** - Melee Attack that deals 4d8 Cold damage. If at least 24 damage was dealt, the target makes a CON save or becomes Frozen for 1 turn.\n- **Ice Bolt** - Ranged Attack that deals 3d6 Cold damage and applies 1 Chill.\n\nYou may consume Frost Charges while summoning the elemental to improve its capabilities. Each effect can be taken multiple times.\n- 1 charge for +1d8 Health.\n- 2 charges for +5m movement.\n- 2 charges to lose vulnerability to Fire, if taken twice gain resistance to Fire, three times for immunity.\n- 3 charges to gain +1 Summon Action.\n- 1 charge for +1 Damage Dice Tier Count.",
       "upgrades": [
         {
           "ca": "3",
@@ -552,7 +552,7 @@
         {
           "ca": "4",
           "variant": null,
-          "text": "When Frost Nova is targeted by Spell Attack or projectile controlled by you or an ally, you may forgo the AoE blast to boost the projectiles or attacks. Melee Spell Attacks targeting the Frost Nova can be retargeted anywhere within 3m of the nova, and any Ranged Spell Attack or Cold Projectile has its range reset at the nova, redirecting it towards the appropriate enemies. For all damage dealt this way, increase the Damage Dice Class by 1."
+          "text": "When Frost Nova is targeted by Spell Attack or projectile controlled by you or an ally, you may forgo the AoE blast to boost the projectiles or attacks. Melee Spell Attacks targeting the Frost Nova can be retargeted anywhere within 3m of the nova, and any Ranged Spell Attack or Cold Projectile has its range reset at the nova, redirecting it towards the appropriate enemies. For all damage dealt this way, increase the Damage Dice Tier Dice Tier by 1."
         },
         {
           "ca": "3",
