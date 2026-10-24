@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-24T00:25:03.275Z",
+  "id": "focus",
+  "name": "Focus",
+  "tier": 1,
+  "damageTypes": [],
+  "keywords": [
+    "utility"
+  ],
+  "theme": "Pale whitish green",
+  "stats": [
+    "DEX",
+    "INT"
+  ],
+  "ascendsInto": [],
+  "mechanics": [],
+  "spells": [
+    {
+      "id": "hone",
+      "name": "Hone",
+      "ba": 0,
+      "ca": "5",
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Passive"
+      ],
+      "body": "Increase your DEX Stat by +1.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Gain **+1d4** to DEX and AGI saves."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-focus",
+      "name": "Enchant Weapon: Focus",
+      "ba": 0,
+      "ca": "4",
+      "mana": "2",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee attacks gain **+1d8** to Attack rolls. Increase by **+1d8** at Player Level 9 and 18.\n\n**Ranged**: Enchanted Ranged attacks gain **+1d6** to Attack rolls. Increase by **+1d6** at Player Level 9 and 18.\n\n**Spell Focus**: Enhance spells gain **+4m** to range. Enchanted Spell Attacks again **+1d8** to Attack rolls. Increase by **+1d8** at Player Level 9 and 18.",
+      "upgrades": []
+    }
+  ],
+  "drafts": [],
+  "signatureSpells": [],
+  "source": "Magic/Focus.md"
+}

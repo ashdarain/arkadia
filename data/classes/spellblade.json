@@ -110,7 +110,7 @@
           "level": 3,
           "name": "Echoing Strike",
           "cost": "1 Spellstrike Point",
-          "body": "When you make a melee attack, you may spend **1 Spellstrike Point** to have your blade echo and strike the target again. If the target is defeated by the initial attack, then Echoing Strike targets an adjacent enemy, or refunds the Spellstrike points spend if there is no valid target.\n\nEchoing Blade makes separate Attack and Damage rolls equivalent to your Full Action attack with the weapon you attacked with, but is not enchanted. It will however keep Stat and Proficiency bonuses made with the original attack."
+          "body": "When you make a melee attack, you may spend **1 Spellstrike Point** to make a secondary attack roll with the same rolls as your first, to have your blade echo and strike the target again. If the target is defeated by the initial attack, then Echoing Strike targets an adjacent enemy, or refunds the Spellstrike points spend if there is no valid target.\n\nEchoing Blade is not enchanted nor does it gain bonuses from enchantments. It will however keep Stat and Proficiency bonuses made with the original attack. All damage from Echoing Blade is magical. At Spellblade Levels 6 and 9, Echoing Strike attacks an additional time."
         },
         {
           "id": "distant-blade",

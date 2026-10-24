@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "ice",
   "name": "Ice",
   "tier": 1,
@@ -14,8 +14,8 @@
   ],
   "theme": "Light blue",
   "stats": [
-    "WIS",
     "DEX",
+    "WIS",
     "INT"
   ],
   "ascendsInto": [
@@ -68,12 +68,12 @@
       "tags": [
         "Frost Charges"
       ],
-      "body": "Frost Charges and gained and used by the Ice Crystal to empower Ice Spells, and behave like a stackable Strong Buff. You have a max of 3 Frost Charges and gain +1 max charges per 10 Ice CA, and +1 per 4 Player levels. All Frost charges expire after a Long Rest. Gain charges by:\n- 1 whenever you cause an enemy to have 1, 3, or 5 stacks of Chill.\n- 2 whenever you Freeze an unfrozen enemy.\n- 3 whenever you Crit dealing Cold damage.",
+      "body": "Frost Charges and gained and used by the Ice Crystal to empower Ice Spells. You have a max of **3 Frost Charges** and gain +1 max charges per 15 Ice CA, and **+1** per 4 Player levels. All Frost charges expire after a Long Rest. Gain charges by:\n- 1 whenever you cause an enemy to have 1, 3, or 5 stacks of **Chill**.\n- 2 whenever you **Freeze** an unfrozen enemy.\n- 3 whenever you **Crit** dealing Cold damage.",
       "upgrades": [
         {
           "ca": "3",
           "variant": null,
-          "text": "As an Extra Action you may empower your next 1d4 Spells or Attacks that deal Cold damage. If an enemy takes Cold damage from an empowered Spell or Attack, gain +1 Frost Charge. Spells and Attacks empowered like this cannot inflict Chill or Freeze, and you may cancel this empowered state any time during your turn."
+          "text": "As an Extra Action you may spend **2 Mana** to empower your next **1d4+[STAT]** Spells or Attacks that deal Cold damage. If an enemy takes Cold damage from an empowered Spell or Attack, gain **+1 Frost Charge**. Spells and Attacks empowered like this cannot inflict Chill or Freeze, and you may cancel this empowered state any time during your turn."
         },
         {
           "ca": "3",
@@ -88,38 +88,6 @@
       ]
     },
     {
-      "id": "enchant-weapon-ice",
-      "name": "Enchant Weapon: Ice",
-      "ba": 0,
-      "ca": "4",
-      "mana": "3+",
-      "concentration": null,
-      "tags": [],
-      "body": "As a Half Action coat your weapon in a layer of ice for the next 3 attacks (or casts). You may consume Frost Charges to increase the potency of certain effects, which must be consumed before while making the attack or spell. Gain the following effects depending on the weapon type:\n**Melee**: +1d6 Cold damage, increases by +1d6 per 4 Player levels. This creates a 3x3m cone of frost behind the target that deals damage to each other enemy within the cone. The cone will only damage the initial target if it is Large or bigger. Each enemy within the cone must make a AGI save or take damage equal to the Cold damage (rerolled) by the initial attack, and gain 1 Chill. They take half damage on a successful save and are not chilled. For each charge consumed, increase the cone length by +1m, the width by +2m, and the damage by +1d6.\n**Ranged**: +1d4 Cold Damage, increases by +1d4 per 4 Player levels. If the attack lands, make a second attack roll and automatically fire a salvo of ice shards. The shards deal damage equal to the Cold damage dealt by the initial ranged attack (rerolled). For each charge consumed, increase the damage by +2d4. For every 3 charges consumed, the target must make a CON save or become Frozen for 1 turn.\n***Spell Focus:*** Enemies chilled by spells must make a CON save or be chilled an additional time. Consuming Frost Charges decreases any save enemies must make for Chill and Freeze saves by -2. If 3 charges are consumed, instead of decreasing the save, you may have the target make the save with Disadvantage. If you do, any charge consumed after 3 decreases their save roll by -2 each.",
-      "upgrades": [
-        {
-          "ca": "3",
-          "variant": null,
-          "text": "Increase the number of attacks (or casts) by +1 per 10 Ice CA."
-        },
-        {
-          "ca": "6",
-          "variant": null,
-          "text": "Increase the Damage Dice Tier Dice Tier for all Enchant Weapon: Ice effects. +2 Mana."
-        },
-        {
-          "ca": "5",
-          "variant": null,
-          "text": "Consuming Frost Charges with enchanted Melee or Ranged attacks additionally increases the base enchanted damage dealt by 1 die per charge. +2 Mana cost."
-        },
-        {
-          "ca": "4",
-          "variant": null,
-          "text": "You may convert all Physical damage from enchanted Melee or Ranged attacks into Cold damage."
-        }
-      ]
-    },
-    {
       "id": "ice-bolt",
       "name": "Ice Bolt",
       "ba": 0,
@@ -127,17 +95,49 @@
       "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "Conjure a shard of ice as a Full Action and send it flying towards an enemy within 10m using a Ranged Spell Attack, dealing **1d6** Cold damage. On hit, the target must make a CON save or gain 1 stack of Chill. Damage increases by **+1d6** per 10 Ice CA. Ice Bolt is a small projectile. You may consume Frost Charges to enhance and amplify the potency of Ice Bolt. For each charge consumed, increase damage by **+1d6**, and decrease the target’s CON save roll by -2. *Damage Dice Tier Dice Tier* increases by **+1** at Player Levels 6, 12 and 18.\n\n**0 Mana Cast:** You may cast Ice Bolt as a **Full Action** for 0 Mana targeting an enemy within 8m using a Ranged Spell Attack, dealing **1d6** Cold Damage on hit. Damage increases by **+1d6** per 20 Ice CA.",
+      "body": "Conjure a shard of ice as a Full Action and send it flying towards an enemy within **10m** using a Ranged Spell Attack, dealing **1d8** Cold damage. On hit, the target must make a CON save or gain 1 stack of Chill. Damage increases by **+1d8** per 15 Ice CA. Ice Bolt is a small projectile. You may consume Frost Charges to enhance and amplify the potency of Ice Bolt. For each charge consumed, increase damage by **+1d8**, and decrease the target’s CON save roll by **-2**. Damage Dice Tier increases by **+1** at Player Levels 6, 12 and 18.\n\n**0 Mana Cast:** You may cast Ice Bolt as a **Full Action** for 0 Mana targeting an enemy within **8m** using a Ranged Spell Attack, dealing **1d6** Cold Damage on hit. Damage increases by **+1d6** per 20 Ice CA.",
       "upgrades": [
         {
           "ca": "2",
           "variant": null,
-          "text": "You may consume 1 Frost Charge to cast Ice Bolt as a Half Action, conjuring a smaller ice shard. This behaves similar to the regular cast, except the base damage is 1d4 and it cannot inflect chill. Damage scales by 1d4 per 10 Ice CA, and you may consume additional charges to increase the damage by 1d6 per charge. The mana cost does not change."
+          "text": "You may consume 1 Frost Charge to cast Ice Bolt as a **Half Action**, conjuring a smaller ice shard. This behaves similar to the regular cast, except the base damage is **1d6** and it cannot inflect chill. Damage scales by **1d6** per 15 Ice CA, and you may consume additional charges to increase the damage by **1d6** per charge."
         },
         {
           "ca": "3",
           "variant": null,
-          "text": "When you consume Frost Charges to enhance Ice Bolt, it explodes on impact, dealing to each enemy around the target. The damage of the explosion is equal to 1d6 per charge consumed, and the AoE is a square with a range equal to 1m per charge. This explosion also Chills like Ice Bolt, but does not apply the CON save roll reduction."
+          "text": "When you consume Frost Charges to enhance Ice Bolt, it explodes on impact, dealing cold Damage to each enemy around the target. The damage of the explosion is equal to **1d6** per charge consumed, and the AoE is a square with a range equal to **1m** per charge. This explosion also Chills like Ice Bolt, but does not apply the CON save roll reduction."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-ice",
+      "name": "Enchant Weapon: Ice",
+      "ba": 0,
+      "ca": "4",
+      "mana": "3+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchant Full Attacks gain bonus **+1d6** Flat Cold damage, Half Attacks gain **+1d4**. Damage Dice Count increases by **+1** per 15 Ice CA and every 4 Levels. Then create a cone of frost behind the target 3m long and 3m wide for Full Attacks or, 3m long and 1m wide for Half Attacks. Enemies within the cone must make an **AGI** save or take Cold damage equal to how much Cold damage the initial target took, and also gain 1 Chill. If the initial target is Large or greater, they must also make this **AGI** save.\n\n**Ranged**: Enchant Full Attacks gain bonus **+1d6** Flat Cold damage, Half Attacks gain **+1d4**. Damage Dice Count increases by **+1** per 15 Ice CA and every 4 Levels. If the attack lands, make Ranged Spell Attack as an **Immediate** action, automatically firing a salvo of ice shards. On hit shards deal **1d4** Cold damage per Cold damage Dice rolled for the initial attack.\n\n***Spell Focus:*** Enemies Chilled by Enchanted spells must make a CON save or become Chilled an additional time. If Frost Charges were consumed during the Enchanted spell, decrease the target’s save against Chill and Freeze saves by **-2** for each charge. If 3 charges are consumed, instead of decreasing the save, you may have the target make the save with Disadvantage. If you do, each charge consumed after 3 decreases their save roll by **-2** again.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": "Melee",
+          "text": "Increase the Length and Width of the cone by **+1m** per 15 Ice CA, and every 5 Player Levels."
+        },
+        {
+          "ca": "3",
+          "variant": "Ranged",
+          "text": "When making an Enchanted Ranged Attack, you may consume Frost Charges to empower the secondary salvo, For each Charge consumed, increase the Cold damage by **+2d4**. For every 3 Charges consumed, the target must make a **CON** save or become **Frozen** for 1 turn. **+1 to Mana Cost**."
+        },
+        {
+          "ca": "2",
+          "variant": "Spell Focus",
+          "text": "Spend Frost Charges to empower Enchanted spells that, granting them +1 to Dice Counter per Charge consumed."
+        },
+        {
+          "ca": "4",
+          "variant": "All",
+          "text": "Convert all damage from Enchanted Spells or Attacks to Cold damage."
         }
       ]
     },
@@ -149,17 +149,17 @@
       "mana": "2",
       "concentration": "Minor Concentration",
       "tags": [],
-      "body": "As a Full Action create an arch of homing icicles circling above your head. Create 3 icicles plus an additional +1 per 10 Ice CA, and +1 per 4 Player levels. Whenever an enemy enters or starts their turn within 4m of the player, one icicle fires towards them dealing 1d6 Cold damage. This effect triggers once per turn for each enemy. This spell lasts until end of combat.",
+      "body": "As a **Full Action** create an arch of homing icicles circling above your head. Create 3 icicles plus an additional **+1** per 10 Ice CA, and every 3 Player levels. Whenever an enemy enters or starts their turn within **4m** of the player, one icicle fires towards them dealing **1d6** Cold damage. Damage increases by **+1d6** per 20 Ice CA. This effect triggers once per turn for each enemy. This spell lasts until end of combat or until you lose Concentration.",
       "upgrades": [
-        {
-          "ca": "2",
-          "variant": null,
-          "text": "As a Full Action you maybe unleash a barrage of all the icicles remaining at a single target, dealing 1d4 damage per icicle. For every 6 icicles unleashed, increase the Damage Dice Tier Dice Tier by one stage. This action ends the spell."
-        },
         {
           "ca": "3",
           "variant": null,
-          "text": "As an Extra Action you may pay 2 Mana to consume Frost Charges to refill 3 icicles per charge. If you have icicles equal to or greater than the max you would normally create, you cannot consume any more charges."
+          "text": "As a **Full Action** you maybe unleash a barrage of all the icicles remaining at a single target, dealing **1d4** damage per icicle. For every 6 icicles unleashed, increase the Damage Dice Tier by +1. This action ends the spell and concentration."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "As an **Extra Action** you may pay 1 Mana to consume Frost Charges to refill **3 icicles** per Charge. You cannot create more icicles than the maximum the spell allows."
         }
       ]
     },
@@ -173,17 +173,17 @@
       "tags": [
         "Passive"
       ],
-      "body": "NEEDS REWORK (keep it in anyways)\nWhenever you deal Cold damage to a target, after all spell, attack and ailment effects of the Action resolve, you may consume stacks of Chill on them for a chance to inflict Freeze. The chilled target must make a CON+5 save and becomes Frozen for 1 turn. For each stack of Chill consumed beyond the first, the the target get -3 to their CON save.",
+      "body": "Whenever you deal Cold damage to a target, after all spell, attack and ailment effects of the Action resolve, you may consume stacks of Chill on them for a chance to inflict Freeze. The chilled target must make a CON+5 save and becomes Frozen for 1 turn. For each stack of Chill consumed beyond the first, the the target get -3 to their CON save.",
       "upgrades": [
         {
-          "ca": "3",
+          "ca": "4",
           "variant": null,
           "text": "When you successfully freeze a target with Frostbite, you may immediately consume Frost Charges to increase the duration of the freeze. For every 3 charges consumed, increase the duration by 1 turn."
         },
         {
           "ca": "3",
           "variant": null,
-          "text": "Decrease the target’s CON save by an additional -1 per Chill consumed beyond the first."
+          "text": "Decrease the target’s CON save by an additional **-1** per 10 Cold damage dealt."
         }
       ]
     },
@@ -195,22 +195,22 @@
       "mana": "1+",
       "concentration": null,
       "tags": [],
-      "body": "Conjure a weapon made of ice to use in a single Action granting various effects, which typically shatters upon use. Damage Dice Tier scales by 1 die per 10 Ice CA. Frostforge requires an empty hand to use.\n- **Dagger** - As a Half Action make a Melee Spell Attack to deal 1d4 Cold damage on hit and impale a frozen knife into the target. Each knife lasts 3 turns and at the start of the enemies turn they must make a CON save or gain 1 Chill. The target may use a Full Action to pull the knife out of their body, shattering it.\n- **Sword** - As a Reaction you may attempt to parry a melee attack. Make a Spell Attack Roll, and if it’s equal to or higher than the incoming attack, you successfully parry it and gain 1 Frost Charge.\n- **Axe** - +2 Mana. As a Full Action make a Melee Spell Attack to lodge a large frozen axe into an enemy. If the attack hits, deal 1d8 Cold damage and the target must make a CON save or be Frozen for 1 turn.\n- **Javelin** - As a Full Action hurl an icy spear at an enemy or empty ground within 10m. Make a Ranged Spell Attack to deal 1d6 Cold Damage on hit. If the attack misses or targets the ground, create a 1m sized Ice Object (Pillar) on empty ground within 1m of the target.\n- **Shield** - +1 Mana. As a Reaction, consume 1 Frost Charge to negate 1d12 damage from a single Spell or Attack. Gain 1 Frost Charge per 10 damage negated. *Damage blocked does not scale like the other Actions.*",
+      "body": "Conjure a weapon made of ice to use in a single Action granting various effects, which typically shatters upon use. Damage **Dice Count** increases by **+1** per 20 Ice CA and per 5 Player Levels. If you don’t have an empty hand, Frostforge conjures over your weapon temporary ignoring its stats.\n- **Dagger** - As a **Half Action** make a Melee Spell Attack to deal **1d4** Cold damage on hit and impale a frozen knife into the target. Each knife lasts 3 turns and at the start of the enemies turn they must make a CON save or gain 1 Chill. The target may use a Full Action to pull the knife out of their body, shattering it.\n- **Sword** - As a **Reaction** you may attempt to parry a melee attack. Make a Melee Spell Attack roll, and if the value is equal to or higher than the incoming attack, you successfully negate the attack and gain **1 Frost Charge**. Gain **+1** additional Frost Charge per 20 Ice CA.\n- **Axe** - *+1 Mana*. As a **Full Action** make a Melee Spell Attack to lodge a large frozen axe into an enemy. If the attack hits, deal **1d8** Cold damage and the target must make a CON save or be Frozen for 1 turn.\n- **Javelin** - As a Full Action hurl an icy spear at an enemy or empty ground within **8m**. Make a Ranged Spell Attack to deal **1d6** Cold damage on hit. If the attack misses or targets the ground, create a 1m sized Ice Object (Pillar) on empty ground within 1m of the target.\n- **Shield** - *+1 Mana*. As a Reaction, consume **1 Frost Charge** to negate **1d12+[STAT]** damage from a single spell attack or ability. Gain **1 Frost Charge** per 10 damage negated. *Damage blocked does not scale like the other Actions.*",
       "upgrades": [
         {
           "ca": "4",
           "variant": null,
-          "text": "Damage Dice Tier Dice Tier increases by +1 at Player Levels 6, 12 and 18."
+          "text": "Damage Dice Tier increases by **+1**, and an additional **+1** per 30 Ice CA, and at Player Levels 8 and 16."
         },
         {
           "ca": "3",
           "variant": null,
-          "text": "You may consume Frost Charges to enhance Frostforge actions.\n- **Dagger** - Consuming 1 charge allows for an immediate second strike and to impale another knife. Roll damage separately.\n- **Sword** - If you successfully parry, consume 1 charge to immediately counterattack dealing 1d8 Cold damage.\n- **Axe** - Each charge consumed decreases the target’s CON save by -2.\n- **Javelin** - Deal 1d6 more Cold damage per charge consumed. If you have Shape Ice unlocked you change the type of Object created (use Shape Ice for reference).\n- **Shield** - You may consume additional charges to increase the damage blocked by 1d12 per charge."
+          "text": "You may consume Frost Charges to enhance Frostforge actions.\n- **Dagger** - Consuming 1 Charge allows for an immediate second strike and to impale another knife. Roll attack and damage separately.\n- **Sword** - If you successfully parry, consume 1 Charge to immediately counterattack dealing **1d8** Cold damage. Damage scales with Ice CA like the other attacks.\n- **Axe** - Each charge consumed decreases the target’s **CON** save by -2.\n- **Javelin** - Deal **2d6** additional more Cold damage per Charge consumed. If you have Shape Ice unlocked you change the type of Object created (use Shape Ice for reference).\n- **Shield** - You may consume additional charges to increase the damage blocked by **1d12** per 2 Charges consumed."
         },
         {
           "ca": "4",
           "variant": null,
-          "text": "Gain access to the following weapons and Actions:\n- **Lance** - +1 Mana. As a Full Action make a Melee Spell Attack to any enemy within +1m to your Melee Range, dealing 1d8 Cold damage on hit, then the target must make CON save or gain 1 Chill. If you consume Frost Charges while making this action, you may travel in a straight line 3m per charge. The lance pierces and attacks all enemies within 1m of the line.\n- **Hammer** - +1 Mana. As a Full Action make a Melee Spell Attack against enemies or Objects to slam a massive hammer upon them dealing 1d8 Cold Damage. If you consume 1 Frost charge, the target must make a CON save with Advantage or become Stunned for 1 turn. This attack Crits on a Nat 16 against Frozen creatures, and Crits on a Nat 11 against Objects. If you destroy an Ice Object this way, it deals Cold Damage equal to the damage deal to each enemy around it in a 2m AoE. Each charge consumed increases the AoE by +1m each.\n- **Greatsword** - As a Full Action, spin around in a circle making a Melee Spell Attack against all enemies within Melee Range with a -4 penalty. This spin attack may be repeated per Frost Charge consumed, costing +1 more Mana and -1 roll penalty per repeat. *The first repeat has a -5 penalty and 2 Mana cost, the third has a -6 penalty and 3 Mana cost, etc.*\n- **Scythe** - +1 Mana. As a Reaction, instead of an Attack of Opportunity, make a Melee Spell Attack against an enemy attempting to move out of your Melee Range. On hit deal 1d10 Cold damage and pull the target towards you within Melee Range, Immobilizing them until the end of their turn. Then you may either heal or gain Frost charges. Heal for half the damage dealt, gain 1 charge per 8 damage deal. When gaining charges, always gain at least 1.\n- **Chakram** - +2 Mana. As a Half Action make a Ranged Spell Attack against an enemy within 5m to deal 1d6 Cold damage. Regardless of whether the attack hit, the chakram bounces to another enemy within 5m with another attack roll. Each target hit must make a CON save or gain 1 Chill. You may consume charges to make the chakram bounce multiple times, but it cannot to the same target twice in a row."
+          "text": "Gain access to the following weapons and Actions. Damage scales with Ice CA like the other weapons:\n- **Lance** - *+1 Mana*. As a **Full Action** make a Melee Spell Attack against an enemy within +1m to your current weapon’s Melee Range, dealing **1d8** Cold damage on hit, then the target must make **CON** save or gain 1 Chill. If you consume Frost Charges while making this action, you may travel in a straight line **2m** per charge. The lance pierces and attacks all enemies within **1m** of the line.\n- **Hammer** - *+2 Mana*. As a **Full Action** make a Melee Spell Attack against enemies or Objects to slam a massive hammer upon them dealing **1d10** Cold Damage. If you consume 1 Frost charge, the target must make a **CON** save with Advantage or become Stunned for 1 turn. This attack has **+4** to **Crit** against Frozen creatures, and **+9** to **Crit** against Objects. If you destroy an Ice Object this way, it deals Cold Damage equal to the damage deal to each enemy around it in a 2m AoE. Each charge consumed increases the AoE by **+1m** each.\n- **Greatsword** - As a **Full Action**, spin around in a circle making a Melee Spell Attack against all enemies within Melee Range with a **-3** penalty to attack rolls. This spin attack may be repeated per Frost Charge consumed, costing +1 more Mana and -1 roll penalty per repetition. *The first repetition has a -4 penalty and 2 Mana cost, the third has a -5 penalty and 3 Mana cost, etc.*\n- **Scythe** - *+1 Mana.* As a **Reaction**, instead of an Attack of Opportunity, make a Melee Spell Attack against an enemy attempting to move out of your Melee Range. On hit deal **1d10** Cold damage and pull the target towards you within **Melee Range**, **Immobilizing** them until the end of their turn. Then you may either heal or gain Frost Charges. Heal for half the damage dealt (rounded down), or gain 1 Charge per 8 damage deal. When gaining charges, always gain at least 1 even if you didn’t meet the damage threshold.\n- **Chakram** - *+1 Mana*. As a **Half Action** make a Ranged Spell Attack against an enemy within **6m** to deal **1d6** Cold damage on hit. Regardless of whether the attack hit, the chakram bounces to another enemy within 6m of the first with another attack roll. Each target hit must make a **CON** save or gain 1 Chill. You may consume Charges to make the chakram bounce multiple times beyond the first per charge consumed, but it cannot to the same target twice in a row."
         }
       ]
     },
@@ -222,17 +222,17 @@
       "mana": "4",
       "concentration": null,
       "tags": [],
-      "body": "As a Full Action summon a floating sigil made of ice that hovers 3m off the ground, lasting 10 turns. The sigil spawns with 4d8 Health, and each Frost Charge you consume increases its health +1d8. It is resistant to Cold damage and vulnerable to Fire damage. It has a movement of 5m, 1 Summon Action, and gains the following abilities:\n- Summon Action to deal 2d6 Cold damage and inflict 1 Chill to each enemy in a 3m radius circle underneath that fails a CON save.\n- Summon Action to fire a beam of concentrated cold at an enemy within 5m dealing 3d8 Cold damage and applying 2 Chill on a failed AGI save.",
+      "body": "As a Full Action summon a floating sigil made of ice that hovers **3m** off the ground, lasting 10 turns. The sigil spawns with **4d8** Health, and each Frost Charge you consume increases its health **+2d8**. It is resistant to Cold damage and vulnerable to Fire damage. It has a movement of **5m**, 1 Summon Action, and gains the following abilities:\n- Summon Action to deal 2d6 Cold damage and inflict 1 Chill to each enemy in a 3m radius circle underneath that fails a CON save.\n- Summon Action to fire a beam of concentrated cold at an enemy within 5m dealing **3d8** Cold damage and applying **2 Chill** on a failed **AGI** save.",
       "upgrades": [
         {
           "ca": "2",
           "variant": null,
-          "text": "The Cryo Sigil gains +1 Summon Action per 20 Ice CA."
+          "text": "The Cryo Sigil gains **+1 Summon Action** per 30 Ice CA."
         },
         {
           "ca": "4",
           "variant": null,
-          "text": "You and each ally standing underneath the sigil within a 3m radius range gains 1d6 Cold damage to all Spell and Attack damage rolls. This damage increases by +1d6 per 20 Ice CA."
+          "text": "You and each ally standing underneath the sigil within a **3m** radius range gains **1d6** Cold damage to all Spell and Attack damage rolls. This damage increases by **+1d6** per 20 Ice CA."
         }
       ]
     },
@@ -244,7 +244,7 @@
       "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "As a Reaction when a projectile is coming towards you, erect a translucent sheet of ice in front of you blocking the projectile. This barrier is 1m in width and height, and is considered an Ice Object. It has 3d8 Health and gains +1d8 per 10 Ice CA. Damage from the projectile is dealt to the barrier instead of the original target, and it takes double damage from large projectiles. The barrier acts as half cover and you can only have 1 barrier active at a time.",
+      "body": "As a **Reaction** when a projectile is coming towards you, erect a translucent sheet of ice in front of you blocking the projectile. This barrier is 1m in width and height, and is considered an Ice Object. It has 3d8 Health and gains +1d8 per 10 Ice CA. Damage from the projectile is dealt to the barrier instead of the original target, and it takes double damage from large projectiles. The barrier acts as half cover and you can only have 1 barrier active at a time.",
       "upgrades": [
         {
           "ca": "2",
@@ -563,6 +563,21 @@
     }
   ],
   "drafts": [],
-  "signatureSpells": [],
+  "signatureSpells": [
+    {
+      "id": "igloo",
+      "name": "Igloo",
+      "class": "Warden",
+      "ba": null,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Mana"
+      ],
+      "body": "As a **Full Action** target yourself or an ally within **8m**",
+      "upgrades": []
+    }
+  ],
   "source": "Magic/Ice.md"
 }

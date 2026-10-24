@@ -45,6 +45,8 @@ export default {
     { name: "Ice", color: "#9ed6ff", lightColor: "#85b6dd" },
     { name: "Wind", color: "#4db344", lightColor: "#40a137" },
     { name: "Light", color: "#e2ebb3", lightColor: "#909479" },
+    { name: "Focus", color: "#bce2ba"},
+    { name: "Power", color: "#e6544e"},
     { name: "Mind", color: "#dcbae9", lightColor: "#bf85d6" },
     { name: "Lightning", color: "#f2d85c", lightColor: "#ccb23f" },
     { name: "Water", color: "#245fb1" },

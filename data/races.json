@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.186Z",
+  "generatedAt": "2026-10-24T00:25:03.247Z",
   "source": "Races.md",
   "intro": "One of your d20 rolls in Character Creation is assigned to your race, the outcome of which determines how many points you get to spend on racial traits. (Racial traits have a Cost - Trait description). Unique traits cannot be taken with other unique traits of the same type.",
   "pointsTable": [
@@ -338,11 +338,6 @@
               "cost": 1,
               "unique": null,
               "text": "Proficiency in **Intimidation**."
-            },
-            {
-              "cost": 2,
-              "unique": null,
-              "text": "Your size becomes **Large**"
             },
             {
               "cost": 3,

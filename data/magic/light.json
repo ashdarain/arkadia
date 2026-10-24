@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "light",
   "name": "Light",
   "tier": 1,
@@ -8,14 +8,13 @@
     "radiant"
   ],
   "keywords": [
-    "wip",
     "charges",
     "healing",
     "blind"
   ],
   "theme": "Pale yellow",
   "stats": [
-    "CON",
+    "AGI",
     "WIS",
     "INT"
   ],
@@ -102,7 +101,7 @@
       "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Full Attacks gain Flat **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Tier Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Ranged**: Full Attacks gain Flat **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Tier Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Spell Focus**: **+4m** to range of Light spells and all spells that deal Radiant damage. Spell Attack rolls gain **+2**, or **+1d6** if the target is Blinded.",
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Full Attacks gain bonus **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Tier Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Ranged**: Full Attacks gain bonus **1d6** Flat Radiant damage on hit, while Half Attacks gain **1d4** instead. Damage Dice Tier Count increases by **+1** per 15 Light CA and every 4 Player Levels.\n\n**Spell Focus**: **+4m** to range of Light spells and all spells that deal Radiant damage. Spell Attack rolls gain **+2**, or **+1d6** if the target is Blinded.",
       "upgrades": [
         {
           "ca": "4",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "crystals": [
     {
       "id": "fire",
@@ -10,7 +10,7 @@
         "fire"
       ],
       "stats": [
-        "CON",
+        "STR",
         "CHA",
         "INT"
       ],
@@ -24,8 +24,8 @@
         "cold"
       ],
       "stats": [
-        "WIS",
         "DEX",
+        "WIS",
         "INT"
       ],
       "file": "ice.json"
@@ -53,11 +53,33 @@
         "radiant"
       ],
       "stats": [
-        "CON",
+        "AGI",
         "WIS",
         "INT"
       ],
       "file": "light.json"
+    },
+    {
+      "id": "focus",
+      "name": "Focus",
+      "tier": 1,
+      "damageTypes": [],
+      "stats": [
+        "DEX",
+        "INT"
+      ],
+      "file": "focus.json"
+    },
+    {
+      "id": "power",
+      "name": "Power",
+      "tier": 1,
+      "damageTypes": [],
+      "stats": [
+        "STR",
+        "INT"
+      ],
+      "file": "power.json"
     },
     {
       "id": "mind",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "fire",
   "name": "Fire",
   "tier": 1,
@@ -13,7 +13,7 @@
   ],
   "theme": "Reddish - Orange",
   "stats": [
-    "CON",
+    "STR",
     "CHA",
     "INT"
   ],
@@ -82,7 +82,7 @@
       "mana": "1+",
       "concentration": null,
       "tags": [],
-      "body": "**Basic Cast**: As a Full Action make a ranged spell attack hurling a ball of fire towards any target within 12m, dealing **1d8** Fire damage. Lesser Fireball is a Small Projectile. Damage increases by *+1d8* per 10 Fire CA.\n\n**Empowered Cast**: Consume 1 Blaze Charge as a Half Action to make a ranged spell attack to hurling a ball of fire towards any target within 8m, dealing 2d6 fire damage. Damage increases by *+1d6* per 10 Fire CA.\n\n**0 Mana Cast:** You may cast Less Fireball for *0 Mana*, if you do it deals *1d6* Fire damage instead and the range is lowered to *6m*. Damage increases by *+1d6* per 20 Fire CA.",
+      "body": "**Basic Cast**: As a Full Action make a ranged spell attack hurling a ball of fire towards any target within 12m, dealing **1d8** Fire damage. Lesser Fireball is a Small Projectile. Damage increases by *+1d8* per 15 Fire CA and every 4 Player Levels.\n\n**Empowered Cast**: Consume **1 Blaze Charge** as a **Half Action** to make a Range Spell Attack hurling a ball of fire towards any target within **8m**, dealing **2d6** fire damage. Damage increases by *+1d6* per 15 Fire CA and every 3 Player Levels.\n\n**0 Mana Cast:** You may cast Less Fireball for *0 Mana*, if you do it deals *1d6* Fire damage instead and the range is lowered to *6m*. Damage increases by *+1d6* per 20 Fire CA.",
       "upgrades": [
         {
           "ca": "2",
@@ -100,31 +100,26 @@
       "id": "enchant-weapon-fire",
       "name": "Enchant Weapon: Fire",
       "ba": 0,
-      "ca": "2",
-      "mana": "2",
+      "ca": "4",
+      "mana": "2+",
       "concentration": null,
       "tags": [],
-      "body": "As a *Half Action*, wreath your weapon in flame for 3 turns. Gain the following effects while enchanted depending on the weapon type:\n**Melee**: Whenever you land a melee attack with your enchanted weapon, apply 1 Burn. The amount of stacks applied increases +1 every 3 Player Levels.\n**Ranged**: Deal +1d4 Fire damage. This increases by +1d4 every 2 Player Levels.\n**Spell Focus**: +1 to spell save DC and spell Attack rolls for Fire spells. The attack roll bonus increases by +1 every 4 Player Levels. Fire spell Attack rolls gain +1 to Crit Chance.",
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Full Attacks gain bonus **+1d6** Flat Fire damage on hit, while Half Attacks gain **+1d4**. Damage Dice Count increases by **+1** per 15 Fire CA and every 4 Player Levels.\n\n**Ranged**: Full Attacks gain bonus **+1d6** Flat Fire damage on hit, while Half Attacks gain **+1d4**. Damage Dice Count increases by **+1** per 15 Fire CA and every 4 Player Levels.\n\n**Spell Focus**: **+1** to spell save DC and **+2** to Spell Attack rolls for Fire spells. The attack roll bonus increases by **+1** per 20 Fire CA, and every 4 Player Levels. Fire spell Attack rolls gain **+1** to **Crit** Chance.",
       "upgrades": [
         {
           "ca": "3",
-          "variant": "Melee",
-          "text": "Deal +1d6 Fire damage per attack. This increases by +1d6 per 3 Player Levels. *+1 Mana Cost*."
+          "variant": "Melee and Ranged",
+          "text": "Enchanted Melee or Ranged Attacks now Burn enemies on hit. Full Attacks inflict **2 Burn** while Half Attacks inflict **1 Burn**."
         },
         {
           "ca": "2",
-          "variant": "Ranged",
-          "text": "When you land a ranged attack with your enchanted weapon, apply 1 Burn. The amount of stacks applied increase by +1 per 3 Player Levels. *+1 Mana Cost*."
-        },
-        {
-          "ca": "3",
           "variant": "Spell Focus",
-          "text": "Once per round whenever you successfully apply Burn, gain 1 Blaze charge. *+1 Mana Cost*."
+          "text": "Once per turn whenever you successfully apply Burn from an Enchanted Spell, gain 1 Blaze charge. *+1 Mana Cost*."
         },
         {
           "ca": "4",
-          "variant": null,
-          "text": "Whenever you apply Burn with a spell or attack from an Enchanted weapon, apply +1 stack of Burn."
+          "variant": "All",
+          "text": "When an effect of an Enchanted Attack or Spell would cause Burn, it causes +1 additional Burn, once per Action."
         }
       ]
     },
@@ -143,12 +138,12 @@
         {
           "ca": "2",
           "variant": null,
-          "text": "Lingering Flame applies +1 Burn per 10 Fire CA."
+          "text": "Lingering Flame applies **+1 Burn** per 20 Fire CA."
         },
         {
           "ca": "3",
           "variant": null,
-          "text": "Lingering Flame now triggers up to twice per round."
+          "text": "Lingering Flame can now triggers twice per round."
         }
       ]
     },
@@ -157,20 +152,20 @@
       "name": "Cleansing Fire",
       "ba": 0,
       "ca": "2",
-      "mana": "2+",
+      "mana": "2*",
       "concentration": null,
       "tags": [],
-      "body": "**Basic Cast**: As a Full Action target a creature within melee range to send a flame coursing through its body. Deal **1d6** Fire damage and remove a single Weak Buff or Weak Debuff from the target. Damage against enemies increases by +1d6 per 10 Fire CA.\n\n**Empowered Cast**: By consuming 3 Blaze Charges, Cleansing Flame removes all Weak Buffs or Weak Debuffs from the target instead. The target must make a CON save taking regular damage on pass, double damage on fail.",
+      "body": "**Basic Cast**: As a Full Action make a **Melee Spell Attack** sending a flame coursing through the target’s body. Deal **1d6** Fire damage and perform a Minor Dispell on hit, removing a Weak Buff from them. Damage against enemies increases by **+1d6** per 15 Fire CA. You may choose to cast this on yourself or an ally. Casting it this way does not do any damage, but still performs a Minor Dispell removing Weak Buffs instead. This also applies to the Empower Cast.\n\n**Empowered Cast**: By consuming **3 Blaze Charges**, Cleansing Flame removes all Weak Buffs or Weak Debuffs from the target instead. The target must make a **CON** save taking regular damage on pass, double damage on fail.",
       "upgrades": [
         {
           "ca": "3",
           "variant": null,
-          "text": "Damage against enemies increases by +1d6 per 2 Player levels. +2 Mana cost."
+          "text": "Damage against enemies increases by **+1d6** per 2 Player levels. *+1 Mana cost*."
         },
         {
           "ca": "2",
           "variant": null,
-          "text": "Cleansing Fire can target an enemy within 12m, if so a Ranged Spell Attack is required, with no effect on fail."
+          "text": "Cleansing Fire can target an enemy within 12m, if so a Ranged Spell Attack is required, with no effect on miss."
         }
       ]
     },

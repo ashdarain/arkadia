@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-24T00:25:03.275Z",
+  "id": "power",
+  "name": "Power",
+  "tier": 1,
+  "damageTypes": [],
+  "keywords": [
+    "utility"
+  ],
+  "theme": "Reddish",
+  "stats": [
+    "STR",
+    "INT"
+  ],
+  "ascendsInto": [],
+  "mechanics": [],
+  "spells": [
+    {
+      "id": "temper",
+      "name": "Temper",
+      "ba": 0,
+      "ca": "5",
+      "mana": null,
+      "concentration": null,
+      "tags": [
+        "Passive"
+      ],
+      "body": "Increase your STR Stat by +1.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "Gain **+1d4** to STR and CON saves."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-power",
+      "name": "Enchant Weapon: Power",
+      "ba": 0,
+      "ca": "4",
+      "mana": "2",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee weapons gain **+1** to **Dice Tier** to their base damage. Increase by an additional **+1** at Player Levels 6, 12 and 18.\n\n**Ranged**: Enchanted Ranged weapons gain **+1** to **Dice Tier** to their base damage. Increase by an additional **+1** at Player Levels 6, 12 and 18.\n\n**Spell Focus**: Enhance spells gain **+4m** to range. Enchanted Spell Attacks again **+1d8** to Attack rolls.",
+      "upgrades": []
+    }
+  ],
+  "drafts": [],
+  "signatureSpells": [],
+  "source": "Magic/Power.md"
+}

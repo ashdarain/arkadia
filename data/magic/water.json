@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "water",
   "name": "Water",
   "tier": 2,
@@ -25,7 +25,7 @@
     {
       "id": "aqua-charges",
       "name": "Aqua Charges",
-      "body": "Aqua Charges are gained during Short and Long Rests, and some during the start of combat to empower your Water spells in various ways.",
+      "body": "Aqua Charges are and optional mechanic gained during Short and Long Rests, and some during the start of combat to empower your Water spells in various ways.",
       "source": null
     },
     {
@@ -50,7 +50,7 @@
       "mana": null,
       "concentration": null,
       "tags": [],
-      "body": "You have a maximum of **Aqua Charges** equal to **4**, which increases by **+1** per 4 Player Levels, and **+1** per 12 Water CA. During Short and Long Rests your Aqua Charges reset to full. At the start of Combat gain 3 Aqua Charges up to your maximum, which increases by **+1** per 24 Water CA.",
+      "body": "You have a maximum of **Aqua Charges** equal to **4**, which increases by **+1** per 4 Player Levels, and **+1** per 12 Water CA. During Short and Long Rests your Aqua Charges reset to full. At the start of Combat gain **+3 Aqua Charges** up to your maximum. Charges gained this way increases by **+1** per 24 Water CA.",
       "upgrades": [
         {
           "ca": "3",
@@ -72,7 +72,7 @@
       "mana": "2",
       "concentration": "Major Concentration*",
       "tags": [],
-      "body": "As a **Full Action** conjure a large sphere of water entirely engulfing a creature **Medium** or smaller. If the creature fails an **AGI** save, they become **Immobilized** for up to *10 turns* or until you lose **Concentration**. Creatures immobilized this way have **Disadvantage** on AGI **saves** and Disadvantage on all **Attack** and **Spell Attack Rolls**. A creature may use a **Half Action** to attempt escaping the bubble using a **STR** save.\n\nAs an **Extra Action** or **Half Action**, you can consume **2 Aqua Charges** to flood their lungs with water, dealing **2d8** Cold damage. Damage increases by **+1d8** per 12 Water CA.",
+      "body": "As a **Full Action** conjure a large sphere of water entirely engulfing a creature **Medium** or smaller. If the creature fails an **AGI** save, they become **Immobilized** for up to *10 turns* or until you lose **Concentration**. Creatures immobilized this way have Disadvantage on **AGI** saves and Disadvantage on all Martial and Spell Attack rolls. A creature may use a **Half Action** to attempt escaping the bubble using a **STR** save.\n\nAs an **Extra Action** or **Half Action**, you can consume **2 Aqua Charges** to flood their lungs with water, dealing **2d8** Cold damage. Damage increases by **+1d8** per 12 Water CA.",
       "upgrades": [
         {
           "ca": "2",
@@ -83,6 +83,38 @@
           "ca": "4",
           "variant": null,
           "text": "Bubble becomes a Minor Concentration spell."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-water",
+      "name": "Enchant Weapon: Water",
+      "ba": 0,
+      "ca": "4",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Full Attacks gain bonus **+1d8** Flat Cold damage on hit, while Half Attacks gain **+1d4**. Damage Dice Count increases by **+1** per 18 Water CA and every 4 Player Levels.\n\n**Ranged**: Full Attacks gain bonus **+1d6** Flat Cold damage on hit, while Half Attacks gain **+1d4**. Damage Dice Count increases by **+1** per 18 Water CA and every 3 Player Levels.\n\n**Spell Focus**: Enchanted spells gain **+3m** to range, **+1m** to length, width and radius, and **+2m** to diameter. Enchanted spell attacks have **Advantage** to enemies affected by immobilize or disarm, or enemies that have 2 Minor Debuffs.",
+      "upgrades": [
+        {
+          "ca": "2",
+          "variant": "Melee",
+          "text": "Spend **2 Aqua Charges** when making Enchanted Full Attacks to add bonus **+1d8** Flat Aether damage. Spend **1 Charge** when making Enchanted Half Attacks to increase the Dice Tier of bonus damage gained by **+1**. Charges can be spent multiple times this way to empower the attacks further."
+        },
+        {
+          "ca": "3",
+          "variant": "Ranged",
+          "text": "Spend **4 Aqua Charges** when casting this spell to add bonus **+1d6** Flat Aether damage to Enchanted Full Attacks, and **+1d4** to Enchanted Half Attacks. Damage Dice Count increases by **+1** per 12 Water CA."
+        },
+        {
+          "ca": "4",
+          "variant": "All",
+          "text": "Defeating an enemy with an Enchanted spell or attack grants you **2 Mana**, up to 8 Mana per Action. *+1 Mana Cost*."
+        },
+        {
+          "ca": null,
+          "variant": "Spell Focus",
+          "text": "Consume **5 Aqua Charges** to increase the damage Dice Tier for enchanted spells cast."
         }
       ]
     },
@@ -131,7 +163,20 @@
       ]
     }
   ],
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "tidal-wave",
+      "name": "Tidal Wave",
+      "ba": 15,
+      "ca": null,
+      "mana": null,
+      "concentration": null,
+      "tags": [],
+      "body": "gain mana",
+      "upgrades": [],
+      "draftReason": "no cost line"
+    }
+  ],
   "signatureSpells": [
     {
       "id": "aquatic-shield",
@@ -139,11 +184,22 @@
       "class": "Warden",
       "ba": null,
       "ca": "3",
-      "mana": null,
+      "mana": "3",
       "concentration": null,
       "tags": [],
-      "body": "- bubble that gives u resistance\n- takes a certain number of hits",
-      "upgrades": []
+      "body": "As a **Full Action**, target yourself or an ally within **6m** enshrouding them in a protective bubble. Aquatic Shield is a Weak Buff that lasts for 3 rounds, increasing by **+1** round per 18 Water CA. Creatures with Aquatic Shield become **Resistant** to Non-Magical damage, as well as Aether, Cold and Fire damage. Aquatic Shield is removed after the creature takes a certain number of hits or instances of damage. Damage from Weak Debuffs **does not** count towards this limit. The number of hits/damage is **3**, gaining **+1** per 18 Water CA and at Warden Levels 3, 6 and 9.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "Spend Aqua Charges to increase the amount of hits Aquatic Shield can protect from. For every **1 Charge** consumed, increases the number of hits by **+1**."
+        },
+        {
+          "ca": "2",
+          "variant": null,
+          "text": "When any creature within **15m** has their Aquatic Shield removed by damage, gain **3 Mana**. Mana gained this way increases by **+1** at Warden Levels 6 and 10."
+        }
+      ]
     }
   ],
   "source": "Magic/Water.md"

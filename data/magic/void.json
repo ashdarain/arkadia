@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "void",
   "name": "Void",
   "tier": 3,
@@ -204,7 +204,7 @@
       "mana": "3*",
       "concentration": null,
       "tags": [],
-      "body": "As a **Full Action** target yourself or an ally within **8m**, protecting them with a watchful eye of the Void. Watchful Eye is a *Strong Buff* that lasts for 3 rounds. This spell costs **-2 Mana** if you target yourself. If a creature with Watchful Eye becomes the target of a spell or is attacked, they can make a **Reaction** to *Pierce the Veil* and enter the Void dimension, leaving behind a **Void Remnant** of their own. The attack or spell is then made against the Remnant instead of the initial target. Watchful Eye continues to last even it’s triggered right away and protected target immediately returns to the real world.\n\nIf they don’t have a Void Crystal, they don’t gain up the upgrades you have regarding the Void. However their Remnant gains the basic abilities like being able to move with Half or Extra Actions, and gaining **Resistances** to all Non-Magical damage types, following the same rules as your un-upgraded ones. Allies in the Void can Breach the Veil and make attacks, leaving behind temporary Remnants like you. At the start of an allies turn inside the Void, they must pay **3 Mana** or be forcefully exited. If Watchful Eye’s duration ends at the end of an ally’s turn, they are also forcefully removed.",
+      "body": "As a **Full Action** target yourself or an ally within **8m**, protecting them with a watchful eye of the Void. Watchful Eye is a *Strong Buff* that lasts for 3 rounds. This spell costs **-2 Mana** if you target yourself. If a creature with Watchful Eye becomes the target of a spell or is attacked, they can make a **Reaction** to *Pierce the Veil* and enter the Void dimension, leaving behind a **Void Remnant** of their own. The attack or spell is then made against the Remnant instead of the initial target. Watchful Eye continues to last even it’s triggered right away and protected target immediately returns to the real world.\n\nIf they don’t have a Void Crystal, they don’t gain up the upgrades you have regarding the Void. However their Remnant gains the basic abilities like being able to move with Half or Extra Actions, and gaining **Resistances** to all Non-Magical damage types, following the same rules as your un-upgraded ones. Allies in the Void can Breach the Veil and make attacks, leaving behind temporary Remnants like you. At the start of an allies turn inside the Void, they must pay **3 Mana** or be forcefully exited. If Watchful Eye’s duration ends at the end of an ally’s turn, they are also forcefully removed.\n\nAt Warden Level 6 you can cast this spell as a **Half Action**.",
       "upgrades": [
         {
           "ca": "4",

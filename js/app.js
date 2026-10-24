@@ -3,7 +3,7 @@
 
 import {
   anchorId, esc, flash, icon, jumpTo, loadData,
-  main, nav, navFoot, packMasonry, state, stickColumns,
+  main, nav, navFoot, packMasonry, shownClasses, shownCrystals, state, stickColumns,
 } from "./core.js";
 import { classesPage } from "./classes.js";
 import { racesPage } from "./races.js";
@@ -262,6 +262,22 @@ main.addEventListener("keydown", (e) => {
     : (i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
   e.preventDefault();
   selectTab(tabs[next], true);
+});
+
+// Left / right arrow keys on a class or crystal page step to the previous / next one, wrapping around.
+// From the overview, right opens the first and left the last. Ignored while typing or on tab lists.
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+  if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  if (e.target.closest?.("input, textarea, select, [contenteditable], [role=tab], [role=tablist]")) return;
+  const { tab, sub } = parseRoute();
+  const list = tab === "classes" ? shownClasses() : tab === "magic" ? shownCrystals() : null;
+  if (!list?.length) return;
+  const i = list.findIndex((x) => x.id === sub);
+  const step = e.key === "ArrowRight" ? 1 : -1;
+  const next = i < 0 ? (step > 0 ? 0 : list.length - 1) : (i + step + list.length) % list.length;
+  e.preventDefault();
+  location.hash = `#/${tab}/${encodeURIComponent(list[next].id)}`;
 });
 
 window.addEventListener("hashchange", () => {

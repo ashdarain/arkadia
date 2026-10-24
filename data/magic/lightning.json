@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "lightning",
   "name": "Lightning",
   "tier": 2,
@@ -84,33 +84,6 @@
       ]
     },
     {
-      "id": "enchant-weapon-lightning",
-      "name": "Enchant Weapon: Lightning",
-      "ba": 0,
-      "ca": "3",
-      "mana": "2",
-      "concentration": null,
-      "tags": [],
-      "body": "As a *Half Action* electricity your weapon for your next 3 attacks/spell casts.  Gain the following effects while enchanted depending on the weapon type:\n\n**Melee:** Convert all Physical damage to Lightning and add 1d6 Lightning damage. Added Lightning damage increases by +1d6 per 3 Player Levels, and +1d6 per 12 Lightning CA.\n**Ranged:** Convert all Physical damage to Lightning and add 1d6 Lightning damage. Added Lightning damage increases by +1d6 per 3 Player Levels, and +1d6 per 12 Lightning CA.\n**Spell Focus:** +1m to AoE, +1 to Spell Save DC, and +2m range with Lightning spells. Range increases by +2m per 12 Lightning CA.",
-      "upgrades": [
-        {
-          "ca": null,
-          "variant": "Melee",
-          "text": "When you hit a melee attack with a Lightning-Enchanted weapon,"
-        },
-        {
-          "ca": "2",
-          "variant": "Ranged",
-          "text": "When you hit a ranged attack with a Lightning-Enchanted weapon, lodge one Lightning Spear into the target."
-        },
-        {
-          "ca": "3",
-          "variant": "Spell Focus",
-          "text": "Whenever you roll a NAT 20"
-        }
-      ]
-    },
-    {
       "id": "thunderbolt",
       "name": "Thunderbolt",
       "ba": 0,
@@ -134,6 +107,33 @@
           "ca": "3",
           "variant": null,
           "text": "Leave behind temporary shocked ground in a circle with a diameter *+2m* of Thunderbolt’s AoE, each grounded creature in that area must pass an *AGI* save or gain **Shock**. The shocked ground dissipates immediately afterwards. If the creature is on or in water, the save fails automatically. *+1 Mana Cost if used*. This upgrade is *disabled* when Thunderbolt is cast from other spells."
+        }
+      ]
+    },
+    {
+      "id": "enchant-weapon-lightning",
+      "name": "Enchant Weapon: Lightning",
+      "ba": 0,
+      "ca": "4",
+      "mana": "2",
+      "concentration": null,
+      "tags": [],
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee:** Convert all your weapon’s damage to Lightning and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 18 Lightning CA, and every 4 Player Levels.\n\n**Ranged:** Convert all your weapon’s damage to Lightning and add **+1d8** Flat Lightning damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 18 Lightning CA, and every 4 Player Levels.\n\n**Spell Focus:** +1m to AoE, +1 to Spell Save DC, and +2m range with Enchanted Lightning spells or spells that deal Lightning damage. Range increases by +2m per 12 Lightning CA. Spell Save DC increases by +1 per 24 Lightning CA.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": "Melee",
+          "text": "When you hit a melee attack with an Enchanted Melee attack, deal **1d8** Lightning damage to all Shocked, Electrocuted or Paralyzed enemies within **6m** with Full attacks, or **1d6** for Half Attacks. Damage dice count for this damage increases by +1 per 36 Lightning CA."
+        },
+        {
+          "ca": "2",
+          "variant": "Ranged",
+          "text": "When you hit a ranged attack with an Enchanted weapon, lodge one Lightning Spear into the target."
+        },
+        {
+          "ca": "3",
+          "variant": "Spell Focus",
+          "text": "Whenever you miss spell attack against an enemy, you may cast Thunderbolt as an Immediate Action targeting that enemy."
         }
       ]
     },

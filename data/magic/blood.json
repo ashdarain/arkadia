@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "blood",
   "name": "Blood",
   "tier": 3,
@@ -92,7 +92,7 @@
       "mana": "2+",
       "concentration": null,
       "tags": [],
-      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee attacks deal bonus Flat **Necrotic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Blood CA and every 3 Player Levels. On hit, you may spend **1 Blood Charge** to gain **+1d6** Health for Full Attacks, or **+1d4** for Half Attacks. Healing Dice Count increases by **+1** per 30 Blood CA.\n\n**Ranged**: Enchanted Ranged attacks deal bonus Flat **Aether** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Blood CA and every 4 Player Levels. On hit, you may spend **1 Blood Charge** to gain **+1d6** Health for Full Attacks, or **+1d4** for Half Attacks. Healing Dice Count increases by **+1** per 30 Blood CA.\n\n**Spell Focus**: When healing for an Enchanted spell by any means, increase the healing Dice Tier by **+1**. Enchanted spells that deal Necrotic or Aether damage gain **+1d4** to Attack rolls.",
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee attacks deal bonus Flat **Necrotic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Blood CA and every 3 Player Levels. On hit, you may spend **1 Blood Charge** to gain **+1d6** Health for Full Attacks, or **+1d4** for Half Attacks. Healing Dice Count increases by **+1** per 30 Blood CA.\n\n**Ranged**: Enchanted Ranged attacks deal bonus Flat **Aether** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Blood CA and every 4 Player Levels. On hit, you may spend **1 Blood Charge** to gain **+1d6** Health for Full Attacks, or **+1d4** for Half Attacks. Healing Dice Count increases by **+1** per 30 Blood CA.\n\n**Spell Focus**: When healing for an Enchanted spell by any means, increase the healing Dice Tier by **+1**. Enchanted spells that deal Necrotic or Aether damage gain **+1d4** to Attack rolls.",
       "upgrades": [
         {
           "ca": "3",
@@ -307,7 +307,7 @@
       "tags": [
         "X Health"
       ],
-      "body": "As a **Full Action**, target yourself or an ally within **6m** protecting them with a barrier of blood, granting them Temporary Health, based on how much Health you spent on this spell. Per 3 Health spent, the target gains **1d8** Temporary Health. Casting this on a creature that already has Temp Health from Blood Barrier removes all of it before applying this spell again.",
+      "body": "As a **Full Action**, target yourself or an ally within **6m** protecting them with a barrier of blood, granting them Temporary Health based on how much Health you spent on this spell. Per 3 Health spent, the target gains **1d8** Temporary Health. Casting this on a creature that already has Temp Health from Blood Barrier removes all of it before applying this spell again.",
       "upgrades": [
         {
           "ca": "2",

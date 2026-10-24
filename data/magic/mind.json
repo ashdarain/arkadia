@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T12:50:41.213Z",
+  "generatedAt": "2026-10-24T00:25:03.275Z",
   "id": "mind",
   "name": "Mind",
   "tier": 2,
@@ -91,23 +91,6 @@
       ]
     },
     {
-      "id": "clarity",
-      "name": "Clarity",
-      "ba": 0,
-      "ca": "2",
-      "mana": "2+",
-      "concentration": null,
-      "tags": [],
-      "body": "As a **Full Action** choose an ally (not yourself) within **6m**, granting them **1d6** Mana. Mana gained increases by **+1d6** per 24 Mind CA.",
-      "upgrades": [
-        {
-          "ca": "3",
-          "variant": null,
-          "text": "You may have the target gain **Advantage** on their next Martial or Spell Attack roll. *+1 Mana cost if used*."
-        }
-      ]
-    },
-    {
       "id": "enchant-weapon-mind",
       "name": "Enchant Weapon: Mind",
       "ba": 0,
@@ -115,7 +98,7 @@
       "mana": "3",
       "concentration": null,
       "tags": [],
-      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Tier Count increases by **+1** per 18 Mind CA, and every 4 Player Levels.\n\n**Ranged**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Tier Count increases by **+1** per 12 Mind CA, and every 4 Player Levels.\n\n**Spell Focus**: +2 to Save DCs for spells you cast that inflict Fear, Taunt, Charm or Paranoia. **+1d6** Psychic damage to all Full Action spells cast, increasing by **+1d6** per 12 Mind CA and every 4 Player Levels.",
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 18 Mind CA, and every 4 Player Levels.\n\n**Ranged**: Convert all your weapon’s damage to Psychic and add **+1d8** Flat Psychic damage to Full attacks or **+1d4** to Half attacks. Added damage Dice Count increases by **+1** per 12 Mind CA, and every 4 Player Levels.\n\n**Spell Focus**: +2 to Save DCs for spells you cast that inflict Fear, Taunt, Charm or Paranoia. **+1d6** Psychic damage to all Full Action spells cast, increasing by **+1d6** per 12 Mind CA and every 4 Player Levels.",
       "upgrades": [
         {
           "ca": "2",
@@ -136,6 +119,23 @@
           "ca": "2",
           "variant": "Melee or Ranged",
           "text": "Enemies you **Crit** with Enchanted Melee or Ranged attacks become Feared by you."
+        }
+      ]
+    },
+    {
+      "id": "clarity",
+      "name": "Clarity",
+      "ba": 0,
+      "ca": "2",
+      "mana": "2+",
+      "concentration": null,
+      "tags": [],
+      "body": "As a **Full Action** choose an ally (not yourself) within **6m**, granting them **1d6** Mana. Mana gained increases by **+1d6** per 24 Mind CA.",
+      "upgrades": [
+        {
+          "ca": "3",
+          "variant": null,
+          "text": "You may have the target gain **Advantage** on their next Martial or Spell Attack roll. *+1 Mana cost if used*."
         }
       ]
     },
