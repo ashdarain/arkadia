@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T00:25:03.331Z",
+  "generatedAt": "2026-10-24T02:11:40.600Z",
   "source": "Conditions.md",
   "conditions": [
     {
@@ -148,7 +148,7 @@
       "kind": "debuff",
       "strength": "weak",
       "label": "Weak Debuff",
-      "body": "A blinded creature makes Physical and Spell attack rolls with Disadvantage, has -2 to AC, and automatically fail AGI and DEX saves, or saves that directly require eyesight. Blind is a Weak Debuff and can last multiple turns.",
+      "body": "A blinded creature makes Physical and Spell attack rolls with Disadvantage, has -2 to AC, and automatically fail AGI, or saves that directly require eyesight. Blind is a Weak Debuff and can last multiple turns.",
       "sources": [
         "Light"
       ]

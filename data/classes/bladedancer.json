@@ -72,7 +72,7 @@
       "name": "Escalating Attacks",
       "abilityType": null,
       "cost": null,
-      "body": "Every attack deals bonus **+1** damage per attack you’ve already made this turn, even if they missed. This bonus damage is equal to however the highest damage of the attack. Damage per previous attack increases by **+1** at Bladedancer levels 4 and 8."
+      "body": "Every attack deals bonus **+1** damage per attack you’ve already made this turn, even if they missed. This bonus damage type is equal the highest damage type of the attack. Damage per previous attack increases by **+1** at Bladedancer levels 4 and 8."
     },
     {
       "id": "deflect-and-parry",

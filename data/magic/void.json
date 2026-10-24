@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T00:25:03.275Z",
+  "generatedAt": "2026-10-24T02:11:40.530Z",
   "id": "void",
   "name": "Void",
   "tier": 3,
@@ -102,7 +102,7 @@
       "mana": "2+",
       "concentration": null,
       "tags": [],
-      "body": "As a _Half Action_ enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee attacks deal bonus Flat **Entropic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 3 Player Levels.\n\n**Ranged**: Enchanted Ranged attacks deal bonus Flat **Entropic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 4 Player Levels.\n\n**Spell Focus**: Enchanted spells that deal Entropic or Psychic damage gain **+2** to Attack rolls, increasing by **+1** per 20 Void CA and every 4 Player Levels. Enchanted spells that cause creatures to be **Feared** make those saves with **Disadvantage**.",
+      "body": "As a *Half Action* enchant your weapon for your next **3** attacks/spell casts. Gain the following effects while enchanted depending on the weapon type:\n\n**Melee**: Enchanted Melee attacks deal bonus Flat **Entropic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 3 Player Levels.\n\n**Ranged**: Enchanted Ranged attacks deal bonus Flat **Entropic** damage. **1d6** for Full Attacks, **1d4** for Half Attacks. Damage Dice Count increases by **+1** per 20 Void CA and every 4 Player Levels.\n\n**Spell Focus**: Enchanted spells that deal Entropic or Psychic damage gain **+2** to Attack rolls, increasing by **+1** per 20 Void CA and every 4 Player Levels. Enchanted spells that cause creatures to be **Feared** make those saves with **Disadvantage**.",
       "upgrades": [
         {
           "ca": "3",

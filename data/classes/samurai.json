@@ -190,7 +190,7 @@
             {
               "id": "ranged-slash",
               "name": "Ranged Slash",
-              "body": "You may make a Full Action attack against any target within 8m. If your blade is Enchanted, the ranged slash is Magical and deals whatever damage the Enchantment grants. Otherwise it deals Physical Slashing damage. This attack is considered Melee."
+              "body": "As a Full Action, make a melee attack against any target within 8m. If your blade is Enchanted, the ranged slash is Magical and deals whatever damage the Enchantment grants. Otherwise it deals Physical Slashing damage. This attack is considered Melee."
             },
             {
               "id": "hilt-bump",

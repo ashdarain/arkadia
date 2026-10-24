@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T00:25:03.275Z",
+  "generatedAt": "2026-10-24T02:11:40.530Z",
   "id": "light",
   "name": "Light",
   "tier": 1,
@@ -32,7 +32,7 @@
     {
       "id": "blind",
       "name": "Blind",
-      "body": "A blinded creature makes Physical and Spell attack rolls with Disadvantage, has -2 to AC, and automatically fail AGI and DEX saves, or saves that directly require eyesight. Blind is a Weak Debuff and can last multiple turns.",
+      "body": "A blinded creature makes Physical and Spell attack rolls with Disadvantage, has -2 to AC, and automatically fail AGI, or saves that directly require eyesight. Blind is a Weak Debuff and can last multiple turns.",
       "source": "Conditions"
     }
   ],
@@ -111,7 +111,7 @@
         {
           "ca": "3",
           "variant": "Melee or Ranged",
-          "text": "You can spend **3 Shine Charges** to increase the Radiant damage **Dice Tier Dice Tier** by **+1** from Enchanted Martial Attacks."
+          "text": "You can spend **3 Shine Charges** to increase the Radiant damage **Dice Tier** by **+1** from Enchanted Martial Attacks."
         },
         {
           "ca": "5",
@@ -216,7 +216,7 @@
       "mana": "2",
       "concentration": null,
       "tags": [],
-      "body": "As a **Half Action**, shine a beam of light above a enemy illuminating them forcing an **AGI** save. Creatures that fail the save take **2d6** Radiant damage, or half on pass. Damage increases by **+1d6** per 10 Light CA and every 3 Player Levels. If they fail the save, until the start of your next turn Spotlight follows them and all attacks against the creature are made with **Advantage**. If they teleports at least 3m away, or successfully enters Stealth or magical darkness, Spotlight is dispelled entirely. Spotlight is a *Weak Debuff* and a creature can only be affected by one Spotlight at a time.",
+      "body": "As a **Half Action** shine a beam of light above a enemy within **12m** illuminating them forcing an **AGI** save. Creatures that fail the save take **2d6** Radiant damage, or half on pass. Damage increases by **+1d6** per 10 Light CA and every 3 Player Levels. If they fail the save, until the start of your next turn Spotlight follows them and all attacks against the creature are made with **Advantage**. If they teleports at least 3m away, or successfully enters Stealth or magical darkness, Spotlight is dispelled entirely. Spotlight is a *Weak Debuff* and a creature can only be affected by one Spotlight at a time.",
       "upgrades": [
         {
           "ca": "3",

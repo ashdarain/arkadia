@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T00:25:03.275Z",
+  "generatedAt": "2026-10-24T02:11:40.530Z",
   "id": "lightning",
   "name": "Lightning",
   "tier": 2,
@@ -191,7 +191,7 @@
       "tags": [
         "Passive"
       ],
-      "body": "**Static Discharge:** Whenever you deal Lightning damage to a target, you may consume *4 Static Charges* to cast *Thunderbolt* on target as an *Immediate Action*. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades, otherwise it is cast normally. *Mana Cost* still applies. If multiple targets are dealt Lightning damage with a single Action, you may consume the charges multiple times to repeatedly cast Thunderbolt with consecutive Immediate Actions.",
+      "body": "**Static Discharge:** Whenever you deal Lightning damage to a target, you may consume *4 Static Charges* to cast *Thunderbolt* on target as an *Immediate Action*. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades, otherwise it is cast normally. If multiple targets are dealt Lightning damage with a single Action, you may consume the charges multiple times to repeatedly cast Thunderbolt with consecutive Immediate Actions.",
       "upgrades": [
         {
           "ca": "2",
@@ -308,12 +308,12 @@
         {
           "ca": "2",
           "variant": null,
-          "text": "Upon landing you may choose an enemy within 2m of you and cast Thunderbolt as an Immediate Action targeting them. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades. *Mana cost still applies.*"
+          "text": "Upon landing you may choose an enemy within 2m of you and cast Thunderbolt as an Immediate Action targeting them. If you do not have Thunderbolt learned, it is cast as if you learned it without any upgrades."
         },
         {
           "ca": "3",
           "variant": null,
-          "text": "When casting Lightning Port, record your starting location. Until the end of your next turn or until you cast Lightning Port again, if you were damaged in any way or targeted by a Spell or ability from an enemy, you may cast Lightning Port as a Reaction choosing the starting location as the target. *Mana cost still applies.*"
+          "text": "When casting Lightning Port, record your starting location. Until the end of your next turn or until you cast Lightning Port again, if you were damaged in any way or targeted by a Spell or ability from an enemy, you may cast Lightning Port as a Reaction choosing the starting location as the target."
         }
       ]
     },

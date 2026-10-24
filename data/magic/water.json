@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-24T00:25:03.275Z",
+  "generatedAt": "2026-10-24T02:11:40.530Z",
   "id": "water",
   "name": "Water",
   "tier": 2,
@@ -99,7 +99,7 @@
         {
           "ca": "2",
           "variant": "Melee",
-          "text": "Spend **2 Aqua Charges** when making Enchanted Full Attacks to add bonus **+1d8** Flat Aether damage. Spend **1 Charge** when making Enchanted Half Attacks to increase the Dice Tier of bonus damage gained by **+1**. Charges can be spent multiple times this way to empower the attacks further."
+          "text": "Spend **2 Aqua Charges** when making Enchanted Full Attacks to add bonus **+1d8** Flat Aether damage. Spend **1 Charge** per Enchanted Half Attacks to increase the Dice Tier of bonus damage gained by **+1**. Charges can be spent multiple times this way to empower the attacks further."
         },
         {
           "ca": "3",
